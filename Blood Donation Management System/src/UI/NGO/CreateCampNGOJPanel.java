@@ -51,7 +51,6 @@ public class CreateCampNGOJPanel extends javax.swing.JPanel {
         stateTF3 = new javax.swing.JTextField();
         organizeCampBtn = new javax.swing.JPanel();
         organizeCampLbl = new javax.swing.JLabel();
-        txtDate = new com.toedter.calendar.JDateChooser();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -167,9 +166,7 @@ public class CreateCampNGOJPanel extends javax.swing.JPanel {
                                 .addGap(18, 18, 18)
                                 .addComponent(errorLbl10))
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(txtDate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(streetTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(streetTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(18, 18, 18)
@@ -201,10 +198,8 @@ public class CreateCampNGOJPanel extends javax.swing.JPanel {
                         .addComponent(errorLbl1)))
                 .addGap(18, 18, 18)
                 .addComponent(nameLbl2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(errorLbl2)
-                    .addComponent(txtDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(8, 8, 8)
+                .addComponent(errorLbl2)
                 .addGap(18, 18, 18)
                 .addComponent(streetLbl)
                 .addGap(6, 6, 6)
@@ -279,6 +274,5 @@ public class CreateCampNGOJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField stateTF3;
     private javax.swing.JLabel streetLbl;
     private javax.swing.JTextField streetTF;
-    private com.toedter.calendar.JDateChooser txtDate;
     // End of variables declaration//GEN-END:variables
 }

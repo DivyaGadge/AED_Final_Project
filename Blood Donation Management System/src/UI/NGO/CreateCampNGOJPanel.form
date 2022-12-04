@@ -61,10 +61,7 @@
                               <Component id="errorLbl10" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="txtDate" max="32767" attributes="0"/>
-                                  <Component id="streetTF" min="-2" pref="305" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="streetTF" min="-2" pref="305" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -110,11 +107,8 @@
               </Group>
               <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
               <Component id="nameLbl2" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="errorLbl2" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtDate" min="-2" max="-2" attributes="0"/>
-              </Group>
+              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+              <Component id="errorLbl2" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="streetLbl" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
@@ -402,7 +396,5 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="com.toedter.calendar.JDateChooser" name="txtDate">
-    </Component>
   </SubComponents>
 </Form>
