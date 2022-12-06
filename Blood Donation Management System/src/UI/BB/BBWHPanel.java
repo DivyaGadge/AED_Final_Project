@@ -4,6 +4,8 @@
  */
 package UI.BB;
 
+import java.awt.CardLayout;
+
 /**
  *
  * @author HP
@@ -32,17 +34,17 @@ public class BBWHPanel extends javax.swing.JPanel {
         manageProfileBtn = new javax.swing.JPanel();
         ManageProLbl = new javax.swing.JLabel();
         proIcon = new javax.swing.JLabel();
-        inventoryBtn = new javax.swing.JPanel();
-        ManageOrgLbl = new javax.swing.JLabel();
-        manageBloodBtn = new javax.swing.JPanel();
-        manageBloodLbl = new javax.swing.JLabel();
-        orgIcon = new javax.swing.JLabel();
-        ManageDonorsPanel = new javax.swing.JPanel();
-        ManageDonLbl = new javax.swing.JLabel();
-        donorIcon = new javax.swing.JLabel();
-        jPanel9 = new javax.swing.JPanel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        bloodInventoryBtn = new javax.swing.JPanel();
+        bloodInventoryLbl = new javax.swing.JLabel();
+        equipmentInventoryBtn = new javax.swing.JPanel();
+        equipmentInventoryLbl = new javax.swing.JLabel();
+        equipInvIcon = new javax.swing.JLabel();
+        placeOrderBtn = new javax.swing.JPanel();
+        placeOrderLbl = new javax.swing.JLabel();
+        placeOrderIcon = new javax.swing.JLabel();
+        manageBloodReqBtn = new javax.swing.JPanel();
+        manageBloodReqLbl = new javax.swing.JLabel();
+        manageBloodReqIcon = new javax.swing.JLabel();
         CardLayoutBBWHPanel = new javax.swing.JPanel();
 
         BBWHheader.setBackground(new java.awt.Color(207, 98, 98));
@@ -83,6 +85,11 @@ public class BBWHPanel extends javax.swing.JPanel {
         ManageProLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         ManageProLbl.setForeground(new java.awt.Color(215, 215, 215));
         ManageProLbl.setText("Manage Profile");
+        ManageProLbl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ManageProLblMouseClicked(evt);
+            }
+        });
 
         proIcon.setBackground(new java.awt.Color(204, 204, 204));
         proIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -109,127 +116,145 @@ public class BBWHPanel extends javax.swing.JPanel {
 
         BBWHmenu.add(manageProfileBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 280, -1));
 
-        inventoryBtn.setBackground(new java.awt.Color(230, 98, 98));
+        bloodInventoryBtn.setBackground(new java.awt.Color(230, 98, 98));
 
-        ManageOrgLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
-        ManageOrgLbl.setForeground(new java.awt.Color(215, 215, 215));
-        ManageOrgLbl.setText("Blood Inventory");
-
-        javax.swing.GroupLayout inventoryBtnLayout = new javax.swing.GroupLayout(inventoryBtn);
-        inventoryBtn.setLayout(inventoryBtnLayout);
-        inventoryBtnLayout.setHorizontalGroup(
-            inventoryBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, inventoryBtnLayout.createSequentialGroup()
-                .addGap(58, 58, 58)
-                .addComponent(ManageOrgLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        inventoryBtnLayout.setVerticalGroup(
-            inventoryBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, inventoryBtnLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(ManageOrgLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        BBWHmenu.add(inventoryBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 280, -1));
-
-        manageBloodBtn.setBackground(new java.awt.Color(230, 98, 98));
-        manageBloodBtn.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                manageBloodBtnMousePressed(evt);
+        bloodInventoryLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        bloodInventoryLbl.setForeground(new java.awt.Color(215, 215, 215));
+        bloodInventoryLbl.setText("Blood Inventory");
+        bloodInventoryLbl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bloodInventoryLblMouseClicked(evt);
             }
         });
 
-        manageBloodLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
-        manageBloodLbl.setForeground(new java.awt.Color(215, 215, 215));
-        manageBloodLbl.setText("Equipment Inventory");
+        javax.swing.GroupLayout bloodInventoryBtnLayout = new javax.swing.GroupLayout(bloodInventoryBtn);
+        bloodInventoryBtn.setLayout(bloodInventoryBtnLayout);
+        bloodInventoryBtnLayout.setHorizontalGroup(
+            bloodInventoryBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bloodInventoryBtnLayout.createSequentialGroup()
+                .addGap(58, 58, 58)
+                .addComponent(bloodInventoryLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        bloodInventoryBtnLayout.setVerticalGroup(
+            bloodInventoryBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bloodInventoryBtnLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(bloodInventoryLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
+                .addContainerGap())
+        );
 
-        orgIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        orgIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagesPackage/suraj/inventory_icon.png"))); // NOI18N
+        BBWHmenu.add(bloodInventoryBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 280, -1));
 
-        javax.swing.GroupLayout manageBloodBtnLayout = new javax.swing.GroupLayout(manageBloodBtn);
-        manageBloodBtn.setLayout(manageBloodBtnLayout);
-        manageBloodBtnLayout.setHorizontalGroup(
-            manageBloodBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, manageBloodBtnLayout.createSequentialGroup()
+        equipmentInventoryBtn.setBackground(new java.awt.Color(230, 98, 98));
+        equipmentInventoryBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                equipmentInventoryBtnMouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                equipmentInventoryBtnMousePressed(evt);
+            }
+        });
+
+        equipmentInventoryLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        equipmentInventoryLbl.setForeground(new java.awt.Color(215, 215, 215));
+        equipmentInventoryLbl.setText("Equipment Inventory");
+
+        equipInvIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        equipInvIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagesPackage/suraj/inventory_icon.png"))); // NOI18N
+
+        javax.swing.GroupLayout equipmentInventoryBtnLayout = new javax.swing.GroupLayout(equipmentInventoryBtn);
+        equipmentInventoryBtn.setLayout(equipmentInventoryBtnLayout);
+        equipmentInventoryBtnLayout.setHorizontalGroup(
+            equipmentInventoryBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, equipmentInventoryBtnLayout.createSequentialGroup()
                 .addGap(12, 12, 12)
-                .addComponent(orgIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(equipInvIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(manageBloodLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
+                .addComponent(equipmentInventoryLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        manageBloodBtnLayout.setVerticalGroup(
-            manageBloodBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(manageBloodBtnLayout.createSequentialGroup()
+        equipmentInventoryBtnLayout.setVerticalGroup(
+            equipmentInventoryBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(equipmentInventoryBtnLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(manageBloodBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(manageBloodBtnLayout.createSequentialGroup()
-                        .addComponent(orgIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(equipmentInventoryBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(equipmentInventoryBtnLayout.createSequentialGroup()
+                        .addComponent(equipInvIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(manageBloodLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE))
+                    .addComponent(equipmentInventoryLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
-        BBWHmenu.add(manageBloodBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 280, -1));
+        BBWHmenu.add(equipmentInventoryBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 280, -1));
 
-        ManageDonorsPanel.setBackground(new java.awt.Color(230, 98, 98));
+        placeOrderBtn.setBackground(new java.awt.Color(230, 98, 98));
+        placeOrderBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                placeOrderBtnMouseClicked(evt);
+            }
+        });
 
-        ManageDonLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
-        ManageDonLbl.setForeground(new java.awt.Color(215, 215, 215));
-        ManageDonLbl.setText("Place an order");
+        placeOrderLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        placeOrderLbl.setForeground(new java.awt.Color(215, 215, 215));
+        placeOrderLbl.setText("Place an order");
 
-        javax.swing.GroupLayout ManageDonorsPanelLayout = new javax.swing.GroupLayout(ManageDonorsPanel);
-        ManageDonorsPanel.setLayout(ManageDonorsPanelLayout);
-        ManageDonorsPanelLayout.setHorizontalGroup(
-            ManageDonorsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ManageDonorsPanelLayout.createSequentialGroup()
+        javax.swing.GroupLayout placeOrderBtnLayout = new javax.swing.GroupLayout(placeOrderBtn);
+        placeOrderBtn.setLayout(placeOrderBtnLayout);
+        placeOrderBtnLayout.setHorizontalGroup(
+            placeOrderBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, placeOrderBtnLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(donorIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(placeOrderIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
-                .addComponent(ManageDonLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
+                .addComponent(placeOrderLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        ManageDonorsPanelLayout.setVerticalGroup(
-            ManageDonorsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ManageDonorsPanelLayout.createSequentialGroup()
+        placeOrderBtnLayout.setVerticalGroup(
+            placeOrderBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(placeOrderBtnLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(ManageDonorsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ManageDonLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
-                    .addComponent(donorIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(placeOrderBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(placeOrderLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
+                    .addComponent(placeOrderIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
-        BBWHmenu.add(ManageDonorsPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 280, -1));
+        BBWHmenu.add(placeOrderBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 280, -1));
 
-        jPanel9.setBackground(new java.awt.Color(230, 98, 98));
+        manageBloodReqBtn.setBackground(new java.awt.Color(230, 98, 98));
+        manageBloodReqBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                manageBloodReqBtnMouseClicked(evt);
+            }
+        });
 
-        jLabel9.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(215, 215, 215));
-        jLabel9.setText("Manage Blood Request");
+        manageBloodReqLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        manageBloodReqLbl.setForeground(new java.awt.Color(215, 215, 215));
+        manageBloodReqLbl.setText("Manage Blood Request");
 
-        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
-        jPanel9.setLayout(jPanel9Layout);
-        jPanel9Layout.setHorizontalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
+        javax.swing.GroupLayout manageBloodReqBtnLayout = new javax.swing.GroupLayout(manageBloodReqBtn);
+        manageBloodReqBtn.setLayout(manageBloodReqBtnLayout);
+        manageBloodReqBtnLayout.setHorizontalGroup(
+            manageBloodReqBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, manageBloodReqBtnLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(manageBloodReqIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
-                .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
+                .addComponent(manageBloodReqLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        jPanel9Layout.setVerticalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
+        manageBloodReqBtnLayout.setVerticalGroup(
+            manageBloodReqBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, manageBloodReqBtnLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(manageBloodReqBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(manageBloodReqLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
+                    .addComponent(manageBloodReqIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
-        BBWHmenu.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 280, -1));
+        BBWHmenu.add(manageBloodReqBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 280, -1));
 
         CardLayoutBBWHPanel.setBackground(new java.awt.Color(255, 255, 255));
         CardLayoutBBWHPanel.setLayout(new java.awt.CardLayout());
@@ -265,35 +290,92 @@ public class BBWHPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void manageBloodBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_manageBloodBtnMousePressed
+    private void equipmentInventoryBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_equipmentInventoryBtnMousePressed
         // TODO add your handling code here:
 
-    }//GEN-LAST:event_manageBloodBtnMousePressed
+    }//GEN-LAST:event_equipmentInventoryBtnMousePressed
 
     private void manageProfileBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_manageProfileBtnMousePressed
         // TODO add your handling code here:
         
     }//GEN-LAST:event_manageProfileBtnMousePressed
 
+    private void ManageProLblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ManageProLblMouseClicked
+        // TODO add your handling code here:
+        manageProfileFunctionality();
+    }//GEN-LAST:event_ManageProLblMouseClicked
+
+    private void bloodInventoryLblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bloodInventoryLblMouseClicked
+        // TODO add your handling code here:
+        bloodInventoryFunctionality();
+    }//GEN-LAST:event_bloodInventoryLblMouseClicked
+
+    private void equipmentInventoryBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_equipmentInventoryBtnMouseClicked
+        // TODO add your handling code here:
+        equipmentInventoryFunctionality();
+    }//GEN-LAST:event_equipmentInventoryBtnMouseClicked
+
+    private void placeOrderBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_placeOrderBtnMouseClicked
+        // TODO add your handling code here:
+        placeOrderFunctionality();
+    }//GEN-LAST:event_placeOrderBtnMouseClicked
+
+    private void manageBloodReqBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_manageBloodReqBtnMouseClicked
+        // TODO add your handling code here:
+        manageBloodReqFunctionality();
+        
+    }//GEN-LAST:event_manageBloodReqBtnMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel BBWHheader;
     private javax.swing.JPanel BBWHmenu;
     private javax.swing.JPanel CardLayoutBBWHPanel;
-    private javax.swing.JLabel ManageDonLbl;
-    private javax.swing.JPanel ManageDonorsPanel;
-    private javax.swing.JLabel ManageOrgLbl;
     private javax.swing.JLabel ManageProLbl;
+    private javax.swing.JPanel bloodInventoryBtn;
+    private javax.swing.JLabel bloodInventoryLbl;
     private javax.swing.JLabel bloodonateLbl;
-    private javax.swing.JLabel donorIcon;
-    private javax.swing.JPanel inventoryBtn;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel9;
-    private javax.swing.JPanel manageBloodBtn;
-    private javax.swing.JLabel manageBloodLbl;
+    private javax.swing.JLabel equipInvIcon;
+    private javax.swing.JPanel equipmentInventoryBtn;
+    private javax.swing.JLabel equipmentInventoryLbl;
+    private javax.swing.JPanel manageBloodReqBtn;
+    private javax.swing.JLabel manageBloodReqIcon;
+    private javax.swing.JLabel manageBloodReqLbl;
     private javax.swing.JPanel manageProfileBtn;
-    private javax.swing.JLabel orgIcon;
+    private javax.swing.JPanel placeOrderBtn;
+    private javax.swing.JLabel placeOrderIcon;
+    private javax.swing.JLabel placeOrderLbl;
     private javax.swing.JLabel proIcon;
     // End of variables declaration//GEN-END:variables
+
+    private void manageProfileFunctionality() {
+        CardLayoutBBWHPanel.removeAll();
+        CardLayoutBBWHPanel.add(new BBWHManageProfile());
+        ((CardLayout) CardLayoutBBWHPanel.getLayout()).next(CardLayoutBBWHPanel);
+    }
+
+    private void bloodInventoryFunctionality() {
+         CardLayoutBBWHPanel.removeAll();
+        CardLayoutBBWHPanel.add(new BBWHbloodInventoryPanel());
+        ((CardLayout) CardLayoutBBWHPanel.getLayout()).next(CardLayoutBBWHPanel);
+    }
+
+    private void equipmentInventoryFunctionality() {
+        CardLayoutBBWHPanel.removeAll();
+        CardLayoutBBWHPanel.add(new BBWHEquipmentInventory());
+        ((CardLayout) CardLayoutBBWHPanel.getLayout()).next(CardLayoutBBWHPanel);
+    }
+
+    private void placeOrderFunctionality() {
+         CardLayoutBBWHPanel.removeAll();
+        CardLayoutBBWHPanel.add(new BBWHnewOrderPanel());
+        ((CardLayout) CardLayoutBBWHPanel.getLayout()).next(CardLayoutBBWHPanel);
+    }
+
+    private void manageBloodReqFunctionality() {
+          CardLayoutBBWHPanel.removeAll();
+        CardLayoutBBWHPanel.add(new BBWHmanageRequestsPanel());
+        ((CardLayout) CardLayoutBBWHPanel.getLayout()).next(CardLayoutBBWHPanel);
+    }
+    
 }

@@ -4,6 +4,8 @@
  */
 package UI.BB;
 
+import java.awt.CardLayout;
+
 
 /**
  *
@@ -27,7 +29,7 @@ public class BBWHmanageRequestsPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        manageCampCardLayout = new javax.swing.JPanel();
+        manageWHReqCardLayout = new javax.swing.JPanel();
         pendingReqBtn = new javax.swing.JPanel();
         pendingReqLbl = new javax.swing.JLabel();
         orderHistBtn = new javax.swing.JPanel();
@@ -35,9 +37,9 @@ public class BBWHmanageRequestsPanel extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(255, 255, 255));
 
-        manageCampCardLayout.setBackground(new java.awt.Color(255, 255, 255));
-        manageCampCardLayout.setPreferredSize(new java.awt.Dimension(1142, 630));
-        manageCampCardLayout.setLayout(new java.awt.CardLayout());
+        manageWHReqCardLayout.setBackground(new java.awt.Color(255, 255, 255));
+        manageWHReqCardLayout.setPreferredSize(new java.awt.Dimension(1142, 630));
+        manageWHReqCardLayout.setLayout(new java.awt.CardLayout());
 
         pendingReqBtn.setBackground(new java.awt.Color(106, 106, 106));
         pendingReqBtn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -51,6 +53,9 @@ public class BBWHmanageRequestsPanel extends javax.swing.JPanel {
         pendingReqLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         pendingReqLbl.setText("Pending Requests");
         pendingReqLbl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pendingReqLblMouseClicked(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 pendingReqLblMousePressed(evt);
             }
@@ -68,6 +73,11 @@ public class BBWHmanageRequestsPanel extends javax.swing.JPanel {
         );
 
         orderHistBtn.setBackground(new java.awt.Color(106, 106, 106));
+        orderHistBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                orderHistBtnMouseClicked(evt);
+            }
+        });
 
         orderHistLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         orderHistLbl.setForeground(new java.awt.Color(255, 255, 255));
@@ -100,7 +110,7 @@ public class BBWHmanageRequestsPanel extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addComponent(orderHistBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(manageCampCardLayout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(manageWHReqCardLayout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -110,50 +120,53 @@ public class BBWHmanageRequestsPanel extends javax.swing.JPanel {
                     .addComponent(orderHistBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(pendingReqBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(manageCampCardLayout, javax.swing.GroupLayout.PREFERRED_SIZE, 630, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(manageWHReqCardLayout, javax.swing.GroupLayout.PREFERRED_SIZE, 630, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void pendingReqLblMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pendingReqLblMousePressed
         // TODO add your handling code here:
 
-        createCampBtnFunctionality();
-
     }//GEN-LAST:event_pendingReqLblMousePressed
 
     private void orderHistLblMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_orderHistLblMousePressed
         // TODO add your handling code here:
 
-        manageCampBtnFunctionality();
     }//GEN-LAST:event_orderHistLblMousePressed
 
     private void pendingReqBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pendingReqBtnMousePressed
         // TODO add your handling code here:
-        createCampBtnFunctionality();
+        pendingReqFunctionality();
+       
     }//GEN-LAST:event_pendingReqBtnMousePressed
+
+    private void pendingReqLblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pendingReqLblMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pendingReqLblMouseClicked
+
+    private void orderHistBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_orderHistBtnMouseClicked
+        // TODO add your handling code here:
+        orderHistoryFunctionality();
+    }//GEN-LAST:event_orderHistBtnMouseClicked
     
-    public void createCampBtnFunctionality() {
-        
-        
-        
-    }
-    
-    public void manageCampBtnFunctionality() {
-        
-       
-    }
-    
-    public void requestDocBtnFunctionality() {
-        
-       
-        
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel manageCampCardLayout;
+    private javax.swing.JPanel manageWHReqCardLayout;
     private javax.swing.JPanel orderHistBtn;
     private javax.swing.JLabel orderHistLbl;
     private javax.swing.JPanel pendingReqBtn;
     private javax.swing.JLabel pendingReqLbl;
     // End of variables declaration//GEN-END:variables
+
+    private void pendingReqFunctionality() {
+         manageWHReqCardLayout.removeAll();
+        manageWHReqCardLayout.add(new BBWHmanageReqPanel());
+        ((CardLayout) manageWHReqCardLayout.getLayout()).next(manageWHReqCardLayout);
+    }
+
+    private void orderHistoryFunctionality() {
+        manageWHReqCardLayout.removeAll();
+        manageWHReqCardLayout.add(new BBWHorderHistory());
+        ((CardLayout) manageWHReqCardLayout.getLayout()).next(manageWHReqCardLayout);
+    }
 }
