@@ -17,6 +17,7 @@ public class BB_org extends javax.swing.JPanel {
      */
     public BB_org() {
         initComponents();
+        
     }
 
     /**
