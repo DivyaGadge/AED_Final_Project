@@ -5,6 +5,7 @@
 package UI.Hospital;
 
 import UI.NGO.*;
+import java.awt.CardLayout;
 
 /**
  *
@@ -33,17 +34,13 @@ public class HospitalJPanel extends javax.swing.JPanel {
         NWHMenu = new javax.swing.JPanel();
         manageHospProfileBtn = new javax.swing.JPanel();
         ManageHProLbl = new javax.swing.JLabel();
-        hproIcon = new javax.swing.JLabel();
-        inventoryBtn = new javax.swing.JPanel();
+        MngProfileBtn = new javax.swing.JPanel();
         ManageOrgLbl = new javax.swing.JLabel();
-        orgIcon = new javax.swing.JLabel();
         manageBloodBtn = new javax.swing.JPanel();
         manageBloodLbl = new javax.swing.JLabel();
-        bloodBagIcon = new javax.swing.JLabel();
         ManageDonorsPanel = new javax.swing.JPanel();
         ManageDonLbl = new javax.swing.JLabel();
-        donorIcon = new javax.swing.JLabel();
-        CardLayoutNWHPanel = new javax.swing.JPanel();
+        CardLayoutHPanel = new javax.swing.JPanel();
 
         NWHHeader.setBackground(new java.awt.Color(207, 98, 98));
 
@@ -75,6 +72,9 @@ public class HospitalJPanel extends javax.swing.JPanel {
 
         manageHospProfileBtn.setBackground(new java.awt.Color(230, 98, 98));
         manageHospProfileBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                manageHospProfileBtnMouseClicked(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 manageHospProfileBtnMousePressed(evt);
             }
@@ -84,62 +84,51 @@ public class HospitalJPanel extends javax.swing.JPanel {
         ManageHProLbl.setForeground(new java.awt.Color(215, 215, 215));
         ManageHProLbl.setText("Hospital Profile");
 
-        hproIcon.setBackground(new java.awt.Color(204, 204, 204));
-        hproIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        hproIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagesPackage/profile_icon.png"))); // NOI18N
-
         javax.swing.GroupLayout manageHospProfileBtnLayout = new javax.swing.GroupLayout(manageHospProfileBtn);
         manageHospProfileBtn.setLayout(manageHospProfileBtnLayout);
         manageHospProfileBtnLayout.setHorizontalGroup(
             manageHospProfileBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, manageHospProfileBtnLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(hproIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(58, 58, 58)
                 .addComponent(ManageHProLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
                 .addContainerGap())
         );
         manageHospProfileBtnLayout.setVerticalGroup(
             manageHospProfileBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(ManageHProLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, manageHospProfileBtnLayout.createSequentialGroup()
-                .addComponent(hproIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
         );
 
         NWHMenu.add(manageHospProfileBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 280, -1));
 
-        inventoryBtn.setBackground(new java.awt.Color(230, 98, 98));
+        MngProfileBtn.setBackground(new java.awt.Color(230, 98, 98));
+        MngProfileBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MngProfileBtnMouseClicked(evt);
+            }
+        });
 
         ManageOrgLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         ManageOrgLbl.setForeground(new java.awt.Color(215, 215, 215));
         ManageOrgLbl.setText("Manage Profile");
 
-        orgIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        orgIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagesPackage/suraj/inventory_icon.png"))); // NOI18N
-
-        javax.swing.GroupLayout inventoryBtnLayout = new javax.swing.GroupLayout(inventoryBtn);
-        inventoryBtn.setLayout(inventoryBtnLayout);
-        inventoryBtnLayout.setHorizontalGroup(
-            inventoryBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, inventoryBtnLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(orgIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
+        javax.swing.GroupLayout MngProfileBtnLayout = new javax.swing.GroupLayout(MngProfileBtn);
+        MngProfileBtn.setLayout(MngProfileBtnLayout);
+        MngProfileBtnLayout.setHorizontalGroup(
+            MngProfileBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MngProfileBtnLayout.createSequentialGroup()
+                .addGap(58, 58, 58)
                 .addComponent(ManageOrgLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        inventoryBtnLayout.setVerticalGroup(
-            inventoryBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, inventoryBtnLayout.createSequentialGroup()
+        MngProfileBtnLayout.setVerticalGroup(
+            MngProfileBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MngProfileBtnLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(inventoryBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ManageOrgLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
-                    .addComponent(orgIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(ManageOrgLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        NWHMenu.add(inventoryBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 280, -1));
+        NWHMenu.add(MngProfileBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 280, -1));
 
         manageBloodBtn.setBackground(new java.awt.Color(230, 98, 98));
         manageBloodBtn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -152,17 +141,12 @@ public class HospitalJPanel extends javax.swing.JPanel {
         manageBloodLbl.setForeground(new java.awt.Color(215, 215, 215));
         manageBloodLbl.setText("Request Blood");
 
-        bloodBagIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        bloodBagIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagesPackage/suraj/logistics_truck.png"))); // NOI18N
-
         javax.swing.GroupLayout manageBloodBtnLayout = new javax.swing.GroupLayout(manageBloodBtn);
         manageBloodBtn.setLayout(manageBloodBtnLayout);
         manageBloodBtnLayout.setHorizontalGroup(
             manageBloodBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, manageBloodBtnLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(bloodBagIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
+                .addGap(58, 58, 58)
                 .addComponent(manageBloodLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
                 .addContainerGap())
         );
@@ -170,9 +154,7 @@ public class HospitalJPanel extends javax.swing.JPanel {
             manageBloodBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(manageBloodBtnLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(manageBloodBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(manageBloodLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
-                    .addComponent(bloodBagIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(manageBloodLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -189,9 +171,7 @@ public class HospitalJPanel extends javax.swing.JPanel {
         ManageDonorsPanelLayout.setHorizontalGroup(
             ManageDonorsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ManageDonorsPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(donorIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
+                .addGap(58, 58, 58)
                 .addComponent(ManageDonLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
                 .addContainerGap())
         );
@@ -199,16 +179,14 @@ public class HospitalJPanel extends javax.swing.JPanel {
             ManageDonorsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ManageDonorsPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(ManageDonorsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ManageDonLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
-                    .addComponent(donorIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(ManageDonLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         NWHMenu.add(ManageDonorsPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 280, -1));
 
-        CardLayoutNWHPanel.setBackground(new java.awt.Color(255, 255, 255));
-        CardLayoutNWHPanel.setLayout(new java.awt.CardLayout());
+        CardLayoutHPanel.setBackground(new java.awt.Color(255, 255, 255));
+        CardLayoutHPanel.setLayout(new java.awt.CardLayout());
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -223,7 +201,7 @@ public class HospitalJPanel extends javax.swing.JPanel {
                         .addGroup(layout.createSequentialGroup()
                             .addComponent(NWHMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(6, 6, 6)
-                            .addComponent(CardLayoutNWHPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 1142, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(CardLayoutHPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 1142, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
@@ -236,7 +214,7 @@ public class HospitalJPanel extends javax.swing.JPanel {
                     .addGap(6, 6, 6)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(NWHMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 702, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(CardLayoutNWHPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 702, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(CardLayoutHPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 702, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -251,23 +229,42 @@ public class HospitalJPanel extends javax.swing.JPanel {
         
     }//GEN-LAST:event_manageHospProfileBtnMousePressed
 
+    private void manageHospProfileBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_manageHospProfileBtnMouseClicked
+        // TODO add your handling code here:
+        hospProfileFunctionality();
+    }//GEN-LAST:event_manageHospProfileBtnMouseClicked
+
+    private void MngProfileBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MngProfileBtnMouseClicked
+        // TODO add your handling code here:
+        manageProfileH();
+    }//GEN-LAST:event_MngProfileBtnMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel CardLayoutNWHPanel;
+    private javax.swing.JPanel CardLayoutHPanel;
     private javax.swing.JLabel ManageDonLbl;
     private javax.swing.JPanel ManageDonorsPanel;
     private javax.swing.JLabel ManageHProLbl;
     private javax.swing.JLabel ManageOrgLbl;
+    private javax.swing.JPanel MngProfileBtn;
     private javax.swing.JPanel NWHHeader;
     private javax.swing.JPanel NWHMenu;
-    private javax.swing.JLabel bloodBagIcon;
     private javax.swing.JLabel bloodonateLbl;
-    private javax.swing.JLabel donorIcon;
-    private javax.swing.JLabel hproIcon;
-    private javax.swing.JPanel inventoryBtn;
     private javax.swing.JPanel manageBloodBtn;
     private javax.swing.JLabel manageBloodLbl;
     private javax.swing.JPanel manageHospProfileBtn;
-    private javax.swing.JLabel orgIcon;
     // End of variables declaration//GEN-END:variables
+
+    private void hospProfileFunctionality() {
+        CardLayoutHPanel.removeAll();
+        CardLayoutHPanel.add(new HospitalProfileJPanel());
+        ((CardLayout) CardLayoutHPanel.getLayout()).next(CardLayoutHPanel);
+
+    }
+
+    private void manageProfileH() {
+        CardLayoutHPanel.removeAll();
+        CardLayoutHPanel.add(new ManageandCreateHospitalUsersJPanel());
+        ((CardLayout) CardLayoutHPanel.getLayout()).next(CardLayoutHPanel);
+    }
 }
