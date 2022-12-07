@@ -116,7 +116,7 @@ public class RegistrationJPanel extends javax.swing.JPanel {
                 registrationCardLayout.add(new HospitalRegistrationJPanel());
                 ((CardLayout) registrationCardLayout.getLayout()).next(registrationCardLayout);
                 break;
-            case "NGO Administration":
+            case "NGO Organization":
                 System.out.println("Selected Patient");
                 registrationCardLayout.removeAll();
                 registrationCardLayout.add(new OrgRegJPanel(userCBValue));

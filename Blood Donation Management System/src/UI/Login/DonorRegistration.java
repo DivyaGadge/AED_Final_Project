@@ -5,15 +5,12 @@
 package UI.Login;
 
 import Sql.SQLConnection;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import model.volunteerEnt.Donor.Donor;
-import model.volunteerEnt.ngoManagement.NGOManagement;
+import model.volunteerEnt.Donor;
 
 /**
  *
@@ -271,7 +268,25 @@ public class DonorRegistration extends javax.swing.JPanel {
 
     public void populateNGOCB() {
 
-//        query the unique NGOs with approval status approved
+        try{
+            Connection con = SQLConnection.establishConnection();
+            if (con!= null){
+                String query = "SELECT user_name FROM NGO";
+                Statement stmt = con.createStatement();
+                ResultSet rs = stmt.executeQuery(query);
+                
+                while(rs.next()){
+                    NGOCB.addItem(rs.getString("user_name"));
+                }
+            }
+            
+            
+            
+        } catch (Exception e) {
+            
+        }
+        
+        
 //        while(rs.next()){
 //            NGOCB.addItem(rs.getString("name"));
     }
@@ -282,6 +297,7 @@ public class DonorRegistration extends javax.swing.JPanel {
         long phoneNo = 0;
         int pincode = 0;
         Date date = null;
+        String NGOCBvalue = null;
         String name = nameTF.getText();
         String username = usernameTF.getText();
         String email = emailTF.getText();
@@ -298,7 +314,12 @@ public class DonorRegistration extends javax.swing.JPanel {
 
         date = dobTF.getDate();
         String bloodGroup = bldGropCB.getSelectedItem().toString();
-        String NGOCBvalue = NGOCB.getSelectedItem().toString();
+        try{
+            NGOCBvalue = NGOCB.getSelectedItem().toString();
+        } catch (NullPointerException e) {
+            NGOError.setVisible(true);
+            valid = false;
+        }
         try {
             pincode = Integer.parseInt(pincodeTF.getText());
         } catch (Exception e) {

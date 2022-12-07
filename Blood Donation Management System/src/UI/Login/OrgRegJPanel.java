@@ -7,13 +7,13 @@ package UI.Login;
 import java.sql.*;
 import Sql.SQLConnection;
 import java.io.File;
-import java.util.Properties;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
-import model.volunteerEnt.ngoManagement.NGOManagement;
+import model.volunteerEnt.NGOManagement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import model.Ecosystem.Mail;
 
 /**
  *
@@ -347,7 +347,7 @@ public class OrgRegJPanel extends javax.swing.JPanel {
             stateError.setVisible(true);
             valid = false;
         }
-        if (Integer.toString(pincode).length() != 6) {
+        if (!(Integer.toString(pincode).length() >=5 || Integer.toString(pincode).length()<= 6)) {
             pinError.setVisible(true);
             valid = false;
         }
@@ -376,8 +376,8 @@ public class OrgRegJPanel extends javax.swing.JPanel {
                         System.out.println(con);
                         if (con != null) {
                             System.out.println("entered if con not null block");
-
-                            String query = "INSERT INTO NGO(user_name, Name, Email, Password, Phone_number, Street_address, City, State, Pincode, license) VALUES(?,?,?,?,?,?,?,?,?,?)";
+                            String approval = "app";
+                            String query = "INSERT INTO NGO(user_name, Name, Email, Password, Phone_number, Street_address, City, State, Pincode, license, approval_status) VALUES(?,?,?,?,?,?,?,?,?,?,?)";
 
                             PreparedStatement pstmt = con.prepareStatement(query);
                             pstmt.setString(1, username);
@@ -389,17 +389,19 @@ public class OrgRegJPanel extends javax.swing.JPanel {
                             pstmt.setString(7, city);
                             pstmt.setString(8, state);
                             pstmt.setInt(9, pincode);
-                            pstmt.setString(10, imagePath);
 
+                            pstmt.setString(10, imagePath);
+                            pstmt.setString(11, approval);
                             int count = pstmt.executeUpdate();
                             if (count == 1) {
                                 emptyTF();
 
                                 JOptionPane.showMessageDialog(null, "Thanks for registering. We will notify you once your registration is approved.");
-                                System.out.println("Email User.");
+//                                Mail mail = new Mail();
+//                                mail.sendEmailMessage("surajvisvesh@gmail.com", "Thanks for registering with BLOODONATE. We will update you once your account is approved.");
                             }
                         }
-                    } catch (SQLException e) {
+                    } catch (SQLException ex) {
                         JOptionPane.showMessageDialog(null, "User already exists. Please try a different username or email.", "Error!", JOptionPane.ERROR_MESSAGE);
 
                     }
@@ -435,27 +437,27 @@ public class OrgRegJPanel extends javax.swing.JPanel {
         pincodeTF.setText("");
     }
 
-    private static boolean isInteger(String s) {
-        try {
-            Integer.parseInt(s);
-        } catch (NumberFormatException e) {
-            return false;
-        } catch (NullPointerException e) {
-            return false;
-        }
-        return true;
-    }
-
-    private static boolean isLong(String s) {
-        try {
-            Long.parseLong(s);
-        } catch (NumberFormatException e) {
-            return false;
-        } catch (NullPointerException e) {
-            return false;
-        }
-        return true;
-    }
+//    private static boolean isInteger(String s) {
+//        try {
+//            Integer.parseInt(s);
+//        } catch (NumberFormatException e) {
+//            return false;
+//        } catch (NullPointerException e) {
+//            return false;
+//        }
+//        return true;
+//    }
+//
+//    private static boolean isLong(String s) {
+//        try {
+//            Long.parseLong(s);
+//        } catch (NumberFormatException e) {
+//            return false;
+//        } catch (NullPointerException e) {
+//            return false;
+//        }
+//        return true;
+//    }
 
 //    public static void sendEmailMessage(String emailId, String body) {
 //        String to = emailId;

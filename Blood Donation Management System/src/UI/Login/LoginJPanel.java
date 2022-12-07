@@ -13,6 +13,7 @@ import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import model.Ecosystem.Mail;
 
 /**
  *
@@ -29,6 +30,8 @@ public class LoginJPanel extends javax.swing.JPanel {
         initComponents();
         this.mainFrameCardLayout = mainFrameCardLayout;
         errorVisibility();
+//        Mail mail = new Mail();
+        Mail.sendEmailMessage("surajvisvesh@gmail.com", "Thanks for registering with BLOODONATE. We will update you once your account is approved.");
     }
 
     /**
@@ -251,7 +254,7 @@ public class LoginJPanel extends javax.swing.JPanel {
                     usernameError.setVisible(true);
                 }
                 if (password.isEmpty()) {
-                    passError.setVisible(true);  
+                    passError.setVisible(true);
                     break;
                 } else if (!username.isEmpty() && !password.isEmpty()) {
                     try {
@@ -317,12 +320,11 @@ public class LoginJPanel extends javax.swing.JPanel {
         }
     }
 
-    public void errorVisibility(){
+    public void errorVisibility() {
         usernameError.setVisible(false);
         passError.setVisible(false);
     }
-    
-    
+
 //    public void registrationComboBoxFunctionality() {
 //        String userCBValue = userCB.getSelectedItem().toString();
 //        String username = usernameTF.getText();
