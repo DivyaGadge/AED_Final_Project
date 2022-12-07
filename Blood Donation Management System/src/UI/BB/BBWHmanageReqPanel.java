@@ -7,7 +7,7 @@ package UI.BB;
 
 /**
  *
- * @author HP
+ * @author prishaa
  */
 public class BBWHmanageReqPanel extends javax.swing.JPanel {
 

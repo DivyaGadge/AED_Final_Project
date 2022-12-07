@@ -9,7 +9,7 @@ import java.awt.CardLayout;
 
 /**
  *
- * @author HP
+ * @author prishaa
  */
 public class BBWHmanageRequestsPanel extends javax.swing.JPanel {
 

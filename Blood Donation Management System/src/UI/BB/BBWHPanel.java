@@ -8,7 +8,7 @@ import java.awt.CardLayout;
 
 /**
  *
- * @author HP
+ * @author prishaa
  */
 public class BBWHPanel extends javax.swing.JPanel {
 

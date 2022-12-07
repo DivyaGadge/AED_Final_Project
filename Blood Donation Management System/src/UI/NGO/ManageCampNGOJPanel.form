@@ -41,10 +41,7 @@
                               <Component id="latitudeErrorLbl" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="dateTF" max="32767" attributes="0"/>
-                                  <Component id="streetTF" pref="305" max="32767" attributes="0"/>
-                              </Group>
+                              <Component id="streetTF" min="-2" pref="305" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="dateErrorLbl" min="-2" max="-2" attributes="0"/>
@@ -128,10 +125,7 @@
                       <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
                       <Component id="campDateLbl" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="dateTF" min="-2" max="-2" attributes="0"/>
-                          <Component id="dateErrorLbl" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="dateErrorLbl" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                       <Component id="streetLbl" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
@@ -475,8 +469,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="longitudeTF">
-    </Component>
-    <Component class="com.toedter.calendar.JDateChooser" name="dateTF">
     </Component>
     <Container class="javax.swing.JPanel" name="updateCampBtn">
       <Properties>
