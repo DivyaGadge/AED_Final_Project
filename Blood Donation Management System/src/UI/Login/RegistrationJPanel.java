@@ -4,6 +4,9 @@
  */
 package UI.Login;
 
+import java.awt.CardLayout;
+import javax.swing.JPanel;
+
 /**
  *
  * @author surajvisvesh
@@ -13,8 +16,11 @@ public class RegistrationJPanel extends javax.swing.JPanel {
     /**
      * Creates new form RegistrationPanel
      */
-    public RegistrationJPanel() {
+    JPanel loginCardLayout;
+    public RegistrationJPanel(JPanel loginCardLayout) {
         initComponents();
+        this.loginCardLayout = loginCardLayout;
+        registrationComboBoxFunctionality();
     }
 
     /**
@@ -26,32 +32,123 @@ public class RegistrationJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jComboBox1 = new javax.swing.JComboBox<>();
+        helloLbl = new javax.swing.JLabel();
+        registrationCardLayout = new javax.swing.JPanel();
+        userCB = new javax.swing.JComboBox<>();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setPreferredSize(new java.awt.Dimension(1440, 702));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        helloLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 30)); // NOI18N
+        helloLbl.setForeground(new java.awt.Color(102, 102, 102));
+        helloLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        helloLbl.setText("Who are you?");
+
+        registrationCardLayout.setBackground(new java.awt.Color(255, 255, 255));
+        registrationCardLayout.setLayout(new java.awt.CardLayout());
+
+        userCB.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        userCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hospital Organization", "NGO Organization", "Bloodbank Organization", "Logistics Organization", "Equipments Provider Organization", "Donor" }));
+        userCB.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                userCBMousePressed(evt);
+            }
+        });
+        userCB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                userCBActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(120, 120, 120)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(328, Short.MAX_VALUE))
+                .addGap(102, 102, 102)
+                .addComponent(helloLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(userCB, javax.swing.GroupLayout.PREFERRED_SIZE, 464, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(652, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(registrationCardLayout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(194, 194, 194)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(461, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(helloLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
+                    .addComponent(userCB))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(registrationCardLayout, javax.swing.GroupLayout.DEFAULT_SIZE, 644, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void userCBMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userCBMousePressed
+        // TODO add your handling code here:
+        registrationComboBoxFunctionality();
+    }//GEN-LAST:event_userCBMousePressed
+
+    private void userCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userCBActionPerformed
+        // TODO add your handling code here:
+        registrationComboBoxFunctionality();
+    }//GEN-LAST:event_userCBActionPerformed
+    
+    
+    public void registrationComboBoxFunctionality() {
+        String userCBValue = userCB.getSelectedItem().toString();
+        switch (userCBValue) {
+            case "Donor":
+                System.out.println("Selected doctor");
+                registrationCardLayout.removeAll();
+                registrationCardLayout.add(new DonorRegistration());
+                ((CardLayout) registrationCardLayout.getLayout()).next(registrationCardLayout);
+                break;
+            case "Patient":
+                System.out.println("Selected Patient");
+                break;
+            case "Hospital Administration":
+                System.out.println("Selected Hospital");
+                registrationCardLayout.removeAll();
+                registrationCardLayout.add(new HospitalRegistrationJPanel());
+                ((CardLayout) registrationCardLayout.getLayout()).next(registrationCardLayout);
+                break;
+            case "NGO Administration":
+                System.out.println("Selected Patient");
+                registrationCardLayout.removeAll();
+                registrationCardLayout.add(new OrgRegJPanel(userCBValue));
+                ((CardLayout) registrationCardLayout.getLayout()).next(registrationCardLayout);
+                break;
+            case "Bloodbank Administration":
+                System.out.println("Selected Patient");
+                break;
+            case "Bloodbank Warehouse":
+                System.out.println("Selected Patient");
+                break;
+            case "Sample Testing Organization":
+                System.out.println("Selected Patient");
+                break;
+            case "Logistics Organization":
+                System.out.println("Selected Patient");
+                break;
+            case "Equipment Supplier Organizaiton":
+                System.out.println("Selected Patient");
+                break;
+            default:
+                break;
+        }
+        
+        
+        
+    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JLabel helloLbl;
+    private javax.swing.JPanel registrationCardLayout;
+    private javax.swing.JComboBox<String> userCB;
     // End of variables declaration//GEN-END:variables
 }
