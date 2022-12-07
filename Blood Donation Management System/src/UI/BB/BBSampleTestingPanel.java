@@ -64,6 +64,8 @@ public class BBSampleTestingPanel extends javax.swing.JPanel {
         SmplTbl.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(SmplTbl);
 
+        TestSmplBtn.setBackground(new java.awt.Color(102, 102, 102));
+        TestSmplBtn.setForeground(new java.awt.Color(255, 255, 255));
         TestSmplBtn.setText("Test selected Samples");
         TestSmplBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

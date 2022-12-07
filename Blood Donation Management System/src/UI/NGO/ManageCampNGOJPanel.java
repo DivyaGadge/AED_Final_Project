@@ -53,7 +53,6 @@ public class ManageCampNGOJPanel extends javax.swing.JPanel {
         longitudeLbl = new javax.swing.JLabel();
         longitudeErrorLbl = new javax.swing.JLabel();
         longitudeTF = new javax.swing.JTextField();
-        dateTF = new com.toedter.calendar.JDateChooser();
         updateCampBtn = new javax.swing.JPanel();
         updateCampLbl = new javax.swing.JLabel();
         updateCampBtn1 = new javax.swing.JPanel();
@@ -199,9 +198,7 @@ public class ManageCampNGOJPanel extends javax.swing.JPanel {
                                 .addGap(18, 18, 18)
                                 .addComponent(latitudeErrorLbl))
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(dateTF, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(streetTF, javax.swing.GroupLayout.DEFAULT_SIZE, 305, Short.MAX_VALUE))
+                                .addComponent(streetTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(dateErrorLbl)
@@ -266,9 +263,7 @@ public class ManageCampNGOJPanel extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addComponent(campDateLbl)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(dateTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(dateErrorLbl))
+                        .addComponent(dateErrorLbl)
                         .addGap(23, 23, 23)
                         .addComponent(streetLbl)
                         .addGap(6, 6, 6)
@@ -324,7 +319,6 @@ public class ManageCampNGOJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel cityLbl;
     private javax.swing.JTextField cityTF;
     private javax.swing.JLabel dateErrorLbl;
-    private com.toedter.calendar.JDateChooser dateTF;
     private javax.swing.JLabel latitudeErrorLbl;
     private javax.swing.JLabel latitudeLbl;
     private javax.swing.JTextField latitudeTF;

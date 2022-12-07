@@ -7,7 +7,7 @@ package UI.BB;
 
 /**
  *
- * @author surajvisvesh
+ * @author prishaa
  */
 public class ManageBBProfilePage extends javax.swing.JPanel {
 

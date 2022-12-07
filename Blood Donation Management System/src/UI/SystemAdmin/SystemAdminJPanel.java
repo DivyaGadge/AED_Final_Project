@@ -2,29 +2,19 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package UI.NGO;
-
-import java.awt.CardLayout;
-import java.awt.Color;
-import javax.swing.JPanel;
+package UI.SystemAdmin;
 
 /**
  *
  * @author surajvisvesh
  */
-public class NGOManagementJPanel extends javax.swing.JPanel {
+public class SystemAdminJPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form NGOManagementJPanel
+     * Creates new form SystemAdminJPanel
      */
-    JPanel mainFrameCardLayout;
-    String ngom_username;
-    public NGOManagementJPanel(JPanel mainFrameCardLayout, String ngom_username) {
+    public SystemAdminJPanel() {
         initComponents();
-        this.mainFrameCardLayout = mainFrameCardLayout;
-        this.ngom_username = ngom_username;
-        
-        headerUserName.setText(ngom_username);
     }
 
     /**
@@ -60,8 +50,6 @@ public class NGOManagementJPanel extends javax.swing.JPanel {
         jLabel10 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         CardLayoutPanel = new javax.swing.JPanel();
-
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         NGOHeader.setBackground(new java.awt.Color(223, 85, 71));
 
@@ -116,8 +104,6 @@ public class NGOManagementJPanel extends javax.swing.JPanel {
                             .addComponent(bloodonateLbl))))
                 .addContainerGap(21, Short.MAX_VALUE))
         );
-
-        add(NGOHeader, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 1428, -1));
 
         NGOMenu.setBackground(new java.awt.Color(223, 85, 71));
         NGOMenu.setPreferredSize(new java.awt.Dimension(220, 700));
@@ -178,7 +164,7 @@ public class NGOManagementJPanel extends javax.swing.JPanel {
 
         ManageOrgLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         ManageOrgLbl.setForeground(new java.awt.Color(215, 215, 215));
-        ManageOrgLbl.setText("Organizations");
+        ManageOrgLbl.setText("Statistics");
 
         orgIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagesPackage/organization_icon.png"))); // NOI18N
 
@@ -214,7 +200,7 @@ public class NGOManagementJPanel extends javax.swing.JPanel {
 
         ManageProLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         ManageProLbl.setForeground(new java.awt.Color(215, 215, 215));
-        ManageProLbl.setText("Manage NGO Profile");
+        ManageProLbl.setText("Registrations");
         ManageProLbl.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 ManageProLblMousePressed(evt);
@@ -340,50 +326,39 @@ public class NGOManagementJPanel extends javax.swing.JPanel {
 
         NGOMenu.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, 280, -1));
 
-        add(NGOMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 92, 280, 702));
-
         CardLayoutPanel.setBackground(new java.awt.Color(255, 255, 255));
         CardLayoutPanel.setLayout(new java.awt.CardLayout());
-        add(CardLayoutPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(292, 92, 1142, 702));
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1440, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(NGOHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(NGOMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(6, 6, 6)
+                            .addComponent(CardLayoutPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 1142, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 800, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(NGOHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(3, 3, 3)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(NGOMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 702, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(CardLayoutPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 702, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void organizeCampsBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_organizeCampsBtnMousePressed
-        // TODO add your handling code here:
-        organizeCampsBtnFunctionality();  
-        
-    }//GEN-LAST:event_organizeCampsBtnMousePressed
-    
-    private void OrgCampsLblMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OrgCampsLblMousePressed
-        // TODO add your handling code here:
-        organizeCampsBtnFunctionality();
-    }//GEN-LAST:event_OrgCampsLblMousePressed
-
-    private void campIconMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_campIconMousePressed
-        // TODO add your handling code here:
-        organizeCampsBtnFunctionality();
-    }//GEN-LAST:event_campIconMousePressed
-
-    private void manageProfileBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_manageProfileBtnMousePressed
-        // TODO add your handling code here:
-        manageProfileBtnFunctionality();
-    }//GEN-LAST:event_manageProfileBtnMousePressed
-
-    private void ManageProLblMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ManageProLblMousePressed
-        // TODO add your handling code here:
-        manageProfileBtnFunctionality();
-    }//GEN-LAST:event_ManageProLblMousePressed
-
-    private void proIconMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_proIconMousePressed
-        // TODO add your handling code here:
-        manageProfileBtnFunctionality();
-    }//GEN-LAST:event_proIconMousePressed
-
-    private void organizationsBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_organizationsBtnMousePressed
-        // TODO add your handling code here:
-        manageOrganizationsBtnFunctionality();
-        
-        
-    }//GEN-LAST:event_organizationsBtnMousePressed
 
     private void headerUserNameMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_headerUserNameMousePressed
         // TODO add your handling code here:
@@ -392,68 +367,44 @@ public class NGOManagementJPanel extends javax.swing.JPanel {
     private void headerUserName1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_headerUserName1MousePressed
         // TODO add your handling code here:
     }//GEN-LAST:event_headerUserName1MousePressed
-    
-    public void setBtnColor(JPanel panel) {
-        
-        panel.setBackground(new Color(210, 75, 60));
-        
-    }
-    
-    public void resetBtnColor(JPanel panel) {
-        
-        panel.setBackground(new Color (223, 85, 71));
-        
-    }
-    public void manageProfileBtnFunctionality(){
-        
-        setBtnColor(manageProfileBtn);
-        resetBtnColor(organizationsBtn);
-        resetBtnColor(organizeCampsBtn);
-        resetBtnColor(insightsBtn);
-        resetBtnColor(manageDonorsBtn);
-        
-        
-        CardLayoutPanel.removeAll();
-        CardLayoutPanel.add(new ManageNGOProfileJPanel());
-        ((CardLayout) CardLayoutPanel.getLayout()).next(CardLayoutPanel);
-        
-    }
-    
-    public void manageOrganizationsBtnFunctionality(){
-        
-        setBtnColor(organizationsBtn);
-        resetBtnColor(manageProfileBtn);
-        resetBtnColor(organizeCampsBtn);
-        resetBtnColor(insightsBtn);
-        resetBtnColor(manageDonorsBtn);
-        
-        CardLayoutPanel.removeAll();
-        CardLayoutPanel.add(new ManageNGOOrganizationsJPanel());
-        ((CardLayout)CardLayoutPanel.getLayout()).next(CardLayoutPanel);
-        
-        
-    }
-    
-    public void organizeCampsBtnFunctionality(){
-        
-        setBtnColor(organizeCampsBtn);
-        resetBtnColor(organizationsBtn);
-        resetBtnColor(manageProfileBtn);
-        resetBtnColor(insightsBtn);
-        resetBtnColor(manageDonorsBtn);
-        
-        
-        CardLayoutPanel.removeAll();
-        CardLayoutPanel.add(new ManageNGOCampsJPanel());
-        ((CardLayout) CardLayoutPanel.getLayout()).next(CardLayoutPanel);
-        
-    }
-    
-    public void setIcons() {
-        
-        
-        
-    }    
+
+    private void OrgCampsLblMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OrgCampsLblMousePressed
+        // TODO add your handling code here:
+//        organizeCampsBtnFunctionality();
+    }//GEN-LAST:event_OrgCampsLblMousePressed
+
+    private void campIconMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_campIconMousePressed
+        // TODO add your handling code here:
+//        organizeCampsBtnFunctionality();
+    }//GEN-LAST:event_campIconMousePressed
+
+    private void organizeCampsBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_organizeCampsBtnMousePressed
+        // TODO add your handling code here:
+//        organizeCampsBtnFunctionality();
+
+    }//GEN-LAST:event_organizeCampsBtnMousePressed
+
+    private void organizationsBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_organizationsBtnMousePressed
+        // TODO add your handling code here:
+//        manageOrganizationsBtnFunctionality();
+
+    }//GEN-LAST:event_organizationsBtnMousePressed
+
+    private void ManageProLblMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ManageProLblMousePressed
+        // TODO add your handling code here:
+//        manageProfileBtnFunctionality();
+    }//GEN-LAST:event_ManageProLblMousePressed
+
+    private void proIconMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_proIconMousePressed
+        // TODO add your handling code here:
+//        manageProfileBtnFunctionality();
+    }//GEN-LAST:event_proIconMousePressed
+
+    private void manageProfileBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_manageProfileBtnMousePressed
+        // TODO add your handling code here:
+//        manageProfileBtnFunctionality();
+    }//GEN-LAST:event_manageProfileBtnMousePressed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel CardLayoutPanel;

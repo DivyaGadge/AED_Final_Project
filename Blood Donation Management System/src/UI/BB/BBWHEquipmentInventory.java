@@ -7,7 +7,7 @@ package UI.BB;
 
 /**
  *
- * @author HP
+ * @author prishaa
  */
 public class BBWHEquipmentInventory extends javax.swing.JPanel {
 

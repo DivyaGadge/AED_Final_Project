@@ -2,10 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package blood.donation.management.system;
+package UI.Login;
 
-import UI.NGO.NGOManagementJPanel;
 import java.awt.CardLayout;
+import javax.swing.JPanel;
 
 /**
  *
@@ -18,10 +18,7 @@ public class MainFrame extends javax.swing.JFrame {
      */
     public MainFrame() {
         initComponents();
-//        jPanel1.removeAll();
-//        CardLayout layout = (CardLayout) jPanel1.getLayout();
-//        jPanel1.add(new NGOManagementJPanel());
-//        layout.next(jPanel1);
+        loadHomePage();
     }
 
     /**
@@ -33,34 +30,40 @@ public class MainFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
-
-        jButton1.setText("jButton1");
+        mainFrameCardLayout = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1440, 800));
 
-        jPanel1.setPreferredSize(new java.awt.Dimension(1440, 800));
-        jPanel1.setLayout(new java.awt.CardLayout());
+        mainFrameCardLayout.setPreferredSize(new java.awt.Dimension(1440, 800));
+        mainFrameCardLayout.setLayout(new java.awt.CardLayout());
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(mainFrameCardLayout, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(mainFrameCardLayout, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    public void loadHomePage() {
+        
+        mainFrameCardLayout.removeAll();
+        mainFrameCardLayout.add(new homeJPanel(mainFrameCardLayout));
+        ((CardLayout) mainFrameCardLayout.getLayout()).next(mainFrameCardLayout);
+        
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -97,7 +100,6 @@ public class MainFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel mainFrameCardLayout;
     // End of variables declaration//GEN-END:variables
 }

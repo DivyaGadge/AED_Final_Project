@@ -6,7 +6,7 @@ package UI.BB;
 
 /**
  *
- * @author HP
+ * @author prishaa
  *
  */
 public class BBWHnewOrderPanel extends javax.swing.JPanel {
