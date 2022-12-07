@@ -4,26 +4,17 @@
  */
 package UI.Login;
 
-import UI.NGO.NGOBloodColJPanel;
-import UI.NGO.NGOManagementJPanel;
-import UI.NGO.NGOWareHouseJPanel;
-import java.awt.CardLayout;
-import javax.swing.JPanel;
-
 /**
  *
  * @author surajvisvesh
  */
-public class LoginPageJPanel extends javax.swing.JPanel {
+public class testUI extends javax.swing.JPanel {
 
     /**
-     * Creates new form loginPage
+     * Creates new form testUI
      */
-    
-    JPanel loginCardLayout;
-    public LoginPageJPanel(JPanel loginCardLayout) {
+    public testUI() {
         initComponents();
-        this.loginCardLayout = loginCardLayout;
     }
 
     /**
@@ -35,11 +26,6 @@ public class LoginPageJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        loginHeader = new javax.swing.JPanel();
-        bloodonateLbl = new javax.swing.JLabel();
-        loginPanel = new javax.swing.JPanel();
-        leftImage = new javax.swing.JLabel();
-        helloLbl = new javax.swing.JLabel();
         login_icon = new javax.swing.JLabel();
         passLbl = new javax.swing.JLabel();
         usernameLbl = new javax.swing.JLabel();
@@ -50,47 +36,10 @@ public class LoginPageJPanel extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         passTF = new javax.swing.JPasswordField();
         passIcon = new javax.swing.JLabel();
+        helloLbl = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         passIcon2 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
-
-        setPreferredSize(new java.awt.Dimension(1440, 800));
-
-        loginHeader.setBackground(new java.awt.Color(230, 98, 98));
-
-        bloodonateLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 36)); // NOI18N
-        bloodonateLbl.setForeground(new java.awt.Color(215, 215, 215));
-        bloodonateLbl.setText("BLOODONATE");
-        bloodonateLbl.setDebugGraphicsOptions(javax.swing.DebugGraphics.FLASH_OPTION);
-
-        javax.swing.GroupLayout loginHeaderLayout = new javax.swing.GroupLayout(loginHeader);
-        loginHeader.setLayout(loginHeaderLayout);
-        loginHeaderLayout.setHorizontalGroup(
-            loginHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(loginHeaderLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(bloodonateLbl)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        loginHeaderLayout.setVerticalGroup(
-            loginHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(loginHeaderLayout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(bloodonateLbl)
-                .addContainerGap(18, Short.MAX_VALUE))
-        );
-
-        loginPanel.setBackground(new java.awt.Color(255, 255, 255));
-        loginPanel.setInheritsPopupMenu(true);
-
-        leftImage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        leftImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagesPackage/suraj/home_page.png"))); // NOI18N
-        leftImage.setPreferredSize(new java.awt.Dimension(465, 590));
-
-        helloLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 30)); // NOI18N
-        helloLbl.setForeground(new java.awt.Color(102, 102, 102));
-        helloLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        helloLbl.setText("Hello there, Welcome Back!");
 
         login_icon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         login_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagesPackage/suraj/login_icon.png"))); // NOI18N
@@ -114,7 +63,7 @@ public class LoginPageJPanel extends javax.swing.JPanel {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 318, Short.MAX_VALUE)
+            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -183,6 +132,11 @@ public class LoginPageJPanel extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        helloLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 30)); // NOI18N
+        helloLbl.setForeground(new java.awt.Color(102, 102, 102));
+        helloLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        helloLbl.setText("Hello there, Welcome Back!");
+
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -198,7 +152,7 @@ public class LoginPageJPanel extends javax.swing.JPanel {
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addComponent(jTextField1)
+                .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 269, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(passIcon2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -212,37 +166,34 @@ public class LoginPageJPanel extends javax.swing.JPanel {
             .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
-        javax.swing.GroupLayout loginPanelLayout = new javax.swing.GroupLayout(loginPanel);
-        loginPanel.setLayout(loginPanelLayout);
-        loginPanelLayout.setHorizontalGroup(
-            loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(loginPanelLayout.createSequentialGroup()
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(leftImage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(loginPanelLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(helloLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap())
-                    .addGroup(loginPanelLayout.createSequentialGroup()
-                        .addGap(350, 350, 350)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(344, 344, 344)
                         .addComponent(login_icon, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(382, Short.MAX_VALUE))
-                    .addGroup(loginPanelLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(passLbl)
-                            .addComponent(usernameLbl)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(loginBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(308, 308, 308))))
+                        .addGap(0, 364, Short.MAX_VALUE))
+                    .addComponent(helloLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(passLbl)
+                    .addComponent(usernameLbl)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(loginBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(309, 309, 309))
         );
-        loginPanelLayout.setVerticalGroup(
-            loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(loginPanelLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(login_icon, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(helloLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -258,68 +209,34 @@ public class LoginPageJPanel extends javax.swing.JPanel {
                 .addComponent(loginBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loginPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(leftImage, javax.swing.GroupLayout.PREFERRED_SIZE, 690, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(loginPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(loginHeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(loginHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(loginPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addContainerGap(82, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void loginLblMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginLblMousePressed
+        // TODO add your handling code here:
+//        loginBtnFunctionality();
+    }//GEN-LAST:event_loginLblMousePressed
+
+    private void loginBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginBtnMousePressed
+        // TODO add your handling code here:
+//        loginBtnFunctionality();
+    }//GEN-LAST:event_loginBtnMousePressed
 
     private void passTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passTFActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_passTFActionPerformed
 
-    private void loginBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginBtnMousePressed
-        // TODO add your handling code here:
-        loginBtnFunctionality();
-    }//GEN-LAST:event_loginBtnMousePressed
-
-    private void loginLblMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginLblMousePressed
-        // TODO add your handling code here:
-        loginBtnFunctionality();
-    }//GEN-LAST:event_loginLblMousePressed
-
-    public void loginBtnFunctionality() {
-        loginCardLayout.removeAll();
-        loginCardLayout.add(new NGOManagementJPanel());
-        ((CardLayout) loginCardLayout.getLayout()).next(loginCardLayout);
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel bloodonateLbl;
     private javax.swing.JLabel helloLbl;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JLabel leftImage;
     private javax.swing.JPanel loginBtn;
-    private javax.swing.JPanel loginHeader;
     private javax.swing.JLabel loginLbl;
-    private javax.swing.JPanel loginPanel;
     private javax.swing.JLabel login_icon;
     private javax.swing.JLabel passIcon;
     private javax.swing.JLabel passIcon2;
