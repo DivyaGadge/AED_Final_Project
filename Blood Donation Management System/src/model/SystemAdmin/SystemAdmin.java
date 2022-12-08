@@ -2,26 +2,23 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package model.volunteerEnt;
-
-import java.util.Date;
+package model.SystemAdmin;
 
 /**
  *
  * @author surajvisvesh
  */
-public class Doctor {
-    
+public class SystemAdmin {
     private String username;
     private String name;
     private String password;
-    private String hospitalUsername;
     private String email;
     private long phoneNo;
     private String street;
     private String city;
     private String state;
     private int pincode;
+    private String photo;
 
     public String getUsername() {
         return username;
@@ -45,14 +42,6 @@ public class Doctor {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public String getHospitalUsername() {
-        return hospitalUsername;
-    }
-
-    public void setHospitalUsername(String hospitalUsername) {
-        this.hospitalUsername = hospitalUsername;
     }
 
     public String getEmail() {
@@ -102,6 +91,15 @@ public class Doctor {
     public void setPincode(int pincode) {
         this.pincode = pincode;
     }
-    
 
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
+    }
+    
+    
+    
 }

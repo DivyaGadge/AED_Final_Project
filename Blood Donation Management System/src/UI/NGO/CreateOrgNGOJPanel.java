@@ -4,9 +4,9 @@
  */
 package UI.NGO;
 
-
+import Sql.SQLConnection;
 import javax.swing.JPanel;
-
+import java.sql.*;
 /**
  *
  * @author surajvisvesh
@@ -16,9 +16,8 @@ public class CreateOrgNGOJPanel extends javax.swing.JPanel {
     /**
      * Creates new form createOrgNGOJPanel
      */
-    
     JPanel manageOrgCardLayout; //
-    
+
     public CreateOrgNGOJPanel() {
         initComponents();
     }
@@ -47,21 +46,22 @@ public class CreateOrgNGOJPanel extends javax.swing.JPanel {
         passLbl = new javax.swing.JLabel();
         stateLbl1 = new javax.swing.JLabel();
         pincodeTF = new javax.swing.JTextField();
-        userNameTF = new javax.swing.JTextField();
+        usernameTF = new javax.swing.JTextField();
         userNameLbl = new javax.swing.JLabel();
         orgTypeLbl = new javax.swing.JLabel();
         orgTypeCB = new javax.swing.JComboBox<>();
         stateCB = new javax.swing.JComboBox<>();
-        userNameError = new javax.swing.JLabel();
         nameError = new javax.swing.JLabel();
-        passError = new javax.swing.JLabel();
-        emailError = new javax.swing.JLabel();
-        phoneError = new javax.swing.JLabel();
-        streetError = new javax.swing.JLabel();
-        cityError = new javax.swing.JLabel();
-        pinError = new javax.swing.JLabel();
         createOrgBtn = new javax.swing.JPanel();
         createOrgLbl = new javax.swing.JLabel();
+        streetError = new javax.swing.JLabel();
+        cityError = new javax.swing.JLabel();
+        stateError = new javax.swing.JLabel();
+        pinError = new javax.swing.JLabel();
+        emailError = new javax.swing.JLabel();
+        phoneNoError = new javax.swing.JLabel();
+        passError = new javax.swing.JLabel();
+        usernameError = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -112,37 +112,9 @@ public class CreateOrgNGOJPanel extends javax.swing.JPanel {
 
         stateCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "IllinoisIndiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "MontanaNebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "PennsylvaniaRhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming" }));
 
-        userNameError.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
-        userNameError.setForeground(new java.awt.Color(255, 51, 0));
-        userNameError.setText("Field cannot be empty");
-
         nameError.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
         nameError.setForeground(new java.awt.Color(255, 51, 0));
-        nameError.setText("Field cannot be empty");
-
-        passError.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
-        passError.setForeground(new java.awt.Color(255, 51, 0));
-        passError.setText("Field cannot be empty");
-
-        emailError.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
-        emailError.setForeground(new java.awt.Color(255, 51, 0));
-        emailError.setText("Field cannot be empty");
-
-        phoneError.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
-        phoneError.setForeground(new java.awt.Color(255, 51, 0));
-        phoneError.setText("Field cannot be empty");
-
-        streetError.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
-        streetError.setForeground(new java.awt.Color(255, 51, 0));
-        streetError.setText("Field cannot be empty");
-
-        cityError.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
-        cityError.setForeground(new java.awt.Color(255, 51, 0));
-        cityError.setText("Field cannot be empty");
-
-        pinError.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
-        pinError.setForeground(new java.awt.Color(255, 51, 0));
-        pinError.setText("Field cannot be empty");
+        nameError.setText("Enter Valid Input");
 
         createOrgBtn.setBackground(new java.awt.Color(106, 106, 106));
 
@@ -159,85 +131,113 @@ public class CreateOrgNGOJPanel extends javax.swing.JPanel {
         );
         createOrgBtnLayout.setVerticalGroup(
             createOrgBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(createOrgLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 59, Short.MAX_VALUE)
+            .addComponent(createOrgLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
         );
+
+        streetError.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
+        streetError.setForeground(new java.awt.Color(255, 51, 0));
+        streetError.setText("Enter Valid Input");
+
+        cityError.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
+        cityError.setForeground(new java.awt.Color(255, 51, 0));
+        cityError.setText("Enter Valid Input");
+
+        stateError.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
+        stateError.setForeground(new java.awt.Color(255, 51, 0));
+        stateError.setText("Enter Valid Input");
+
+        pinError.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
+        pinError.setForeground(new java.awt.Color(255, 51, 0));
+        pinError.setText("Enter Valid Input");
+
+        emailError.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
+        emailError.setForeground(new java.awt.Color(255, 51, 0));
+        emailError.setText("Enter valid data");
+
+        phoneNoError.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
+        phoneNoError.setForeground(new java.awt.Color(255, 51, 0));
+        phoneNoError.setText("Enter valid data");
+
+        passError.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
+        passError.setForeground(new java.awt.Color(255, 51, 0));
+        passError.setText("Enter valid data");
+
+        usernameError.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
+        usernameError.setForeground(new java.awt.Color(255, 51, 0));
+        usernameError.setText("Enter valid data");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(createOrgBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(404, 404, 404))
             .addGroup(layout.createSequentialGroup()
-                .addGap(26, 26, 26)
+                .addGap(109, 109, 109)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(userNameLbl)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(userNameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(userNameError))
-                                .addComponent(passLbl)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(passTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(passError))
-                                .addComponent(emailLbl)
-                                .addComponent(streetLbl)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(streetTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(streetError))
-                                .addComponent(cityLbl)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(cityTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(cityError))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(emailTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(emailError))
-                                .addComponent(phoneLbl)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(phoneTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(phoneError)))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 511, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(nameLbl)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(nameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(18, 18, 18)
-                                            .addComponent(nameError)))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addComponent(stateLbl)
-                                    .addGap(472, 472, 472))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addComponent(stateCB, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(202, 202, 202)))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(stateLbl1)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(pincodeTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(pinError))
-                                .addComponent(orgTypeLbl)
-                                .addComponent(orgTypeCB, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(305, 305, 305)
-                        .addComponent(createOrgBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(349, 349, 349)))
-                .addGap(152, 152, 152))
+                        .addComponent(emailTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(emailError))
+                    .addComponent(emailLbl)
+                    .addComponent(nameLbl)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(nameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(nameError))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(streetLbl)
+                                    .addComponent(streetTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addComponent(streetError))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(usernameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(usernameError))
+                            .addComponent(userNameLbl)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(stateCB, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(stateError))
+                            .addComponent(stateLbl))
+                        .addGap(92, 92, 92)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(cityLbl)
+                                    .addComponent(cityTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addComponent(cityError))
+                            .addComponent(passLbl)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(passTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(passError))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(phoneLbl)
+                                    .addComponent(phoneTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addComponent(phoneNoError))
+                            .addComponent(stateLbl1)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(pincodeTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(pinError))
+                            .addComponent(orgTypeLbl)
+                            .addComponent(orgTypeCB, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(103, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGap(22, 22, 22)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(nameLbl)
                         .addGap(6, 6, 6)
@@ -249,57 +249,65 @@ public class CreateOrgNGOJPanel extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(orgTypeLbl)
                         .addGap(6, 6, 6)
-                        .addComponent(orgTypeCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(3, 3, 3)))
-                .addComponent(userNameLbl)
-                .addGap(6, 6, 6)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(userNameTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(userNameError))
-                .addGap(16, 16, 16)
-                .addComponent(passLbl)
-                .addGap(6, 6, 6)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(passTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(passError))
-                .addGap(18, 18, 18)
-                .addComponent(emailLbl)
-                .addGap(6, 6, 6)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(emailTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(emailError))
-                .addGap(18, 18, 18)
-                .addComponent(phoneLbl)
-                .addGap(6, 6, 6)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(phoneTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(phoneError))
-                .addGap(19, 19, 19)
-                .addComponent(streetLbl)
-                .addGap(6, 6, 6)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(streetTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(streetError))
-                .addGap(18, 18, 18)
-                .addComponent(cityLbl)
-                .addGap(6, 6, 6)
+                        .addComponent(orgTypeCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(52, 52, 52)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(passLbl)
+                        .addGap(6, 6, 6)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(passTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(passError)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(userNameLbl)
+                        .addGap(6, 6, 6)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(usernameTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(usernameError))))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(cityTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(stateLbl)
-                            .addComponent(stateLbl1))
+                        .addGap(55, 55, 55)
+                        .addComponent(emailLbl)
                         .addGap(6, 6, 6)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(stateCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(pincodeTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(pinError))))
-                    .addComponent(cityError))
-                .addGap(31, 31, 31)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(emailTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(emailError)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(47, 47, 47)
+                        .addComponent(phoneLbl)
+                        .addGap(6, 6, 6)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(phoneTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(phoneNoError))))
+                .addGap(56, 56, 56)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(streetLbl)
+                        .addGap(6, 6, 6)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(streetTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(streetError)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(cityLbl)
+                        .addGap(6, 6, 6)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(cityTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cityError))))
+                .addGap(54, 54, 54)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(stateLbl1)
+                    .addComponent(stateLbl))
+                .addGap(6, 6, 6)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(stateCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(stateError))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(pincodeTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(pinError)))
+                .addGap(58, 58, 58)
                 .addComponent(createOrgBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(43, 43, 43))
+                .addGap(52, 52, 52))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -319,6 +327,110 @@ public class CreateOrgNGOJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_orgTypeCBActionPerformed
 
+    public void registerBtnFunctionality() {
+        boolean valid = true;
+        long phoneNo = 0;
+        int pincode = 0;
+
+        String name = nameTF.getText();
+        String username = usernameTF.getText();
+        String email = emailTF.getText();
+        String password = passTF.getText();
+        try {
+            phoneNo = Long.parseLong(phoneTF.getText());
+        } catch (NumberFormatException e) {
+            phoneNoError.setVisible(false);
+            valid = false;
+        }
+        String street = streetTF.getText();
+        String city = cityTF.getText();
+        String state = stateCB.getSelectedItem().toString();
+        try {
+            pincode = Integer.parseInt(pincodeTF.getText());
+        } catch (Exception e) {
+            pinError.setVisible(true);
+            valid = false;
+        }
+        if (name.isEmpty()) {
+            nameError.setVisible(true);
+            valid = false;
+        }
+        if (username.isEmpty()) {
+            usernameError.setVisible(true);
+            valid = false;
+        }
+        if (email.isEmpty() || email.length() < 2 || !email.matches("^(.+)@(\\S+)$")) {
+            emailError.setVisible(true);
+            valid = false;
+        }
+        if (password.isEmpty()) {
+            passError.setVisible(true);
+            valid = false;
+        }
+        if (Long.toString(phoneNo).length() != 10) {
+            System.out.println("PhoneNo");
+            phoneNoError.setVisible(true);
+            valid = false;
+        }
+        if (street.isEmpty()) {
+            streetError.setVisible(true);
+            valid = false;
+        }
+        if (city.isEmpty()) {
+            cityError.setVisible(true);
+            valid = false;
+        }
+        if (state.isEmpty()) {
+            stateError.setVisible(true);
+            valid = false;
+        }
+        if (!(Integer.toString(pincode).length() >= 5 || Integer.toString(pincode).length() <= 6)) {
+            pinError.setVisible(true);
+            valid = false;
+        }
+
+        if (valid) {
+            try {
+                Connection con = SQLConnection.establishConnection();
+                if (con != null) {
+                    String query = "SELECT user_name FROM BB TABLE";
+                    Statement stmt = con.createStatement();
+//                Execute the sql query
+                }
+
+            } catch (SQLException ex) {
+                System.out.println("Catch");
+            }
+        }
+    
+    }
+    
+
+    public void errorVisibility() {
+
+        nameError.setVisible(false);
+        usernameError.setVisible(false);
+        emailError.setVisible(false);
+        passError.setVisible(false);
+        phoneNoError.setVisible(false);
+        streetError.setVisible(false);
+        cityError.setVisible(false);
+        stateError.setVisible(false);
+        pinError.setVisible(false);
+
+    }
+
+    public void emptyTF() {
+        nameTF.setText("");
+        usernameTF.setText("");
+        emailTF.setText("");
+        phoneTF.setText("");
+        passTF.setText("");
+        streetTF.setText("");
+        cityTF.setText("");
+        pincodeTF.setText("");
+    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel cityError;
@@ -337,19 +449,20 @@ public class CreateOrgNGOJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel passError;
     private javax.swing.JLabel passLbl;
     private javax.swing.JTextField passTF;
-    private javax.swing.JLabel phoneError;
     private javax.swing.JLabel phoneLbl;
+    private javax.swing.JLabel phoneNoError;
     private javax.swing.JTextField phoneTF;
     private javax.swing.JLabel pinError;
     private javax.swing.JTextField pincodeTF;
     private javax.swing.JComboBox<String> stateCB;
+    private javax.swing.JLabel stateError;
     private javax.swing.JLabel stateLbl;
     private javax.swing.JLabel stateLbl1;
     private javax.swing.JLabel streetError;
     private javax.swing.JLabel streetLbl;
     private javax.swing.JTextField streetTF;
-    private javax.swing.JLabel userNameError;
     private javax.swing.JLabel userNameLbl;
-    private javax.swing.JTextField userNameTF;
+    private javax.swing.JLabel usernameError;
+    private javax.swing.JTextField usernameTF;
     // End of variables declaration//GEN-END:variables
 }

@@ -6,6 +6,7 @@ package UI.Login;
 
 import Sql.SQLConnection;
 import UI.NGO.NGOManagementJPanel;
+import UI.SystemAdmin.SystemAdminJPanel;
 import java.awt.CardLayout;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -31,7 +32,7 @@ public class LoginJPanel extends javax.swing.JPanel {
         this.mainFrameCardLayout = mainFrameCardLayout;
         errorVisibility();
 //        Mail mail = new Mail();
-        Mail.sendEmailMessage("surajvisvesh@gmail.com", "Thanks for registering with BLOODONATE. We will update you once your account is approved.");
+        
     }
 
     /**
@@ -315,6 +316,12 @@ public class LoginJPanel extends javax.swing.JPanel {
 //            case "Equipment Supplier Organizaiton":
 //                System.out.println("Selected Patient");
 //                break;
+            case "System Admin":
+                System.out.println("Selected System Admin");
+                mainFrameCardLayout.removeAll();
+                mainFrameCardLayout.add(new SystemAdminJPanel(mainFrameCardLayout, username, userCBValue));
+                ((CardLayout) mainFrameCardLayout.getLayout()).next(mainFrameCardLayout);
+                break;
             default:
                 break;
         }

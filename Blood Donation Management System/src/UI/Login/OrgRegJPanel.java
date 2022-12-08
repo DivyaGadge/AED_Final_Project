@@ -228,7 +228,7 @@ public class OrgRegJPanel extends javax.swing.JPanel {
         usernameError.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
         usernameError.setForeground(new java.awt.Color(255, 51, 0));
         usernameError.setText("Enter valid data");
-        add(usernameError, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 40, -1, -1));
+        add(usernameError, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 40, -1, -1));
 
         licError.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
         licError.setForeground(new java.awt.Color(255, 51, 0));
@@ -399,6 +399,7 @@ public class OrgRegJPanel extends javax.swing.JPanel {
                                 JOptionPane.showMessageDialog(null, "Thanks for registering. We will notify you once your registration is approved.");
 //                                Mail mail = new Mail();
 //                                mail.sendEmailMessage("surajvisvesh@gmail.com", "Thanks for registering with BLOODONATE. We will update you once your account is approved.");
+                                Mail.sendEmailMessage(email, "Thanks for registering with *BLOODONATE*. We will update you once your account is approved.");   
                             }
                         }
                     } catch (SQLException ex) {

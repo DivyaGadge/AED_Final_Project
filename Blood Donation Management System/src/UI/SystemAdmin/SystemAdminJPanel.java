@@ -4,6 +4,10 @@
  */
 package UI.SystemAdmin;
 
+import java.awt.CardLayout;
+import java.awt.Color;
+import javax.swing.JPanel;
+
 /**
  *
  * @author surajvisvesh
@@ -13,8 +17,14 @@ public class SystemAdminJPanel extends javax.swing.JPanel {
     /**
      * Creates new form SystemAdminJPanel
      */
-    public SystemAdminJPanel() {
+    JPanel mainFrameCardLayout;
+    String username;
+    String userCBValue;
+    public SystemAdminJPanel(JPanel mainFrameCardLayout, String username, String userCBValue) {
         initComponents();
+        this.mainFrameCardLayout = mainFrameCardLayout;
+        this.userCBValue = userCBValue;
+        this.username = username;
     }
 
     /**
@@ -200,7 +210,7 @@ public class SystemAdminJPanel extends javax.swing.JPanel {
 
         ManageProLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         ManageProLbl.setForeground(new java.awt.Color(215, 215, 215));
-        ManageProLbl.setText("Registrations");
+        ManageProLbl.setText("Registration Requests");
         ManageProLbl.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 ManageProLblMousePressed(evt);
@@ -393,7 +403,7 @@ public class SystemAdminJPanel extends javax.swing.JPanel {
 
     private void ManageProLblMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ManageProLblMousePressed
         // TODO add your handling code here:
-//        manageProfileBtnFunctionality();
+        manageRegFunctionality();
     }//GEN-LAST:event_ManageProLblMousePressed
 
     private void proIconMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_proIconMousePressed
@@ -405,7 +415,33 @@ public class SystemAdminJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
 //        manageProfileBtnFunctionality();
     }//GEN-LAST:event_manageProfileBtnMousePressed
-
+    
+    public void manageRegFunctionality(){
+        setBtnColor(manageProfileBtn);
+//        resetBtnColor(organizationsBtn);
+//        resetBtnColor(organizeCampsBtn);
+//        resetBtnColor(insightsBtn);
+//        resetBtnColor(manageDonorsBtn);
+        
+        
+        CardLayoutPanel.removeAll();
+        CardLayoutPanel.add(new ManageRegistration());
+        ((CardLayout) CardLayoutPanel.getLayout()).next(CardLayoutPanel);
+    }
+    
+    public void setBtnColor(JPanel panel) {
+        
+        panel.setBackground(new Color(210, 75, 60));
+        
+    }
+    
+    public void resetBtnColor(JPanel panel) {
+        
+        panel.setBackground(new Color (223, 85, 71));
+        
+    }
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel CardLayoutPanel;

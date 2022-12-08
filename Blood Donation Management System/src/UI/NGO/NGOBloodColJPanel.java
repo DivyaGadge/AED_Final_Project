@@ -5,6 +5,8 @@
 package UI.NGO;
 
 import java.awt.CardLayout;
+import java.awt.Color;
+import javax.swing.JPanel;
 
 /**
  *
@@ -259,7 +261,18 @@ public class NGOBloodColJPanel extends javax.swing.JPanel {
         ((CardLayout) CardLayoutNBCPanel.getLayout()).next(CardLayoutNBCPanel);
 
     }//GEN-LAST:event_transportBloodBtnMousePressed
-
+    
+    public void setBtnColor(JPanel panel) {
+        
+        panel.setBackground(new Color(210, 75, 60));
+        
+    }
+    
+    public void resetBtnColor(JPanel panel) {
+        
+        panel.setBackground(new Color (223, 85, 71));
+        
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel CardLayoutNBCPanel;
