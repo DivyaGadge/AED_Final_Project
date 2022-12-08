@@ -4,6 +4,8 @@
  */
 package UI.Login;
 
+import UI.BB.BBWHPanel;
+import UI.BB.BB_org;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
 
@@ -59,13 +61,13 @@ public class MainFrame extends javax.swing.JFrame {
     public void loadHomePage() {
         
         mainFrameCardLayout.removeAll();
-        mainFrameCardLayout.add(new homeJPanel(mainFrameCardLayout));
+        mainFrameCardLayout.add(new BBWHPanel());
         ((CardLayout) mainFrameCardLayout.getLayout()).next(mainFrameCardLayout);
         
     }
     
     /**
-     * @param args the command line arguments
+     * @param args the command line argument
      */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

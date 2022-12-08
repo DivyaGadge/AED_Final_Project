@@ -28,14 +28,11 @@ public class BBWHbloodInventoryPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         searchTF = new javax.swing.JTextField();
-        serachIconLbl = new javax.swing.JLabel();
         BBWHequipmentTbl = new javax.swing.JScrollPane();
         BBWHequipInventoryTbl = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
-
-        serachIconLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagesPackage/search_icon.png"))); // NOI18N
 
         BBWHequipInventoryTbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -61,9 +58,6 @@ public class BBWHbloodInventoryPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(972, 972, 972)
-                        .addComponent(serachIconLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(BBWHequipmentTbl, javax.swing.GroupLayout.PREFERRED_SIZE, 1076, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel1)
@@ -74,9 +68,7 @@ public class BBWHbloodInventoryPanel extends javax.swing.JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addComponent(serachIconLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(1, 1, 1)
+                .addGap(44, 44, 44)
                 .addComponent(jLabel1)
                 .addGap(42, 42, 42)
                 .addComponent(searchTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -92,6 +84,5 @@ public class BBWHbloodInventoryPanel extends javax.swing.JPanel {
     private javax.swing.JScrollPane BBWHequipmentTbl;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField searchTF;
-    private javax.swing.JLabel serachIconLbl;
     // End of variables declaration//GEN-END:variables
 }
