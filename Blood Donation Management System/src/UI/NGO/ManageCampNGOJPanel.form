@@ -21,82 +21,78 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="updateCampBtn" min="-2" pref="147" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="endCampBtn" min="-2" pref="147" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="searchTF" min="-2" pref="208" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="serachIconLbl" min="-2" pref="29" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="orgTable" alignment="1" min="-2" pref="1069" max="-2" attributes="0"/>
+                          <Component id="campLocBtn" alignment="0" min="-2" pref="147" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="38" max="32767" attributes="0"/>
+                  </Group>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="nameTF" min="-2" pref="305" max="-2" attributes="0"/>
-                              <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
-                              <Component id="nameErrorLbl" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="campDateLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="streetLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="nameLbl" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="latitudeLbl" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="latitudeTF" min="-2" pref="305" max="-2" attributes="0"/>
+                              <Component id="latTF" min="-2" pref="305" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="latitudeErrorLbl" min="-2" max="-2" attributes="0"/>
+                              <Component id="latitudeError" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="dateTF" max="32767" attributes="0"/>
-                                  <Component id="streetTF" pref="305" max="32767" attributes="0"/>
-                              </Group>
+                              <Component id="nameTF" min="-2" pref="305" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="dateErrorLbl" min="-2" max="-2" attributes="0"/>
-                                  <Component id="streetErrorLbl" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="nameError" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="streetLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="nameLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="streetTF" min="-2" pref="305" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="streetError" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="campDateLbl" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="campDateTF" min="-2" pref="305" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="dateError" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="longitudeLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="longitudeTF" min="-2" pref="305" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="longitudeErrorLbl" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                              <Component id="longitudeLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="lonTF" alignment="0" min="-2" pref="305" max="-2" attributes="0"/>
+                              <Component id="cityLbl" min="-2" max="-2" attributes="0"/>
+                              <Component id="pincodeLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="pinTF" alignment="0" min="-2" pref="305" max="-2" attributes="0"/>
+                              <Component id="cityTF" alignment="0" min="-2" pref="305" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="cityLbl" min="-2" max="-2" attributes="0"/>
-                          <Component id="pincodeLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="pincodeTF" min="-2" pref="305" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="pincodeErrorLbl" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="cityTF" min="-2" pref="305" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="cityErrorLbl" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="stateLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="stateCB" min="-2" pref="305" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="stateErrorLbl" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                              <Component id="stateLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="stateCB" alignment="0" min="-2" pref="305" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                  </Group>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
-                          <Component id="searchTF" min="-2" pref="208" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="serachIconLbl" min="-2" pref="29" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="cityError" min="-2" max="-2" attributes="0"/>
+                          <Component id="stateError" min="-2" max="-2" attributes="0"/>
+                          <Component id="pinError" min="-2" max="-2" attributes="0"/>
+                          <Component id="longitudeError" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="orgTable" alignment="1" min="-2" pref="1069" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="136" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="38" max="32767" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
-              <Component id="updateCampBtn" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="updateCampBtn1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="333" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -109,80 +105,90 @@
                   <Component id="serachIconLbl" alignment="1" min="-2" pref="29" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="orgTable" min="-2" pref="183" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="nameLbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="cityLbl" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="nameTF" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="3" pref="3" max="-2" attributes="0"/>
-                              <Component id="nameErrorLbl" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
-                      <Component id="campDateLbl" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="dateTF" min="-2" max="-2" attributes="0"/>
-                          <Component id="dateErrorLbl" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                      <Component id="streetLbl" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="streetTF" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="streetErrorLbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Component id="dateError" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
                       <Component id="latitudeLbl" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="latitudeTF" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="latitudeErrorLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="latTF" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="latitudeError" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="orgTable" min="-2" pref="183" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="cityTF" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
-                              <Component id="stateLbl" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="campLocBtn" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace pref="15" max="32767" attributes="0"/>
+                              <Component id="nameLbl" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="stateCB" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="stateErrorLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="nameTF" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="nameError" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="campDateLbl" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="campDateTF" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="streetLbl" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="streetTF" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="streetError" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="cityErrorLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="pincodeLbl" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="pincodeTF" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="pincodeErrorLbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="longitudeLbl" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="longitudeTF" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="longitudeErrorLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="180" pref="180" max="-2" attributes="0"/>
+                                      <Component id="longitudeLbl" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="lonTF" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="longitudeError" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="cityLbl" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="cityTF" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="cityError" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="stateLbl" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="stateCB" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="stateError" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="pincodeLbl" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="pinTF" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="pinError" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <EmptySpace max="32767" attributes="0"/>
+                          </Group>
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="41" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="updateCampBtn" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="updateCampBtn1" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="endCampBtn" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -198,25 +204,19 @@
         <Component class="javax.swing.JTable" name="campTable">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="9" rowCount="4">
+              <Table columnCount="8" rowCount="4">
                 <Column editable="false" title="Camp Id" type="java.lang.Object"/>
                 <Column editable="false" title="Camp Name" type="java.lang.Object"/>
                 <Column editable="false" title="Camp Date" type="java.lang.Object"/>
-                <Column editable="false" title="Street Address" type="java.lang.Object"/>
                 <Column editable="false" title="City" type="java.lang.Object"/>
                 <Column editable="false" title="State" type="java.lang.Object"/>
-                <Column editable="false" title="Pincode" type="java.lang.Object"/>
                 <Column editable="false" title="Latitude" type="java.lang.Object"/>
                 <Column editable="false" title="Longitude" type="java.lang.Object"/>
+                <Column editable="false" title="Status" type="java.lang.Object"/>
               </Table>
             </Property>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
               <TableColumnModel selectionModel="0">
-                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                  <Title/>
-                  <Editor/>
-                  <Renderer/>
-                </Column>
                 <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                   <Title/>
                   <Editor/>
@@ -345,69 +345,14 @@
         <Property name="text" type="java.lang.String" value="Street Address*"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="nameErrorLbl">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Helvetica Neue" size="13" style="2"/>
-        </Property>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="0" green="33" red="ff" type="rgb"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Field cannot be empty"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="streetErrorLbl">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Helvetica Neue" size="13" style="2"/>
-        </Property>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="0" green="33" red="ff" type="rgb"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Field cannot be empty"/>
-      </Properties>
-    </Component>
     <Component class="javax.swing.JTextField" name="streetTF">
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="streetTFActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="dateErrorLbl">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Helvetica Neue" size="13" style="2"/>
-        </Property>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="0" green="33" red="ff" type="rgb"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Field cannot be empty"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="cityErrorLbl">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Helvetica Neue" size="13" style="2"/>
-        </Property>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="0" green="33" red="ff" type="rgb"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Field cannot be empty"/>
-      </Properties>
-    </Component>
     <Component class="javax.swing.JLabel" name="cityLbl">
       <Properties>
         <Property name="text" type="java.lang.String" value="City*"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="pincodeErrorLbl">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Helvetica Neue" size="13" style="2"/>
-        </Property>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="0" green="33" red="ff" type="rgb"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Field cannot be empty."/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="cityTF">
@@ -415,17 +360,6 @@
     <Component class="javax.swing.JLabel" name="stateLbl">
       <Properties>
         <Property name="text" type="java.lang.String" value="State*"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="stateErrorLbl">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Helvetica Neue" size="13" style="2"/>
-        </Property>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="0" green="33" red="ff" type="rgb"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Field cannot be empty"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="nameLbl">
@@ -438,24 +372,13 @@
         <Property name="text" type="java.lang.String" value="Pincode*"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="latitudeTF">
+    <Component class="javax.swing.JTextField" name="latTF">
     </Component>
-    <Component class="javax.swing.JTextField" name="pincodeTF">
+    <Component class="javax.swing.JTextField" name="pinTF">
     </Component>
     <Component class="javax.swing.JLabel" name="latitudeLbl">
       <Properties>
         <Property name="text" type="java.lang.String" value="Latitude*"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="latitudeErrorLbl">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Helvetica Neue" size="13" style="2"/>
-        </Property>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="0" green="33" red="ff" type="rgb"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Field cannot be empty."/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="longitudeLbl">
@@ -463,32 +386,24 @@
         <Property name="text" type="java.lang.String" value="Longitude*"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="longitudeErrorLbl">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Helvetica Neue" size="13" style="2"/>
-        </Property>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="0" green="33" red="ff" type="rgb"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Field cannot be empty."/>
-      </Properties>
+    <Component class="javax.swing.JTextField" name="lonTF">
     </Component>
-    <Component class="javax.swing.JTextField" name="longitudeTF">
-    </Component>
-    <Component class="com.toedter.calendar.JDateChooser" name="dateTF">
+    <Component class="com.toedter.calendar.JDateChooser" name="campDateTF">
     </Component>
     <Container class="javax.swing.JPanel" name="updateCampBtn">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="6a" green="6a" red="6a" type="rgb"/>
         </Property>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[132, 47]"/>
+        </Property>
       </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="updateCampLbl" alignment="1" pref="198" max="32767" attributes="0"/>
+              <Component id="updateCampLbl" alignment="1" pref="147" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
@@ -512,27 +427,30 @@
         </Component>
       </SubComponents>
     </Container>
-    <Container class="javax.swing.JPanel" name="updateCampBtn1">
+    <Container class="javax.swing.JPanel" name="endCampBtn">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="6a" green="6a" red="6a" type="rgb"/>
+        </Property>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[132, 47]"/>
         </Property>
       </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="updateCampLbl1" alignment="1" pref="198" max="32767" attributes="0"/>
+              <Component id="endCampLbl" alignment="1" pref="147" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="updateCampLbl1" alignment="1" pref="47" max="32767" attributes="0"/>
+              <Component id="endCampLbl" alignment="1" pref="47" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="updateCampLbl1">
+        <Component class="javax.swing.JLabel" name="endCampLbl">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Helvetica Neue" size="13" style="1"/>
@@ -546,5 +464,130 @@
         </Component>
       </SubComponents>
     </Container>
+    <Container class="javax.swing.JPanel" name="campLocBtn">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="6a" green="6a" red="6a" type="rgb"/>
+        </Property>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[132, 47]"/>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Component id="campLocLbl" alignment="1" pref="147" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Component id="campLocLbl" alignment="1" pref="47" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="campLocLbl">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Helvetica Neue" size="13" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="View Camp Location"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JLabel" name="nameError">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Helvetica Neue" size="13" style="2"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="33" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Enter Valid Input"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="streetError">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Helvetica Neue" size="13" style="2"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="33" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Enter Valid Input"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="dateError">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Helvetica Neue" size="13" style="2"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="33" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Enter Valid Input"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="cityError">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Helvetica Neue" size="13" style="2"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="33" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Enter Valid Input"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="stateError">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Helvetica Neue" size="13" style="2"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="33" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Enter Valid Input"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="pinError">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Helvetica Neue" size="13" style="2"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="33" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Enter Valid Input"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="latitudeError">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Helvetica Neue" size="13" style="2"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="33" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Enter Valid Input"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="longitudeError">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Helvetica Neue" size="13" style="2"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="33" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Enter Valid Input"/>
+      </Properties>
+    </Component>
   </SubComponents>
 </Form>

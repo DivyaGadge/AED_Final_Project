@@ -52,7 +52,7 @@
     <Container class="javax.swing.JPanel" name="NBCHeader">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="62" green="62" red="cf" type="rgb"/>
+          <Color blue="47" green="55" red="df" type="rgb"/>
         </Property>
       </Properties>
 
@@ -94,7 +94,7 @@
     <Container class="javax.swing.JPanel" name="NBCMenu">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="62" green="62" red="cf" type="rgb"/>
+          <Color blue="47" green="55" red="df" type="rgb"/>
         </Property>
         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[220, 700]"/>
@@ -108,7 +108,7 @@
         <Container class="javax.swing.JPanel" name="manageProfileBtn">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="62" green="62" red="e6" type="rgb"/>
+              <Color blue="47" green="55" red="df" type="rgb"/>
             </Property>
           </Properties>
           <Constraints>
@@ -167,7 +167,7 @@
         <Container class="javax.swing.JPanel" name="collectBloodBtn">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="62" green="62" red="e6" type="rgb"/>
+              <Color blue="47" green="55" red="df" type="rgb"/>
             </Property>
           </Properties>
           <Constraints>
@@ -226,7 +226,7 @@
         <Container class="javax.swing.JPanel" name="transportBloodBtn">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="62" green="62" red="e6" type="rgb"/>
+              <Color blue="47" green="55" red="df" type="rgb"/>
             </Property>
           </Properties>
           <Events>
@@ -288,7 +288,7 @@
         <Container class="javax.swing.JPanel" name="ManageDonorsPanel">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="62" green="62" red="e6" type="rgb"/>
+              <Color blue="47" green="55" red="df" type="rgb"/>
             </Property>
           </Properties>
           <Constraints>
@@ -347,7 +347,7 @@
         <Container class="javax.swing.JPanel" name="jPanel9">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="62" green="62" red="e6" type="rgb"/>
+              <Color blue="47" green="55" red="df" type="rgb"/>
             </Property>
           </Properties>
           <Constraints>

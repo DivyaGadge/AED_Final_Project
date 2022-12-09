@@ -35,6 +35,8 @@ public class ManageNGOCampsJPanel extends javax.swing.JPanel {
         manageCampLbl = new javax.swing.JLabel();
         reqDocBtn = new javax.swing.JPanel();
         reqDocLbl = new javax.swing.JLabel();
+        inviteDonBtn = new javax.swing.JPanel();
+        inviteDonLbl = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -116,6 +118,29 @@ public class ManageNGOCampsJPanel extends javax.swing.JPanel {
             .addComponent(reqDocLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
+        inviteDonBtn.setBackground(new java.awt.Color(106, 106, 106));
+
+        inviteDonLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        inviteDonLbl.setForeground(new java.awt.Color(255, 255, 255));
+        inviteDonLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        inviteDonLbl.setText("Invite Donors");
+        inviteDonLbl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                inviteDonLblMousePressed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout inviteDonBtnLayout = new javax.swing.GroupLayout(inviteDonBtn);
+        inviteDonBtn.setLayout(inviteDonBtnLayout);
+        inviteDonBtnLayout.setHorizontalGroup(
+            inviteDonBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(inviteDonLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE)
+        );
+        inviteDonBtnLayout.setVerticalGroup(
+            inviteDonBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(inviteDonLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -127,6 +152,8 @@ public class ManageNGOCampsJPanel extends javax.swing.JPanel {
                 .addComponent(manageCampBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(reqDocBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(inviteDonBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(manageCampCardLayout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -138,7 +165,8 @@ public class ManageNGOCampsJPanel extends javax.swing.JPanel {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(manageCampBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(createCampBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(reqDocBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(reqDocBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(inviteDonBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(manageCampCardLayout, javax.swing.GroupLayout.PREFERRED_SIZE, 630, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -166,6 +194,10 @@ public class ManageNGOCampsJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         createCampBtnFunctionality();
     }//GEN-LAST:event_createCampBtnMousePressed
+
+    private void inviteDonLblMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inviteDonLblMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inviteDonLblMousePressed
     
     public void createCampBtnFunctionality() {
         
@@ -194,6 +226,8 @@ public class ManageNGOCampsJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel createCampBtn;
     private javax.swing.JLabel createCampLbl;
+    private javax.swing.JPanel inviteDonBtn;
+    private javax.swing.JLabel inviteDonLbl;
     private javax.swing.JPanel manageCampBtn;
     private javax.swing.JPanel manageCampCardLayout;
     private javax.swing.JLabel manageCampLbl;

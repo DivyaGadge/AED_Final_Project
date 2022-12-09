@@ -15,6 +15,7 @@ public class ManageCampNGOJPanel extends javax.swing.JPanel {
      */
     public ManageCampNGOJPanel() {
         initComponents();
+        errorVisibility();
     }
 
     /**
@@ -34,46 +35,48 @@ public class ManageCampNGOJPanel extends javax.swing.JPanel {
         nameTF = new javax.swing.JTextField();
         stateCB = new javax.swing.JComboBox<>();
         streetLbl = new javax.swing.JLabel();
-        nameErrorLbl = new javax.swing.JLabel();
-        streetErrorLbl = new javax.swing.JLabel();
         streetTF = new javax.swing.JTextField();
-        dateErrorLbl = new javax.swing.JLabel();
-        cityErrorLbl = new javax.swing.JLabel();
         cityLbl = new javax.swing.JLabel();
-        pincodeErrorLbl = new javax.swing.JLabel();
         cityTF = new javax.swing.JTextField();
         stateLbl = new javax.swing.JLabel();
-        stateErrorLbl = new javax.swing.JLabel();
         nameLbl = new javax.swing.JLabel();
         pincodeLbl = new javax.swing.JLabel();
-        latitudeTF = new javax.swing.JTextField();
-        pincodeTF = new javax.swing.JTextField();
+        latTF = new javax.swing.JTextField();
+        pinTF = new javax.swing.JTextField();
         latitudeLbl = new javax.swing.JLabel();
-        latitudeErrorLbl = new javax.swing.JLabel();
         longitudeLbl = new javax.swing.JLabel();
-        longitudeErrorLbl = new javax.swing.JLabel();
-        longitudeTF = new javax.swing.JTextField();
-        dateTF = new com.toedter.calendar.JDateChooser();
+        lonTF = new javax.swing.JTextField();
+        campDateTF = new com.toedter.calendar.JDateChooser();
         updateCampBtn = new javax.swing.JPanel();
         updateCampLbl = new javax.swing.JLabel();
-        updateCampBtn1 = new javax.swing.JPanel();
-        updateCampLbl1 = new javax.swing.JLabel();
+        endCampBtn = new javax.swing.JPanel();
+        endCampLbl = new javax.swing.JLabel();
+        campLocBtn = new javax.swing.JPanel();
+        campLocLbl = new javax.swing.JLabel();
+        nameError = new javax.swing.JLabel();
+        streetError = new javax.swing.JLabel();
+        dateError = new javax.swing.JLabel();
+        cityError = new javax.swing.JLabel();
+        stateError = new javax.swing.JLabel();
+        pinError = new javax.swing.JLabel();
+        latitudeError = new javax.swing.JLabel();
+        longitudeError = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
         campTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Camp Id", "Camp Name", "Camp Date", "Street Address", "City", "State", "Pincode", "Latitude", "Longitude"
+                "Camp Id", "Camp Name", "Camp Date", "City", "State", "Latitude", "Longitude", "Status"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -91,39 +94,15 @@ public class ManageCampNGOJPanel extends javax.swing.JPanel {
 
         streetLbl.setText("Street Address*");
 
-        nameErrorLbl.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
-        nameErrorLbl.setForeground(new java.awt.Color(255, 51, 0));
-        nameErrorLbl.setText("Field cannot be empty");
-
-        streetErrorLbl.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
-        streetErrorLbl.setForeground(new java.awt.Color(255, 51, 0));
-        streetErrorLbl.setText("Field cannot be empty");
-
         streetTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 streetTFActionPerformed(evt);
             }
         });
 
-        dateErrorLbl.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
-        dateErrorLbl.setForeground(new java.awt.Color(255, 51, 0));
-        dateErrorLbl.setText("Field cannot be empty");
-
-        cityErrorLbl.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
-        cityErrorLbl.setForeground(new java.awt.Color(255, 51, 0));
-        cityErrorLbl.setText("Field cannot be empty");
-
         cityLbl.setText("City*");
 
-        pincodeErrorLbl.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
-        pincodeErrorLbl.setForeground(new java.awt.Color(255, 51, 0));
-        pincodeErrorLbl.setText("Field cannot be empty.");
-
         stateLbl.setText("State*");
-
-        stateErrorLbl.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
-        stateErrorLbl.setForeground(new java.awt.Color(255, 51, 0));
-        stateErrorLbl.setText("Field cannot be empty");
 
         nameLbl.setText("Name of the Camp*");
 
@@ -131,17 +110,10 @@ public class ManageCampNGOJPanel extends javax.swing.JPanel {
 
         latitudeLbl.setText("Latitude*");
 
-        latitudeErrorLbl.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
-        latitudeErrorLbl.setForeground(new java.awt.Color(255, 51, 0));
-        latitudeErrorLbl.setText("Field cannot be empty.");
-
         longitudeLbl.setText("Longitude*");
 
-        longitudeErrorLbl.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
-        longitudeErrorLbl.setForeground(new java.awt.Color(255, 51, 0));
-        longitudeErrorLbl.setText("Field cannot be empty.");
-
         updateCampBtn.setBackground(new java.awt.Color(106, 106, 106));
+        updateCampBtn.setPreferredSize(new java.awt.Dimension(132, 47));
 
         updateCampLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         updateCampLbl.setForeground(new java.awt.Color(255, 255, 255));
@@ -152,30 +124,82 @@ public class ManageCampNGOJPanel extends javax.swing.JPanel {
         updateCampBtn.setLayout(updateCampBtnLayout);
         updateCampBtnLayout.setHorizontalGroup(
             updateCampBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(updateCampLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE)
+            .addComponent(updateCampLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE)
         );
         updateCampBtnLayout.setVerticalGroup(
             updateCampBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(updateCampLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
         );
 
-        updateCampBtn1.setBackground(new java.awt.Color(106, 106, 106));
+        endCampBtn.setBackground(new java.awt.Color(106, 106, 106));
+        endCampBtn.setPreferredSize(new java.awt.Dimension(132, 47));
 
-        updateCampLbl1.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
-        updateCampLbl1.setForeground(new java.awt.Color(255, 255, 255));
-        updateCampLbl1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        updateCampLbl1.setText("End Camp");
+        endCampLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        endCampLbl.setForeground(new java.awt.Color(255, 255, 255));
+        endCampLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        endCampLbl.setText("End Camp");
 
-        javax.swing.GroupLayout updateCampBtn1Layout = new javax.swing.GroupLayout(updateCampBtn1);
-        updateCampBtn1.setLayout(updateCampBtn1Layout);
-        updateCampBtn1Layout.setHorizontalGroup(
-            updateCampBtn1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(updateCampLbl1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE)
+        javax.swing.GroupLayout endCampBtnLayout = new javax.swing.GroupLayout(endCampBtn);
+        endCampBtn.setLayout(endCampBtnLayout);
+        endCampBtnLayout.setHorizontalGroup(
+            endCampBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(endCampLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE)
         );
-        updateCampBtn1Layout.setVerticalGroup(
-            updateCampBtn1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(updateCampLbl1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
+        endCampBtnLayout.setVerticalGroup(
+            endCampBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(endCampLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
         );
+
+        campLocBtn.setBackground(new java.awt.Color(106, 106, 106));
+        campLocBtn.setPreferredSize(new java.awt.Dimension(132, 47));
+
+        campLocLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        campLocLbl.setForeground(new java.awt.Color(255, 255, 255));
+        campLocLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        campLocLbl.setText("View Camp Location");
+
+        javax.swing.GroupLayout campLocBtnLayout = new javax.swing.GroupLayout(campLocBtn);
+        campLocBtn.setLayout(campLocBtnLayout);
+        campLocBtnLayout.setHorizontalGroup(
+            campLocBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(campLocLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE)
+        );
+        campLocBtnLayout.setVerticalGroup(
+            campLocBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(campLocLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
+        );
+
+        nameError.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
+        nameError.setForeground(new java.awt.Color(255, 51, 0));
+        nameError.setText("Enter Valid Input");
+
+        streetError.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
+        streetError.setForeground(new java.awt.Color(255, 51, 0));
+        streetError.setText("Enter Valid Input");
+
+        dateError.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
+        dateError.setForeground(new java.awt.Color(255, 51, 0));
+        dateError.setText("Enter Valid Input");
+
+        cityError.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
+        cityError.setForeground(new java.awt.Color(255, 51, 0));
+        cityError.setText("Enter Valid Input");
+
+        stateError.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
+        stateError.setForeground(new java.awt.Color(255, 51, 0));
+        stateError.setText("Enter Valid Input");
+
+        pinError.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
+        pinError.setForeground(new java.awt.Color(255, 51, 0));
+        pinError.setText("Enter Valid Input");
+
+        latitudeError.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
+        latitudeError.setForeground(new java.awt.Color(255, 51, 0));
+        latitudeError.setText("Enter Valid Input");
+
+        longitudeError.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
+        longitudeError.setForeground(new java.awt.Color(255, 51, 0));
+        longitudeError.setText("Enter Valid Input");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -183,64 +207,61 @@ public class ManageCampNGOJPanel extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(35, 35, 35)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(updateCampBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(endCampBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(searchTF, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(serachIconLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(orgTable, javax.swing.GroupLayout.PREFERRED_SIZE, 1069, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(campLocBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(38, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(latitudeLbl)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(latTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(latitudeError))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(nameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(nameErrorLbl))
-                            .addComponent(campDateLbl)
+                                .addComponent(nameError))
                             .addComponent(streetLbl)
                             .addComponent(nameLbl)
-                            .addComponent(latitudeLbl)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(latitudeTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(streetTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(latitudeErrorLbl))
+                                .addComponent(streetError))
+                            .addComponent(campDateLbl)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(dateTF, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(streetTF, javax.swing.GroupLayout.DEFAULT_SIZE, 305, Short.MAX_VALUE))
+                                .addComponent(campDateTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(dateErrorLbl)
-                                    .addComponent(streetErrorLbl))))
+                                .addComponent(dateError)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(longitudeLbl)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(longitudeTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(longitudeErrorLbl))
-                            .addComponent(cityLbl)
-                            .addComponent(pincodeLbl)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(pincodeTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(pincodeErrorLbl))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(cityTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(cityErrorLbl))
-                            .addComponent(stateLbl)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(stateCB, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(stateErrorLbl))))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(searchTF, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(serachIconLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(orgTable, javax.swing.GroupLayout.PREFERRED_SIZE, 1069, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(38, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(updateCampBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(updateCampBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(333, 333, 333))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(longitudeLbl)
+                                .addComponent(lonTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(cityLbl)
+                                .addComponent(pincodeLbl)
+                                .addComponent(pinTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(cityTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(stateLbl)
+                                .addComponent(stateCB, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cityError)
+                            .addComponent(stateError)
+                            .addComponent(pinError)
+                            .addComponent(longitudeError))
+                        .addGap(136, 136, 136))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -250,65 +271,73 @@ public class ManageCampNGOJPanel extends javax.swing.JPanel {
                     .addComponent(searchTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(serachIconLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(orgTable, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(nameLbl)
-                    .addComponent(cityLbl))
-                .addGap(6, 6, 6)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(nameTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(3, 3, 3)
-                                .addComponent(nameErrorLbl)))
-                        .addGap(18, 18, 18)
-                        .addComponent(campDateLbl)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(dateTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(dateErrorLbl))
-                        .addGap(23, 23, 23)
-                        .addComponent(streetLbl)
-                        .addGap(6, 6, 6)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(streetTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(streetErrorLbl))
-                        .addGap(18, 18, 18)
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(dateError)
+                        .addGap(76, 76, 76)
                         .addComponent(latitudeLbl)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(latitudeTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(latitudeErrorLbl)))
+                            .addComponent(latTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(latitudeError))
+                        .addGap(31, 31, 31))
                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(orgTable, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(cityTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(stateLbl)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(campLocBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
+                                .addComponent(nameLbl)
                                 .addGap(6, 6, 6)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(stateCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(stateErrorLbl)))
-                            .addComponent(cityErrorLbl))
-                        .addGap(18, 18, 18)
-                        .addComponent(pincodeLbl)
-                        .addGap(6, 6, 6)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(pincodeTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(pincodeErrorLbl))
-                        .addGap(18, 18, 18)
-                        .addComponent(longitudeLbl)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(longitudeTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(longitudeErrorLbl))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                                    .addComponent(nameTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(nameError))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(campDateLbl)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(campDateTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(streetLbl)
+                                .addGap(5, 5, 5)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(streetTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(streetError))
+                                .addGap(90, 90, 90))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(65, 65, 65)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(180, 180, 180)
+                                        .addComponent(longitudeLbl)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(lonTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(longitudeError)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(cityLbl)
+                                        .addGap(6, 6, 6)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(cityTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(cityError))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(stateLbl)
+                                        .addGap(6, 6, 6)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(stateCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(stateError))
+                                        .addGap(18, 18, 18)
+                                        .addComponent(pincodeLbl)
+                                        .addGap(6, 6, 6)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(pinTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(pinError))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(updateCampBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(updateCampBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32))
+                    .addComponent(endCampBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(19, 19, 19))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -316,39 +345,82 @@ public class ManageCampNGOJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_streetTFActionPerformed
 
+    public void populateCampsTable() {
+        
+//        write sql query to fetch database details.
+        
+    }
+    
+    public void errorVisibility() {
 
+        nameError.setVisible(false);
+        dateError.setVisible(false);
+//        BBError.setVisible(false);
+        streetError.setVisible(false);
+        cityError.setVisible(false);
+        pinError.setVisible(false);
+        latitudeError.setVisible(false);
+        longitudeError.setVisible(false);
+
+    }
+
+    public void emptyTF() {
+        nameTF.setText("");
+        campDateTF.setDate(null);
+        latTF.setText("");
+        lonTF.setText("");
+        streetTF.setText("");
+        cityTF.setText("");
+        pinTF.setText("");
+
+    }
+    
+    public void updateBtnFunctionality() {
+        
+    }
+    
+    public void endCampBtnFunctionality() {
+        
+    }
+    
+    public void campLocFunctionality() {
+        
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel campDateLbl;
+    private com.toedter.calendar.JDateChooser campDateTF;
+    private javax.swing.JPanel campLocBtn;
+    private javax.swing.JLabel campLocLbl;
     private javax.swing.JTable campTable;
-    private javax.swing.JLabel cityErrorLbl;
+    private javax.swing.JLabel cityError;
     private javax.swing.JLabel cityLbl;
     private javax.swing.JTextField cityTF;
-    private javax.swing.JLabel dateErrorLbl;
-    private com.toedter.calendar.JDateChooser dateTF;
-    private javax.swing.JLabel latitudeErrorLbl;
+    private javax.swing.JLabel dateError;
+    private javax.swing.JPanel endCampBtn;
+    private javax.swing.JLabel endCampLbl;
+    private javax.swing.JTextField latTF;
+    private javax.swing.JLabel latitudeError;
     private javax.swing.JLabel latitudeLbl;
-    private javax.swing.JTextField latitudeTF;
-    private javax.swing.JLabel longitudeErrorLbl;
+    private javax.swing.JTextField lonTF;
+    private javax.swing.JLabel longitudeError;
     private javax.swing.JLabel longitudeLbl;
-    private javax.swing.JTextField longitudeTF;
-    private javax.swing.JLabel nameErrorLbl;
+    private javax.swing.JLabel nameError;
     private javax.swing.JLabel nameLbl;
     private javax.swing.JTextField nameTF;
     private javax.swing.JScrollPane orgTable;
-    private javax.swing.JLabel pincodeErrorLbl;
+    private javax.swing.JLabel pinError;
+    private javax.swing.JTextField pinTF;
     private javax.swing.JLabel pincodeLbl;
-    private javax.swing.JTextField pincodeTF;
     private javax.swing.JTextField searchTF;
     private javax.swing.JLabel serachIconLbl;
     private javax.swing.JComboBox<String> stateCB;
-    private javax.swing.JLabel stateErrorLbl;
+    private javax.swing.JLabel stateError;
     private javax.swing.JLabel stateLbl;
-    private javax.swing.JLabel streetErrorLbl;
+    private javax.swing.JLabel streetError;
     private javax.swing.JLabel streetLbl;
     private javax.swing.JTextField streetTF;
     private javax.swing.JPanel updateCampBtn;
-    private javax.swing.JPanel updateCampBtn1;
     private javax.swing.JLabel updateCampLbl;
-    private javax.swing.JLabel updateCampLbl1;
     // End of variables declaration//GEN-END:variables
 }

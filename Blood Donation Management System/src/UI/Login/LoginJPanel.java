@@ -5,7 +5,9 @@
 package UI.Login;
 
 import Sql.SQLConnection;
+import UI.NGO.NGOBloodColJPanel;
 import UI.NGO.NGOManagementJPanel;
+import UI.NGO.NGOWareHouseJPanel;
 import UI.SystemAdmin.SystemAdminJPanel;
 import java.awt.CardLayout;
 import javax.swing.JLabel;
@@ -32,7 +34,7 @@ public class LoginJPanel extends javax.swing.JPanel {
         this.mainFrameCardLayout = mainFrameCardLayout;
         errorVisibility();
 //        Mail mail = new Mail();
-        
+
     }
 
     /**
@@ -204,7 +206,7 @@ public class LoginJPanel extends javax.swing.JPanel {
         add(usernamePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 370, -1, -1));
 
         userCB.setFont(new java.awt.Font("Helvetica Neue", 3, 16)); // NOI18N
-        userCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Doctor", "Patient", "System Admin", "Hospital Organization", "Donor", "NGO Organization", "Hospital Warehouse", "NGO Warehouse", "NGO Blood Collection Organization" }));
+        userCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Doctor", "System Admin", "Hospital Organization", "Donor", "NGO Organization", "Hospital Warehouse", "NGO Warehouse", "NGO Blood Collection" }));
         userCB.setBorder(null);
         add(userCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 280, 320, 50));
 
@@ -250,7 +252,7 @@ public class LoginJPanel extends javax.swing.JPanel {
         String username = usernameTF.getText();
         String password = String.valueOf(passTF.getPassword());
         switch (userCBValue) {
-            case "Doctor":
+            case "NGO Organization":
                 if (username.isEmpty()) {
                     usernameError.setVisible(true);
                 }
@@ -293,11 +295,18 @@ public class LoginJPanel extends javax.swing.JPanel {
                     }
                 }
 
-//            case "Patient":
-//                System.out.println("Selected Patient");
-//                break;
-//            case "Hospital Administration":
-//                break;
+            case "NGO Warehouse":
+                System.out.println("Selected Patient");
+                mainFrameCardLayout.removeAll();
+                mainFrameCardLayout.add(new NGOWareHouseJPanel(mainFrameCardLayout, username));
+                ((CardLayout) mainFrameCardLayout.getLayout()).next(mainFrameCardLayout);
+                break;
+            case "NGO Blood Collection":
+                System.out.println("Selected Patient");
+                mainFrameCardLayout.removeAll();
+                mainFrameCardLayout.add(new NGOBloodColJPanel(mainFrameCardLayout, username));
+                ((CardLayout) mainFrameCardLayout.getLayout()).next(mainFrameCardLayout);
+                break;
 //            case "NGO Administration":
 //                System.out.println("Selected Patient");
 //                break;

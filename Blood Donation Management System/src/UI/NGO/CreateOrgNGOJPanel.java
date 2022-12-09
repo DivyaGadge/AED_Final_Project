@@ -64,44 +64,63 @@ public class CreateOrgNGOJPanel extends javax.swing.JPanel {
         usernameError = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        add(nameTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 45, 305, -1));
 
         passTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 passTFActionPerformed(evt);
             }
         });
+        add(passTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(517, 143, 305, -1));
 
         emailLbl.setText("Email*");
+        add(emailLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 221, -1, -1));
 
         emailTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 emailTFActionPerformed(evt);
             }
         });
+        add(emailTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 244, 305, -1));
 
         phoneLbl.setText("Phone*");
+        add(phoneLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(517, 213, -1, -1));
+        add(phoneTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(517, 236, 305, -1));
 
         streetLbl.setText("Street Address*");
+        add(streetLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 323, -1, -1));
 
         streetTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 streetTFActionPerformed(evt);
             }
         });
+        add(streetTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 346, 305, -1));
 
         cityLbl.setText("City*");
+        add(cityLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(517, 323, -1, -1));
+        add(cityTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(517, 346, 305, -1));
 
         stateLbl.setText("State*");
+        add(stateLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 423, -1, -1));
 
         nameLbl.setText("Name of the Organization*");
+        add(nameLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 22, -1, -1));
 
         passLbl.setText("Password*");
+        add(passLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(517, 120, -1, -1));
 
         stateLbl1.setText("Pincode*");
+        add(stateLbl1, new org.netbeans.lib.awtextra.AbsoluteConstraints(517, 423, -1, -1));
+        add(pincodeTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(517, 446, 305, -1));
+        add(usernameTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 143, 305, -1));
 
         userNameLbl.setText("User Name*");
+        add(userNameLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 120, -1, -1));
 
         orgTypeLbl.setText("Organization Type*");
+        add(orgTypeLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(517, 22, -1, -1));
 
         orgTypeCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Blood Collection Organization", "Sample Testing Organization", "Blood Bank Warehouse" }));
         orgTypeCB.addActionListener(new java.awt.event.ActionListener() {
@@ -109,12 +128,15 @@ public class CreateOrgNGOJPanel extends javax.swing.JPanel {
                 orgTypeCBActionPerformed(evt);
             }
         });
+        add(orgTypeCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(517, 45, 305, -1));
 
         stateCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "IllinoisIndiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "MontanaNebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "PennsylvaniaRhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming" }));
+        add(stateCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 446, 305, -1));
 
         nameError.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
         nameError.setForeground(new java.awt.Color(255, 51, 0));
         nameError.setText("Enter Valid Input");
+        add(nameError, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 50, -1, -1));
 
         createOrgBtn.setBackground(new java.awt.Color(106, 106, 106));
 
@@ -127,188 +149,54 @@ public class CreateOrgNGOJPanel extends javax.swing.JPanel {
         createOrgBtn.setLayout(createOrgBtnLayout);
         createOrgBtnLayout.setHorizontalGroup(
             createOrgBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(createOrgLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
+            .addComponent(createOrgLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
         );
         createOrgBtnLayout.setVerticalGroup(
             createOrgBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(createOrgLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
         );
 
+        add(createOrgBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 510, 190, -1));
+
         streetError.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
         streetError.setForeground(new java.awt.Color(255, 51, 0));
         streetError.setText("Enter Valid Input");
+        add(streetError, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 350, -1, -1));
 
         cityError.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
         cityError.setForeground(new java.awt.Color(255, 51, 0));
         cityError.setText("Enter Valid Input");
+        add(cityError, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 350, -1, -1));
 
         stateError.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
         stateError.setForeground(new java.awt.Color(255, 51, 0));
         stateError.setText("Enter Valid Input");
+        add(stateError, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 450, -1, -1));
 
         pinError.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
         pinError.setForeground(new java.awt.Color(255, 51, 0));
         pinError.setText("Enter Valid Input");
+        add(pinError, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 450, -1, -1));
 
         emailError.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
         emailError.setForeground(new java.awt.Color(255, 51, 0));
         emailError.setText("Enter valid data");
+        add(emailError, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 250, -1, -1));
 
         phoneNoError.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
         phoneNoError.setForeground(new java.awt.Color(255, 51, 0));
         phoneNoError.setText("Enter valid data");
+        add(phoneNoError, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 240, -1, -1));
 
         passError.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
         passError.setForeground(new java.awt.Color(255, 51, 0));
         passError.setText("Enter valid data");
+        add(passError, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 140, -1, -1));
 
         usernameError.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
         usernameError.setForeground(new java.awt.Color(255, 51, 0));
         usernameError.setText("Enter valid data");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(createOrgBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(404, 404, 404))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(109, 109, 109)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(emailTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(emailError))
-                    .addComponent(emailLbl)
-                    .addComponent(nameLbl)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(nameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(nameError))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(streetLbl)
-                                    .addComponent(streetTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addComponent(streetError))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(usernameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(usernameError))
-                            .addComponent(userNameLbl)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(stateCB, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(stateError))
-                            .addComponent(stateLbl))
-                        .addGap(92, 92, 92)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(cityLbl)
-                                    .addComponent(cityTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addComponent(cityError))
-                            .addComponent(passLbl)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(passTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(passError))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(phoneLbl)
-                                    .addComponent(phoneTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addComponent(phoneNoError))
-                            .addComponent(stateLbl1)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(pincodeTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(pinError))
-                            .addComponent(orgTypeLbl)
-                            .addComponent(orgTypeCB, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(103, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(nameLbl)
-                        .addGap(6, 6, 6)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(nameTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(3, 3, 3)
-                                .addComponent(nameError))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(orgTypeLbl)
-                        .addGap(6, 6, 6)
-                        .addComponent(orgTypeCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(52, 52, 52)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(passLbl)
-                        .addGap(6, 6, 6)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(passTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(passError)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(userNameLbl)
-                        .addGap(6, 6, 6)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(usernameTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(usernameError))))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(55, 55, 55)
-                        .addComponent(emailLbl)
-                        .addGap(6, 6, 6)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(emailTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(emailError)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(47, 47, 47)
-                        .addComponent(phoneLbl)
-                        .addGap(6, 6, 6)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(phoneTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(phoneNoError))))
-                .addGap(56, 56, 56)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(streetLbl)
-                        .addGap(6, 6, 6)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(streetTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(streetError)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(cityLbl)
-                        .addGap(6, 6, 6)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(cityTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cityError))))
-                .addGap(54, 54, 54)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(stateLbl1)
-                    .addComponent(stateLbl))
-                .addGap(6, 6, 6)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(stateCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(stateError))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(pincodeTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(pinError)))
-                .addGap(58, 58, 58)
-                .addComponent(createOrgBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(52, 52, 52))
-        );
+        add(usernameError, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 150, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void passTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passTFActionPerformed

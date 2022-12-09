@@ -17,8 +17,13 @@ public class NGOBloodColJPanel extends javax.swing.JPanel {
     /**
      * Creates new form NGOBloodColJPanel
      */
-    public NGOBloodColJPanel() {
+    JPanel mainFrameCardLayout;
+    String ngow_username;
+
+    public NGOBloodColJPanel(JPanel mainFrameCardLayout, String ngow_username) {
         initComponents();
+        this.mainFrameCardLayout = mainFrameCardLayout;
+        this.ngow_username = ngow_username;
     }
 
     /**
@@ -50,7 +55,7 @@ public class NGOBloodColJPanel extends javax.swing.JPanel {
         jLabel7 = new javax.swing.JLabel();
         CardLayoutNBCPanel = new javax.swing.JPanel();
 
-        NBCHeader.setBackground(new java.awt.Color(207, 98, 98));
+        NBCHeader.setBackground(new java.awt.Color(223, 85, 71));
 
         bloodonateLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 36)); // NOI18N
         bloodonateLbl.setForeground(new java.awt.Color(215, 215, 215));
@@ -74,11 +79,11 @@ public class NGOBloodColJPanel extends javax.swing.JPanel {
                 .addContainerGap(19, Short.MAX_VALUE))
         );
 
-        NBCMenu.setBackground(new java.awt.Color(207, 98, 98));
+        NBCMenu.setBackground(new java.awt.Color(223, 85, 71));
         NBCMenu.setPreferredSize(new java.awt.Dimension(220, 700));
         NBCMenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        manageProfileBtn.setBackground(new java.awt.Color(230, 98, 98));
+        manageProfileBtn.setBackground(new java.awt.Color(223, 85, 71));
 
         ManageProLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         ManageProLbl.setForeground(new java.awt.Color(215, 215, 215));
@@ -109,7 +114,7 @@ public class NGOBloodColJPanel extends javax.swing.JPanel {
 
         NBCMenu.add(manageProfileBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 280, -1));
 
-        collectBloodBtn.setBackground(new java.awt.Color(230, 98, 98));
+        collectBloodBtn.setBackground(new java.awt.Color(223, 85, 71));
 
         ManageOrgLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         ManageOrgLbl.setForeground(new java.awt.Color(215, 215, 215));
@@ -141,7 +146,7 @@ public class NGOBloodColJPanel extends javax.swing.JPanel {
 
         NBCMenu.add(collectBloodBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 280, -1));
 
-        transportBloodBtn.setBackground(new java.awt.Color(230, 98, 98));
+        transportBloodBtn.setBackground(new java.awt.Color(223, 85, 71));
         transportBloodBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 transportBloodBtnMousePressed(evt);
@@ -178,7 +183,7 @@ public class NGOBloodColJPanel extends javax.swing.JPanel {
 
         NBCMenu.add(transportBloodBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 280, -1));
 
-        ManageDonorsPanel.setBackground(new java.awt.Color(230, 98, 98));
+        ManageDonorsPanel.setBackground(new java.awt.Color(223, 85, 71));
 
         ManageDonLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         ManageDonLbl.setForeground(new java.awt.Color(215, 215, 215));
@@ -210,7 +215,7 @@ public class NGOBloodColJPanel extends javax.swing.JPanel {
 
         NBCMenu.add(ManageDonorsPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 280, -1));
 
-        jPanel9.setBackground(new java.awt.Color(230, 98, 98));
+        jPanel9.setBackground(new java.awt.Color(223, 85, 71));
         jPanel9.setLayout(new java.awt.CardLayout());
 
         jLabel9.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
@@ -261,17 +266,17 @@ public class NGOBloodColJPanel extends javax.swing.JPanel {
         ((CardLayout) CardLayoutNBCPanel.getLayout()).next(CardLayoutNBCPanel);
 
     }//GEN-LAST:event_transportBloodBtnMousePressed
-    
+
     public void setBtnColor(JPanel panel) {
-        
+
         panel.setBackground(new Color(210, 75, 60));
-        
+
     }
-    
+
     public void resetBtnColor(JPanel panel) {
-        
-        panel.setBackground(new Color (223, 85, 71));
-        
+
+        panel.setBackground(new Color(223, 85, 71));
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
