@@ -6,13 +6,12 @@ package UI.Login;
 
 import UI.Hospital.HospitalJPanel;
 import java.awt.CardLayout;
-import javax.swing.JPanel;
 
 /**
  *
  * @author surajvisvesh
  */
-public class MainFrame extends javax.swing.JFrame {
+public final class MainFrame extends javax.swing.JFrame {
 
     /**
      * Creates new form MainFrame
@@ -93,10 +92,8 @@ public class MainFrame extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new MainFrame().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new MainFrame().setVisible(true);
         });
     }
 

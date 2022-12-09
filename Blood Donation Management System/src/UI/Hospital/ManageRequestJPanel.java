@@ -26,18 +26,18 @@ public class ManageRequestJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
-        placeorderBtn = new javax.swing.JPanel();
-        placeorderLbl = new javax.swing.JLabel();
+        CampDetailsJLabel = new javax.swing.JLabel();
+        CampDJScrollPanel = new javax.swing.JScrollPane();
+        campDjTable = new javax.swing.JTable();
+        DocAvailablejScrollPanel = new javax.swing.JScrollPane();
+        DocAvailablejTable = new javax.swing.JTable();
+        assignDocBtn = new javax.swing.JPanel();
+        assignDocLbl = new javax.swing.JLabel();
 
-        jLabel1.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
-        jLabel1.setText("Camp Details");
+        CampDetailsJLabel.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        CampDetailsJLabel.setText("Camp Details");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        campDjTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -48,9 +48,9 @@ public class ManageRequestJPanel extends javax.swing.JPanel {
                 "NGO", "Camp", "Location", "Date"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        CampDJScrollPanel.setViewportView(campDjTable);
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        DocAvailablejTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
                 {null, null},
@@ -61,24 +61,24 @@ public class ManageRequestJPanel extends javax.swing.JPanel {
                 "Doctor", "Availability"
             }
         ));
-        jScrollPane2.setViewportView(jTable2);
+        DocAvailablejScrollPanel.setViewportView(DocAvailablejTable);
 
-        placeorderBtn.setBackground(new java.awt.Color(106, 106, 106));
+        assignDocBtn.setBackground(new java.awt.Color(106, 106, 106));
 
-        placeorderLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
-        placeorderLbl.setForeground(new java.awt.Color(255, 255, 255));
-        placeorderLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        placeorderLbl.setText("Assign a Doctor");
+        assignDocLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        assignDocLbl.setForeground(new java.awt.Color(255, 255, 255));
+        assignDocLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        assignDocLbl.setText("Assign a Doctor");
 
-        javax.swing.GroupLayout placeorderBtnLayout = new javax.swing.GroupLayout(placeorderBtn);
-        placeorderBtn.setLayout(placeorderBtnLayout);
-        placeorderBtnLayout.setHorizontalGroup(
-            placeorderBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(placeorderLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE)
+        javax.swing.GroupLayout assignDocBtnLayout = new javax.swing.GroupLayout(assignDocBtn);
+        assignDocBtn.setLayout(assignDocBtnLayout);
+        assignDocBtnLayout.setHorizontalGroup(
+            assignDocBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(assignDocLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE)
         );
-        placeorderBtnLayout.setVerticalGroup(
-            placeorderBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(placeorderLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
+        assignDocBtnLayout.setVerticalGroup(
+            assignDocBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(assignDocLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -88,38 +88,38 @@ public class ManageRequestJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(44, 44, 44)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 662, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(DocAvailablejScrollPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CampDetailsJLabel)
+                    .addComponent(CampDJScrollPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 662, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(436, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(placeorderBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(assignDocBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(178, 178, 178))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(33, 33, 33)
-                .addComponent(jLabel1)
+                .addComponent(CampDetailsJLabel)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(CampDJScrollPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(DocAvailablejScrollPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(placeorderBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(assignDocBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(199, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
-    private javax.swing.JPanel placeorderBtn;
-    private javax.swing.JLabel placeorderLbl;
+    private javax.swing.JScrollPane CampDJScrollPanel;
+    private javax.swing.JLabel CampDetailsJLabel;
+    private javax.swing.JScrollPane DocAvailablejScrollPanel;
+    private javax.swing.JTable DocAvailablejTable;
+    private javax.swing.JPanel assignDocBtn;
+    private javax.swing.JLabel assignDocLbl;
+    private javax.swing.JTable campDjTable;
     // End of variables declaration//GEN-END:variables
 }

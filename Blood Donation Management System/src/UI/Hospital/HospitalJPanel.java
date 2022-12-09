@@ -29,46 +29,46 @@ public class HospitalJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        NWHHeader = new javax.swing.JPanel();
+        HospitalHeader = new javax.swing.JPanel();
         bloodonateLbl = new javax.swing.JLabel();
-        NWHMenu = new javax.swing.JPanel();
+        HospitalMenu = new javax.swing.JPanel();
         manageHospProfileBtn = new javax.swing.JPanel();
         ManageHProLbl = new javax.swing.JLabel();
-        MngProfileBtn = new javax.swing.JPanel();
+        mngProfileBtn = new javax.swing.JPanel();
         ManageOrgLbl = new javax.swing.JLabel();
-        manageBloodBtn = new javax.swing.JPanel();
+        reqBloodBtn = new javax.swing.JPanel();
         manageBloodLbl = new javax.swing.JLabel();
-        ManageDonorsPanel = new javax.swing.JPanel();
+        mngbloodreqBtn = new javax.swing.JPanel();
         ManageDonLbl = new javax.swing.JLabel();
         CardLayoutHPanel = new javax.swing.JPanel();
 
-        NWHHeader.setBackground(new java.awt.Color(207, 98, 98));
+        HospitalHeader.setBackground(new java.awt.Color(207, 98, 98));
 
         bloodonateLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 36)); // NOI18N
         bloodonateLbl.setForeground(new java.awt.Color(215, 215, 215));
         bloodonateLbl.setText("BLOODONATE");
         bloodonateLbl.setDebugGraphicsOptions(javax.swing.DebugGraphics.FLASH_OPTION);
 
-        javax.swing.GroupLayout NWHHeaderLayout = new javax.swing.GroupLayout(NWHHeader);
-        NWHHeader.setLayout(NWHHeaderLayout);
-        NWHHeaderLayout.setHorizontalGroup(
-            NWHHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(NWHHeaderLayout.createSequentialGroup()
+        javax.swing.GroupLayout HospitalHeaderLayout = new javax.swing.GroupLayout(HospitalHeader);
+        HospitalHeader.setLayout(HospitalHeaderLayout);
+        HospitalHeaderLayout.setHorizontalGroup(
+            HospitalHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(HospitalHeaderLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(bloodonateLbl)
                 .addContainerGap(1168, Short.MAX_VALUE))
         );
-        NWHHeaderLayout.setVerticalGroup(
-            NWHHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(NWHHeaderLayout.createSequentialGroup()
+        HospitalHeaderLayout.setVerticalGroup(
+            HospitalHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(HospitalHeaderLayout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addComponent(bloodonateLbl)
                 .addContainerGap(18, Short.MAX_VALUE))
         );
 
-        NWHMenu.setBackground(new java.awt.Color(207, 98, 98));
-        NWHMenu.setPreferredSize(new java.awt.Dimension(220, 700));
-        NWHMenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        HospitalMenu.setBackground(new java.awt.Color(207, 98, 98));
+        HospitalMenu.setPreferredSize(new java.awt.Dimension(220, 700));
+        HospitalMenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         manageHospProfileBtn.setBackground(new java.awt.Color(230, 98, 98));
         manageHospProfileBtn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -98,12 +98,12 @@ public class HospitalJPanel extends javax.swing.JPanel {
             .addComponent(ManageHProLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        NWHMenu.add(manageHospProfileBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 280, -1));
+        HospitalMenu.add(manageHospProfileBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 280, -1));
 
-        MngProfileBtn.setBackground(new java.awt.Color(230, 98, 98));
-        MngProfileBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+        mngProfileBtn.setBackground(new java.awt.Color(230, 98, 98));
+        mngProfileBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                MngProfileBtnMouseClicked(evt);
+                mngProfileBtnMouseClicked(evt);
             }
         });
 
@@ -111,29 +111,32 @@ public class HospitalJPanel extends javax.swing.JPanel {
         ManageOrgLbl.setForeground(new java.awt.Color(215, 215, 215));
         ManageOrgLbl.setText("Manage Profile");
 
-        javax.swing.GroupLayout MngProfileBtnLayout = new javax.swing.GroupLayout(MngProfileBtn);
-        MngProfileBtn.setLayout(MngProfileBtnLayout);
-        MngProfileBtnLayout.setHorizontalGroup(
-            MngProfileBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MngProfileBtnLayout.createSequentialGroup()
+        javax.swing.GroupLayout mngProfileBtnLayout = new javax.swing.GroupLayout(mngProfileBtn);
+        mngProfileBtn.setLayout(mngProfileBtnLayout);
+        mngProfileBtnLayout.setHorizontalGroup(
+            mngProfileBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mngProfileBtnLayout.createSequentialGroup()
                 .addGap(58, 58, 58)
                 .addComponent(ManageOrgLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        MngProfileBtnLayout.setVerticalGroup(
-            MngProfileBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MngProfileBtnLayout.createSequentialGroup()
+        mngProfileBtnLayout.setVerticalGroup(
+            mngProfileBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mngProfileBtnLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(ManageOrgLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        NWHMenu.add(MngProfileBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 280, -1));
+        HospitalMenu.add(mngProfileBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 280, -1));
 
-        manageBloodBtn.setBackground(new java.awt.Color(230, 98, 98));
-        manageBloodBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+        reqBloodBtn.setBackground(new java.awt.Color(230, 98, 98));
+        reqBloodBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                reqBloodBtnMouseClicked(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                manageBloodBtnMousePressed(evt);
+                reqBloodBtnMousePressed(evt);
             }
         });
 
@@ -141,49 +144,54 @@ public class HospitalJPanel extends javax.swing.JPanel {
         manageBloodLbl.setForeground(new java.awt.Color(215, 215, 215));
         manageBloodLbl.setText("Request Blood");
 
-        javax.swing.GroupLayout manageBloodBtnLayout = new javax.swing.GroupLayout(manageBloodBtn);
-        manageBloodBtn.setLayout(manageBloodBtnLayout);
-        manageBloodBtnLayout.setHorizontalGroup(
-            manageBloodBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, manageBloodBtnLayout.createSequentialGroup()
+        javax.swing.GroupLayout reqBloodBtnLayout = new javax.swing.GroupLayout(reqBloodBtn);
+        reqBloodBtn.setLayout(reqBloodBtnLayout);
+        reqBloodBtnLayout.setHorizontalGroup(
+            reqBloodBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, reqBloodBtnLayout.createSequentialGroup()
                 .addGap(58, 58, 58)
                 .addComponent(manageBloodLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        manageBloodBtnLayout.setVerticalGroup(
-            manageBloodBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(manageBloodBtnLayout.createSequentialGroup()
+        reqBloodBtnLayout.setVerticalGroup(
+            reqBloodBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(reqBloodBtnLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(manageBloodLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        NWHMenu.add(manageBloodBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 280, -1));
+        HospitalMenu.add(reqBloodBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 280, -1));
 
-        ManageDonorsPanel.setBackground(new java.awt.Color(230, 98, 98));
+        mngbloodreqBtn.setBackground(new java.awt.Color(230, 98, 98));
+        mngbloodreqBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                mngbloodreqBtnMouseClicked(evt);
+            }
+        });
 
         ManageDonLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         ManageDonLbl.setForeground(new java.awt.Color(215, 215, 215));
         ManageDonLbl.setText("Manage Blood Request");
 
-        javax.swing.GroupLayout ManageDonorsPanelLayout = new javax.swing.GroupLayout(ManageDonorsPanel);
-        ManageDonorsPanel.setLayout(ManageDonorsPanelLayout);
-        ManageDonorsPanelLayout.setHorizontalGroup(
-            ManageDonorsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ManageDonorsPanelLayout.createSequentialGroup()
+        javax.swing.GroupLayout mngbloodreqBtnLayout = new javax.swing.GroupLayout(mngbloodreqBtn);
+        mngbloodreqBtn.setLayout(mngbloodreqBtnLayout);
+        mngbloodreqBtnLayout.setHorizontalGroup(
+            mngbloodreqBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mngbloodreqBtnLayout.createSequentialGroup()
                 .addGap(58, 58, 58)
                 .addComponent(ManageDonLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        ManageDonorsPanelLayout.setVerticalGroup(
-            ManageDonorsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ManageDonorsPanelLayout.createSequentialGroup()
+        mngbloodreqBtnLayout.setVerticalGroup(
+            mngbloodreqBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(mngbloodreqBtnLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(ManageDonLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        NWHMenu.add(ManageDonorsPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 280, -1));
+        HospitalMenu.add(mngbloodreqBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 280, -1));
 
         CardLayoutHPanel.setBackground(new java.awt.Color(255, 255, 255));
         CardLayoutHPanel.setLayout(new java.awt.CardLayout());
@@ -197,9 +205,9 @@ public class HospitalJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(NWHHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(HospitalHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(layout.createSequentialGroup()
-                            .addComponent(NWHMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(HospitalMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(6, 6, 6)
                             .addComponent(CardLayoutHPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 1142, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGap(0, 0, Short.MAX_VALUE)))
@@ -210,19 +218,19 @@ public class HospitalJPanel extends javax.swing.JPanel {
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(NWHHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(HospitalHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(6, 6, 6)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(NWHMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 702, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(HospitalMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 702, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(CardLayoutHPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 702, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void manageBloodBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_manageBloodBtnMousePressed
+    private void reqBloodBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reqBloodBtnMousePressed
         // TODO add your handling code here:
 
-    }//GEN-LAST:event_manageBloodBtnMousePressed
+    }//GEN-LAST:event_reqBloodBtnMousePressed
 
     private void manageHospProfileBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_manageHospProfileBtnMousePressed
         // TODO add your handling code here:
@@ -234,25 +242,35 @@ public class HospitalJPanel extends javax.swing.JPanel {
         hospProfileFunctionality();
     }//GEN-LAST:event_manageHospProfileBtnMouseClicked
 
-    private void MngProfileBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MngProfileBtnMouseClicked
+    private void mngProfileBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mngProfileBtnMouseClicked
         // TODO add your handling code here:
         manageProfileH();
-    }//GEN-LAST:event_MngProfileBtnMouseClicked
+    }//GEN-LAST:event_mngProfileBtnMouseClicked
+
+    private void reqBloodBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reqBloodBtnMouseClicked
+        // TODO add your handling code here:
+        requestBlood();
+    }//GEN-LAST:event_reqBloodBtnMouseClicked
+
+    private void mngbloodreqBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mngbloodreqBtnMouseClicked
+        // TODO add your handling code here:
+        manageBloodRequest();
+    }//GEN-LAST:event_mngbloodreqBtnMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel CardLayoutHPanel;
+    private javax.swing.JPanel HospitalHeader;
+    private javax.swing.JPanel HospitalMenu;
     private javax.swing.JLabel ManageDonLbl;
-    private javax.swing.JPanel ManageDonorsPanel;
     private javax.swing.JLabel ManageHProLbl;
     private javax.swing.JLabel ManageOrgLbl;
-    private javax.swing.JPanel MngProfileBtn;
-    private javax.swing.JPanel NWHHeader;
-    private javax.swing.JPanel NWHMenu;
     private javax.swing.JLabel bloodonateLbl;
-    private javax.swing.JPanel manageBloodBtn;
     private javax.swing.JLabel manageBloodLbl;
     private javax.swing.JPanel manageHospProfileBtn;
+    private javax.swing.JPanel mngProfileBtn;
+    private javax.swing.JPanel mngbloodreqBtn;
+    private javax.swing.JPanel reqBloodBtn;
     // End of variables declaration//GEN-END:variables
 
     private void hospProfileFunctionality() {
@@ -265,6 +283,18 @@ public class HospitalJPanel extends javax.swing.JPanel {
     private void manageProfileH() {
         CardLayoutHPanel.removeAll();
         CardLayoutHPanel.add(new ManageandCreateHospitalUsersJPanel());
+        ((CardLayout) CardLayoutHPanel.getLayout()).next(CardLayoutHPanel);
+    }
+
+    private void requestBlood() {
+        CardLayoutHPanel.removeAll();
+        CardLayoutHPanel.add(new ListofBBJPanel());
+        ((CardLayout) CardLayoutHPanel.getLayout()).next(CardLayoutHPanel);
+    }
+
+    private void manageBloodRequest() {
+        CardLayoutHPanel.removeAll();
+        CardLayoutHPanel.add(new ManageRequestJPanel());
         ((CardLayout) CardLayoutHPanel.getLayout()).next(CardLayoutHPanel);
     }
 }

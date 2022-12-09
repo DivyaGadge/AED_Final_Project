@@ -4,6 +4,8 @@
  */
 package UI.Hospital;
 
+import java.awt.CardLayout;
+
 /**
  *
  * @author divyagadge
@@ -27,14 +29,14 @@ public class ListofBBJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
-        updateOrgBtn = new javax.swing.JPanel();
-        updateOrgLbl = new javax.swing.JLabel();
+        ListofBBjTable = new javax.swing.JTable();
+        ListofBBjLabel = new javax.swing.JLabel();
+        ReqtoBBBtn = new javax.swing.JPanel();
+        RedtoBBLbl = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(1142, 702));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        ListofBBjTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
@@ -53,27 +55,32 @@ public class ListofBBJPanel extends javax.swing.JPanel {
                 return types [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(ListofBBjTable);
 
-        jLabel1.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
-        jLabel1.setText("List of Blood Banks");
+        ListofBBjLabel.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        ListofBBjLabel.setText("List of Blood Banks");
 
-        updateOrgBtn.setBackground(new java.awt.Color(106, 106, 106));
+        ReqtoBBBtn.setBackground(new java.awt.Color(106, 106, 106));
+        ReqtoBBBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ReqtoBBBtnMouseClicked(evt);
+            }
+        });
 
-        updateOrgLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
-        updateOrgLbl.setForeground(new java.awt.Color(255, 255, 255));
-        updateOrgLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        updateOrgLbl.setText("Request to Blood Bank");
+        RedtoBBLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        RedtoBBLbl.setForeground(new java.awt.Color(255, 255, 255));
+        RedtoBBLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        RedtoBBLbl.setText("Request to Blood Bank");
 
-        javax.swing.GroupLayout updateOrgBtnLayout = new javax.swing.GroupLayout(updateOrgBtn);
-        updateOrgBtn.setLayout(updateOrgBtnLayout);
-        updateOrgBtnLayout.setHorizontalGroup(
-            updateOrgBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(updateOrgLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE)
+        javax.swing.GroupLayout ReqtoBBBtnLayout = new javax.swing.GroupLayout(ReqtoBBBtn);
+        ReqtoBBBtn.setLayout(ReqtoBBBtnLayout);
+        ReqtoBBBtnLayout.setHorizontalGroup(
+            ReqtoBBBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(RedtoBBLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE)
         );
-        updateOrgBtnLayout.setVerticalGroup(
-            updateOrgBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(updateOrgLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
+        ReqtoBBBtnLayout.setVerticalGroup(
+            ReqtoBBBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(RedtoBBLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -84,11 +91,11 @@ public class ListofBBJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(844, 844, 844)
-                        .addComponent(updateOrgBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(ReqtoBBBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(31, 31, 31)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
+                            .addComponent(ListofBBjLabel)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1049, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(151, Short.MAX_VALUE))
         );
@@ -96,21 +103,33 @@ public class ListofBBJPanel extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(53, 53, 53)
-                .addComponent(jLabel1)
+                .addComponent(ListofBBjLabel)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(51, 51, 51)
-                .addComponent(updateOrgBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ReqtoBBBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(211, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void ReqtoBBBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ReqtoBBBtnMouseClicked
+        // TODO add your handling code here:
+        requesttoBB();
+    }//GEN-LAST:event_ReqtoBBBtnMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel ListofBBjLabel;
+    private javax.swing.JTable ListofBBjTable;
+    private javax.swing.JLabel RedtoBBLbl;
+    private javax.swing.JPanel ReqtoBBBtn;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JPanel updateOrgBtn;
-    private javax.swing.JLabel updateOrgLbl;
     // End of variables declaration//GEN-END:variables
+
+    private void requesttoBB() {
+        CardLayoutHPanel.removeAll();
+        CardLayoutHPanel.add(new ManageRequestJPanel());
+        ((CardLayout) CardLayoutHPanel.getLayout()).next(CardLayoutHPanel);
+    }
+
 }
