@@ -10,9 +10,10 @@ import java.sql.*;
  *
  * @author surajvisvesh
  */
+
+//Class to establish connection to local Database.
 public class SQLConnection {
     
-//    Connection con = null;
     static String url = "jdbc:mysql://localhost:3306/bdms";
     private static String user = "root";
     private static String password = "admin@123";
