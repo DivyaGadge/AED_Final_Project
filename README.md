@@ -4,7 +4,7 @@
 
 # URL for ERD diagram
 
-![Domain Model](Database_ER.jpeg)
+![ERDl](Database _ER.jpeg)
 
 # URL for Architecture Diagram
 
