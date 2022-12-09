@@ -26,7 +26,5 @@ public class SQLConnection {
         } catch(ClassNotFoundException | SQLException e){
             return null;
         }
-    }
-    
-    
+    }    
 }
