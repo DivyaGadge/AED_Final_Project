@@ -4,8 +4,11 @@
  */
 package UI.NGO;
 
+import model.Ecosystem.Logout;
+import UI.Login.homeJPanel;
 import java.awt.CardLayout;
 import java.awt.Color;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -39,7 +42,7 @@ public class NGOManagementJPanel extends javax.swing.JPanel {
         NGOHeader = new javax.swing.JPanel();
         bloodonateLbl = new javax.swing.JLabel();
         headerUserName = new javax.swing.JLabel();
-        headerUserName1 = new javax.swing.JLabel();
+        logoutBtn = new javax.swing.JLabel();
         NGOMenu = new javax.swing.JPanel();
         organizeCampsBtn = new javax.swing.JPanel();
         OrgCampsLbl = new javax.swing.JLabel();
@@ -79,13 +82,13 @@ public class NGOManagementJPanel extends javax.swing.JPanel {
             }
         });
 
-        headerUserName1.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
-        headerUserName1.setForeground(new java.awt.Color(215, 215, 215));
-        headerUserName1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        headerUserName1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagesPackage/suraj/logout.png"))); // NOI18N
-        headerUserName1.addMouseListener(new java.awt.event.MouseAdapter() {
+        logoutBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        logoutBtn.setForeground(new java.awt.Color(215, 215, 215));
+        logoutBtn.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        logoutBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagesPackage/suraj/logout.png"))); // NOI18N
+        logoutBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                headerUserName1MousePressed(evt);
+                logoutBtnMousePressed(evt);
             }
         });
 
@@ -99,7 +102,7 @@ public class NGOManagementJPanel extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 798, Short.MAX_VALUE)
                 .addComponent(headerUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(headerUserName1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(logoutBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         NGOHeaderLayout.setVerticalGroup(
@@ -112,7 +115,7 @@ public class NGOManagementJPanel extends javax.swing.JPanel {
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, NGOHeaderLayout.createSequentialGroup()
                         .addGap(17, 17, 17)
                         .addGroup(NGOHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(headerUserName1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(logoutBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(bloodonateLbl))))
                 .addContainerGap(21, Short.MAX_VALUE))
         );
@@ -389,9 +392,14 @@ public class NGOManagementJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_headerUserNameMousePressed
 
-    private void headerUserName1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_headerUserName1MousePressed
+    private void logoutBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutBtnMousePressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_headerUserName1MousePressed
+        
+        Logout logout = new Logout(mainFrameCardLayout);
+        logout.logoutFunctionality();
+         
+        
+    }//GEN-LAST:event_logoutBtnMousePressed
     
     public void setBtnColor(JPanel panel) {
         
@@ -467,13 +475,13 @@ public class NGOManagementJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel campIcon;
     private javax.swing.JLabel donorIcon;
     private javax.swing.JLabel headerUserName;
-    private javax.swing.JLabel headerUserName1;
     private javax.swing.JPanel insightsBtn;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel10;
+    private javax.swing.JLabel logoutBtn;
     private javax.swing.JPanel manageDonorsBtn;
     private javax.swing.JPanel manageProfileBtn;
     private javax.swing.JLabel orgIcon;

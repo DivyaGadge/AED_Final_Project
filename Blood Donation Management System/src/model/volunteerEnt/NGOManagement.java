@@ -4,24 +4,38 @@
  */
 package model.volunteerEnt;
 
-import java.util.Date;
-
 /**
  *
  * @author surajvisvesh
  */
-public class Doctor {
-    
+public class NGOManagement {
     private String username;
     private String name;
     private String password;
-    private String hospitalUsername;
     private String email;
     private long phoneNo;
     private String street;
     private String city;
     private String state;
     private int pincode;
+    private String license_path;
+    private String approval_status;
+
+    public String getApproval_status() {
+        return approval_status;
+    }
+
+    public void setApproval_status(String approval_status) {
+        this.approval_status = approval_status;
+    }
+
+    public String getLicense_path() {
+        return license_path;
+    }
+
+    public void setLicense_path(String license_path) {
+        this.license_path = license_path;
+    }
 
     public String getUsername() {
         return username;
@@ -45,14 +59,6 @@ public class Doctor {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public String getHospitalUsername() {
-        return hospitalUsername;
-    }
-
-    public void setHospitalUsername(String hospitalUsername) {
-        this.hospitalUsername = hospitalUsername;
     }
 
     public String getEmail() {
@@ -103,5 +109,6 @@ public class Doctor {
         this.pincode = pincode;
     }
     
-
+    
+    
 }

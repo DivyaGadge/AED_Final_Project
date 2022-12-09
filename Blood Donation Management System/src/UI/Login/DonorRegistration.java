@@ -5,14 +5,12 @@
 package UI.Login;
 
 import Sql.SQLConnection;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import model.volunteerEnt.ngoManagement.NGOManagement;
+import model.volunteerEnt.Donor;
 
 /**
  *
@@ -77,12 +75,16 @@ public class DonorRegistration extends javax.swing.JPanel {
         dobTF = new com.toedter.calendar.JDateChooser();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        add(pincodeTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 500, 305, -1));
 
         stateError.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
         stateError.setForeground(new java.awt.Color(255, 51, 0));
         stateError.setText("Enter valid data");
+        add(stateError, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 330, -1, -1));
 
         dobLbl.setText("DateOfBirth");
+        add(dobLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 300, -1, -1));
 
         registerBtn2.setBackground(new java.awt.Color(106, 106, 106));
         registerBtn2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -112,265 +114,125 @@ public class DonorRegistration extends javax.swing.JPanel {
             .addComponent(registerLbl2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
         );
 
+        add(registerBtn2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 540, -1, -1));
+        add(usernameTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, 305, -1));
+
         nameError.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
         nameError.setForeground(new java.awt.Color(255, 51, 0));
         nameError.setText("Enter valid data");
+        add(nameError, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 140, -1, -1));
 
         usernameLbl.setText("Username*");
+        add(usernameLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, -1, -1));
 
         passLbl.setText("Password*");
+        add(passLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 210, -1, -1));
 
         passError.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
         passError.setForeground(new java.awt.Color(255, 51, 0));
         passError.setText("Enter valid data");
+        add(passError, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 230, -1, -1));
 
         stateLbl.setText("State*");
+        add(stateLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 390, -1, -1));
 
         emailError.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
         emailError.setForeground(new java.awt.Color(255, 51, 0));
         emailError.setText("Enter valid data");
+        add(emailError, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 50, -1, -1));
+        add(nameTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, 305, -1));
 
         phoneNoError.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
         phoneNoError.setForeground(new java.awt.Color(255, 51, 0));
         phoneNoError.setText("Enter valid data");
+        add(phoneNoError, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 140, -1, -1));
 
         passTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 passTFActionPerformed(evt);
             }
         });
+        add(passTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, 305, -1));
 
         streetError.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
         streetError.setForeground(new java.awt.Color(255, 51, 0));
         streetError.setText("Enter valid data");
+        add(streetError, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 240, -1, -1));
 
         emailLbl.setText("Email*");
+        add(emailLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 20, -1, -1));
 
         cityError.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
         cityError.setForeground(new java.awt.Color(255, 51, 0));
         cityError.setText("Enter valid data");
+        add(cityError, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 410, -1, -1));
 
         emailTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 emailTFActionPerformed(evt);
             }
         });
+        add(emailTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 40, 305, -1));
 
         usernameError.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
         usernameError.setForeground(new java.awt.Color(255, 51, 0));
         usernameError.setText("Enter valid data");
+        add(usernameError, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 40, -1, -1));
 
         phoneLbl.setText("Phone Number*");
+        add(phoneLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 120, -1, -1));
 
         dobError.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
         dobError.setForeground(new java.awt.Color(255, 51, 0));
         dobError.setText("Enter valid data");
+        add(dobError, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 320, -1, 30));
+        add(phoneTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 140, 305, -1));
 
         pinError.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
         pinError.setForeground(new java.awt.Color(255, 51, 0));
         pinError.setText("Enter valid data");
+        add(pinError, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 500, -1, -1));
 
         streetLbl.setText("Street Address*");
+        add(streetLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 210, -1, -1));
 
         streetTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 streetTFActionPerformed(evt);
             }
         });
+        add(streetTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 230, 305, -1));
 
         cityLbl.setText("City*");
+        add(cityLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 390, -1, -1));
 
         nameLbl.setText("Name*");
+        add(nameLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, -1, -1));
+        add(cityTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 410, 305, -1));
 
         stateCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "IllinoisIndiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "MontanaNebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "PennsylvaniaRhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming" }));
+        add(stateCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 410, 305, -1));
 
         pinLbl.setText("Pincode*");
+        add(pinLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 470, -1, -1));
 
         bldGropCB.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         bldGropCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-" }));
+        add(bldGropCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 330, 305, -1));
 
         bloodGrpLbl.setText("Blood Group*");
+        add(bloodGrpLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 310, -1, -1));
 
         NGOError.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
         NGOError.setForeground(new java.awt.Color(255, 51, 0));
         NGOError.setText("Enter valid data");
+        add(NGOError, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 490, -1, 20));
 
         NGOLbl.setText("NGO*");
+        add(NGOLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 470, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(90, 90, 90)
-                        .addComponent(usernameLbl)
-                        .addGap(466, 466, 466)
-                        .addComponent(emailLbl))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(90, 90, 90)
-                        .addComponent(usernameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(25, 25, 25)
-                        .addComponent(usernameError)
-                        .addGap(109, 109, 109)
-                        .addComponent(emailTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(15, 15, 15)
-                        .addComponent(emailError))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(90, 90, 90)
-                        .addComponent(nameLbl)
-                        .addGap(491, 491, 491)
-                        .addComponent(phoneLbl))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(90, 90, 90)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(nameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(15, 15, 15)
-                                .addComponent(nameError)
-                                .addGap(119, 119, 119)
-                                .addComponent(phoneTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(15, 15, 15)
-                                .addComponent(phoneNoError))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(passTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(15, 15, 15)
-                                        .addComponent(passError))
-                                    .addComponent(passLbl)
-                                    .addComponent(stateLbl)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(stateCB, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(15, 15, 15)
-                                        .addComponent(stateError))
-                                    .addComponent(streetLbl)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(streetTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(streetError))
-                                    .addComponent(dobLbl)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(dobTF, javax.swing.GroupLayout.DEFAULT_SIZE, 304, Short.MAX_VALUE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(dobError)))
-                                .addGap(116, 116, 116)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(bloodGrpLbl)
-                                    .addComponent(bldGropCB, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(NGOLbl)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(NGOCB, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(NGOError))
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(pincodeTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(21, 21, 21)
-                                            .addComponent(pinError))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                            .addComponent(pinLbl)
-                                            .addGap(365, 365, 365)))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(cityTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(15, 15, 15)
-                                        .addComponent(cityError))
-                                    .addComponent(cityLbl)))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(459, 459, 459)
-                        .addComponent(registerBtn2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(392, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(usernameLbl)
-                    .addComponent(emailLbl))
-                .addGap(3, 3, 3)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(usernameError)
-                        .addComponent(usernameTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(emailTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(emailError)))
-                .addGap(43, 43, 43)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(nameLbl)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(phoneLbl)))
-                .addGap(3, 3, 3)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(nameTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(nameError)
-                    .addComponent(phoneTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(phoneNoError))
-                .addGap(41, 41, 41)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(passLbl)
-                        .addGap(3, 3, 3)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(passTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(passError)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(bloodGrpLbl)
-                        .addGap(3, 3, 3)
-                        .addComponent(bldGropCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(6, 6, 6)))
-                .addGap(48, 48, 48)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(NGOLbl)
-                        .addGap(3, 3, 3)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(NGOError)
-                            .addComponent(NGOCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(43, 43, 43))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(dobLbl)
-                        .addGap(6, 6, 6)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(dobError)
-                            .addComponent(dobTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(streetLbl)
-                        .addGap(3, 3, 3))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(cityLbl)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cityTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cityError))
-                        .addGap(43, 43, 43)
-                        .addComponent(pinLbl)
-                        .addGap(3, 3, 3)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(pincodeTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(pinError)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(streetTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(streetError))
-                        .addGap(46, 46, 46)
-                        .addComponent(stateLbl)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(stateCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(stateError))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
-                .addComponent(registerBtn2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24))
-        );
+        add(NGOCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 490, 305, -1));
+        add(dobTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 324, 304, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void streetTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_streetTFActionPerformed
@@ -406,7 +268,25 @@ public class DonorRegistration extends javax.swing.JPanel {
 
     public void populateNGOCB() {
 
-//        query the unique NGOs with approval status approved
+        try{
+            Connection con = SQLConnection.establishConnection();
+            if (con!= null){
+                String query = "SELECT user_name FROM NGO";
+                Statement stmt = con.createStatement();
+                ResultSet rs = stmt.executeQuery(query);
+                
+                while(rs.next()){
+                    NGOCB.addItem(rs.getString("user_name"));
+                }
+            }
+            
+            
+            
+        } catch (Exception e) {
+            
+        }
+        
+        
 //        while(rs.next()){
 //            NGOCB.addItem(rs.getString("name"));
     }
@@ -416,7 +296,8 @@ public class DonorRegistration extends javax.swing.JPanel {
         boolean valid = true;
         long phoneNo = 0;
         int pincode = 0;
-
+        Date date = null;
+        String NGOCBvalue = null;
         String name = nameTF.getText();
         String username = usernameTF.getText();
         String email = emailTF.getText();
@@ -430,20 +311,15 @@ public class DonorRegistration extends javax.swing.JPanel {
         String street = streetTF.getText();
         String city = cityTF.getText();
         String state = stateCB.getSelectedItem().toString();
-        try {
-            Date date = dobTF.getDate();
-        } catch (NullPointerException e) {
-            dobError.setVisible(true);
-            valid = false;
-        }
+
+        date = dobTF.getDate();
         String bloodGroup = bldGropCB.getSelectedItem().toString();
         try{
-            String NGOCBvalue = NGOCB.getSelectedItem().toString();
-        } catch(Exception e) {
-            System.out.println("combo box error");
+            NGOCBvalue = NGOCB.getSelectedItem().toString();
+        } catch (NullPointerException e) {
+            NGOError.setVisible(true);
+            valid = false;
         }
-        
-
         try {
             pincode = Integer.parseInt(pincodeTF.getText());
         } catch (Exception e) {
@@ -487,54 +363,65 @@ public class DonorRegistration extends javax.swing.JPanel {
             pinError.setVisible(true);
             valid = false;
         }
+        if (date == null) {
+            dobError.setVisible(true);
+            valid = false;
+            
+        }
+        if (NGOCBvalue.isEmpty()){
+            NGOError.setVisible(true);
+            valid = false;
+        }
         if (valid) {
 
             System.out.println("Entered valid block.");
-//            NGOManagement ngo = new NGOManagement();
-//            ngo.setName(name);
-//            ngo.setUsername(username);
-//            ngo.setEmail(email);
-//            ngo.setPhoneNo(phoneNo);
-//            ngo.setCity(city);
-//            ngo.setStreet(street);
-//            ngo.setPassword(password);
-//            ngo.setPincode(pincode);
-//            ngo.setState(state);
-//
-//
-//            try {
-//                System.out.println("entered try block");
-//                Connection con = SQLConnection.establishConnection();
-//                System.out.println(con);
-//                if (con != null) {
-//                    System.out.println("entered if con not null block");
-//
-//                    String query = "INSERT INTO NGO(user_name, Name, Email, Password, Phone_number, Street_address, City, State, Pincode, license) VALUES(?,?,?,?,?,?,?,?,?,?)";
-//
-//                    PreparedStatement pstmt = con.prepareStatement(query);
-//                    pstmt.setString(1, username);
-//                    pstmt.setString(2, name);
-//                    pstmt.setString(3, email);
-//                    pstmt.setString(4, password);
-//                    pstmt.setLong(5, phoneNo);
-//                    pstmt.setString(6, street);
-//                    pstmt.setString(7, city);
-//                    pstmt.setString(8, state);
-//                    pstmt.setInt(9, pincode);
-//
-//
-//                    int count = pstmt.executeUpdate();
-//                    if (count == 1) {
-//                        emptyTF();
-//
-//                        JOptionPane.showMessageDialog(null, "Thanks for registering. We will notify you once your registration is approved.");
-//                        System.out.println("Email User.");
-//                    }
-//                }
-//            } catch (SQLException e) {
-//                JOptionPane.showMessageDialog(null, "User already exists. Please try a different username or email.", "Error!", JOptionPane.ERROR_MESSAGE);
-//
-//            }
+            Donor donor = new Donor(); 
+            donor.setName(name);
+            donor.setUsername(username);
+            donor.setEmail(email);
+            donor.setPhoneNo(phoneNo);
+            donor.setCity(city);
+            donor.setStreet(street);
+            donor.setPassword(password);
+            donor.setPincode(pincode);
+            donor.setState(state);
+            donor.setBloodGroup(bloodGroup);
+            donor.setNGOUsername(NGOCBvalue);
+            donor.setDate(date);
+
+            try {
+                System.out.println("entered try block");
+                Connection con = SQLConnection.establishConnection();
+                System.out.println(con);
+                if (con != null) {
+                    System.out.println("entered if con not null block");
+
+                    String query = "INSERT INTO NGO(user_name, Name, Email, Password, Phone_number, Street_address, City, State, Pincode, license) VALUES(?,?,?,?,?,?,?,?,?,?)";
+
+                    PreparedStatement pstmt = con.prepareStatement(query);
+                    pstmt.setString(1, username);
+                    pstmt.setString(2, name);
+                    pstmt.setString(3, email);
+                    pstmt.setString(4, password);
+                    pstmt.setLong(5, phoneNo);
+                    pstmt.setString(6, street);
+                    pstmt.setString(7, city);
+                    pstmt.setString(8, state);
+                    pstmt.setInt(9, pincode);
+
+
+                    int count = pstmt.executeUpdate();
+                    if (count == 1) {
+                        emptyTF();
+
+                        JOptionPane.showMessageDialog(null, "Thanks for registering. We will notify you once your registration is approved.");
+                        System.out.println("Email User.");
+                    }
+                }
+            } catch (SQLException e) {
+                JOptionPane.showMessageDialog(null, "User already exists. Please try a different username or email.", "Error!", JOptionPane.ERROR_MESSAGE);
+
+            }
         }
 
     }

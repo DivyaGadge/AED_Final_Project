@@ -2,13 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package model.volunteerEnt.ngoManagement;
+package model.SystemAdmin;
 
 /**
  *
  * @author surajvisvesh
  */
-public class NGOManagement {
+public class SystemAdmin {
     private String username;
     private String name;
     private String password;
@@ -18,24 +18,7 @@ public class NGOManagement {
     private String city;
     private String state;
     private int pincode;
-    private String license_path;
-    private String approval_status;
-
-    public String getApproval_status() {
-        return approval_status;
-    }
-
-    public void setApproval_status(String approval_status) {
-        this.approval_status = approval_status;
-    }
-
-    public String getLicense_path() {
-        return license_path;
-    }
-
-    public void setLicense_path(String license_path) {
-        this.license_path = license_path;
-    }
+    private String photo;
 
     public String getUsername() {
         return username;
@@ -107,6 +90,14 @@ public class NGOManagement {
 
     public void setPincode(int pincode) {
         this.pincode = pincode;
+    }
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
     }
     
     

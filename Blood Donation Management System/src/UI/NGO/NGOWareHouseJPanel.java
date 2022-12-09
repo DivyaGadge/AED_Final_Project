@@ -4,6 +4,9 @@
  */
 package UI.NGO;
 
+import java.awt.Color;
+import javax.swing.JPanel;
+
 /**
  *
  * @author surajvisvesh
@@ -278,9 +281,19 @@ public class NGOWareHouseJPanel extends javax.swing.JPanel {
 
     private void manageProfileBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_manageProfileBtnMousePressed
         // TODO add your handling code here:
-        
-    }//GEN-LAST:event_manageProfileBtnMousePressed
 
+    }//GEN-LAST:event_manageProfileBtnMousePressed
+    public void setBtnColor(JPanel panel) {
+
+        panel.setBackground(new Color(210, 75, 60));
+
+    }
+
+    public void resetBtnColor(JPanel panel) {
+
+        panel.setBackground(new Color(223, 85, 71));
+
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel CardLayoutNWHPanel;

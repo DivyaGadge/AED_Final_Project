@@ -48,7 +48,7 @@ public class RegistrationJPanel extends javax.swing.JPanel {
         registrationCardLayout.setLayout(new java.awt.CardLayout());
 
         userCB.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
-        userCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hospital Organization", "NGO Organization", "Bloodbank Organization", "Logistics Organization", "Equipments Provider Organization", "Donor" }));
+        userCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hospital Organization", "NGO Organization", "Bloodbank Organization", "Logistics Organization", "Equipments Provider", "Sample Tester", "Donor" }));
         userCB.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 userCBMousePressed(evt);
@@ -68,8 +68,8 @@ public class RegistrationJPanel extends javax.swing.JPanel {
                 .addGap(102, 102, 102)
                 .addComponent(helloLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(userCB, javax.swing.GroupLayout.PREFERRED_SIZE, 464, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(652, Short.MAX_VALUE))
+                .addComponent(userCB, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(827, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(registrationCardLayout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -113,10 +113,10 @@ public class RegistrationJPanel extends javax.swing.JPanel {
             case "Hospital Administration":
                 System.out.println("Selected Hospital");
                 registrationCardLayout.removeAll();
-                registrationCardLayout.add(new HospitalRegistrationJPanel());
+                registrationCardLayout.add(new OrgRegJPanel(userCBValue));
                 ((CardLayout) registrationCardLayout.getLayout()).next(registrationCardLayout);
                 break;
-            case "NGO Administration":
+            case "NGO Organization":
                 System.out.println("Selected Patient");
                 registrationCardLayout.removeAll();
                 registrationCardLayout.add(new OrgRegJPanel(userCBValue));

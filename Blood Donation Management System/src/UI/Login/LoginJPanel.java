@@ -6,6 +6,7 @@ package UI.Login;
 
 import Sql.SQLConnection;
 import UI.NGO.NGOManagementJPanel;
+import UI.SystemAdmin.SystemAdminJPanel;
 import java.awt.CardLayout;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -13,6 +14,7 @@ import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import model.Ecosystem.Mail;
 
 /**
  *
@@ -29,6 +31,8 @@ public class LoginJPanel extends javax.swing.JPanel {
         initComponents();
         this.mainFrameCardLayout = mainFrameCardLayout;
         errorVisibility();
+//        Mail mail = new Mail();
+        
     }
 
     /**
@@ -251,7 +255,7 @@ public class LoginJPanel extends javax.swing.JPanel {
                     usernameError.setVisible(true);
                 }
                 if (password.isEmpty()) {
-                    passError.setVisible(true);  
+                    passError.setVisible(true);
                     break;
                 } else if (!username.isEmpty() && !password.isEmpty()) {
                     try {
@@ -312,17 +316,22 @@ public class LoginJPanel extends javax.swing.JPanel {
 //            case "Equipment Supplier Organizaiton":
 //                System.out.println("Selected Patient");
 //                break;
+            case "System Admin":
+                System.out.println("Selected System Admin");
+                mainFrameCardLayout.removeAll();
+                mainFrameCardLayout.add(new SystemAdminJPanel(mainFrameCardLayout, username, userCBValue));
+                ((CardLayout) mainFrameCardLayout.getLayout()).next(mainFrameCardLayout);
+                break;
             default:
                 break;
         }
     }
 
-    public void errorVisibility(){
+    public void errorVisibility() {
         usernameError.setVisible(false);
         passError.setVisible(false);
     }
-    
-    
+
 //    public void registrationComboBoxFunctionality() {
 //        String userCBValue = userCB.getSelectedItem().toString();
 //        String username = usernameTF.getText();

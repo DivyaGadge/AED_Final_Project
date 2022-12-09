@@ -10,18 +10,19 @@ import java.util.Date;
  *
  * @author surajvisvesh
  */
-public class Doctor {
-    
+public class Donor {
     private String username;
     private String name;
     private String password;
-    private String hospitalUsername;
     private String email;
     private long phoneNo;
     private String street;
     private String city;
     private String state;
     private int pincode;
+    private Date dob;
+    private String bloodGroup;
+    private String NGOUsername;
 
     public String getUsername() {
         return username;
@@ -45,14 +46,6 @@ public class Doctor {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public String getHospitalUsername() {
-        return hospitalUsername;
-    }
-
-    public void setHospitalUsername(String hospitalUsername) {
-        this.hospitalUsername = hospitalUsername;
     }
 
     public String getEmail() {
@@ -102,6 +95,31 @@ public class Doctor {
     public void setPincode(int pincode) {
         this.pincode = pincode;
     }
-    
 
+    public Date getDate() {
+        return dob;
+    }
+
+    public void setDate(Date dob) {
+        this.dob = dob;
+    }
+
+    public String getBloodGroup() {
+        return bloodGroup;
+    }
+
+    public void setBloodGroup(String bloodGroup) {
+        this.bloodGroup = bloodGroup;
+    }
+
+    public String getNGOUsername() {
+        return NGOUsername;
+    }
+
+    public void setNGOUsername(String NGOUsername) {
+        this.NGOUsername = NGOUsername;
+    }
+    
+    
+    
 }
