@@ -137,31 +137,31 @@ public class ManageRegistration extends javax.swing.JPanel {
     public void openHosRegPanel() {
         System.out.println("Selected Bloodbank");
         manageRegCardLayout.removeAll();
-        manageRegCardLayout.add(new BloodbankRegistration());
+        manageRegCardLayout.add(new HospitalRegistration());
         ((CardLayout) manageRegCardLayout.getLayout()).next(manageRegCardLayout);
     }
     public void openDonorRegPanel() {
         System.out.println("Selected Bloodbank");
         manageRegCardLayout.removeAll();
-        manageRegCardLayout.add(new BloodbankRegistration());
+        manageRegCardLayout.add(new DonorRegistration());
         ((CardLayout) manageRegCardLayout.getLayout()).next(manageRegCardLayout);
     }
     public void openEquipRegPanel() {
         System.out.println("Selected Bloodbank");
         manageRegCardLayout.removeAll();
-        manageRegCardLayout.add(new BloodbankRegistration());
+        manageRegCardLayout.add(new EquipRegistration());
         ((CardLayout) manageRegCardLayout.getLayout()).next(manageRegCardLayout);
     }
     public void openLogRegPanel() {
         System.out.println("Selected Bloodbank");
         manageRegCardLayout.removeAll();
-        manageRegCardLayout.add(new BloodbankRegistration());
+        manageRegCardLayout.add(new LogisticsRegistration());
         ((CardLayout) manageRegCardLayout.getLayout()).next(manageRegCardLayout);
     }
     public void openSampTestRegPanel() {
         System.out.println("Selected Bloodbank");
         manageRegCardLayout.removeAll();
-        manageRegCardLayout.add(new BloodbankRegistration());
+        manageRegCardLayout.add(new SampleTestRegistration());
         ((CardLayout) manageRegCardLayout.getLayout()).next(manageRegCardLayout);
     }
 

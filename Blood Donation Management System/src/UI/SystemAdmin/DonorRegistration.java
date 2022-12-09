@@ -177,6 +177,22 @@ public class DonorRegistration extends javax.swing.JPanel {
     }//GEN-LAST:event_viewLicLblMousePressed
 
 
+    private void approveReqFunctionality() {
+        
+    }
+    
+    private void denyReqFunctionality() {
+        
+    }
+    
+    private void viewLicFunctionality() {
+        
+    }
+    
+    private void populateTable() {
+        
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel approveReqBtn;
     private javax.swing.JLabel approveReqLbl;

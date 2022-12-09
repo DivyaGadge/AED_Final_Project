@@ -176,6 +176,21 @@ public class LogisticsRegistration extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_viewLicLblMousePressed
 
+    private void approveReqFunctionality() {
+        
+    }
+    
+    private void denyReqFunctionality() {
+        
+    }
+    
+    private void viewLicFunctionality() {
+        
+    }
+    
+    private void populateTable() {
+        
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel approveReqBtn;
