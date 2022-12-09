@@ -37,10 +37,8 @@ public class LogisticsJPanel extends javax.swing.JPanel {
         hproIcon = new javax.swing.JLabel();
         inventoryBtn = new javax.swing.JPanel();
         ManageOrgLbl = new javax.swing.JLabel();
-        orgIcon = new javax.swing.JLabel();
         manageBloodBtn = new javax.swing.JPanel();
         manageBloodLbl = new javax.swing.JLabel();
-        bloodBagIcon = new javax.swing.JLabel();
         ManageDonorsPanel = new javax.swing.JPanel();
         ManageDonLbl = new javax.swing.JLabel();
         donorIcon = new javax.swing.JLabel();
@@ -116,17 +114,12 @@ public class LogisticsJPanel extends javax.swing.JPanel {
         ManageOrgLbl.setForeground(new java.awt.Color(215, 215, 215));
         ManageOrgLbl.setText("Pending Request");
 
-        orgIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        orgIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagesPackage/suraj/inventory_icon.png"))); // NOI18N
-
         javax.swing.GroupLayout inventoryBtnLayout = new javax.swing.GroupLayout(inventoryBtn);
         inventoryBtn.setLayout(inventoryBtnLayout);
         inventoryBtnLayout.setHorizontalGroup(
             inventoryBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, inventoryBtnLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(orgIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
+                .addGap(58, 58, 58)
                 .addComponent(ManageOrgLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
                 .addContainerGap())
         );
@@ -134,9 +127,7 @@ public class LogisticsJPanel extends javax.swing.JPanel {
             inventoryBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, inventoryBtnLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(inventoryBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ManageOrgLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
-                    .addComponent(orgIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(ManageOrgLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -153,17 +144,12 @@ public class LogisticsJPanel extends javax.swing.JPanel {
         manageBloodLbl.setForeground(new java.awt.Color(215, 215, 215));
         manageBloodLbl.setText("Active Request");
 
-        bloodBagIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        bloodBagIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagesPackage/suraj/logistics_truck.png"))); // NOI18N
-
         javax.swing.GroupLayout manageBloodBtnLayout = new javax.swing.GroupLayout(manageBloodBtn);
         manageBloodBtn.setLayout(manageBloodBtnLayout);
         manageBloodBtnLayout.setHorizontalGroup(
             manageBloodBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, manageBloodBtnLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(bloodBagIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
+                .addGap(58, 58, 58)
                 .addComponent(manageBloodLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
                 .addContainerGap())
         );
@@ -171,9 +157,7 @@ public class LogisticsJPanel extends javax.swing.JPanel {
             manageBloodBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(manageBloodBtnLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(manageBloodBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(manageBloodLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
-                    .addComponent(bloodBagIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(manageBloodLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -261,7 +245,6 @@ public class LogisticsJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel ManageOrgLbl;
     private javax.swing.JPanel NWHHeader;
     private javax.swing.JPanel NWHMenu;
-    private javax.swing.JLabel bloodBagIcon;
     private javax.swing.JLabel bloodonateLbl;
     private javax.swing.JLabel donorIcon;
     private javax.swing.JLabel hproIcon;
@@ -269,6 +252,5 @@ public class LogisticsJPanel extends javax.swing.JPanel {
     private javax.swing.JPanel manageBloodBtn;
     private javax.swing.JLabel manageBloodLbl;
     private javax.swing.JPanel manageHospProfileBtn;
-    private javax.swing.JLabel orgIcon;
     // End of variables declaration//GEN-END:variables
 }

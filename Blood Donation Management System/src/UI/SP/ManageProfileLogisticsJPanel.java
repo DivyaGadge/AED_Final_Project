@@ -4,6 +4,7 @@
  */
 package UI.SP;
 
+import UI.Hospital.*;
 import UI.BB.*;
 
 
@@ -44,6 +45,11 @@ public class ManageProfileLogisticsJPanel extends javax.swing.JPanel {
         cityLbl = new javax.swing.JLabel();
         cityTF = new javax.swing.JTextField();
         stateLbl = new javax.swing.JLabel();
+        licenseLbl = new javax.swing.JLabel();
+        viewLicBtn = new javax.swing.JPanel();
+        viewLicLbl = new javax.swing.JLabel();
+        updateLicBtn = new javax.swing.JPanel();
+        updateLicLbl = new javax.swing.JLabel();
         updateProfileBtn = new javax.swing.JPanel();
         updateProfileLbl = new javax.swing.JLabel();
         stateCB = new javax.swing.JComboBox<>();
@@ -56,7 +62,7 @@ public class ManageProfileLogisticsJPanel extends javax.swing.JPanel {
         userNameLbl.setForeground(new java.awt.Color(153, 153, 153));
         userNameLbl.setText("User Name - Delete the text later");
 
-        nameLbl.setText("Name");
+        nameLbl.setText("Logistics Org Name");
 
         passLbl.setText("Password");
 
@@ -88,6 +94,56 @@ public class ManageProfileLogisticsJPanel extends javax.swing.JPanel {
 
         stateLbl.setText("State");
 
+        licenseLbl.setText("Logistics License");
+
+        viewLicBtn.setBackground(new java.awt.Color(106, 106, 106));
+
+        viewLicLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        viewLicLbl.setForeground(new java.awt.Color(255, 255, 255));
+        viewLicLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        viewLicLbl.setText("View License");
+
+        javax.swing.GroupLayout viewLicBtnLayout = new javax.swing.GroupLayout(viewLicBtn);
+        viewLicBtn.setLayout(viewLicBtnLayout);
+        viewLicBtnLayout.setHorizontalGroup(
+            viewLicBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(viewLicBtnLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(viewLicLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        viewLicBtnLayout.setVerticalGroup(
+            viewLicBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(viewLicBtnLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(viewLicLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        updateLicBtn.setBackground(new java.awt.Color(106, 106, 106));
+
+        updateLicLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        updateLicLbl.setForeground(new java.awt.Color(255, 255, 255));
+        updateLicLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        updateLicLbl.setText("Update License");
+
+        javax.swing.GroupLayout updateLicBtnLayout = new javax.swing.GroupLayout(updateLicBtn);
+        updateLicBtn.setLayout(updateLicBtnLayout);
+        updateLicBtnLayout.setHorizontalGroup(
+            updateLicBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, updateLicBtnLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(updateLicLbl)
+                .addContainerGap())
+        );
+        updateLicBtnLayout.setVerticalGroup(
+            updateLicBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(updateLicBtnLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(updateLicLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
         updateProfileBtn.setBackground(new java.awt.Color(106, 106, 106));
 
         updateProfileLbl.setBackground(new java.awt.Color(215, 215, 215));
@@ -101,9 +157,9 @@ public class ManageProfileLogisticsJPanel extends javax.swing.JPanel {
         updateProfileBtnLayout.setHorizontalGroup(
             updateProfileBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(updateProfileBtnLayout.createSequentialGroup()
-                .addGap(43, 43, 43)
+                .addGap(45, 45, 45)
                 .addComponent(updateProfileLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(47, Short.MAX_VALUE))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
         updateProfileBtnLayout.setVerticalGroup(
             updateProfileBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -129,6 +185,7 @@ public class ManageProfileLogisticsJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(72, 72, 72)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(pinTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(nameLbl)
                     .addComponent(nameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(passTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -145,10 +202,17 @@ public class ManageProfileLogisticsJPanel extends javax.swing.JPanel {
                     .addComponent(emailTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(pinlbl)
                     .addComponent(userNameLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 978, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(updateProfileBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(pinTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(140, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(licenseLbl)
+                        .addGap(18, 18, 18)
+                        .addComponent(viewLicBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(updateLicBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(72, Short.MAX_VALUE)
+                .addComponent(updateProfileBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(808, 808, 808))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -187,9 +251,14 @@ public class ManageProfileLogisticsJPanel extends javax.swing.JPanel {
                 .addComponent(pinlbl)
                 .addGap(5, 5, 5)
                 .addComponent(pinTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
+                .addGap(14, 14, 14)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(updateLicBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(licenseLbl)
+                    .addComponent(viewLicBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                 .addComponent(updateProfileBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(74, Short.MAX_VALUE))
+                .addGap(29, 29, 29))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -215,6 +284,7 @@ public class ManageProfileLogisticsJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField cityTF;
     private javax.swing.JLabel emailLbl;
     private javax.swing.JTextField emailTF;
+    private javax.swing.JLabel licenseLbl;
     private javax.swing.JLabel nameLbl;
     private javax.swing.JTextField nameTF;
     private javax.swing.JLabel passLbl;
@@ -227,8 +297,12 @@ public class ManageProfileLogisticsJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel stateLbl;
     private javax.swing.JLabel streetLbl;
     private javax.swing.JTextField streetTF;
+    private javax.swing.JPanel updateLicBtn;
+    private javax.swing.JLabel updateLicLbl;
     private javax.swing.JPanel updateProfileBtn;
     private javax.swing.JLabel updateProfileLbl;
     private javax.swing.JLabel userNameLbl;
+    private javax.swing.JPanel viewLicBtn;
+    private javax.swing.JLabel viewLicLbl;
     // End of variables declaration//GEN-END:variables
 }
