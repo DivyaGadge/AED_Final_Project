@@ -21,13 +21,13 @@ public class NGOManagementJPanel extends javax.swing.JPanel {
      * Creates new form NGOManagementJPanel
      */
     JPanel mainFrameCardLayout;
-    String ngom_username;
-    public NGOManagementJPanel(JPanel mainFrameCardLayout, String ngom_username) {
+    String username;
+    public NGOManagementJPanel(JPanel mainFrameCardLayout, String username) {
         initComponents();
         this.mainFrameCardLayout = mainFrameCardLayout;
-        this.ngom_username = ngom_username;
+        this.username = username;
         
-        headerUserName.setText(ngom_username);
+        headerUserName.setText(username);
     }
 
     /**

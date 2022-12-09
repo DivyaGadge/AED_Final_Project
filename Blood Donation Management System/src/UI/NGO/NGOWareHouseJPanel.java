@@ -7,6 +7,7 @@ package UI.NGO;
 import java.awt.CardLayout;
 import java.awt.Color;
 import javax.swing.JPanel;
+import model.Ecosystem.Logout;
 
 /**
  *
@@ -24,7 +25,7 @@ public class NGOWareHouseJPanel extends javax.swing.JPanel {
         initComponents();
         this.username = username;
         this.mainFrameCardLayout = mainFrameCardLayout;
-        
+        headerUserName.setText(username);
     }
 
     /**
@@ -38,6 +39,8 @@ public class NGOWareHouseJPanel extends javax.swing.JPanel {
 
         NWHHeader = new javax.swing.JPanel();
         bloodonateLbl = new javax.swing.JLabel();
+        headerUserName = new javax.swing.JLabel();
+        logoutBtn = new javax.swing.JLabel();
         NWHMenu = new javax.swing.JPanel();
         manageProfileBtn = new javax.swing.JPanel();
         ManageProLbl = new javax.swing.JLabel();
@@ -63,6 +66,25 @@ public class NGOWareHouseJPanel extends javax.swing.JPanel {
         bloodonateLbl.setText("BLOODONATE");
         bloodonateLbl.setDebugGraphicsOptions(javax.swing.DebugGraphics.FLASH_OPTION);
 
+        headerUserName.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        headerUserName.setForeground(new java.awt.Color(215, 215, 215));
+        headerUserName.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        headerUserName.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                headerUserNameMousePressed(evt);
+            }
+        });
+
+        logoutBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        logoutBtn.setForeground(new java.awt.Color(215, 215, 215));
+        logoutBtn.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        logoutBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagesPackage/suraj/logout.png"))); // NOI18N
+        logoutBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                logoutBtnMousePressed(evt);
+            }
+        });
+
         javax.swing.GroupLayout NWHHeaderLayout = new javax.swing.GroupLayout(NWHHeader);
         NWHHeader.setLayout(NWHHeaderLayout);
         NWHHeaderLayout.setHorizontalGroup(
@@ -70,13 +92,21 @@ public class NGOWareHouseJPanel extends javax.swing.JPanel {
             .addGroup(NWHHeaderLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(bloodonateLbl)
-                .addContainerGap(1168, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 798, Short.MAX_VALUE)
+                .addComponent(headerUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(logoutBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         NWHHeaderLayout.setVerticalGroup(
             NWHHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(NWHHeaderLayout.createSequentialGroup()
                 .addGap(17, 17, 17)
-                .addComponent(bloodonateLbl)
+                .addGroup(NWHHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(NWHHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(headerUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(logoutBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(bloodonateLbl))
                 .addContainerGap(18, Short.MAX_VALUE))
         );
 
@@ -322,6 +352,18 @@ public class NGOWareHouseJPanel extends javax.swing.JPanel {
         inventoryBtnFunctionality();
         
     }//GEN-LAST:event_inventoryLblMousePressed
+
+    private void headerUserNameMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_headerUserNameMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_headerUserNameMousePressed
+
+    private void logoutBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutBtnMousePressed
+        // TODO add your handling code here:
+
+        Logout logout = new Logout(mainFrameCardLayout);
+        logout.logoutFunctionality();
+
+    }//GEN-LAST:event_logoutBtnMousePressed
     public void setBtnColor(JPanel panel) {
 
         panel.setBackground(new Color(210, 75, 60));
@@ -385,12 +427,14 @@ public class NGOWareHouseJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel bloodBagIcon;
     private javax.swing.JLabel bloodonateLbl;
     private javax.swing.JLabel donorIcon;
+    private javax.swing.JLabel headerUserName;
     private javax.swing.JPanel inventoryBtn;
     private javax.swing.JLabel inventoryLbl;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JPanel logisticsBtn;
+    private javax.swing.JLabel logoutBtn;
     private javax.swing.JLabel manageBloodLbl;
     private javax.swing.JPanel manageProfileBtn;
     private javax.swing.JLabel orgIcon;

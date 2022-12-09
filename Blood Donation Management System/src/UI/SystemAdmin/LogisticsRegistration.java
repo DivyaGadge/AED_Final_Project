@@ -191,6 +191,8 @@ public class LogisticsRegistration extends javax.swing.JPanel {
     private void populateTable() {
         
     }
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel approveReqBtn;

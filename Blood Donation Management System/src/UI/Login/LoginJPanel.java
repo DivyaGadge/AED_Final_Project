@@ -33,6 +33,7 @@ public class LoginJPanel extends javax.swing.JPanel {
         initComponents();
         this.mainFrameCardLayout = mainFrameCardLayout;
         errorVisibility();
+        clearTFs();
 //        Mail mail = new Mail();
 
     }
@@ -205,9 +206,15 @@ public class LoginJPanel extends javax.swing.JPanel {
 
         add(usernamePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 370, -1, -1));
 
-        userCB.setFont(new java.awt.Font("Helvetica Neue", 3, 16)); // NOI18N
+        userCB.setFont(new java.awt.Font("Helvetica Neue", 1, 16)); // NOI18N
+        userCB.setForeground(new java.awt.Color(102, 102, 102));
         userCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Doctor", "System Admin", "Hospital Organization", "Donor", "NGO Organization", "Hospital Warehouse", "NGO Warehouse", "NGO Blood Collection" }));
         userCB.setBorder(null);
+        userCB.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                userCBMousePressed(evt);
+            }
+        });
         add(userCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 280, 320, 50));
 
         usernameLbl1.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
@@ -245,6 +252,12 @@ public class LoginJPanel extends javax.swing.JPanel {
     private void passTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passTFActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_passTFActionPerformed
+
+    private void userCBMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userCBMousePressed
+        // TODO add your handling code here:
+        errorVisibility();
+        clearTFs();
+    }//GEN-LAST:event_userCBMousePressed
 
     public void loginBtnFunctionality() {
         errorVisibility();
@@ -307,24 +320,30 @@ public class LoginJPanel extends javax.swing.JPanel {
                 mainFrameCardLayout.add(new NGOBloodColJPanel(mainFrameCardLayout, username));
                 ((CardLayout) mainFrameCardLayout.getLayout()).next(mainFrameCardLayout);
                 break;
-//            case "NGO Administration":
-//                System.out.println("Selected Patient");
-//                break;
-//            case "Bloodbank Administration":
-//                System.out.println("Selected Patient");
-//                break;
-//            case "Bloodbank Warehouse":
-//                System.out.println("Selected Patient");
-//                break;
-//            case "Sample Testing Organization":
-//                System.out.println("Selected Patient");
-//                break;
-//            case "Logistics Organization":
-//                System.out.println("Selected Patient");
-//                break;
-//            case "Equipment Supplier Organizaiton":
-//                System.out.println("Selected Patient");
-//                break;
+            case "Donor":
+                System.out.println("Selected Patient");
+                break;
+            case "Hospital Organization":
+                System.out.println("Selected Patient");
+                break;
+            case "Bloodbank Organization":
+                System.out.println("Selected Patient");
+                break;
+            case "Doctor":
+                System.out.println("Selected Patient");
+                break;
+            case "Bloodbank Warehouse":
+                System.out.println("Selected Patient");
+                break;
+            case "Sample Tester":
+                System.out.println("Selected Patient");
+                break;
+            case "Logistics Organization":
+                System.out.println("Selected Patient");
+                break;
+            case "Equipments Provider":
+                System.out.println("Selected Patient");
+                break;
             case "System Admin":
                 System.out.println("Selected System Admin");
                 mainFrameCardLayout.removeAll();
@@ -339,6 +358,11 @@ public class LoginJPanel extends javax.swing.JPanel {
     public void errorVisibility() {
         usernameError.setVisible(false);
         passError.setVisible(false);
+    }
+    
+    private void clearTFs() {
+        usernameTF.setText("");
+        passTF.setText("");
     }
 
 //    public void registrationComboBoxFunctionality() {
