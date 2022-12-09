@@ -33,6 +33,7 @@ public class BBWHorderHistory extends javax.swing.JPanel {
         pastOrderLbl = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setPreferredSize(new java.awt.Dimension(1142, 630));
 
         BBWHorderHistoryTbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

@@ -36,6 +36,7 @@ public class BBWHmanageReqPanel extends javax.swing.JPanel {
         jComboBox1 = new javax.swing.JComboBox<>();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setPreferredSize(new java.awt.Dimension(1142, 630));
 
         BBWHequipInventoryTbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

@@ -9,7 +9,7 @@ package model.BBEnt;
  * @author prishaa
  */
 public class BBMgmt {
-      private String username;
+    private String username;
     private String name;
     private String password;
     private String email;
