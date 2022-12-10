@@ -8,7 +8,7 @@ package model.BBEnt;
  *
  * @author prishaa
  */
-public class BBMgmt {
+public class BBMgmt extends BloodBankEnterprise {
     private String username;
     private String name;
     private String password;

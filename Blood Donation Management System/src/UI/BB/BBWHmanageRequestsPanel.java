@@ -6,7 +6,6 @@ package UI.BB;
 
 import java.awt.CardLayout;
 
-
 /**
  *
  * @author prishaa
@@ -131,13 +130,13 @@ public class BBWHmanageRequestsPanel extends javax.swing.JPanel {
 
     private void orderHistLblMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_orderHistLblMousePressed
         // TODO add your handling code here:
-       orderHistoryFunctionality();
+        orderHistoryFunctionality();
     }//GEN-LAST:event_orderHistLblMousePressed
 
     private void pendingReqBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pendingReqBtnMousePressed
         // TODO add your handling code here:
-      pendingOrderFunctionality();
-       
+        pendingOrderFunctionality();
+
     }//GEN-LAST:event_pendingReqBtnMousePressed
 
     private void pendingReqLblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pendingReqLblMouseClicked
@@ -147,9 +146,9 @@ public class BBWHmanageRequestsPanel extends javax.swing.JPanel {
 
     private void orderHistBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_orderHistBtnMouseClicked
         // TODO add your handling code here:
-      orderHistoryFunctionality();
+        orderHistoryFunctionality();
     }//GEN-LAST:event_orderHistBtnMouseClicked
-    
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel manageWHReqCardLayout;
@@ -159,16 +158,15 @@ public class BBWHmanageRequestsPanel extends javax.swing.JPanel {
     private javax.swing.JLabel pendingReqLbl;
     // End of variables declaration//GEN-END:variables
 
-   
-private void pendingOrderFunctionality(){
-    manageWHReqCardLayout.removeAll();
+    private void pendingOrderFunctionality() {
+        manageWHReqCardLayout.removeAll();
         manageWHReqCardLayout.add(new BBWHmanageReqPanel());
         ((CardLayout) manageWHReqCardLayout.getLayout()).next(manageWHReqCardLayout);
-}
+    }
 
-private void orderHistoryFunctionality(){
-     manageWHReqCardLayout.removeAll();
+    private void orderHistoryFunctionality() {
+        manageWHReqCardLayout.removeAll();
         manageWHReqCardLayout.add(new BBWHorderHistory());
         ((CardLayout) manageWHReqCardLayout.getLayout()).next(manageWHReqCardLayout);
-}
+    }
 }
