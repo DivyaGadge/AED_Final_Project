@@ -4,7 +4,7 @@
  */
 package UI.Hospital;
 
-import UI.NGO.*;
+
 import java.awt.CardLayout;
 
 /**
@@ -85,25 +85,11 @@ public class HospitalInventoryJPanel extends javax.swing.JPanel {
     private void viewInventoryLblMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewInventoryLblMousePressed
         // TODO add your handling code here:
         
-        viewInventoryBtnFunctionality();
+     
         
     }//GEN-LAST:event_viewInventoryLblMousePressed
     
-    public void viewInventoryBtnFunctionality() {
-        
-        manageInventoryCardLayout.removeAll();
-        manageInventoryCardLayout.add(new ViewInventoryNWHJPanel());
-        ((CardLayout) manageInventoryCardLayout.getLayout()).next(manageInventoryCardLayout);
-        
-    }
     
-    public void orderEquipBtnFunctionality() {
-        
-        manageInventoryCardLayout.removeAll();
-        manageInventoryCardLayout.add(new OrderEquipmentsNWHJPanel());
-        ((CardLayout) manageInventoryCardLayout.getLayout()).next(manageInventoryCardLayout);
-        
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel manageInventoryCardLayout;

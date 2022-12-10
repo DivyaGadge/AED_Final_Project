@@ -4,7 +4,6 @@
  */
 package UI.Hospital;
 
-import UI.NGO.*;
 
 /**
  *
@@ -83,7 +82,6 @@ public class HospitalWareHouseJPanel extends javax.swing.JPanel {
 
         hproIcon.setBackground(new java.awt.Color(204, 204, 204));
         hproIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        hproIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagesPackage/profile_icon.png"))); // NOI18N
 
         javax.swing.GroupLayout manageHospProfileBtnLayout = new javax.swing.GroupLayout(manageHospProfileBtn);
         manageHospProfileBtn.setLayout(manageHospProfileBtnLayout);
@@ -113,7 +111,6 @@ public class HospitalWareHouseJPanel extends javax.swing.JPanel {
         ManageOrgLbl.setText("Order Equipment");
 
         orgIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        orgIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagesPackage/suraj/inventory_icon.png"))); // NOI18N
 
         javax.swing.GroupLayout inventoryBtnLayout = new javax.swing.GroupLayout(inventoryBtn);
         inventoryBtn.setLayout(inventoryBtnLayout);
@@ -150,7 +147,6 @@ public class HospitalWareHouseJPanel extends javax.swing.JPanel {
         manageBloodLbl.setText("Manage Blood");
 
         bloodBagIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        bloodBagIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagesPackage/suraj/logistics_truck.png"))); // NOI18N
 
         javax.swing.GroupLayout manageBloodBtnLayout = new javax.swing.GroupLayout(manageBloodBtn);
         manageBloodBtn.setLayout(manageBloodBtnLayout);

@@ -4,7 +4,7 @@
  */
 package UI.Hospital;
 
-import java.awt.CardLayout;
+//import java.awt.CardLayout;
 
 /**
  *
@@ -114,7 +114,7 @@ public class ListofBBJPanel extends javax.swing.JPanel {
 
     private void ReqtoBBBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ReqtoBBBtnMouseClicked
         // TODO add your handling code here:
-        requesttoBB();
+//        requesttoBB();
     }//GEN-LAST:event_ReqtoBBBtnMouseClicked
 
 
@@ -126,10 +126,10 @@ public class ListofBBJPanel extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 
-    private void requesttoBB() {
-        CardLayoutHPanel.removeAll();
-        CardLayoutHPanel.add(new ManageRequestJPanel());
-        ((CardLayout) CardLayoutHPanel.getLayout()).next(CardLayoutHPanel);
-    }
+//    private void requesttoBB() {
+//        CardLayoutHPanel.removeAll();
+//        CardLayoutHPanel.add(new ManageRequestJPanel());
+//        ((CardLayout) CardLayoutHPanel.getLayout()).next(CardLayoutHPanel);
+//    }
 
 }

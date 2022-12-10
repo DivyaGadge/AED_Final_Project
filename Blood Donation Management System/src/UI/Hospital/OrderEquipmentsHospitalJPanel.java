@@ -4,7 +4,7 @@
  */
 package UI.Hospital;
 
-import UI.NGO.*;
+
 
 /**
  *

@@ -122,14 +122,14 @@ public class ManageandCreateHospitalUsersJPanel extends javax.swing.JPanel {
 
     private void createHUserLblMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_createHUserLblMousePressed
         // TODO add your handling code here:
-        
-        
-        
+
+        createHUserBtnFunctionality();
+
     }//GEN-LAST:event_createHUserLblMousePressed
 
     private void manageHUserLblMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_manageHUserLblMousePressed
         // TODO add your handling code here:
-       
+        manageHUserBtnFunctionality();
     }//GEN-LAST:event_manageHUserLblMousePressed
 
     private void createHUserBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_createHUserBtnMouseClicked
@@ -139,10 +139,9 @@ public class ManageandCreateHospitalUsersJPanel extends javax.swing.JPanel {
 
     private void manageHUserBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_manageHUserBtnMouseClicked
         // TODO add your handling code here:
-         manageHUserBtnFunctionality();
+        manageHUserBtnFunctionality();
     }//GEN-LAST:event_manageHUserBtnMouseClicked
-    
-   
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel createHUserBtn;
