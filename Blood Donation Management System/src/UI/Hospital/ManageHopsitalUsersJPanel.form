@@ -50,14 +50,10 @@
                                       <Component id="streetHT" alignment="0" min="-2" pref="305" max="-2" attributes="0"/>
                                       <Component id="cityHLbl" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="cityHT" alignment="0" min="-2" pref="305" max="-2" attributes="0"/>
-                                      <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="pinLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="pinT" alignment="0" min="-2" pref="305" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="stateHLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="stateHT" alignment="0" min="-2" pref="305" max="-2" attributes="0"/>
-                                      </Group>
+                                      <Component id="pinLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="pinT" alignment="0" min="-2" pref="305" max="-2" attributes="0"/>
+                                      <Component id="stateHLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="stateHT" alignment="0" min="-2" pref="305" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="152" max="-2" attributes="0"/>
                               </Group>

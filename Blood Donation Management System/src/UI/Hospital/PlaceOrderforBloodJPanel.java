@@ -16,6 +16,14 @@ public class PlaceOrderforBloodJPanel extends javax.swing.JPanel {
     public PlaceOrderforBloodJPanel() {
         initComponents();
     }
+    
+    private void populateBloodTable(){
+        
+    }
+    
+    private void placeOrder(){
+        
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.

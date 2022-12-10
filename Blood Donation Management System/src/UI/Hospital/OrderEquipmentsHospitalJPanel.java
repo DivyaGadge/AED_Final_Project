@@ -18,6 +18,22 @@ public class OrderEquipmentsHospitalJPanel extends javax.swing.JPanel {
     public OrderEquipmentsHospitalJPanel() {
         initComponents();
     }
+    
+    private void populatesearchentry(){
+        
+    }
+    
+    private void populateequipmentTable(){
+        
+    }
+    
+    private void quantityTable(){
+        
+    }
+    
+    private void orderHEquipment(){
+        
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.

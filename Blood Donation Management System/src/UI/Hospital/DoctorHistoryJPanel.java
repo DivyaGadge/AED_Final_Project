@@ -16,6 +16,10 @@ public class DoctorHistoryJPanel extends javax.swing.JPanel {
     public DoctorHistoryJPanel() {
         initComponents();
     }
+    
+    private void populateDocHistoryTable(){
+        
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.

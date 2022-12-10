@@ -16,6 +16,18 @@ public class AvailableBloodListJPanel extends javax.swing.JPanel {
     public AvailableBloodListJPanel() {
         initComponents();
     }
+    
+    private void populateBloodTypeTable(){
+        
+    } 
+    
+    private void populatePatientTable(){
+        
+    }
+    
+    private void assignBloodBtnFunctionality() {
+        
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.

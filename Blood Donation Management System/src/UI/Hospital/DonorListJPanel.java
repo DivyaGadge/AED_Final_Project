@@ -18,6 +18,14 @@ public class DonorListJPanel extends javax.swing.JPanel {
     public DonorListJPanel() {
         initComponents();
     }
+    
+    private void populateDonorDetailsTable(){
+        
+    }
+    
+    private void populateVitalSingsTable(){
+        
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.

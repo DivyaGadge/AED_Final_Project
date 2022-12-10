@@ -18,6 +18,18 @@ public class EquipmentInventoryJPanel extends javax.swing.JPanel {
     public EquipmentInventoryJPanel() {
         initComponents();
     }
+    
+    private void addbloodkitdetails(){
+        
+    }
+    
+    private void updatebloodkitdetails(){
+        
+    }
+    
+    private void populateBloodkitTable(){
+        
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.

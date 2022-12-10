@@ -18,6 +18,14 @@ public class ListofBBJPanel extends javax.swing.JPanel {
     public ListofBBJPanel() {
         initComponents();
     }
+    
+    private void populateListofBBTable(){
+        
+    }
+    
+    private void reqtoBBTable(){
+        
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.

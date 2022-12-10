@@ -18,6 +18,21 @@ public class LogisticsPendingOrdJPanel extends javax.swing.JPanel {
     public LogisticsPendingOrdJPanel() {
         initComponents();
     }
+    
+    
+    private void populatependingorderstable(){
+        
+    }
+    
+    
+    private void acceptOrderL(){
+        
+    }
+    
+    
+    private void denyOrderL(){
+        
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.

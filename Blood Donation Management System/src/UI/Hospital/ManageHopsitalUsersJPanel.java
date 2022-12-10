@@ -22,6 +22,14 @@ public class ManageHopsitalUsersJPanel extends javax.swing.JPanel {
         initComponents();
         
     }
+    
+    private void populateHospitalUserDetailsTable(){
+        
+    }
+    
+    private void updateUserDetails(){
+        
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.

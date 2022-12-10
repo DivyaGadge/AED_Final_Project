@@ -19,6 +19,13 @@ public class ViewInventoryHospitalJPanel extends javax.swing.JPanel {
         initComponents();
     }
 
+    private void populateInventryTable(){
+        
+    }
+    
+    private void populateOrderNewEquimentTable(){
+        
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
