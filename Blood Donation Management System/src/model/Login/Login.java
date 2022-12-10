@@ -45,15 +45,16 @@ public class Login {
                 if (con != null) {
                     System.out.println("entered if con not null block");
 
-                    String query = "SELECT user_name, Password FROM Doctor WHERE user_name=('" + username + "')";
+                    String query = "SELECT user_name, Password FROM NGO WHERE user_name=('" + username + "')";
                     Statement stmt = con.createStatement();
                     ResultSet rs = stmt.executeQuery(query);
 
                     if (rs.next()) {
                         System.out.println("entered if rs. block");
-                        String password_sql = rs.getString("password");
+                        String password_sql = rs.getString("Password");
+                        System.out.println(password_sql);
                         String username_sql = rs.getString("user_name");
-                        if (password.equals(password_sql)) {
+                        if (this.password.equals(password_sql)) {
 
                             mainFrameCardLayout.removeAll();
                             mainFrameCardLayout.add(new NGOManagementJPanel(mainFrameCardLayout, username_sql));
@@ -62,6 +63,7 @@ public class Login {
                             break;
                         } else {
                             JOptionPane.showMessageDialog(null, username + ", Please enter correct password", "error message", JOptionPane.ERROR_MESSAGE);
+                        break;
                         }
 
                     } else {
@@ -70,6 +72,7 @@ public class Login {
                     }
                 }
             } catch (SQLException ex) {
+                ex.printStackTrace();
                 Logger.getLogger(LoginJPanel.class.getName()).log(Level.SEVERE, null, ex);
             }
 
@@ -205,11 +208,13 @@ public class Login {
                         }
 
                     } else {
+                        
                         JOptionPane.showMessageDialog(null, "You are not registered. Please register with us to login.", "error message", JOptionPane.ERROR_MESSAGE);
                         break;
                     }
                 }
             } catch (SQLException ex) {
+                ex.printStackTrace();
                 Logger.getLogger(LoginJPanel.class.getName()).log(Level.SEVERE, null, ex);
             }
             case "Hospital Warehouse":

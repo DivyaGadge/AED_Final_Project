@@ -23,6 +23,7 @@ public class ManageCampNGOJPanel extends javax.swing.JPanel {
         initComponents();
         errorVisibility();
         this.manageCamp = new ManageCampNGO();
+        populateCampsTable();
     }
 
     /**
@@ -64,7 +65,6 @@ public class ManageCampNGOJPanel extends javax.swing.JPanel {
         streetError = new javax.swing.JLabel();
         dateError = new javax.swing.JLabel();
         cityError = new javax.swing.JLabel();
-        stateError = new javax.swing.JLabel();
         pinError = new javax.swing.JLabel();
         latitudeError = new javax.swing.JLabel();
         longitudeError = new javax.swing.JLabel();
@@ -192,10 +192,6 @@ public class ManageCampNGOJPanel extends javax.swing.JPanel {
         cityError.setForeground(new java.awt.Color(255, 51, 0));
         cityError.setText("Enter Valid Input");
 
-        stateError.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
-        stateError.setForeground(new java.awt.Color(255, 51, 0));
-        stateError.setText("Enter Valid Input");
-
         pinError.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
         pinError.setForeground(new java.awt.Color(255, 51, 0));
         pinError.setText("Enter Valid Input");
@@ -265,7 +261,6 @@ public class ManageCampNGOJPanel extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(cityError)
-                            .addComponent(stateError)
                             .addComponent(pinError)
                             .addComponent(longitudeError))
                         .addGap(136, 136, 136))))
@@ -331,9 +326,7 @@ public class ManageCampNGOJPanel extends javax.swing.JPanel {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(stateLbl)
                                         .addGap(6, 6, 6)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(stateCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(stateError))
+                                        .addComponent(stateCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
                                         .addComponent(pincodeLbl)
                                         .addGap(6, 6, 6)
@@ -355,17 +348,10 @@ public class ManageCampNGOJPanel extends javax.swing.JPanel {
     public void populateCampsTable() {
         int selectedRowIndex = campTable.getSelectedRow();
 
-        if (selectedRowIndex < 0) {
-            JOptionPane.showMessageDialog(this, "Please select a camp to end.");
-            return;
-        }
 
         DefaultTableModel model = (DefaultTableModel) campTable.getModel();
-        int camp_id = (int) model.getValueAt(selectedRowIndex, 0);
-        
-        System.out.println(camp_id);
-        
-        manageCamp.populateTable(camp_id, model);
+       
+        manageCamp.populateTable(model);
         
         
     }
@@ -380,6 +366,7 @@ public class ManageCampNGOJPanel extends javax.swing.JPanel {
         pinError.setVisible(false);
         latitudeError.setVisible(false);
         longitudeError.setVisible(false);
+        
 
     }
 
@@ -435,7 +422,6 @@ public class ManageCampNGOJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField searchTF;
     private javax.swing.JLabel serachIconLbl;
     private javax.swing.JComboBox<String> stateCB;
-    private javax.swing.JLabel stateError;
     private javax.swing.JLabel stateLbl;
     private javax.swing.JLabel streetError;
     private javax.swing.JLabel streetLbl;

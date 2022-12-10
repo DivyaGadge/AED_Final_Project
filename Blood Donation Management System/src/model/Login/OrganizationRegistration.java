@@ -87,7 +87,7 @@ public class OrganizationRegistration {
 
                             JOptionPane.showMessageDialog(null, "Thanks for registering. We will notify you once your registration is approved.");
                             Mail.sendEmailMessage(email, "Thanks for registering with BLOODONATE. We will update you once your account is approved.");
-
+                            break;
                         }
                     }
                 } catch (SQLException ex) {
@@ -290,6 +290,7 @@ public class OrganizationRegistration {
             }
 
         }
+
     }
 
 }

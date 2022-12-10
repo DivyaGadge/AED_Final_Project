@@ -14,9 +14,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class ManageCampNGO {
     
-    
-    @SuppressWarnings("empty-statement")
-    public ResultSet populateTable(int camp_id, DefaultTableModel model) {
+    public ResultSet populateTable(DefaultTableModel model) {
         
         try {
                 System.out.println("entered try block");
@@ -25,7 +23,7 @@ public class ManageCampNGO {
                 if (con != null) {
                     System.out.println("entered if con not null block");
 
-                    String query = "SELECT * FROM Camps WHERE camp_id=('" + camp_id + "')";
+                    String query = "SELECT * FROM Camps WHERE status='open'";
                     Statement stmt = con.createStatement();
                     ResultSet rs = stmt.executeQuery(query);
 
@@ -45,7 +43,7 @@ public class ManageCampNGO {
                         String status = rs.getString("status");
                         
                         Object row[] = {campId, campName, campDate, city, state, latitude, longitude, status};
-                        model.addRow(row);
+                        model.insertRow(0,row);
                     }
                 }
             } catch (SQLException ex) {

@@ -22,7 +22,7 @@ public class CreateCampNGO {
         try {
             Connection con = SQLConnection.establishConnection();
             if (con != null) {
-                String query = "INSERT INTO Camps(ngo_username, campName, campDate, Street_address, latitude, longitude, City, State, Pincode, BB_username, status) VALUES(?,?,?,?,?,?,?,?,?,?)";
+                String query = "INSERT INTO Camps(ngo_username, campName, campDate, Street_address, latitude, longitude, City, State, Pincode, BB_username, status) VALUES(?,?,?,?,?,?,?,?,?,?,?)";
 
                 PreparedStatement pstmt = con.prepareStatement(query);
                 pstmt.setString(1, ngo_username);
@@ -46,6 +46,7 @@ public class CreateCampNGO {
 
             }
         } catch (SQLException ex) {
+            ex.printStackTrace();
             System.out.println("insert camp ");
 
         }
@@ -57,13 +58,12 @@ public class CreateCampNGO {
         try {
             Connection con = SQLConnection.establishConnection();
             if (con != null) {
-                String query = "SELECT user_name FROM BB TABLE";
+                String query = "SELECT user_name FROM BloodBank_Org";
                 Statement stmt = con.createStatement();
                 ResultSet rs = stmt.executeQuery(query);
                 while (rs.next()) {
                     BBCB.addItem(rs.getString("user_name"));
                 }
-//                Execute the sql query
             }
 
         } catch (SQLException e) {

@@ -86,7 +86,6 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="cityError" min="-2" max="-2" attributes="0"/>
-                          <Component id="stateError" min="-2" max="-2" attributes="0"/>
                           <Component id="pinError" min="-2" max="-2" attributes="0"/>
                           <Component id="longitudeError" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -166,10 +165,7 @@
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Component id="stateLbl" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="stateCB" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="stateError" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
+                                      <Component id="stateCB" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Component id="pincodeLbl" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
@@ -535,17 +531,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="cityError">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Helvetica Neue" size="13" style="2"/>
-        </Property>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="0" green="33" red="ff" type="rgb"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Enter Valid Input"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="stateError">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Helvetica Neue" size="13" style="2"/>

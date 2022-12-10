@@ -285,7 +285,9 @@ public class CreateOrgNGOJPanel extends javax.swing.JPanel {
         }
 
         if (valid) {
+
             createOrg.insertOrg(username, ngo_username, name, email, password, phoneNo, street, city, state, pincode);
+            emptyTF();
         }
 
     }

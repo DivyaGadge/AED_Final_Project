@@ -60,7 +60,6 @@ public class CreateCampNGOJPanel extends javax.swing.JPanel {
         streetError = new javax.swing.JLabel();
         dateError = new javax.swing.JLabel();
         cityError = new javax.swing.JLabel();
-        stateError = new javax.swing.JLabel();
         pinError = new javax.swing.JLabel();
         latitudeError = new javax.swing.JLabel();
         longitudeError = new javax.swing.JLabel();
@@ -120,6 +119,11 @@ public class CreateCampNGOJPanel extends javax.swing.JPanel {
         organizeCampLbl.setForeground(new java.awt.Color(255, 255, 255));
         organizeCampLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         organizeCampLbl.setText("OrganizeCamp");
+        organizeCampLbl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                organizeCampLblMousePressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout organizeCampBtnLayout = new javax.swing.GroupLayout(organizeCampBtn);
         organizeCampBtn.setLayout(organizeCampBtnLayout);
@@ -149,11 +153,6 @@ public class CreateCampNGOJPanel extends javax.swing.JPanel {
         cityError.setForeground(new java.awt.Color(255, 51, 0));
         cityError.setText("Enter Valid Input");
         add(cityError, new org.netbeans.lib.awtextra.AbsoluteConstraints(421, 307, -1, -1));
-
-        stateError.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
-        stateError.setForeground(new java.awt.Color(255, 51, 0));
-        stateError.setText("Enter Valid Input");
-        add(stateError, new org.netbeans.lib.awtextra.AbsoluteConstraints(421, 371, -1, -1));
 
         pinError.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
         pinError.setForeground(new java.awt.Color(255, 51, 0));
@@ -185,6 +184,15 @@ public class CreateCampNGOJPanel extends javax.swing.JPanel {
     private void streetTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_streetTFActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_streetTFActionPerformed
+
+    private void organizeCampLblMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_organizeCampLblMousePressed
+        try {
+            // TODO add your handling code here:
+            organizeCampBtnFunctionality();
+        } catch (SQLException ex) {
+            Logger.getLogger(CreateCampNGOJPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_organizeCampLblMousePressed
 
     public void organizeCampBtnFunctionality() throws SQLException {
 
@@ -244,10 +252,6 @@ public class CreateCampNGOJPanel extends javax.swing.JPanel {
             cityError.setVisible(true);
             valid = false;
         }
-        if (state.isEmpty()) {
-            stateError.setVisible(true);
-            valid = false;
-        }
         if (!(Integer.toString(pincode).length() >= 5 || Integer.toString(pincode).length() <= 6)) {
             pinError.setVisible(true);
             valid = false;
@@ -257,6 +261,7 @@ public class CreateCampNGOJPanel extends javax.swing.JPanel {
             
             createCamp.insertCamp(name, ngo_username, BBOrg, campDate, latitude, longitude, street, city, state, pincode, status);
             emptyTF();
+            errorVisibility();
             
         }
 
@@ -273,6 +278,7 @@ public class CreateCampNGOJPanel extends javax.swing.JPanel {
         pinError.setVisible(false);
         latitudeError.setVisible(false);
         longitudeError.setVisible(false);
+        
 
     }
 
@@ -309,7 +315,6 @@ public class CreateCampNGOJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel pinError;
     private javax.swing.JTextField pinTF;
     private javax.swing.JComboBox<String> stateCB;
-    private javax.swing.JLabel stateError;
     private javax.swing.JLabel stateLbl;
     private javax.swing.JLabel stateLbl1;
     private javax.swing.JLabel stateLbl2;
