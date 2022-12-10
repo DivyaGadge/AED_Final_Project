@@ -26,138 +26,93 @@ public class NWHProfileJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        streetTF = new javax.swing.JTextField();
-        emailLbl = new javax.swing.JLabel();
         userNameLbl = new javax.swing.JLabel();
-        stateCB = new javax.swing.JComboBox<>();
-        emailTF = new javax.swing.JTextField();
         cityLbl = new javax.swing.JLabel();
+        stateTF = new javax.swing.JTextField();
         nameLbl = new javax.swing.JLabel();
-        phoneLbl = new javax.swing.JLabel();
         cityTF = new javax.swing.JTextField();
         passLbl = new javax.swing.JLabel();
         stateLbl = new javax.swing.JLabel();
-        phoneTF = new javax.swing.JTextField();
         nameTF = new javax.swing.JTextField();
-        streetLbl = new javax.swing.JLabel();
+        phoneLbl = new javax.swing.JLabel();
         passTF = new javax.swing.JTextField();
+        phoneTF = new javax.swing.JTextField();
+        emailLbl = new javax.swing.JLabel();
+        streetLbl = new javax.swing.JLabel();
+        emailTF = new javax.swing.JTextField();
+        streetTF = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(255, 255, 255));
-
-        streetTF.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                streetTFActionPerformed(evt);
-            }
-        });
-
-        emailLbl.setText("Email");
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         userNameLbl.setFont(new java.awt.Font("Helvetica Neue", 2, 20)); // NOI18N
         userNameLbl.setForeground(new java.awt.Color(153, 153, 153));
         userNameLbl.setText("User Name - Delete the text later");
-
-        stateCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "IllinoisIndiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "MontanaNebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "PennsylvaniaRhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming" }));
-
-        emailTF.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                emailTFActionPerformed(evt);
-            }
-        });
+        add(userNameLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(73, 6, 978, -1));
 
         cityLbl.setText("City");
+        add(cityLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(73, 518, -1, -1));
+        add(stateTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(73, 629, 305, -1));
 
         nameLbl.setText("Name");
-
-        phoneLbl.setText("Phone");
+        add(nameLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(73, 81, -1, -1));
+        add(cityTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(73, 541, 305, -1));
 
         passLbl.setText("Password");
+        add(passLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(73, 168, -1, -1));
 
         stateLbl.setText("State");
+        add(stateLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(73, 606, -1, -1));
+        add(nameTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(73, 104, 305, -1));
 
-        streetLbl.setText("Street Address");
+        phoneLbl.setText("Phone");
+        add(phoneLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(73, 343, -1, -1));
 
         passTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 passTFActionPerformed(evt);
             }
         });
+        add(passTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(73, 191, 305, -1));
+        add(phoneTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(73, 366, 305, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(72, 72, 72)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(nameLbl)
-                            .addComponent(nameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(passLbl)
-                            .addComponent(passTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(emailLbl)
-                            .addComponent(emailTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(phoneLbl)
-                            .addComponent(phoneTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(streetLbl)
-                            .addComponent(streetTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cityLbl)
-                            .addComponent(cityTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(stateLbl)
-                            .addComponent(stateCB, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(userNameLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 978, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(92, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(userNameLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(nameLbl)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(nameTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(passLbl)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(passTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(emailLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(emailTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(phoneLbl)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(phoneTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(streetLbl)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(streetTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(cityLbl)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cityTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(stateLbl)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(stateCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(191, Short.MAX_VALUE))
-        );
+        emailLbl.setText("Email");
+        add(emailLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(73, 256, -1, -1));
+
+        streetLbl.setText("Street Address");
+        add(streetLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(73, 429, -1, -1));
+
+        emailTF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                emailTFActionPerformed(evt);
+            }
+        });
+        add(emailTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(73, 279, 305, -1));
+
+        streetTF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                streetTFActionPerformed(evt);
+            }
+        });
+        add(streetTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(73, 452, 305, -1));
     }// </editor-fold>//GEN-END:initComponents
-
-    private void streetTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_streetTFActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_streetTFActionPerformed
-
-    private void emailTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailTFActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_emailTFActionPerformed
 
     private void passTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passTFActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_passTFActionPerformed
 
+    private void emailTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailTFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_emailTFActionPerformed
+
+    private void streetTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_streetTFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_streetTFActionPerformed
+
+    private void populateTFs() {
+//        code to populate the TFs
+    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel cityLbl;
@@ -170,8 +125,8 @@ public class NWHProfileJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField passTF;
     private javax.swing.JLabel phoneLbl;
     private javax.swing.JTextField phoneTF;
-    private javax.swing.JComboBox<String> stateCB;
     private javax.swing.JLabel stateLbl;
+    private javax.swing.JTextField stateTF;
     private javax.swing.JLabel streetLbl;
     private javax.swing.JTextField streetTF;
     private javax.swing.JLabel userNameLbl;

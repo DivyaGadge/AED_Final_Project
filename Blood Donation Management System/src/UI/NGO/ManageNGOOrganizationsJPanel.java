@@ -15,8 +15,10 @@ public class ManageNGOOrganizationsJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ManageNGOOrganizationsJPanel
      */
-    public ManageNGOOrganizationsJPanel() {
+    String ngo_username;
+    public ManageNGOOrganizationsJPanel(String ngo_username) {
         initComponents();
+        this.ngo_username = ngo_username;
     }
 
     /**
@@ -133,7 +135,7 @@ public class ManageNGOOrganizationsJPanel extends javax.swing.JPanel {
     public void createOrgBtnFunctionality() {
         
         manageOrgCardLayout.removeAll();
-        manageOrgCardLayout.add(new CreateOrgNGOJPanel());
+        manageOrgCardLayout.add(new CreateOrgNGOJPanel(ngo_username));
         ((CardLayout) manageOrgCardLayout.getLayout()).next(manageOrgCardLayout);
         
     }

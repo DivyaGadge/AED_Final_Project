@@ -4,6 +4,11 @@
  */
 package UI.NGO;
 
+import java.awt.CardLayout;
+import java.awt.Color;
+import javax.swing.JPanel;
+import model.Ecosystem.Logout;
+
 /**
  *
  * @author surajvisvesh
@@ -13,8 +18,14 @@ public class NGOWareHouseJPanel extends javax.swing.JPanel {
     /**
      * Creates new form NGOWareHouseJPanel
      */
-    public NGOWareHouseJPanel() {
+    
+    JPanel mainFrameCardLayout;
+    String username;
+    public NGOWareHouseJPanel(JPanel mainFrameCardLayout, String username) {
         initComponents();
+        this.username = username;
+        this.mainFrameCardLayout = mainFrameCardLayout;
+        headerUserName.setText(username);
     }
 
     /**
@@ -28,14 +39,16 @@ public class NGOWareHouseJPanel extends javax.swing.JPanel {
 
         NWHHeader = new javax.swing.JPanel();
         bloodonateLbl = new javax.swing.JLabel();
+        headerUserName = new javax.swing.JLabel();
+        logoutBtn = new javax.swing.JLabel();
         NWHMenu = new javax.swing.JPanel();
         manageProfileBtn = new javax.swing.JPanel();
         ManageProLbl = new javax.swing.JLabel();
         proIcon = new javax.swing.JLabel();
         inventoryBtn = new javax.swing.JPanel();
-        ManageOrgLbl = new javax.swing.JLabel();
+        inventoryLbl = new javax.swing.JLabel();
         orgIcon = new javax.swing.JLabel();
-        manageBloodBtn = new javax.swing.JPanel();
+        logisticsBtn = new javax.swing.JPanel();
         manageBloodLbl = new javax.swing.JLabel();
         bloodBagIcon = new javax.swing.JLabel();
         ManageDonorsPanel = new javax.swing.JPanel();
@@ -46,12 +59,31 @@ public class NGOWareHouseJPanel extends javax.swing.JPanel {
         jLabel7 = new javax.swing.JLabel();
         CardLayoutNWHPanel = new javax.swing.JPanel();
 
-        NWHHeader.setBackground(new java.awt.Color(207, 98, 98));
+        NWHHeader.setBackground(new java.awt.Color(223, 85, 71));
 
         bloodonateLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 36)); // NOI18N
         bloodonateLbl.setForeground(new java.awt.Color(215, 215, 215));
         bloodonateLbl.setText("BLOODONATE");
         bloodonateLbl.setDebugGraphicsOptions(javax.swing.DebugGraphics.FLASH_OPTION);
+
+        headerUserName.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        headerUserName.setForeground(new java.awt.Color(215, 215, 215));
+        headerUserName.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        headerUserName.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                headerUserNameMousePressed(evt);
+            }
+        });
+
+        logoutBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        logoutBtn.setForeground(new java.awt.Color(215, 215, 215));
+        logoutBtn.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        logoutBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagesPackage/suraj/logout.png"))); // NOI18N
+        logoutBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                logoutBtnMousePressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout NWHHeaderLayout = new javax.swing.GroupLayout(NWHHeader);
         NWHHeader.setLayout(NWHHeaderLayout);
@@ -60,21 +92,29 @@ public class NGOWareHouseJPanel extends javax.swing.JPanel {
             .addGroup(NWHHeaderLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(bloodonateLbl)
-                .addContainerGap(1168, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 798, Short.MAX_VALUE)
+                .addComponent(headerUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(logoutBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         NWHHeaderLayout.setVerticalGroup(
             NWHHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(NWHHeaderLayout.createSequentialGroup()
                 .addGap(17, 17, 17)
-                .addComponent(bloodonateLbl)
+                .addGroup(NWHHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(NWHHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(headerUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(logoutBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(bloodonateLbl))
                 .addContainerGap(18, Short.MAX_VALUE))
         );
 
-        NWHMenu.setBackground(new java.awt.Color(207, 98, 98));
+        NWHMenu.setBackground(new java.awt.Color(223, 85, 71));
         NWHMenu.setPreferredSize(new java.awt.Dimension(220, 700));
         NWHMenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        manageProfileBtn.setBackground(new java.awt.Color(230, 98, 98));
+        manageProfileBtn.setBackground(new java.awt.Color(223, 85, 71));
         manageProfileBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 manageProfileBtnMousePressed(evt);
@@ -84,6 +124,11 @@ public class NGOWareHouseJPanel extends javax.swing.JPanel {
         ManageProLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         ManageProLbl.setForeground(new java.awt.Color(215, 215, 215));
         ManageProLbl.setText("Manage Profile");
+        ManageProLbl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                ManageProLblMousePressed(evt);
+            }
+        });
 
         proIcon.setBackground(new java.awt.Color(204, 204, 204));
         proIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -110,11 +155,16 @@ public class NGOWareHouseJPanel extends javax.swing.JPanel {
 
         NWHMenu.add(manageProfileBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 280, -1));
 
-        inventoryBtn.setBackground(new java.awt.Color(230, 98, 98));
+        inventoryBtn.setBackground(new java.awt.Color(223, 85, 71));
 
-        ManageOrgLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
-        ManageOrgLbl.setForeground(new java.awt.Color(215, 215, 215));
-        ManageOrgLbl.setText("Inventory");
+        inventoryLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        inventoryLbl.setForeground(new java.awt.Color(215, 215, 215));
+        inventoryLbl.setText("Inventory");
+        inventoryLbl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                inventoryLblMousePressed(evt);
+            }
+        });
 
         orgIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         orgIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagesPackage/suraj/inventory_icon.png"))); // NOI18N
@@ -127,7 +177,7 @@ public class NGOWareHouseJPanel extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(orgIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
-                .addComponent(ManageOrgLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
+                .addComponent(inventoryLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
                 .addContainerGap())
         );
         inventoryBtnLayout.setVerticalGroup(
@@ -135,51 +185,56 @@ public class NGOWareHouseJPanel extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, inventoryBtnLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(inventoryBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ManageOrgLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
+                    .addComponent(inventoryLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
                     .addComponent(orgIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
         NWHMenu.add(inventoryBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 280, -1));
 
-        manageBloodBtn.setBackground(new java.awt.Color(230, 98, 98));
-        manageBloodBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+        logisticsBtn.setBackground(new java.awt.Color(223, 85, 71));
+        logisticsBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                manageBloodBtnMousePressed(evt);
+                logisticsBtnMousePressed(evt);
             }
         });
 
         manageBloodLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         manageBloodLbl.setForeground(new java.awt.Color(215, 215, 215));
         manageBloodLbl.setText("Logistics");
+        manageBloodLbl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                manageBloodLblMousePressed(evt);
+            }
+        });
 
         bloodBagIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         bloodBagIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagesPackage/suraj/logistics_truck.png"))); // NOI18N
 
-        javax.swing.GroupLayout manageBloodBtnLayout = new javax.swing.GroupLayout(manageBloodBtn);
-        manageBloodBtn.setLayout(manageBloodBtnLayout);
-        manageBloodBtnLayout.setHorizontalGroup(
-            manageBloodBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, manageBloodBtnLayout.createSequentialGroup()
+        javax.swing.GroupLayout logisticsBtnLayout = new javax.swing.GroupLayout(logisticsBtn);
+        logisticsBtn.setLayout(logisticsBtnLayout);
+        logisticsBtnLayout.setHorizontalGroup(
+            logisticsBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, logisticsBtnLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(bloodBagIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
                 .addComponent(manageBloodLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        manageBloodBtnLayout.setVerticalGroup(
-            manageBloodBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(manageBloodBtnLayout.createSequentialGroup()
+        logisticsBtnLayout.setVerticalGroup(
+            logisticsBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(logisticsBtnLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(manageBloodBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(logisticsBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(manageBloodLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
                     .addComponent(bloodBagIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
-        NWHMenu.add(manageBloodBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 280, -1));
+        NWHMenu.add(logisticsBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 280, -1));
 
-        ManageDonorsPanel.setBackground(new java.awt.Color(230, 98, 98));
+        ManageDonorsPanel.setBackground(new java.awt.Color(223, 85, 71));
 
         ManageDonLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         ManageDonLbl.setForeground(new java.awt.Color(215, 215, 215));
@@ -208,7 +263,7 @@ public class NGOWareHouseJPanel extends javax.swing.JPanel {
 
         NWHMenu.add(ManageDonorsPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 280, -1));
 
-        jPanel9.setBackground(new java.awt.Color(230, 98, 98));
+        jPanel9.setBackground(new java.awt.Color(223, 85, 71));
 
         jLabel9.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(215, 215, 215));
@@ -271,33 +326,115 @@ public class NGOWareHouseJPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void manageBloodBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_manageBloodBtnMousePressed
+    private void logisticsBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logisticsBtnMousePressed
         // TODO add your handling code here:
-
-    }//GEN-LAST:event_manageBloodBtnMousePressed
+        logisticsBtnFunctionality();
+    }//GEN-LAST:event_logisticsBtnMousePressed
 
     private void manageProfileBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_manageProfileBtnMousePressed
         // TODO add your handling code here:
-        
+        manageProfileBtnFunctionality();
     }//GEN-LAST:event_manageProfileBtnMousePressed
 
+    private void ManageProLblMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ManageProLblMousePressed
+        // TODO add your handling code here:
+        manageProfileBtnFunctionality();
+        
+    }//GEN-LAST:event_ManageProLblMousePressed
+
+    private void manageBloodLblMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_manageBloodLblMousePressed
+        // TODO add your handling code here:
+        logisticsBtnFunctionality();
+    }//GEN-LAST:event_manageBloodLblMousePressed
+
+    private void inventoryLblMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inventoryLblMousePressed
+        // TODO add your handling code here:
+        inventoryBtnFunctionality();
+        
+    }//GEN-LAST:event_inventoryLblMousePressed
+
+    private void headerUserNameMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_headerUserNameMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_headerUserNameMousePressed
+
+    private void logoutBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutBtnMousePressed
+        // TODO add your handling code here:
+
+        Logout logout = new Logout(mainFrameCardLayout);
+        logout.logoutFunctionality();
+
+    }//GEN-LAST:event_logoutBtnMousePressed
+    public void setBtnColor(JPanel panel) {
+
+        panel.setBackground(new Color(210, 75, 60));
+
+    }
+
+    public void resetBtnColor(JPanel panel) {
+
+        panel.setBackground(new Color(223, 85, 71));
+
+    }
+    
+    public void manageProfileBtnFunctionality(){
+        
+        setBtnColor(manageProfileBtn);
+        resetBtnColor(inventoryBtn);
+        resetBtnColor(logisticsBtn);
+        
+        
+        CardLayoutNWHPanel.removeAll();
+        CardLayoutNWHPanel.add(new NWHProfileJPanel());
+        ((CardLayout) CardLayoutNWHPanel.getLayout()).next(CardLayoutNWHPanel);
+        
+    }
+    
+    public void inventoryBtnFunctionality(){
+        
+        setBtnColor(inventoryBtn);
+        resetBtnColor(manageProfileBtn);
+        resetBtnColor(logisticsBtn);
+        
+        CardLayoutNWHPanel.removeAll();
+        CardLayoutNWHPanel.add(new NWHInventoryJPanel());
+        ((CardLayout)CardLayoutNWHPanel.getLayout()).next(CardLayoutNWHPanel);
+        
+        
+    }
+    
+    public void logisticsBtnFunctionality(){
+        
+        setBtnColor(logisticsBtn);
+        resetBtnColor(inventoryBtn);
+        resetBtnColor(manageProfileBtn);
+        
+        
+        CardLayoutNWHPanel.removeAll();
+        CardLayoutNWHPanel.add(new NWHLogisticsJPanel());
+        ((CardLayout) CardLayoutNWHPanel.getLayout()).next(CardLayoutNWHPanel);
+        
+    }
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel CardLayoutNWHPanel;
     private javax.swing.JLabel ManageDonLbl;
     private javax.swing.JPanel ManageDonorsPanel;
-    private javax.swing.JLabel ManageOrgLbl;
     private javax.swing.JLabel ManageProLbl;
     private javax.swing.JPanel NWHHeader;
     private javax.swing.JPanel NWHMenu;
     private javax.swing.JLabel bloodBagIcon;
     private javax.swing.JLabel bloodonateLbl;
     private javax.swing.JLabel donorIcon;
+    private javax.swing.JLabel headerUserName;
     private javax.swing.JPanel inventoryBtn;
+    private javax.swing.JLabel inventoryLbl;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel9;
-    private javax.swing.JPanel manageBloodBtn;
+    private javax.swing.JPanel logisticsBtn;
+    private javax.swing.JLabel logoutBtn;
     private javax.swing.JLabel manageBloodLbl;
     private javax.swing.JPanel manageProfileBtn;
     private javax.swing.JLabel orgIcon;

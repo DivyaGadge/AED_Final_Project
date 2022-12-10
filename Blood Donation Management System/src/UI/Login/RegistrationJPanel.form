@@ -28,8 +28,8 @@
               <EmptySpace min="-2" pref="102" max="-2" attributes="0"/>
               <Component id="helloLbl" min="-2" pref="210" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="userCB" min="-2" pref="464" max="-2" attributes="0"/>
-              <EmptySpace pref="652" max="32767" attributes="0"/>
+              <Component id="userCB" min="-2" pref="289" max="-2" attributes="0"/>
+              <EmptySpace pref="827" max="32767" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
@@ -80,13 +80,14 @@
           <Font name="Helvetica Neue" size="18" style="1"/>
         </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="6">
+          <StringArray count="7">
             <StringItem index="0" value="Hospital Organization"/>
             <StringItem index="1" value="NGO Organization"/>
             <StringItem index="2" value="Bloodbank Organization"/>
             <StringItem index="3" value="Logistics Organization"/>
-            <StringItem index="4" value="Equipments Provider Organization"/>
-            <StringItem index="5" value="Donor"/>
+            <StringItem index="4" value="Equipments Provider"/>
+            <StringItem index="5" value="Sample Tester"/>
+            <StringItem index="6" value="Donor"/>
           </StringArray>
         </Property>
       </Properties>

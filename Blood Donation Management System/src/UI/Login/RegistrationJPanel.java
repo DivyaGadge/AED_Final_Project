@@ -17,6 +17,7 @@ public class RegistrationJPanel extends javax.swing.JPanel {
      * Creates new form RegistrationPanel
      */
     JPanel loginCardLayout;
+
     public RegistrationJPanel(JPanel loginCardLayout) {
         initComponents();
         this.loginCardLayout = loginCardLayout;
@@ -48,7 +49,7 @@ public class RegistrationJPanel extends javax.swing.JPanel {
         registrationCardLayout.setLayout(new java.awt.CardLayout());
 
         userCB.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
-        userCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hospital Organization", "NGO Organization", "Bloodbank Organization", "Logistics Organization", "Equipments Provider Organization", "Donor" }));
+        userCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hospital Organization", "NGO Organization", "Bloodbank Organization", "Logistics Organization", "Equipments Provider", "Sample Tester", "Donor" }));
         userCB.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 userCBMousePressed(evt);
@@ -68,8 +69,8 @@ public class RegistrationJPanel extends javax.swing.JPanel {
                 .addGap(102, 102, 102)
                 .addComponent(helloLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(userCB, javax.swing.GroupLayout.PREFERRED_SIZE, 464, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(652, Short.MAX_VALUE))
+                .addComponent(userCB, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(827, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(registrationCardLayout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -96,55 +97,48 @@ public class RegistrationJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         registrationComboBoxFunctionality();
     }//GEN-LAST:event_userCBActionPerformed
-    
-    
+
     public void registrationComboBoxFunctionality() {
-        String userCBValue = userCB.getSelectedItem().toString();
-        switch (userCBValue) {
+        String userType = userCB.getSelectedItem().toString();
+        switch (userType) {
             case "Donor":
-                System.out.println("Selected doctor");
-                registrationCardLayout.removeAll();
-                registrationCardLayout.add(new DonorRegistration());
-                ((CardLayout) registrationCardLayout.getLayout()).next(registrationCardLayout);
+                donorReg(userType);
                 break;
-            case "Patient":
-                System.out.println("Selected Patient");
+
+            case "Hospital Organization":
+                organizationReg(userType);
                 break;
-            case "Hospital Administration":
-                System.out.println("Selected Hospital");
-                registrationCardLayout.removeAll();
-                registrationCardLayout.add(new HospitalRegistrationJPanel());
-                ((CardLayout) registrationCardLayout.getLayout()).next(registrationCardLayout);
+
+            case "NGO Organization":
+                organizationReg(userType);
                 break;
-            case "NGO Administration":
-                System.out.println("Selected Patient");
-                registrationCardLayout.removeAll();
-                registrationCardLayout.add(new OrgRegJPanel(userCBValue));
-                ((CardLayout) registrationCardLayout.getLayout()).next(registrationCardLayout);
-                break;
-            case "Bloodbank Administration":
-                System.out.println("Selected Patient");
-                break;
-            case "Bloodbank Warehouse":
-                System.out.println("Selected Patient");
-                break;
-            case "Sample Testing Organization":
-                System.out.println("Selected Patient");
+            case "Bloodbank Organization":
+                organizationReg(userType);
                 break;
             case "Logistics Organization":
-                System.out.println("Selected Patient");
+                organizationReg(userType);
                 break;
-            case "Equipment Supplier Organizaiton":
-                System.out.println("Selected Patient");
+            case "Equipments Provider":
+                organizationReg(userType);
                 break;
             default:
                 break;
         }
-        
-        
-        
+
     }
-    
+
+    private void donorReg(String userType) {
+        registrationCardLayout.removeAll();
+        registrationCardLayout.add(new DonorRegistration());
+        ((CardLayout) registrationCardLayout.getLayout()).next(registrationCardLayout);
+    }
+
+    private void organizationReg(String userType) {
+        registrationCardLayout.removeAll();
+        registrationCardLayout.add(new OrgRegJPanel(userType));
+        ((CardLayout) registrationCardLayout.getLayout()).next(registrationCardLayout);
+    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel helloLbl;

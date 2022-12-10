@@ -4,6 +4,9 @@
  */
 package UI.NGO;
 
+import java.awt.CardLayout;
+import javax.swing.JPanel;
+
 /**
  *
  * @author surajvisvesh
@@ -13,8 +16,11 @@ public class ViewInventoryNWHJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ManageEquipmentNWHJPanel
      */
-    public ViewInventoryNWHJPanel() {
+    JPanel manageInventoryCardLayout;
+
+    public ViewInventoryNWHJPanel(JPanel manageInventoryCardLayout) {
         initComponents();
+        this.manageInventoryCardLayout = manageInventoryCardLayout;
     }
 
     /**
@@ -31,9 +37,15 @@ public class ViewInventoryNWHJPanel extends javax.swing.JPanel {
         orgTable = new javax.swing.JScrollPane();
         orderEquipmentTable = new javax.swing.JTable();
         orderEquipmentsBtn = new javax.swing.JPanel();
-        createOrgLbl = new javax.swing.JLabel();
+        orderEquipLbl = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
+
+        searchTF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchTFActionPerformed(evt);
+            }
+        });
 
         serachIconLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagesPackage/search_icon.png"))); // NOI18N
 
@@ -61,13 +73,13 @@ public class ViewInventoryNWHJPanel extends javax.swing.JPanel {
 
         orderEquipmentsBtn.setBackground(new java.awt.Color(106, 106, 106));
 
-        createOrgLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
-        createOrgLbl.setForeground(new java.awt.Color(255, 255, 255));
-        createOrgLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        createOrgLbl.setText("Order New Equipments");
-        createOrgLbl.addMouseListener(new java.awt.event.MouseAdapter() {
+        orderEquipLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        orderEquipLbl.setForeground(new java.awt.Color(255, 255, 255));
+        orderEquipLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        orderEquipLbl.setText("Order New Equipments");
+        orderEquipLbl.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                createOrgLblMousePressed(evt);
+                orderEquipLblMousePressed(evt);
             }
         });
 
@@ -75,11 +87,11 @@ public class ViewInventoryNWHJPanel extends javax.swing.JPanel {
         orderEquipmentsBtn.setLayout(orderEquipmentsBtnLayout);
         orderEquipmentsBtnLayout.setHorizontalGroup(
             orderEquipmentsBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(createOrgLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 288, Short.MAX_VALUE)
+            .addComponent(orderEquipLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)
         );
         orderEquipmentsBtnLayout.setVerticalGroup(
             orderEquipmentsBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(createOrgLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+            .addComponent(orderEquipLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -87,40 +99,54 @@ public class ViewInventoryNWHJPanel extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(853, 853, 853)
                         .addComponent(searchTF, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(serachIconLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(orgTable, javax.swing.GroupLayout.PREFERRED_SIZE, 1068, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(orderEquipmentsBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(40, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(serachIconLbl))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(933, 933, 933)
+                        .addComponent(orderEquipmentsBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(42, 42, 42)
+                        .addComponent(orgTable, javax.swing.GroupLayout.PREFERRED_SIZE, 1060, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(40, 40, 40))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(14, 14, 14)
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(searchTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(serachIconLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(serachIconLbl)
+                    .addComponent(searchTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(orgTable, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19)
+                .addGap(18, 18, 18)
                 .addComponent(orderEquipmentsBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(57, Short.MAX_VALUE))
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void createOrgLblMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_createOrgLblMousePressed
+    private void orderEquipLblMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_orderEquipLblMousePressed
         // TODO add your handling code here:
+        orderEquipBtnFunctionality();
 
+    }//GEN-LAST:event_orderEquipLblMousePressed
 
-    }//GEN-LAST:event_createOrgLblMousePressed
+    private void searchTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchTFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_searchTFActionPerformed
 
+    private void orderEquipBtnFunctionality() {
+        manageInventoryCardLayout.removeAll();
+        manageInventoryCardLayout.add(new OrderEquipmentsNWHJPanel());
+        ((CardLayout) manageInventoryCardLayout.getLayout()).next(manageInventoryCardLayout);
+
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel createOrgLbl;
+    private javax.swing.JLabel orderEquipLbl;
     private javax.swing.JTable orderEquipmentTable;
     private javax.swing.JPanel orderEquipmentsBtn;
     private javax.swing.JScrollPane orgTable;

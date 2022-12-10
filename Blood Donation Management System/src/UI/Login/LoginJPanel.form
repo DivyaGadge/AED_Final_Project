@@ -304,25 +304,34 @@
     <Component class="javax.swing.JComboBox" name="userCB">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Helvetica Neue" size="16" style="3"/>
+          <Font name="Helvetica Neue" size="16" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="66" green="66" red="66" type="rgb"/>
         </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="9">
+          <StringArray count="12">
             <StringItem index="0" value="Doctor"/>
-            <StringItem index="1" value="Patient"/>
-            <StringItem index="2" value="System Admin"/>
-            <StringItem index="3" value="Hospital Organization"/>
-            <StringItem index="4" value="Donor"/>
-            <StringItem index="5" value="NGO Organization"/>
-            <StringItem index="6" value="Hospital Warehouse"/>
-            <StringItem index="7" value="NGO Warehouse"/>
-            <StringItem index="8" value="NGO Blood Collection Organization"/>
+            <StringItem index="1" value="System Admin"/>
+            <StringItem index="2" value="Hospital Organization"/>
+            <StringItem index="3" value="Donor"/>
+            <StringItem index="4" value="NGO Organization"/>
+            <StringItem index="5" value="NGO Warehouse"/>
+            <StringItem index="6" value="NGO Blood Collection"/>
+            <StringItem index="7" value="Hospital Warehouse"/>
+            <StringItem index="8" value="Bloodbank Organization"/>
+            <StringItem index="9" value="Bloodbank Warehouse"/>
+            <StringItem index="10" value="Equipments Provider"/>
+            <StringItem index="11" value="Logistics Organization"/>
           </StringArray>
         </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="null"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="userCBMousePressed"/>
+      </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
