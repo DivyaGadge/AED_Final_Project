@@ -310,15 +310,19 @@
           <Color blue="66" green="66" red="66" type="rgb"/>
         </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="8">
+          <StringArray count="12">
             <StringItem index="0" value="Doctor"/>
             <StringItem index="1" value="System Admin"/>
             <StringItem index="2" value="Hospital Organization"/>
             <StringItem index="3" value="Donor"/>
             <StringItem index="4" value="NGO Organization"/>
-            <StringItem index="5" value="Hospital Warehouse"/>
-            <StringItem index="6" value="NGO Warehouse"/>
-            <StringItem index="7" value="NGO Blood Collection"/>
+            <StringItem index="5" value="NGO Warehouse"/>
+            <StringItem index="6" value="NGO Blood Collection"/>
+            <StringItem index="7" value="Hospital Warehouse"/>
+            <StringItem index="8" value="Bloodbank Organization"/>
+            <StringItem index="9" value="Bloodbank Warehouse"/>
+            <StringItem index="10" value="Equipments Provider"/>
+            <StringItem index="11" value="Logistics Organization"/>
           </StringArray>
         </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">

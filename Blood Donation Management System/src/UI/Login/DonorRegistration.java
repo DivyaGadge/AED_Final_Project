@@ -37,7 +37,6 @@ public class DonorRegistration extends javax.swing.JPanel {
     private void initComponents() {
 
         pincodeTF = new javax.swing.JTextField();
-        stateError = new javax.swing.JLabel();
         dobLbl = new javax.swing.JLabel();
         registerBtn2 = new javax.swing.JPanel();
         registerLbl2 = new javax.swing.JLabel();
@@ -77,11 +76,6 @@ public class DonorRegistration extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         add(pincodeTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 500, 305, -1));
-
-        stateError.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
-        stateError.setForeground(new java.awt.Color(255, 51, 0));
-        stateError.setText("Enter valid data");
-        add(stateError, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 330, -1, -1));
 
         dobLbl.setText("DateOfBirth");
         add(dobLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 300, -1, -1));
@@ -355,10 +349,6 @@ public class DonorRegistration extends javax.swing.JPanel {
             cityError.setVisible(true);
             valid = false;
         }
-        if (state.isEmpty()) {
-            stateError.setVisible(true);
-            valid = false;
-        }
         if (Integer.toString(pincode).length() != 6) {
             pinError.setVisible(true);
             valid = false;
@@ -435,7 +425,6 @@ public class DonorRegistration extends javax.swing.JPanel {
         phoneNoError.setVisible(false);
         streetError.setVisible(false);
         cityError.setVisible(false);
-        stateError.setVisible(false);
         pinError.setVisible(false);
         dobError.setVisible(false);
         NGOError.setVisible(false);
@@ -482,14 +471,9 @@ public class DonorRegistration extends javax.swing.JPanel {
     private javax.swing.JLabel pinError;
     private javax.swing.JLabel pinLbl;
     private javax.swing.JTextField pincodeTF;
-    private javax.swing.JPanel registerBtn;
-    private javax.swing.JPanel registerBtn1;
     private javax.swing.JPanel registerBtn2;
-    private javax.swing.JLabel registerLbl;
-    private javax.swing.JLabel registerLbl1;
     private javax.swing.JLabel registerLbl2;
     private javax.swing.JComboBox<String> stateCB;
-    private javax.swing.JLabel stateError;
     private javax.swing.JLabel stateLbl;
     private javax.swing.JLabel streetError;
     private javax.swing.JLabel streetLbl;

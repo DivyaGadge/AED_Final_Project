@@ -14,6 +14,7 @@ import model.volunteerEnt.NGOManagement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.Ecosystem.Mail;
+import model.Login.OrganizationRegistration;
 
 /**
  *
@@ -22,17 +23,17 @@ import model.Ecosystem.Mail;
 public class OrgRegJPanel extends javax.swing.JPanel {
 
     private String imagePath = "";
-    private String userCBValue;
+    private String userType;
 
     /**
      * Creates new form DonorRegistration
      *
      * @param userCBValue
      */
-    public OrgRegJPanel(String userCBValue) {
+    public OrgRegJPanel(String userType) {
         initComponents();
         errorVisibility();
-        this.userCBValue = userCBValue;
+        this.userType = userType;
     }
 
     /**
@@ -347,7 +348,7 @@ public class OrgRegJPanel extends javax.swing.JPanel {
             stateError.setVisible(true);
             valid = false;
         }
-        if (!(Integer.toString(pincode).length() >=5 || Integer.toString(pincode).length()<= 6)) {
+        if (!(Integer.toString(pincode).length() >= 5 || Integer.toString(pincode).length() <= 6)) {
             pinError.setVisible(true);
             valid = false;
         }
@@ -356,57 +357,9 @@ public class OrgRegJPanel extends javax.swing.JPanel {
             valid = false;
         }
         if (valid) {
-            switch (userCBValue) {
-                case "NGO Organization":
-                    NGOManagement ngo = new NGOManagement();
-                    ngo.setName(name);
-                    ngo.setUsername(username);
-                    ngo.setEmail(email);
-                    ngo.setPhoneNo(phoneNo);
-                    ngo.setCity(city);
-                    ngo.setStreet(street);
-                    ngo.setPassword(password);
-                    ngo.setPincode(pincode);
-                    ngo.setState(state);
-                    ngo.setLicense_path(imagePath);
-
-                    try {
-                        System.out.println("entered try block");
-                        Connection con = SQLConnection.establishConnection();
-                        System.out.println(con);
-                        if (con != null) {
-                            System.out.println("entered if con not null block");
-                            String approval = "app";
-                            String query = "INSERT INTO NGO(user_name, Name, Email, Password, Phone_number, Street_address, City, State, Pincode, license, approval_status) VALUES(?,?,?,?,?,?,?,?,?,?,?)";
-
-                            PreparedStatement pstmt = con.prepareStatement(query);
-                            pstmt.setString(1, username);
-                            pstmt.setString(2, name);
-                            pstmt.setString(3, email);
-                            pstmt.setString(4, password);
-                            pstmt.setLong(5, phoneNo);
-                            pstmt.setString(6, street);
-                            pstmt.setString(7, city);
-                            pstmt.setString(8, state);
-                            pstmt.setInt(9, pincode);
-
-                            pstmt.setString(10, imagePath);
-                            pstmt.setString(11, approval);
-                            int count = pstmt.executeUpdate();
-                            if (count == 1) {
-                                emptyTF();
-
-                                JOptionPane.showMessageDialog(null, "Thanks for registering. We will notify you once your registration is approved.");
-//                                Mail mail = new Mail();
-//                                mail.sendEmailMessage("surajvisvesh@gmail.com", "Thanks for registering with BLOODONATE. We will update you once your account is approved.");
-                                Mail.sendEmailMessage(email, "Thanks for registering with *BLOODONATE*. We will update you once your account is approved.");   
-                            }
-                        }
-                    } catch (SQLException ex) {
-                        JOptionPane.showMessageDialog(null, "User already exists. Please try a different username or email.", "Error!", JOptionPane.ERROR_MESSAGE);
-
-                    }
-            }
+            OrganizationRegistration orgRegistration = new OrganizationRegistration();
+            orgRegistration.registration(userType, username, name, email, phoneNo, password, street, city, state, pincode, imagePath);
+            emptyTF();
 
         }
 
@@ -459,7 +412,6 @@ public class OrgRegJPanel extends javax.swing.JPanel {
 //        }
 //        return true;
 //    }
-
 //    public static void sendEmailMessage(String emailId, String body) {
 //        String to = emailId;
 //        String from = "doneverevereply@gmail.com";

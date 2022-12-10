@@ -4,11 +4,13 @@
  */
 package model.volunteerEnt;
 
+import model.Enterprise.NGOEnterprise;
+
 /**
  *
  * @author surajvisvesh
  */
-public class NGOManagement {
+public class NGOManagement extends NGOEnterprise{
     private String username;
     private String name;
     private String password;

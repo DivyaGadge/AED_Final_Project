@@ -77,7 +77,9 @@ public class DonationHistory extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
 
-    
+    private void populateTable() {
+        
+    }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable campTable;
