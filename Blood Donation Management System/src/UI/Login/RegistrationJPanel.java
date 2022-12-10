@@ -17,6 +17,7 @@ public class RegistrationJPanel extends javax.swing.JPanel {
      * Creates new form RegistrationPanel
      */
     JPanel loginCardLayout;
+
     public RegistrationJPanel(JPanel loginCardLayout) {
         initComponents();
         this.loginCardLayout = loginCardLayout;
@@ -96,55 +97,48 @@ public class RegistrationJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         registrationComboBoxFunctionality();
     }//GEN-LAST:event_userCBActionPerformed
-    
-    
+
     public void registrationComboBoxFunctionality() {
-        String userCBValue = userCB.getSelectedItem().toString();
-        switch (userCBValue) {
+        String userType = userCB.getSelectedItem().toString();
+        switch (userType) {
             case "Donor":
-                System.out.println("Selected doctor");
-                registrationCardLayout.removeAll();
-                registrationCardLayout.add(new DonorRegistration());
-                ((CardLayout) registrationCardLayout.getLayout()).next(registrationCardLayout);
+                donorReg(userType);
                 break;
-            case "Patient":
-                System.out.println("Selected Patient");
+
+            case "Hospital Organization":
+                organizationReg(userType);
                 break;
-            case "Hospital Administration":
-                System.out.println("Selected Hospital");
-                registrationCardLayout.removeAll();
-                registrationCardLayout.add(new OrgRegJPanel(userCBValue));
-                ((CardLayout) registrationCardLayout.getLayout()).next(registrationCardLayout);
-                break;
+
             case "NGO Organization":
-                System.out.println("Selected Patient");
-                registrationCardLayout.removeAll();
-                registrationCardLayout.add(new OrgRegJPanel(userCBValue));
-                ((CardLayout) registrationCardLayout.getLayout()).next(registrationCardLayout);
+                organizationReg(userType);
                 break;
-            case "Bloodbank Administration":
-                System.out.println("Selected Patient");
-                break;
-            case "Bloodbank Warehouse":
-                System.out.println("Selected Patient");
-                break;
-            case "Sample Testing Organization":
-                System.out.println("Selected Patient");
+            case "Bloodbank Organization":
+                organizationReg(userType);
                 break;
             case "Logistics Organization":
-                System.out.println("Selected Patient");
+                organizationReg(userType);
                 break;
-            case "Equipment Supplier Organizaiton":
-                System.out.println("Selected Patient");
+            case "Equipments Provider":
+                organizationReg(userType);
                 break;
             default:
                 break;
         }
-        
-        
-        
+
     }
-    
+
+    private void donorReg(String userType) {
+        registrationCardLayout.removeAll();
+        registrationCardLayout.add(new DonorRegistration());
+        ((CardLayout) registrationCardLayout.getLayout()).next(registrationCardLayout);
+    }
+
+    private void organizationReg(String userType) {
+        registrationCardLayout.removeAll();
+        registrationCardLayout.add(new OrgRegJPanel(userType));
+        ((CardLayout) registrationCardLayout.getLayout()).next(registrationCardLayout);
+    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel helloLbl;

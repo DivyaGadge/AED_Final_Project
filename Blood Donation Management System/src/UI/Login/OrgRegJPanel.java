@@ -139,7 +139,7 @@ public class OrgRegJPanel extends javax.swing.JPanel {
         stateError.setText("Enter valid data");
         add(stateError, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 330, -1, -1));
 
-        licenseLbl.setText("NGO License*");
+        licenseLbl.setText("Organization License*");
         add(licenseLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 410, -1, -1));
 
         addLicBtn.setBackground(new java.awt.Color(106, 106, 106));
@@ -190,7 +190,7 @@ public class OrgRegJPanel extends javax.swing.JPanel {
             .addComponent(registerLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
         );
 
-        add(registerBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 520, -1, -1));
+        add(registerBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 510, -1, -1));
         add(usernameTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, 305, -1));
 
         nameError.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N

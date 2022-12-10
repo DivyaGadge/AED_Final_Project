@@ -10,6 +10,7 @@ import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import model.Login.ModelDonorRegistration;
 import model.volunteerEnt.Donor;
 
 /**
@@ -19,7 +20,7 @@ import model.volunteerEnt.Donor;
 public class DonorRegistration extends javax.swing.JPanel {
 
     /**
-     * Creates new form DonorRegistration
+     * Creates new form ModelDonorRegistration
      */
     public DonorRegistration() {
         initComponents();
@@ -108,7 +109,7 @@ public class DonorRegistration extends javax.swing.JPanel {
             .addComponent(registerLbl2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
         );
 
-        add(registerBtn2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 540, -1, -1));
+        add(registerBtn2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 550, -1, -1));
         add(usernameTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, 305, -1));
 
         nameError.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
@@ -262,25 +263,22 @@ public class DonorRegistration extends javax.swing.JPanel {
 
     public void populateNGOCB() {
 
-        try{
+        try {
             Connection con = SQLConnection.establishConnection();
-            if (con!= null){
+            if (con != null) {
                 String query = "SELECT user_name FROM NGO";
                 Statement stmt = con.createStatement();
                 ResultSet rs = stmt.executeQuery(query);
-                
-                while(rs.next()){
+
+                while (rs.next()) {
                     NGOCB.addItem(rs.getString("user_name"));
                 }
             }
-            
-            
-            
+
         } catch (Exception e) {
-            
+
         }
-        
-        
+
 //        while(rs.next()){
 //            NGOCB.addItem(rs.getString("name"));
     }
@@ -290,7 +288,7 @@ public class DonorRegistration extends javax.swing.JPanel {
         boolean valid = true;
         long phoneNo = 0;
         int pincode = 0;
-        Date date = null;
+        String dateOfBirth=null;
         String NGOCBvalue = null;
         String name = nameTF.getText();
         String username = usernameTF.getText();
@@ -305,10 +303,14 @@ public class DonorRegistration extends javax.swing.JPanel {
         String street = streetTF.getText();
         String city = cityTF.getText();
         String state = stateCB.getSelectedItem().toString();
-
-        date = dobTF.getDate();
+        try {
+            dateOfBirth = dobTF.getDate().toString();
+        } catch (Exception e) {
+            dobError.setVisible(true);
+            valid = false;
+        }
         String bloodGroup = bldGropCB.getSelectedItem().toString();
-        try{
+        try {
             NGOCBvalue = NGOCB.getSelectedItem().toString();
         } catch (NullPointerException e) {
             NGOError.setVisible(true);
@@ -353,65 +355,68 @@ public class DonorRegistration extends javax.swing.JPanel {
             pinError.setVisible(true);
             valid = false;
         }
-        if (date == null) {
-            dobError.setVisible(true);
-            valid = false;
-            
-        }
-        if (NGOCBvalue.isEmpty()){
-            NGOError.setVisible(true);
-            valid = false;
-        }
+//        if (dateOfBirth == null) {
+//            dobError.setVisible(true);
+//            valid = false;
+//
+//        }
+//        if (NGOCBvalue == null) {
+//            NGOError.setVisible(true);
+//            valid = false;
+//        }
         if (valid) {
+            ModelDonorRegistration donorReg = new ModelDonorRegistration();
+            donorReg.donorRegistration(username, name, email, phoneNo, password, street, city, state, pincode, dateOfBirth, NGOCBvalue, bloodGroup);
+            emptyTF();
 
-            System.out.println("Entered valid block.");
-            Donor donor = new Donor(); 
-            donor.setName(name);
-            donor.setUsername(username);
-            donor.setEmail(email);
-            donor.setPhoneNo(phoneNo);
-            donor.setCity(city);
-            donor.setStreet(street);
-            donor.setPassword(password);
-            donor.setPincode(pincode);
-            donor.setState(state);
-            donor.setBloodGroup(bloodGroup);
-            donor.setNGOUsername(NGOCBvalue);
-            donor.setDate(date);
-
-            try {
-                System.out.println("entered try block");
-                Connection con = SQLConnection.establishConnection();
-                System.out.println(con);
-                if (con != null) {
-                    System.out.println("entered if con not null block");
-
-                    String query = "INSERT INTO NGO(user_name, Name, Email, Password, Phone_number, Street_address, City, State, Pincode, license) VALUES(?,?,?,?,?,?,?,?,?,?)";
-
-                    PreparedStatement pstmt = con.prepareStatement(query);
-                    pstmt.setString(1, username);
-                    pstmt.setString(2, name);
-                    pstmt.setString(3, email);
-                    pstmt.setString(4, password);
-                    pstmt.setLong(5, phoneNo);
-                    pstmt.setString(6, street);
-                    pstmt.setString(7, city);
-                    pstmt.setString(8, state);
-                    pstmt.setInt(9, pincode);
-
-
-                    int count = pstmt.executeUpdate();
-                    if (count == 1) {
-                        emptyTF();
-
-                        JOptionPane.showMessageDialog(null, "Thanks for registering. We will notify you once your registration is approved.");
-                        System.out.println("Email User.");
-                    }
-                }
-            } catch (SQLException e) {
-                JOptionPane.showMessageDialog(null, "User already exists. Please try a different username or email.", "Error!", JOptionPane.ERROR_MESSAGE);
-
-            }
+//            System.out.println("Entered valid block.");
+//            Donor donor = new Donor(); 
+//            donor.setName(name);
+//            donor.setUsername(username);
+//            donor.setEmail(email);
+//            donor.setPhoneNo(phoneNo);
+//            donor.setCity(city);
+//            donor.setStreet(street);
+//            donor.setPassword(password);
+//            donor.setPincode(pincode);
+//            donor.setState(state);
+//            donor.setBloodGroup(bloodGroup);
+//            donor.setNGOUsername(NGOCBvalue);
+//            donor.setDate(date);
+//
+//            try {
+//                System.out.println("entered try block");
+//                Connection con = SQLConnection.establishConnection();
+//                System.out.println(con);
+//                if (con != null) {
+//                    System.out.println("entered if con not null block");
+//
+//                    String query = "INSERT INTO NGO(user_name, Name, Email, Password, Phone_number, Street_address, City, State, Pincode, license) VALUES(?,?,?,?,?,?,?,?,?,?)";
+//
+//                    PreparedStatement pstmt = con.prepareStatement(query);
+//                    pstmt.setString(1, username);
+//                    pstmt.setString(2, name);
+//                    pstmt.setString(3, email);
+//                    pstmt.setString(4, password);
+//                    pstmt.setLong(5, phoneNo);
+//                    pstmt.setString(6, street);
+//                    pstmt.setString(7, city);
+//                    pstmt.setString(8, state);
+//                    pstmt.setInt(9, pincode);
+//
+//
+//                    int count = pstmt.executeUpdate();
+//                    if (count == 1) {
+//                        emptyTF();
+//
+//                        JOptionPane.showMessageDialog(null, "Thanks for registering. We will notify you once your registration is approved.");
+//                        System.out.println("Email User.");
+//                    }
+//                }
+//            } catch (SQLException e) {
+//                JOptionPane.showMessageDialog(null, "User already exists. Please try a different username or email.", "Error!", JOptionPane.ERROR_MESSAGE);
+//
+//            }
         }
 
     }

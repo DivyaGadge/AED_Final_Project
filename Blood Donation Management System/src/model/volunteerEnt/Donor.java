@@ -20,7 +20,7 @@ public class Donor {
     private String city;
     private String state;
     private int pincode;
-    private Date dob;
+    private String dob;
     private String bloodGroup;
     private String NGOUsername;
 
@@ -96,11 +96,11 @@ public class Donor {
         this.pincode = pincode;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return dob;
     }
 
-    public void setDate(Date dob) {
+    public void setDate(String dob) {
         this.dob = dob;
     }
 

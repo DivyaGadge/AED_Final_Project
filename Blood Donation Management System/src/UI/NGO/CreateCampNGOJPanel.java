@@ -190,7 +190,7 @@ public class CreateCampNGOJPanel extends javax.swing.JPanel {
         String name = nameTF.getText();
         String latitude = latTF.getText();
         String longitude = lonTF.getText();
-        Date campDate = (Date) campDateTF.getDate();
+        String campDate =  campDateTF.getDate().toString();
         String street = streetTF.getText();
         String city = cityTF.getText();
         String state = stateCB.getSelectedItem().toString();
@@ -234,6 +234,10 @@ public class CreateCampNGOJPanel extends javax.swing.JPanel {
             pinError.setVisible(true);
             valid = false;
         }
+        if (campDate.isEmpty()){
+            dateError.setVisible(true);
+            valid = false;
+        }
 
         if (valid) {
             try {
@@ -263,6 +267,7 @@ public class CreateCampNGOJPanel extends javax.swing.JPanel {
         pinError.setVisible(false);
         latitudeError.setVisible(false);
         longitudeError.setVisible(false);
+
 
     }
 

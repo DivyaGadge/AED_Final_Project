@@ -56,7 +56,7 @@ public class OrganizationRegistration {
                     ngo.setState(state);
                     ngo.setLicense_path(license_path);
                     ngo.setApproval_status(approval_status);
-                    
+                    String enterprise = ngo.getEnterprise();
 
                     try {
                         System.out.println("entered try block");
@@ -64,7 +64,7 @@ public class OrganizationRegistration {
                         System.out.println(con);
                         if (con != null) {
                             System.out.println("entered if con not null block");
-                            String query = "INSERT INTO NGO(user_name, Name, Email, Password, Phone_number, Street_address, City, State, Pincode, license, approval_status) VALUES(?,?,?,?,?,?,?,?,?,?,?)";
+                            String query = "INSERT INTO NGO(user_name, Name, Email, Password, Phone_number, Street_address, City, State, Pincode, license, approval_status, enterprise) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
 
                             PreparedStatement pstmt = con.prepareStatement(query);
                             pstmt.setString(1, username);
@@ -79,6 +79,7 @@ public class OrganizationRegistration {
 
                             pstmt.setString(10, license_path);
                             pstmt.setString(11, approval_status);
+                            pstmt.setString(11, enterprise);
                             int count = pstmt.executeUpdate();
                             if (count == 1) {
                                 

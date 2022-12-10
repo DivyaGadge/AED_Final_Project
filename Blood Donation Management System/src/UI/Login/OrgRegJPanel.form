@@ -242,7 +242,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="licenseLbl">
       <Properties>
-        <Property name="text" type="java.lang.String" value="NGO License*"/>
+        <Property name="text" type="java.lang.String" value="Organization License*"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -300,7 +300,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="530" y="520" width="-1" height="-1"/>
+          <AbsoluteConstraints x="90" y="510" width="-1" height="-1"/>
         </Constraint>
       </Constraints>
 
