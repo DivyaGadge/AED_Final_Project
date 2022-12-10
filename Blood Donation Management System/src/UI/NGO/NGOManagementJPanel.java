@@ -422,7 +422,7 @@ public class NGOManagementJPanel extends javax.swing.JPanel {
         
         
         CardLayoutPanel.removeAll();
-        CardLayoutPanel.add(new ManageNGOProfileJPanel());
+        CardLayoutPanel.add(new ManageNGOProfileJPanel(username));
         ((CardLayout) CardLayoutPanel.getLayout()).next(CardLayoutPanel);
         
     }
@@ -436,7 +436,7 @@ public class NGOManagementJPanel extends javax.swing.JPanel {
         resetBtnColor(manageDonorsBtn);
         
         CardLayoutPanel.removeAll();
-        CardLayoutPanel.add(new ManageNGOOrganizationsJPanel());
+        CardLayoutPanel.add(new ManageNGOOrganizationsJPanel(username));
         ((CardLayout)CardLayoutPanel.getLayout()).next(CardLayoutPanel);
         
         
@@ -452,7 +452,7 @@ public class NGOManagementJPanel extends javax.swing.JPanel {
         
         
         CardLayoutPanel.removeAll();
-        CardLayoutPanel.add(new ManageNGOCampsJPanel());
+        CardLayoutPanel.add(new ManageNGOCampsJPanel(username));
         ((CardLayout) CardLayoutPanel.getLayout()).next(CardLayoutPanel);
         
     }

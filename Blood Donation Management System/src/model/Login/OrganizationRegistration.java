@@ -9,12 +9,13 @@ import java.sql.*;
 import javax.swing.JOptionPane;
 import model.Ecosystem.Mail;
 import model.volunteerEnt.NGOManagement;
+
 /**
  *
  * @author surajvisvesh
  */
 public class OrganizationRegistration {
-    
+
     private String userType;
     private String username;
     private String name;
@@ -28,7 +29,7 @@ public class OrganizationRegistration {
     private String license_path;
     private final String approval_status = "not_approved";
 //    private String enterprise;
-    
+
     public void registration(String userType, String username, String name, String email, long phoneNo, String password, String street, String city, String state, int pincode, String license_path) {
         this.userType = userType;
         this.username = username;
@@ -41,59 +42,60 @@ public class OrganizationRegistration {
         this.state = state;
         this.pincode = pincode;
         this.license_path = license_path;
-        
+
         switch (userType) {
-                case "NGO Organization":
-                    NGOManagement ngo = new NGOManagement();
-                    ngo.setName(name);
-                    ngo.setUsername(username);
-                    ngo.setEmail(email);
-                    ngo.setPhoneNo(phoneNo);
-                    ngo.setCity(city);
-                    ngo.setStreet(street);
-                    ngo.setPassword(password);
-                    ngo.setPincode(pincode);
-                    ngo.setState(state);
-                    ngo.setLicense_path(license_path);
-                    ngo.setApproval_status(approval_status);
-                    String enterprise = ngo.getEnterprise();
 
-                    try {
-                        System.out.println("entered try block");
-                        Connection con = SQLConnection.establishConnection();
-                        System.out.println(con);
-                        if (con != null) {
-                            System.out.println("entered if con not null block");
-                            String query = "INSERT INTO NGO(user_name, Name, Email, Password, Phone_number, Street_address, City, State, Pincode, license, approval_status, enterprise) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
+            case "NGO Organization":
+                System.out.println(userType);
+                NGOManagement ngo = new NGOManagement();
+                ngo.setName(name);
+                ngo.setUsername(username);
+                ngo.setEmail(email);
+                ngo.setPhoneNo(phoneNo);
+                ngo.setCity(city);
+                ngo.setStreet(street);
+                ngo.setPassword(password);
+                ngo.setPincode(pincode);
+                ngo.setState(state);
+                ngo.setLicense_path(license_path);
+                ngo.setApproval_status(approval_status);
+                String enterprise = ngo.getEnterprise();
+                System.out.println(enterprise);
+                try {
+                    System.out.println("entered try block updated");
+                    Connection con = SQLConnection.establishConnection();
+                    System.out.println(con);
+                    if (con != null) {
+                        System.out.println("entered if con not null block");
+                        String query = "INSERT INTO NGO(user_name, Name, Email, Password, Phone_number, Street_address, City, State, Pincode, approval_file, Approval_status, enterprise) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
 
-                            PreparedStatement pstmt = con.prepareStatement(query);
-                            pstmt.setString(1, username);
-                            pstmt.setString(2, name);
-                            pstmt.setString(3, email);
-                            pstmt.setString(4, password);
-                            pstmt.setLong(5, phoneNo);
-                            pstmt.setString(6, street);
-                            pstmt.setString(7, city);
-                            pstmt.setString(8, state);
-                            pstmt.setInt(9, pincode);
+                        PreparedStatement pstmt = con.prepareStatement(query);
+                        pstmt.setString(1, username);
+                        pstmt.setString(2, name);
+                        pstmt.setString(3, email);
+                        pstmt.setString(4, password);
+                        pstmt.setLong(5, phoneNo);
+                        pstmt.setString(6, street);
+                        pstmt.setString(7, city);
+                        pstmt.setString(8, state);
+                        pstmt.setInt(9, pincode);
+                        pstmt.setString(10, license_path);
+                        pstmt.setString(11, approval_status);
+                        pstmt.setString(12, enterprise);
+                        int count = pstmt.executeUpdate();
+                        if (count == 1) {
 
-                            pstmt.setString(10, license_path);
-                            pstmt.setString(11, approval_status);
-                            pstmt.setString(11, enterprise);
-                            int count = pstmt.executeUpdate();
-                            if (count == 1) {
-                                
+                            JOptionPane.showMessageDialog(null, "Thanks for registering. We will notify you once your registration is approved.");
+                            Mail.sendEmailMessage(email, "Thanks for registering with BLOODONATE. We will update you once your account is approved.");
 
-                                JOptionPane.showMessageDialog(null, "Thanks for registering. We will notify you once your registration is approved.");
-                                Mail.sendEmailMessage(email, "Thanks for registering with *BLOODONATE*. We will update you once your account is approved.");
-                                
-                            }
                         }
-                    } catch (SQLException ex) {
-                        JOptionPane.showMessageDialog(null, "User already exists. Please try a different username or email.", "Error!", JOptionPane.ERROR_MESSAGE);
-
                     }
-                case "Hospital Organization":
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                    JOptionPane.showMessageDialog(null, "User already exists. Please try a different username or email.", "Error!", JOptionPane.ERROR_MESSAGE);
+
+                }
+            case "Hospital Organization":
 //                    NGOManagement ngo = new NGOManagement();
 //                    ngo.setName(name);
 //                    ngo.setUsername(username);
@@ -107,42 +109,41 @@ public class OrganizationRegistration {
 //                    ngo.setLicense_path(license_path);
 //                    ngo.setApproval_status(approval_status);
 
-                    try {
-                        System.out.println("entered try block");
-                        Connection con = SQLConnection.establishConnection();
-                        System.out.println(con);
-                        if (con != null) {
-                            System.out.println("entered if con not null block");
-                            String query = "INSERT INTO NGO(user_name, Name, Email, Password, Phone_number, Street_address, City, State, Pincode, license, approval_status) VALUES(?,?,?,?,?,?,?,?,?,?,?)";
+                try {
+                System.out.println("entered try block");
+                Connection con = SQLConnection.establishConnection();
+                System.out.println(con);
+                if (con != null) {
+                    System.out.println("entered if con not null block");
+                    String query = "INSERT INTO NGO(user_name, Name, Email, Password, Phone_number, Street_address, City, State, Pincode, license, approval_status) VALUES(?,?,?,?,?,?,?,?,?,?,?)";
 
-                            PreparedStatement pstmt = con.prepareStatement(query);
-                            pstmt.setString(1, username);
-                            pstmt.setString(2, name);
-                            pstmt.setString(3, email);
-                            pstmt.setString(4, password);
-                            pstmt.setLong(5, phoneNo);
-                            pstmt.setString(6, street);
-                            pstmt.setString(7, city);
-                            pstmt.setString(8, state);
-                            pstmt.setInt(9, pincode);
+                    PreparedStatement pstmt = con.prepareStatement(query);
+                    pstmt.setString(1, username);
+                    pstmt.setString(2, name);
+                    pstmt.setString(3, email);
+                    pstmt.setString(4, password);
+                    pstmt.setLong(5, phoneNo);
+                    pstmt.setString(6, street);
+                    pstmt.setString(7, city);
+                    pstmt.setString(8, state);
+                    pstmt.setInt(9, pincode);
 
-                            pstmt.setString(10, license_path);
-                            pstmt.setString(11, approval_status);
-                            int count = pstmt.executeUpdate();
-                            if (count == 1) {
-                                
+                    pstmt.setString(10, license_path);
+                    pstmt.setString(11, approval_status);
+                    int count = pstmt.executeUpdate();
+                    if (count == 1) {
 
-                                JOptionPane.showMessageDialog(null, "Thanks for registering. We will notify you once your registration is approved.");
-                                Mail.sendEmailMessage(email, "Thanks for registering with *BLOODONATE*. We will update you once your account is approved.");
-                                
-                            }
-                        }
-                    } catch (SQLException ex) {
-                        JOptionPane.showMessageDialog(null, "User already exists. Please try a different username or email.", "Error!", JOptionPane.ERROR_MESSAGE);
+                        JOptionPane.showMessageDialog(null, "Thanks for registering. We will notify you once your registration is approved.");
+                        Mail.sendEmailMessage(email, "Thanks for registering with *BLOODONATE*. We will update you once your account is approved.");
 
                     }
-                    
-                case "Bloodbank Organization":
+                }
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, "User already exists. Please try a different username or email.", "Error!", JOptionPane.ERROR_MESSAGE);
+
+            }
+
+            case "Bloodbank Organization":
 //                    BBMgmt bb = new BBMgmt();
 //                    bb.setName(name);
 //                    bb.setUsername(username);
@@ -156,143 +157,139 @@ public class OrganizationRegistration {
 //                    bb.setLicense_path(license_path);
 //                    bb.setApproval_status(approval_status);
 
-                    try {
-                        System.out.println("entered try block");
-                        Connection con = SQLConnection.establishConnection();
-                        System.out.println(con);
-                        if (con != null) {
-                            System.out.println("entered if con not null block");
+                try {
+                System.out.println("entered try block");
+                Connection con = SQLConnection.establishConnection();
+                System.out.println(con);
+                if (con != null) {
+                    System.out.println("entered if con not null block");
 
-                            String query = "INSERT INTO BloodBank_Org(user_name, Name, Email, Password, Phone_number, Street_address, City, State, Pincode, license, approval_status) VALUES(?,?,?,?,?,?,?,?,?,?,?)";
+                    String query = "INSERT INTO BloodBank_Org(user_name, Name, Email, Password, Phone_number, Street_address, City, State, Pincode, license, approval_status) VALUES(?,?,?,?,?,?,?,?,?,?,?)";
 
-                            PreparedStatement pstmt = con.prepareStatement(query);
-                            pstmt.setString(1, username);
-                            pstmt.setString(2, name);
-                            pstmt.setString(3, email);
-                            pstmt.setString(4, password);
-                            pstmt.setLong(5, phoneNo);
-                            pstmt.setString(6, street);
-                            pstmt.setString(7, city);
-                            pstmt.setString(8, state);
-                            pstmt.setInt(9, pincode);
+                    PreparedStatement pstmt = con.prepareStatement(query);
+                    pstmt.setString(1, username);
+                    pstmt.setString(2, name);
+                    pstmt.setString(3, email);
+                    pstmt.setString(4, password);
+                    pstmt.setLong(5, phoneNo);
+                    pstmt.setString(6, street);
+                    pstmt.setString(7, city);
+                    pstmt.setString(8, state);
+                    pstmt.setInt(9, pincode);
 
-                            pstmt.setString(10, license_path);
-                            pstmt.setString(11, approval_status);
-                            int count = pstmt.executeUpdate();
-                            if (count == 1) {
-                                
+                    pstmt.setString(10, license_path);
+                    pstmt.setString(11, approval_status);
+                    int count = pstmt.executeUpdate();
+                    if (count == 1) {
 
-                                JOptionPane.showMessageDialog(null, "Thanks for registering. We will notify you once your registration is approved.");
-                                Mail.sendEmailMessage(email, "Thanks for registering with *BLOODONATE*. We will update you once your account is approved.");
-                                
-                            }
-                        }
-                    } catch (SQLException ex) {
-                        JOptionPane.showMessageDialog(null, "User already exists. Please try a different username or email.", "Error!", JOptionPane.ERROR_MESSAGE);
+                        JOptionPane.showMessageDialog(null, "Thanks for registering. We will notify you once your registration is approved.");
+                        Mail.sendEmailMessage(email, "Thanks for registering with *BLOODONATE*. We will update you once your account is approved.");
 
                     }
-                    
-                case "Logistics Organization":
-//                    NGOManagement ngo = new NGOManagement();
-//                    ngo.setName(name);
-//                    ngo.setUsername(username);
-//                    ngo.setEmail(email);
-//                    ngo.setPhoneNo(phoneNo);
-//                    ngo.setCity(city);
-//                    ngo.setStreet(street);
-//                    ngo.setPassword(password);
-//                    ngo.setPincode(pincode);
-//                    ngo.setState(state);
-//                    ngo.setLicense_path(license_path);
-//                    ngo.setApproval_status(approval_status);
+                }
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, "User already exists. Please try a different username or email.", "Error!", JOptionPane.ERROR_MESSAGE);
 
-                    try {
-                        System.out.println("entered try block");
-                        Connection con = SQLConnection.establishConnection();
-                        System.out.println(con);
-                        if (con != null) {
-                            System.out.println("entered if con not null block");
-                            String query = "INSERT INTO NGO(user_name, Name, Email, Password, Phone_number, Street_address, City, State, Pincode, license, approval_status) VALUES(?,?,?,?,?,?,?,?,?,?,?)";
-
-                            PreparedStatement pstmt = con.prepareStatement(query);
-                            pstmt.setString(1, username);
-                            pstmt.setString(2, name);
-                            pstmt.setString(3, email);
-                            pstmt.setString(4, password);
-                            pstmt.setLong(5, phoneNo);
-                            pstmt.setString(6, street);
-                            pstmt.setString(7, city);
-                            pstmt.setString(8, state);
-                            pstmt.setInt(9, pincode);
-
-                            pstmt.setString(10, license_path);
-                            pstmt.setString(11, approval_status);
-                            int count = pstmt.executeUpdate();
-                            if (count == 1) {
-                                
-
-                                JOptionPane.showMessageDialog(null, "Thanks for registering. We will notify you once your registration is approved.");
-                                Mail.sendEmailMessage(email, "Thanks for registering with *BLOODONATE*. We will update you once your account is approved.");
-                                
-                            }
-                        }
-                    } catch (SQLException ex) {
-                        JOptionPane.showMessageDialog(null, "User already exists. Please try a different username or email.", "Error!", JOptionPane.ERROR_MESSAGE);
-
-                    }
-                    
-                case "Equipments Provider":
-//                    NGOManagement ngo = new NGOManagement();
-//                    ngo.setName(name);
-//                    ngo.setUsername(username);
-//                    ngo.setEmail(email);
-//                    ngo.setPhoneNo(phoneNo);
-//                    ngo.setCity(city);
-//                    ngo.setStreet(street);
-//                    ngo.setPassword(password);
-//                    ngo.setPincode(pincode);
-//                    ngo.setState(state);
-//                    ngo.setLicense_path(license_path);
-//                    ngo.setApproval_status(approval_status);
-
-                    try {
-                        System.out.println("entered try block");
-                        Connection con = SQLConnection.establishConnection();
-                        System.out.println(con);
-                        if (con != null) {
-                            System.out.println("entered if con not null block");
-
-                            String query = "INSERT INTO NGO(user_name, Name, Email, Password, Phone_number, Street_address, City, State, Pincode, license, approval_status) VALUES(?,?,?,?,?,?,?,?,?,?,?)";
-
-                            PreparedStatement pstmt = con.prepareStatement(query);
-                            pstmt.setString(1, username);
-                            pstmt.setString(2, name);
-                            pstmt.setString(3, email);
-                            pstmt.setString(4, password);
-                            pstmt.setLong(5, phoneNo);
-                            pstmt.setString(6, street);
-                            pstmt.setString(7, city);
-                            pstmt.setString(8, state);
-                            pstmt.setInt(9, pincode);
-
-                            pstmt.setString(10, license_path);
-                            pstmt.setString(11, approval_status);
-                            int count = pstmt.executeUpdate();
-                            if (count == 1) {
-                                
-
-                                JOptionPane.showMessageDialog(null, "Thanks for registering. We will notify you once your registration is approved.");
-                                Mail.sendEmailMessage(email, "Thanks for registering with *BLOODONATE*. We will update you once your account is approved.");
-                                
-                            }
-                        }
-                    } catch (SQLException ex) {
-                        JOptionPane.showMessageDialog(null, "User already exists. Please try a different username or email.", "Error!", JOptionPane.ERROR_MESSAGE);
-
-                    }
-                    
-                
             }
+
+            case "Logistics Organization":
+//                    NGOManagement ngo = new NGOManagement();
+//                    ngo.setName(name);
+//                    ngo.setUsername(username);
+//                    ngo.setEmail(email);
+//                    ngo.setPhoneNo(phoneNo);
+//                    ngo.setCity(city);
+//                    ngo.setStreet(street);
+//                    ngo.setPassword(password);
+//                    ngo.setPincode(pincode);
+//                    ngo.setState(state);
+//                    ngo.setLicense_path(license_path);
+//                    ngo.setApproval_status(approval_status);
+
+                try {
+                System.out.println("entered try block");
+                Connection con = SQLConnection.establishConnection();
+                System.out.println(con);
+                if (con != null) {
+                    System.out.println("entered if con not null block");
+                    String query = "INSERT INTO NGO(user_name, Name, Email, Password, Phone_number, Street_address, City, State, Pincode, license, approval_status) VALUES(?,?,?,?,?,?,?,?,?,?,?)";
+
+                    PreparedStatement pstmt = con.prepareStatement(query);
+                    pstmt.setString(1, username);
+                    pstmt.setString(2, name);
+                    pstmt.setString(3, email);
+                    pstmt.setString(4, password);
+                    pstmt.setLong(5, phoneNo);
+                    pstmt.setString(6, street);
+                    pstmt.setString(7, city);
+                    pstmt.setString(8, state);
+                    pstmt.setInt(9, pincode);
+
+                    pstmt.setString(10, license_path);
+                    pstmt.setString(11, approval_status);
+                    int count = pstmt.executeUpdate();
+                    if (count == 1) {
+
+                        JOptionPane.showMessageDialog(null, "Thanks for registering. We will notify you once your registration is approved.");
+                        Mail.sendEmailMessage(email, "Thanks for registering with *BLOODONATE*. We will update you once your account is approved.");
+
+                    }
+                }
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, "User already exists. Please try a different username or email.", "Error!", JOptionPane.ERROR_MESSAGE);
+
+            }
+
+            case "Equipments Provider":
+//                    NGOManagement ngo = new NGOManagement();
+//                    ngo.setName(name);
+//                    ngo.setUsername(username);
+//                    ngo.setEmail(email);
+//                    ngo.setPhoneNo(phoneNo);
+//                    ngo.setCity(city);
+//                    ngo.setStreet(street);
+//                    ngo.setPassword(password);
+//                    ngo.setPincode(pincode);
+//                    ngo.setState(state);
+//                    ngo.setLicense_path(license_path);
+//                    ngo.setApproval_status(approval_status);
+
+                try {
+                System.out.println("entered try block");
+                Connection con = SQLConnection.establishConnection();
+                System.out.println(con);
+                if (con != null) {
+                    System.out.println("entered if con not null block");
+
+                    String query = "INSERT INTO NGO(user_name, Name, Email, Password, Phone_number, Street_address, City, State, Pincode, license, approval_status) VALUES(?,?,?,?,?,?,?,?,?,?,?)";
+
+                    PreparedStatement pstmt = con.prepareStatement(query);
+                    pstmt.setString(1, username);
+                    pstmt.setString(2, name);
+                    pstmt.setString(3, email);
+                    pstmt.setString(4, password);
+                    pstmt.setLong(5, phoneNo);
+                    pstmt.setString(6, street);
+                    pstmt.setString(7, city);
+                    pstmt.setString(8, state);
+                    pstmt.setInt(9, pincode);
+
+                    pstmt.setString(10, license_path);
+                    pstmt.setString(11, approval_status);
+                    int count = pstmt.executeUpdate();
+                    if (count == 1) {
+
+                        JOptionPane.showMessageDialog(null, "Thanks for registering. We will notify you once your registration is approved.");
+                        Mail.sendEmailMessage(email, "Thanks for registering with *BLOODONATE*. We will update you once your account is approved.");
+
+                    }
+                }
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, "User already exists. Please try a different username or email.", "Error!", JOptionPane.ERROR_MESSAGE);
+
+            }
+
+        }
     }
-    
+
 }

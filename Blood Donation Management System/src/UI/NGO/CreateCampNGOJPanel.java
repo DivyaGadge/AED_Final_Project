@@ -19,10 +19,14 @@ public class CreateCampNGOJPanel extends javax.swing.JPanel {
     /**
      * Creates new form CreateCampNGO
      */
-    public CreateCampNGOJPanel() {
+    model.volunteerEnt.CreateCampNGO createCamp;
+    String ngo_username;
+    public CreateCampNGOJPanel(String ngo_username) {
         initComponents();
-        populateBBCB();
+        this.createCamp = new model.volunteerEnt.CreateCampNGO();
+        createCamp.populateBBCB(BBCB);
         errorVisibility();
+        this.ngo_username = ngo_username;
     }
 
     /**
@@ -182,19 +186,40 @@ public class CreateCampNGOJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_streetTFActionPerformed
 
-    public void organizeCampBtnFunctionality() {
-        
+    public void organizeCampBtnFunctionality() throws SQLException {
+
         boolean valid = true;
         int pincode = 0;
-        String BBOrg;
+        double latitude = 0;
+        double longitude = 0;
+        String campDate = null;
+        String status = "open";
+        
+        String BBOrg = null;
         String name = nameTF.getText();
-        String latitude = latTF.getText();
-        String longitude = lonTF.getText();
-        String campDate =  campDateTF.getDate().toString();
+        try {
+            latitude = Double.parseDouble(latTF.getText());
+        } catch (Exception lae) {
+            latitudeError.setVisible(true);
+            valid = false;
+        }
+        try {
+            longitude = Double.parseDouble(lonTF.getText());
+        } catch (Exception loe) {
+            longitudeError.setVisible(true);
+            valid = false;
+        }
+        try {
+            campDate = campDateTF.getDate().toString();
+        } catch (Exception e) {
+            dateError.setVisible(true);
+            valid = false;
+        }
+
         String street = streetTF.getText();
         String city = cityTF.getText();
         String state = stateCB.getSelectedItem().toString();
-        try{
+        try {
             BBOrg = BBCB.getSelectedItem().toString();
         } catch (NullPointerException e) {
             BBError.setVisible(true);
@@ -210,14 +235,7 @@ public class CreateCampNGOJPanel extends javax.swing.JPanel {
             nameError.setVisible(true);
             valid = false;
         }
-        if (latitude.isEmpty()) {
-            latitudeError.setVisible(true);
-            valid = false;
-        }
-        if (longitude.isEmpty()) {
-            longitudeError.setVisible(true);
-            valid = false;
-        }
+
         if (street.isEmpty()) {
             streetError.setVisible(true);
             valid = false;
@@ -230,32 +248,20 @@ public class CreateCampNGOJPanel extends javax.swing.JPanel {
             stateError.setVisible(true);
             valid = false;
         }
-        if (!(Integer.toString(pincode).length() >=5 || Integer.toString(pincode).length()<= 6)) {
+        if (!(Integer.toString(pincode).length() >= 5 || Integer.toString(pincode).length() <= 6)) {
             pinError.setVisible(true);
-            valid = false;
-        }
-        if (campDate.isEmpty()){
-            dateError.setVisible(true);
             valid = false;
         }
 
         if (valid) {
-            try {
-            Connection con = SQLConnection.establishConnection();
-            if (con!=null){
-                String query = "SELECT user_name FROM BB TABLE";
-                Statement stmt = con.createStatement();
-//                Execute the sql query
-            }
-
-        } catch (SQLException ex) {
-            Logger.getLogger(LoginJPanel.class.getName()).log(Level.SEVERE, null, ex);
-        }
-//            
+            
+            createCamp.insertCamp(name, ngo_username, BBOrg, campDate, latitude, longitude, street, city, state, pincode, status);
+            emptyTF();
+            
         }
 
+        
     }
-    
 
     public void errorVisibility() {
 
@@ -267,7 +273,6 @@ public class CreateCampNGOJPanel extends javax.swing.JPanel {
         pinError.setVisible(false);
         latitudeError.setVisible(false);
         longitudeError.setVisible(false);
-
 
     }
 
@@ -282,19 +287,6 @@ public class CreateCampNGOJPanel extends javax.swing.JPanel {
 
     }
 
-    public void populateBBCB() {
-        try {
-            Connection con = SQLConnection.establishConnection();
-            if (con!=null){
-                String query = "SELECT user_name FROM BB TABLE";
-                Statement stmt = con.createStatement();
-//                Execute the sql query
-            }
-
-        } catch (SQLException ex) {
-            Logger.getLogger(LoginJPanel.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> BBCB;

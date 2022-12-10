@@ -15,8 +15,10 @@ public class ManageNGOCampsJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ManageNGOCamps
      */
-    public ManageNGOCampsJPanel() {
+    String ngo_username;
+    public ManageNGOCampsJPanel(String ngo_username) {
         initComponents();
+        this.ngo_username = ngo_username;
     }
 
     /**
@@ -202,7 +204,7 @@ public class ManageNGOCampsJPanel extends javax.swing.JPanel {
     public void createCampBtnFunctionality() {
         
         manageCampCardLayout.removeAll();
-        manageCampCardLayout.add(new CreateCampNGOJPanel());
+        manageCampCardLayout.add(new CreateCampNGOJPanel(ngo_username));
         ((CardLayout) manageCampCardLayout.getLayout()).next(manageCampCardLayout);
         
     }

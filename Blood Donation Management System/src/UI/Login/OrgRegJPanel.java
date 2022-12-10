@@ -295,7 +295,6 @@ public class OrgRegJPanel extends javax.swing.JPanel {
         boolean valid = true;
         long phoneNo = 0;
         int pincode = 0;
-
         String name = nameTF.getText();
         String username = usernameTF.getText();
         String email = emailTF.getText();

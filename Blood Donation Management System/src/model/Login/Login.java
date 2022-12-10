@@ -54,7 +54,7 @@ public class Login {
                         String password_sql = rs.getString("password");
                         String username_sql = rs.getString("user_name");
                         if (password.equals(password_sql)) {
-                            
+
                             mainFrameCardLayout.removeAll();
                             mainFrameCardLayout.add(new NGOManagementJPanel(mainFrameCardLayout, username_sql));
                             ((CardLayout) mainFrameCardLayout.getLayout()).next(mainFrameCardLayout);
@@ -66,6 +66,7 @@ public class Login {
 
                     } else {
                         JOptionPane.showMessageDialog(null, "You are not registered. Please register with us to login.", "error message", JOptionPane.ERROR_MESSAGE);
+                        break;
                     }
                 }
             } catch (SQLException ex) {
@@ -100,6 +101,7 @@ public class Login {
 
                         } else {
                             JOptionPane.showMessageDialog(null, "You are not registered. Please register with us to login.", "error message", JOptionPane.ERROR_MESSAGE);
+                            break;
                         }
                     }
                 } catch (SQLException ex) {
@@ -130,6 +132,7 @@ public class Login {
                             break;
                         } else {
                             JOptionPane.showMessageDialog(null, username + ", Please enter correct password", "error message", JOptionPane.ERROR_MESSAGE);
+                            break;
                         }
 
                     } else {
@@ -168,6 +171,7 @@ public class Login {
 
                     } else {
                         JOptionPane.showMessageDialog(null, "You are not registered. Please register with us to login.", "error message", JOptionPane.ERROR_MESSAGE);
+                        break;
                     }
                 }
             } catch (SQLException ex) {
@@ -202,6 +206,7 @@ public class Login {
 
                     } else {
                         JOptionPane.showMessageDialog(null, "You are not registered. Please register with us to login.", "error message", JOptionPane.ERROR_MESSAGE);
+                        break;
                     }
                 }
             } catch (SQLException ex) {
@@ -236,6 +241,7 @@ public class Login {
 
                     } else {
                         JOptionPane.showMessageDialog(null, "You are not registered. Please register with us to login.", "error message", JOptionPane.ERROR_MESSAGE);
+                        break;
                     }
                 }
             } catch (SQLException ex) {
@@ -270,6 +276,7 @@ public class Login {
 
                     } else {
                         JOptionPane.showMessageDialog(null, "You are not registered. Please register with us to login.", "error message", JOptionPane.ERROR_MESSAGE);
+                        break;
                     }
                 }
             } catch (SQLException ex) {
@@ -304,6 +311,7 @@ public class Login {
 
                     } else {
                         JOptionPane.showMessageDialog(null, "You are not registered. Please register with us to login.", "error message", JOptionPane.ERROR_MESSAGE);
+                        break;
                     }
                 }
             } catch (SQLException ex) {
@@ -338,6 +346,7 @@ public class Login {
 
                     } else {
                         JOptionPane.showMessageDialog(null, "You are not registered. Please register with us to login.", "error message", JOptionPane.ERROR_MESSAGE);
+                        break;
                     }
                 }
             } catch (SQLException ex) {
@@ -406,6 +415,7 @@ public class Login {
 
                     } else {
                         JOptionPane.showMessageDialog(null, "You are not registered. Please register with us to login.", "error message", JOptionPane.ERROR_MESSAGE);
+                        break;
                     }
                 }
             } catch (SQLException ex) {
@@ -440,6 +450,7 @@ public class Login {
 
                     } else {
                         JOptionPane.showMessageDialog(null, "You are not registered. Please register with us to login.", "error message", JOptionPane.ERROR_MESSAGE);
+                        break;
                     }
                 }
             } catch (SQLException ex) {
@@ -474,6 +485,7 @@ public class Login {
 
                     } else {
                         JOptionPane.showMessageDialog(null, "You are not registered. Please register with us to login.", "error message", JOptionPane.ERROR_MESSAGE);
+                        break;
                     }
                 }
             } catch (SQLException ex) {

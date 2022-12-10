@@ -7,6 +7,8 @@ package UI.NGO;
 import Sql.SQLConnection;
 import javax.swing.JPanel;
 import java.sql.*;
+import model.volunteerEnt.CreateOrgNGO;
+
 /**
  *
  * @author surajvisvesh
@@ -17,9 +19,14 @@ public class CreateOrgNGOJPanel extends javax.swing.JPanel {
      * Creates new form createOrgNGOJPanel
      */
     JPanel manageOrgCardLayout; //
+    String ngo_username;
+    model.volunteerEnt.CreateOrgNGO createOrg;
 
-    public CreateOrgNGOJPanel() {
+    public CreateOrgNGOJPanel(String ngo_username) {
         initComponents();
+        this.ngo_username = ngo_username;
+        this.createOrg = new CreateOrgNGO();
+
     }
 
     /**
@@ -122,7 +129,7 @@ public class CreateOrgNGOJPanel extends javax.swing.JPanel {
         orgTypeLbl.setText("Organization Type*");
         add(orgTypeLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(517, 22, -1, -1));
 
-        orgTypeCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Blood Collection Organization", "Sample Testing Organization", "Blood Bank Warehouse" }));
+        orgTypeCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Blood Collection Organization", "Warehouse Organization" }));
         orgTypeCB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 orgTypeCBActionPerformed(evt);
@@ -278,21 +285,10 @@ public class CreateOrgNGOJPanel extends javax.swing.JPanel {
         }
 
         if (valid) {
-            try {
-                Connection con = SQLConnection.establishConnection();
-                if (con != null) {
-                    String query = "SELECT user_name FROM BB TABLE";
-                    Statement stmt = con.createStatement();
-//                Execute the sql query
-                }
-
-            } catch (SQLException ex) {
-                System.out.println("Catch");
-            }
+            createOrg.insertOrg(username, ngo_username, name, email, password, phoneNo, street, city, state, pincode);
         }
-    
+
     }
-    
 
     public void errorVisibility() {
 

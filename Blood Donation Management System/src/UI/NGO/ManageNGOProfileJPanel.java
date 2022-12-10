@@ -13,9 +13,10 @@ public class ManageNGOProfileJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ManageNGOProfileJPanel
      */
-    public ManageNGOProfileJPanel() {
+    String userName;
+    public ManageNGOProfileJPanel(String userName) {
         initComponents();
-        userNameLbl.setText("USER NAME!");
+        userNameLbl.setText(userName);
     }
 
     /**

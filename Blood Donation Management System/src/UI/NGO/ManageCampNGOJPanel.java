@@ -4,6 +4,11 @@
  */
 package UI.NGO;
 
+import com.mysql.cj.protocol.Resultset;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import model.volunteerEnt.ManageCampNGO;
+
 /**
  *
  * @author surajvisvesh
@@ -13,9 +18,11 @@ public class ManageCampNGOJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ManageCampNGOJPanel
      */
+    ManageCampNGO manageCamp;
     public ManageCampNGOJPanel() {
         initComponents();
         errorVisibility();
+        this.manageCamp = new ManageCampNGO();
     }
 
     /**
@@ -346,8 +353,20 @@ public class ManageCampNGOJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_streetTFActionPerformed
 
     public void populateCampsTable() {
+        int selectedRowIndex = campTable.getSelectedRow();
+
+        if (selectedRowIndex < 0) {
+            JOptionPane.showMessageDialog(this, "Please select a camp to end.");
+            return;
+        }
+
+        DefaultTableModel model = (DefaultTableModel) campTable.getModel();
+        int camp_id = (int) model.getValueAt(selectedRowIndex, 0);
         
-//        write sql query to fetch database details.
+        System.out.println(camp_id);
+        
+        manageCamp.populateTable(camp_id, model);
+        
         
     }
     
@@ -379,8 +398,9 @@ public class ManageCampNGOJPanel extends javax.swing.JPanel {
         
     }
     
-    public void endCampBtnFunctionality() {
+    public void endCampBtnFunctionality(String camp_id) {
         
+        manageCamp.endCamp();
     }
     
     public void campLocFunctionality() {
