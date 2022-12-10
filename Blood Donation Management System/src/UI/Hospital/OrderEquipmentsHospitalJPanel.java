@@ -28,18 +28,15 @@ public class OrderEquipmentsHospitalJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        searchTF = new javax.swing.JTextField();
-        serachIconLbl = new javax.swing.JLabel();
-        orgTable = new javax.swing.JScrollPane();
+        searchHEquipT = new javax.swing.JTextField();
+        equipTable = new javax.swing.JScrollPane();
         equipmentListTbl = new javax.swing.JTable();
-        orderBtn = new javax.swing.JPanel();
+        orderHBtn = new javax.swing.JPanel();
         orderLbl = new javax.swing.JLabel();
-        qtyTF = new javax.swing.JTextField();
-        qtyLbl = new javax.swing.JLabel();
+        qtyHT = new javax.swing.JTextField();
+        qtyHLbl = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
-
-        serachIconLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagesPackage/search_icon.png"))); // NOI18N
 
         equipmentListTbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -61,9 +58,9 @@ public class OrderEquipmentsHospitalJPanel extends javax.swing.JPanel {
             }
         });
         equipmentListTbl.getTableHeader().setReorderingAllowed(false);
-        orgTable.setViewportView(equipmentListTbl);
+        equipTable.setViewportView(equipmentListTbl);
 
-        orderBtn.setBackground(new java.awt.Color(106, 106, 106));
+        orderHBtn.setBackground(new java.awt.Color(106, 106, 106));
 
         orderLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         orderLbl.setForeground(new java.awt.Color(255, 255, 255));
@@ -75,18 +72,18 @@ public class OrderEquipmentsHospitalJPanel extends javax.swing.JPanel {
             }
         });
 
-        javax.swing.GroupLayout orderBtnLayout = new javax.swing.GroupLayout(orderBtn);
-        orderBtn.setLayout(orderBtnLayout);
-        orderBtnLayout.setHorizontalGroup(
-            orderBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout orderHBtnLayout = new javax.swing.GroupLayout(orderHBtn);
+        orderHBtn.setLayout(orderHBtnLayout);
+        orderHBtnLayout.setHorizontalGroup(
+            orderHBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(orderLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
         );
-        orderBtnLayout.setVerticalGroup(
-            orderBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        orderHBtnLayout.setVerticalGroup(
+            orderHBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(orderLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
-        qtyLbl.setText("Enter required Quantity");
+        qtyHLbl.setText("Enter required Quantity");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -96,40 +93,37 @@ public class OrderEquipmentsHospitalJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(qtyLbl)
+                        .addComponent(qtyHLbl)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(qtyTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(qtyHT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(orderBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(orderHBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGap(26, 26, 26)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(searchTF, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(serachIconLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(orgTable, javax.swing.GroupLayout.PREFERRED_SIZE, 1069, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(searchHEquipT, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(35, 35, 35))
+                            .addComponent(equipTable, javax.swing.GroupLayout.PREFERRED_SIZE, 1069, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(47, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(searchTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(serachIconLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(12, 12, 12)
+                .addComponent(searchHEquipT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(orgTable, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(equipTable, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
-                        .addComponent(orderBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(orderHBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(139, 139, 139))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(42, 42, 42)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(qtyTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(qtyLbl))
+                            .addComponent(qtyHT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(qtyHLbl))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -140,13 +134,12 @@ public class OrderEquipmentsHospitalJPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JScrollPane equipTable;
     private javax.swing.JTable equipmentListTbl;
-    private javax.swing.JPanel orderBtn;
+    private javax.swing.JPanel orderHBtn;
     private javax.swing.JLabel orderLbl;
-    private javax.swing.JScrollPane orgTable;
-    private javax.swing.JLabel qtyLbl;
-    private javax.swing.JTextField qtyTF;
-    private javax.swing.JTextField searchTF;
-    private javax.swing.JLabel serachIconLbl;
+    private javax.swing.JLabel qtyHLbl;
+    private javax.swing.JTextField qtyHT;
+    private javax.swing.JTextField searchHEquipT;
     // End of variables declaration//GEN-END:variables
 }

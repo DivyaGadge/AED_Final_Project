@@ -28,18 +28,15 @@ public class ViewInventoryHospitalJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        searchTF = new javax.swing.JTextField();
-        serachIconLbl = new javax.swing.JLabel();
-        orgTable = new javax.swing.JScrollPane();
-        orderEquipmentTable = new javax.swing.JTable();
-        orderEquipmentsBtn = new javax.swing.JPanel();
-        createOrgLbl = new javax.swing.JLabel();
+        searchHWH = new javax.swing.JTextField();
+        inventoryWHWTable = new javax.swing.JScrollPane();
+        inventoryhwTable = new javax.swing.JTable();
+        ordEquipHWHBtn = new javax.swing.JPanel();
+        ordEquipHWHLbl = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
-        serachIconLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagesPackage/search_icon.png"))); // NOI18N
-
-        orderEquipmentTable.setModel(new javax.swing.table.DefaultTableModel(
+        inventoryhwTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -58,30 +55,30 @@ public class ViewInventoryHospitalJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        orderEquipmentTable.getTableHeader().setReorderingAllowed(false);
-        orgTable.setViewportView(orderEquipmentTable);
+        inventoryhwTable.getTableHeader().setReorderingAllowed(false);
+        inventoryWHWTable.setViewportView(inventoryhwTable);
 
-        orderEquipmentsBtn.setBackground(new java.awt.Color(106, 106, 106));
+        ordEquipHWHBtn.setBackground(new java.awt.Color(106, 106, 106));
 
-        createOrgLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
-        createOrgLbl.setForeground(new java.awt.Color(255, 255, 255));
-        createOrgLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        createOrgLbl.setText("Order New Equipments");
-        createOrgLbl.addMouseListener(new java.awt.event.MouseAdapter() {
+        ordEquipHWHLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        ordEquipHWHLbl.setForeground(new java.awt.Color(255, 255, 255));
+        ordEquipHWHLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ordEquipHWHLbl.setText("Order New Equipments");
+        ordEquipHWHLbl.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                createOrgLblMousePressed(evt);
+                ordEquipHWHLblMousePressed(evt);
             }
         });
 
-        javax.swing.GroupLayout orderEquipmentsBtnLayout = new javax.swing.GroupLayout(orderEquipmentsBtn);
-        orderEquipmentsBtn.setLayout(orderEquipmentsBtnLayout);
-        orderEquipmentsBtnLayout.setHorizontalGroup(
-            orderEquipmentsBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(createOrgLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 288, Short.MAX_VALUE)
+        javax.swing.GroupLayout ordEquipHWHBtnLayout = new javax.swing.GroupLayout(ordEquipHWHBtn);
+        ordEquipHWHBtn.setLayout(ordEquipHWHBtnLayout);
+        ordEquipHWHBtnLayout.setHorizontalGroup(
+            ordEquipHWHBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(ordEquipHWHLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 288, Short.MAX_VALUE)
         );
-        orderEquipmentsBtnLayout.setVerticalGroup(
-            orderEquipmentsBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(createOrgLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+        ordEquipHWHBtnLayout.setVerticalGroup(
+            ordEquipHWHBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(ordEquipHWHLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -92,41 +89,37 @@ public class ViewInventoryHospitalJPanel extends javax.swing.JPanel {
                 .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(searchTF, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(serachIconLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(orgTable, javax.swing.GroupLayout.PREFERRED_SIZE, 1068, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(orderEquipmentsBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(searchHWH, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(35, 35, 35))
+                    .addComponent(inventoryWHWTable, javax.swing.GroupLayout.PREFERRED_SIZE, 1068, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ordEquipHWHBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(40, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(searchTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(serachIconLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20)
+                .addComponent(searchHWH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(orgTable, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(inventoryWHWTable, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(19, 19, 19)
-                .addComponent(orderEquipmentsBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ordEquipHWHBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(57, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void createOrgLblMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_createOrgLblMousePressed
+    private void ordEquipHWHLblMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ordEquipHWHLblMousePressed
         // TODO add your handling code here:
 
 
-    }//GEN-LAST:event_createOrgLblMousePressed
+    }//GEN-LAST:event_ordEquipHWHLblMousePressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel createOrgLbl;
-    private javax.swing.JTable orderEquipmentTable;
-    private javax.swing.JPanel orderEquipmentsBtn;
-    private javax.swing.JScrollPane orgTable;
-    private javax.swing.JTextField searchTF;
-    private javax.swing.JLabel serachIconLbl;
+    private javax.swing.JScrollPane inventoryWHWTable;
+    private javax.swing.JTable inventoryhwTable;
+    private javax.swing.JPanel ordEquipHWHBtn;
+    private javax.swing.JLabel ordEquipHWHLbl;
+    private javax.swing.JTextField searchHWH;
     // End of variables declaration//GEN-END:variables
 }

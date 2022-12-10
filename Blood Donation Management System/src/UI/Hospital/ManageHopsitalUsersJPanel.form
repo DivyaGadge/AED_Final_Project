@@ -27,83 +27,47 @@
                   <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="searchTF" min="-2" pref="208" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="serachIconLbl" min="-2" pref="29" max="-2" attributes="0"/>
+                              <Component id="search" min="-2" pref="208" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                           </Group>
                           <Group type="103" alignment="1" groupAlignment="1" max="-2" attributes="0">
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="nameLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="nameTF" min="-2" pref="305" max="-2" attributes="0"/>
-                                          <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
-                                          <Component id="nameErrorLbl" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Component id="nameLbl2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="orgTypeCB" min="-2" pref="305" max="-2" attributes="0"/>
-                                          <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
-                                          <Component id="orgTypeErrorLbl" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Component id="passLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="passTF" min="-2" pref="305" max="-2" attributes="0"/>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="passErrorLbl" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Component id="emailLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="emailTF" min="-2" pref="305" max="-2" attributes="0"/>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="emailErrorLbl" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Component id="phoneLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="phoneTF" min="-2" pref="305" max="-2" attributes="0"/>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="phoneErrorLbl" min="-2" max="-2" attributes="0"/>
-                                      </Group>
+                                      <Component id="nameHLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="nameHT" alignment="0" min="-2" pref="305" max="-2" attributes="0"/>
+                                      <Component id="UserCategory" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="UserTypeCB" alignment="0" min="-2" pref="305" max="-2" attributes="0"/>
+                                      <Component id="passHLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="passT" alignment="0" min="-2" pref="305" max="-2" attributes="0"/>
+                                      <Component id="emailHLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="emailHT" alignment="0" min="-2" pref="305" max="-2" attributes="0"/>
+                                      <Component id="phoneHLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="phoneHT" alignment="0" min="-2" pref="305" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="32767" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="streetLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="streetTF" min="-2" pref="305" max="-2" attributes="0"/>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="streetErrorLbl" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="streetALbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="streetHT" alignment="0" min="-2" pref="305" max="-2" attributes="0"/>
+                                      <Component id="cityHLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="cityHT" alignment="0" min="-2" pref="305" max="-2" attributes="0"/>
+                                      <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="pinLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="pinT" alignment="0" min="-2" pref="305" max="-2" attributes="0"/>
                                       </Group>
-                                      <Component id="cityLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="cityTF" min="-2" pref="305" max="-2" attributes="0"/>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="cityErrorLbl" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="pincodeLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="stateTF1" alignment="0" min="-2" pref="305" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="pincodeErrorLbl" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="stateLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="stateCB" alignment="0" min="-2" pref="305" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="stateErrorLbl" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="stateHLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="stateHT" alignment="0" min="-2" pref="305" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
+                                  <EmptySpace min="-2" pref="152" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="orgTable" min="-2" pref="1069" max="-2" attributes="0"/>
+                              <Component id="UserdetailsTable" min="-2" pref="1069" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <Component id="updateOrgBtn" min="-2" max="-2" attributes="0"/>
+                      <Component id="updateuserBtn" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="424" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -113,86 +77,51 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="searchTF" min="-2" max="-2" attributes="0"/>
-                  <Component id="serachIconLbl" min="-2" pref="29" max="-2" attributes="0"/>
-              </Group>
+              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+              <Component id="search" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-              <Component id="orgTable" min="-2" pref="183" max="-2" attributes="0"/>
+              <Component id="UserdetailsTable" min="-2" pref="183" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="streetLbl" min="-2" max="-2" attributes="0"/>
+                      <Component id="streetALbl" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="streetTF" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="streetErrorLbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="streetHT" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="cityLbl" min="-2" max="-2" attributes="0"/>
+                      <Component id="cityHLbl" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="cityTF" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="cityErrorLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="cityHT" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="stateErrorLbl" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="stateLbl" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                              <Component id="stateCB" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="pincodeLbl" min="-2" max="-2" attributes="0"/>
+                      <Component id="stateHLbl" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="stateTF1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="pincodeErrorLbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="stateHT" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="pinLbl" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                      <Component id="pinT" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
-                      <Component id="updateOrgBtn" min="-2" max="-2" attributes="0"/>
+                      <Component id="updateuserBtn" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="nameLbl" min="-2" max="-2" attributes="0"/>
+                      <Component id="nameHLbl" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="nameTF" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="3" pref="3" max="-2" attributes="0"/>
-                              <Component id="nameErrorLbl" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
+                      <Component id="nameHT" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="nameLbl2" min="-2" max="-2" attributes="0"/>
+                      <Component id="UserCategory" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="orgTypeCB" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="orgTypeErrorLbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="UserTypeCB" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="emailLbl" min="-2" max="-2" attributes="0"/>
+                      <Component id="emailHLbl" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="emailTF" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="emailErrorLbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="emailHT" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="passLbl" min="-2" max="-2" attributes="0"/>
+                      <Component id="passHLbl" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="passTF" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="passErrorLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="passT" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="phoneLbl" min="-2" max="-2" attributes="0"/>
+                      <Component id="phoneHLbl" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="phoneTF" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="phoneErrorLbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="phoneHT" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace pref="31" max="32767" attributes="0"/>
@@ -201,99 +130,48 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JTextField" name="searchTF">
+    <Component class="javax.swing.JTextField" name="search">
     </Component>
-    <Component class="javax.swing.JLabel" name="serachIconLbl">
-      <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/imagesPackage/search_icon.png"/>
-        </Property>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="emailErrorLbl">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Helvetica Neue" size="13" style="2"/>
-        </Property>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="0" green="33" red="ff" type="rgb"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Field cannot be empty"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="passErrorLbl">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Helvetica Neue" size="13" style="2"/>
-        </Property>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="0" green="33" red="ff" type="rgb"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Field cannot be empty"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="orgTypeErrorLbl">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Helvetica Neue" size="13" style="2"/>
-        </Property>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="0" green="33" red="ff" type="rgb"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Field cannot be empty"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="nameErrorLbl">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Helvetica Neue" size="13" style="2"/>
-        </Property>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="0" green="33" red="ff" type="rgb"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Field cannot be empty"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="pincodeLbl">
+    <Component class="javax.swing.JLabel" name="pinLbl">
       <Properties>
         <Property name="text" type="java.lang.String" value="Pincode*"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="stateTF1">
+    <Component class="javax.swing.JTextField" name="pinT">
     </Component>
-    <Component class="javax.swing.JTextField" name="passTF">
+    <Component class="javax.swing.JTextField" name="passT">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="passTFActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="passTActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="emailLbl">
+    <Component class="javax.swing.JLabel" name="emailHLbl">
       <Properties>
         <Property name="text" type="java.lang.String" value="Email*"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="emailTF">
+    <Component class="javax.swing.JTextField" name="emailHT">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="emailTFActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="emailHTActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="nameLbl2">
+    <Component class="javax.swing.JLabel" name="UserCategory">
       <Properties>
         <Property name="text" type="java.lang.String" value="User Category*"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="phoneLbl">
+    <Component class="javax.swing.JLabel" name="phoneHLbl">
       <Properties>
         <Property name="text" type="java.lang.String" value="Phone*"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="phoneTF">
+    <Component class="javax.swing.JTextField" name="phoneHT">
     </Component>
-    <Component class="javax.swing.JLabel" name="streetLbl">
+    <Component class="javax.swing.JLabel" name="streetALbl">
       <Properties>
         <Property name="text" type="java.lang.String" value="Street Address*"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="orgTypeCB">
+    <Component class="javax.swing.JComboBox" name="UserTypeCB">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="3">
@@ -304,18 +182,18 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="orgTypeCBActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="UserTypeCBActionPerformed"/>
       </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JTextField" name="streetTF">
+    <Component class="javax.swing.JTextField" name="streetHT">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="streetTFActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="streetHTActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JComboBox" name="stateCB">
+    <Component class="javax.swing.JComboBox" name="stateHT">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="47">
@@ -373,51 +251,29 @@
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JLabel" name="cityLbl">
+    <Component class="javax.swing.JLabel" name="cityHLbl">
       <Properties>
         <Property name="text" type="java.lang.String" value="City*"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="cityTF">
+    <Component class="javax.swing.JTextField" name="cityHT">
     </Component>
-    <Component class="javax.swing.JLabel" name="stateLbl">
+    <Component class="javax.swing.JLabel" name="stateHLbl">
       <Properties>
         <Property name="text" type="java.lang.String" value="State*"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="nameLbl">
+    <Component class="javax.swing.JLabel" name="nameHLbl">
       <Properties>
         <Property name="text" type="java.lang.String" value="Name of the Hospital*"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="pincodeErrorLbl">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Helvetica Neue" size="13" style="2"/>
-        </Property>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="0" green="33" red="ff" type="rgb"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Field cannot be empty."/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="passLbl">
+    <Component class="javax.swing.JLabel" name="passHLbl">
       <Properties>
         <Property name="text" type="java.lang.String" value="Password*"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="cityErrorLbl">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Helvetica Neue" size="13" style="2"/>
-        </Property>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="0" green="33" red="ff" type="rgb"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Field cannot be empty"/>
-      </Properties>
-    </Component>
-    <Container class="javax.swing.JPanel" name="updateOrgBtn">
+    <Container class="javax.swing.JPanel" name="updateuserBtn">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="6a" green="6a" red="6a" type="rgb"/>
@@ -451,42 +307,9 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JLabel" name="streetErrorLbl">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Helvetica Neue" size="13" style="2"/>
-        </Property>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="0" green="33" red="ff" type="rgb"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Field cannot be empty"/>
-      </Properties>
+    <Component class="javax.swing.JTextField" name="nameHT">
     </Component>
-    <Component class="javax.swing.JLabel" name="phoneErrorLbl">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Helvetica Neue" size="13" style="2"/>
-        </Property>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="0" green="33" red="ff" type="rgb"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Field cannot be empty"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="nameTF">
-    </Component>
-    <Component class="javax.swing.JLabel" name="stateErrorLbl">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Helvetica Neue" size="13" style="2"/>
-        </Property>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="0" green="33" red="ff" type="rgb"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Field cannot be empty"/>
-      </Properties>
-    </Component>
-    <Container class="javax.swing.JScrollPane" name="orgTable">
+    <Container class="javax.swing.JScrollPane" name="UserdetailsTable">
       <AuxValues>
         <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
       </AuxValues>

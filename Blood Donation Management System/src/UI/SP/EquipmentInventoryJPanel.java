@@ -10,12 +10,12 @@ import UI.Hospital.*;
  *
  * @author divyagadge
  */
-public class EquipmentManageOrdJPanel extends javax.swing.JPanel {
+public class EquipmentInventoryJPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form ListofBBJPanel
      */
-    public EquipmentManageOrdJPanel() {
+    public EquipmentInventoryJPanel() {
         initComponents();
     }
 
@@ -28,118 +28,271 @@ public class EquipmentManageOrdJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
-        updateOrgBtn = new javax.swing.JPanel();
-        updateOrgLbl = new javax.swing.JLabel();
-        updateOrgBtn1 = new javax.swing.JPanel();
-        updateOrgLbl1 = new javax.swing.JLabel();
+        inventoryESScrollPane = new javax.swing.JScrollPane();
+        ESjTable = new javax.swing.JTable();
+        updateESBtn = new javax.swing.JPanel();
+        updateESLbl = new javax.swing.JLabel();
+        addESBtn = new javax.swing.JPanel();
+        addESLbl = new javax.swing.JLabel();
+        emailTF = new javax.swing.JTextField();
+        emailTF1 = new javax.swing.JTextField();
+        emailTF2 = new javax.swing.JTextField();
+        emailTF3 = new javax.swing.JTextField();
+        emailTF4 = new javax.swing.JTextField();
+        emailTF5 = new javax.swing.JTextField();
+        emailTF6 = new javax.swing.JTextField();
+        emailLbl = new javax.swing.JLabel();
+        emailLbl1 = new javax.swing.JLabel();
+        emailLbl3 = new javax.swing.JLabel();
+        emailLbl4 = new javax.swing.JLabel();
+        emailLbl5 = new javax.swing.JLabel();
+        emailLbl6 = new javax.swing.JLabel();
+        emailLbl7 = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(1142, 702));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        ESjTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Order Id", "Equipment Org Username", "Received From", "Item Count", "Delivery Status"
+                "Blood Pressure Monitors", "Scales", "Donor Chairs", "Blood Collection Monitors", "Blood bag tube sealers", "Blood transportation boxes", "Blood bank refrigerators"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        inventoryESScrollPane.setViewportView(ESjTable);
 
-        jLabel1.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
-        jLabel1.setText("Equipment Orders");
+        updateESBtn.setBackground(new java.awt.Color(106, 106, 106));
 
-        updateOrgBtn.setBackground(new java.awt.Color(106, 106, 106));
+        updateESLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        updateESLbl.setForeground(new java.awt.Color(255, 255, 255));
+        updateESLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        updateESLbl.setText("Update");
 
-        updateOrgLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
-        updateOrgLbl.setForeground(new java.awt.Color(255, 255, 255));
-        updateOrgLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        updateOrgLbl.setText("Send to Logistics Team");
-
-        javax.swing.GroupLayout updateOrgBtnLayout = new javax.swing.GroupLayout(updateOrgBtn);
-        updateOrgBtn.setLayout(updateOrgBtnLayout);
-        updateOrgBtnLayout.setHorizontalGroup(
-            updateOrgBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(updateOrgLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE)
+        javax.swing.GroupLayout updateESBtnLayout = new javax.swing.GroupLayout(updateESBtn);
+        updateESBtn.setLayout(updateESBtnLayout);
+        updateESBtnLayout.setHorizontalGroup(
+            updateESBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(updateESLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE)
         );
-        updateOrgBtnLayout.setVerticalGroup(
-            updateOrgBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(updateOrgLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
+        updateESBtnLayout.setVerticalGroup(
+            updateESBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(updateESLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
         );
 
-        updateOrgBtn1.setBackground(new java.awt.Color(106, 106, 106));
+        addESBtn.setBackground(new java.awt.Color(106, 106, 106));
 
-        updateOrgLbl1.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
-        updateOrgLbl1.setForeground(new java.awt.Color(255, 255, 255));
-        updateOrgLbl1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        updateOrgLbl1.setText("Accept Order");
+        addESLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        addESLbl.setForeground(new java.awt.Color(255, 255, 255));
+        addESLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        addESLbl.setText("Add");
 
-        javax.swing.GroupLayout updateOrgBtn1Layout = new javax.swing.GroupLayout(updateOrgBtn1);
-        updateOrgBtn1.setLayout(updateOrgBtn1Layout);
-        updateOrgBtn1Layout.setHorizontalGroup(
-            updateOrgBtn1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(updateOrgLbl1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE)
+        javax.swing.GroupLayout addESBtnLayout = new javax.swing.GroupLayout(addESBtn);
+        addESBtn.setLayout(addESBtnLayout);
+        addESBtnLayout.setHorizontalGroup(
+            addESBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(addESLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE)
         );
-        updateOrgBtn1Layout.setVerticalGroup(
-            updateOrgBtn1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(updateOrgLbl1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
+        addESBtnLayout.setVerticalGroup(
+            addESBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(addESLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
         );
+
+        emailTF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                emailTFActionPerformed(evt);
+            }
+        });
+
+        emailTF1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                emailTF1ActionPerformed(evt);
+            }
+        });
+
+        emailTF2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                emailTF2ActionPerformed(evt);
+            }
+        });
+
+        emailTF3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                emailTF3ActionPerformed(evt);
+            }
+        });
+
+        emailTF4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                emailTF4ActionPerformed(evt);
+            }
+        });
+
+        emailTF5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                emailTF5ActionPerformed(evt);
+            }
+        });
+
+        emailTF6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                emailTF6ActionPerformed(evt);
+            }
+        });
+
+        emailLbl.setText("Blood Pressure Monitors");
+
+        emailLbl1.setText("Blood transportation boxes");
+
+        emailLbl3.setText("Blood bank refrigerators");
+
+        emailLbl4.setText("Scales");
+
+        emailLbl5.setText("Donor Chairs");
+
+        emailLbl6.setText("Blood Collection Monitors");
+
+        emailLbl7.setText("Blood bag tube sealers");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(inventoryESScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 1075, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(emailLbl6)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(604, 604, 604)
-                        .addComponent(updateOrgBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(updateOrgBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1049, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(62, Short.MAX_VALUE))
+                            .addComponent(emailLbl5)
+                            .addComponent(emailLbl4))
+                        .addGap(405, 405, 405)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(emailTF4, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(emailLbl1)
+                            .addComponent(emailLbl3)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(emailLbl)
+                            .addComponent(emailTF2, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(emailTF1, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(emailTF5, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(emailTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(175, 175, 175)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(emailTF3, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(emailLbl7)
+                            .addComponent(emailTF6, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(addESBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(39, 39, 39)
+                                .addComponent(updateESBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(68, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(53, 53, 53)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(updateOrgBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(58, 58, 58)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(emailLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(emailLbl7, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(emailTF3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(emailTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(22, 22, 22)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(emailLbl4, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(emailLbl1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(emailTF4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(emailTF1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(24, 24, 24)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(emailLbl5, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(emailLbl3, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(emailTF6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(emailTF5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(25, 25, 25)
+                .addComponent(emailLbl6, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(51, 51, 51)
-                        .addComponent(updateOrgBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(211, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(emailTF2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(updateESBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 107, Short.MAX_VALUE)
+                        .addComponent(inventoryESScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(addESBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void emailTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailTFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_emailTFActionPerformed
+
+    private void emailTF1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailTF1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_emailTF1ActionPerformed
+
+    private void emailTF2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailTF2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_emailTF2ActionPerformed
+
+    private void emailTF3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailTF3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_emailTF3ActionPerformed
+
+    private void emailTF4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailTF4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_emailTF4ActionPerformed
+
+    private void emailTF5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailTF5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_emailTF5ActionPerformed
+
+    private void emailTF6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailTF6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_emailTF6ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JPanel updateOrgBtn;
-    private javax.swing.JPanel updateOrgBtn1;
-    private javax.swing.JLabel updateOrgLbl;
-    private javax.swing.JLabel updateOrgLbl1;
+    private javax.swing.JTable ESjTable;
+    private javax.swing.JPanel addESBtn;
+    private javax.swing.JLabel addESLbl;
+    private javax.swing.JLabel emailLbl;
+    private javax.swing.JLabel emailLbl1;
+    private javax.swing.JLabel emailLbl3;
+    private javax.swing.JLabel emailLbl4;
+    private javax.swing.JLabel emailLbl5;
+    private javax.swing.JLabel emailLbl6;
+    private javax.swing.JLabel emailLbl7;
+    private javax.swing.JTextField emailTF;
+    private javax.swing.JTextField emailTF1;
+    private javax.swing.JTextField emailTF2;
+    private javax.swing.JTextField emailTF3;
+    private javax.swing.JTextField emailTF4;
+    private javax.swing.JTextField emailTF5;
+    private javax.swing.JTextField emailTF6;
+    private javax.swing.JScrollPane inventoryESScrollPane;
+    private javax.swing.JPanel updateESBtn;
+    private javax.swing.JLabel updateESLbl;
     // End of variables declaration//GEN-END:variables
 }

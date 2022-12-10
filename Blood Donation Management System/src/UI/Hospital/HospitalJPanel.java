@@ -249,7 +249,7 @@ public class HospitalJPanel extends javax.swing.JPanel {
 
     private void reqBloodBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reqBloodBtnMouseClicked
         // TODO add your handling code here:
-//        requestBlood();
+        requestBlood();
     }//GEN-LAST:event_reqBloodBtnMouseClicked
 
     private void mngbloodreqBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mngbloodreqBtnMouseClicked

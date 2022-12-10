@@ -4,8 +4,8 @@
  */
 package UI.SP;
 
-import UI.Hospital.*;
-import UI.NGO.*;
+import java.awt.CardLayout;
+
 
 /**
  *
@@ -29,171 +29,172 @@ public class LogisticsJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        NWHHeader = new javax.swing.JPanel();
+        LogisticsHeader = new javax.swing.JPanel();
         bloodonateLbl = new javax.swing.JLabel();
-        NWHMenu = new javax.swing.JPanel();
-        manageHospProfileBtn = new javax.swing.JPanel();
-        ManageHProLbl = new javax.swing.JLabel();
-        hproIcon = new javax.swing.JLabel();
-        inventoryBtn = new javax.swing.JPanel();
-        ManageOrgLbl = new javax.swing.JLabel();
-        manageBloodBtn = new javax.swing.JPanel();
-        manageBloodLbl = new javax.swing.JLabel();
-        ManageDonorsPanel = new javax.swing.JPanel();
-        ManageDonLbl = new javax.swing.JLabel();
-        donorIcon = new javax.swing.JLabel();
-        CardLayoutNWHPanel = new javax.swing.JPanel();
+        LogisticsMenu = new javax.swing.JPanel();
+        manageLogisticsProfileBtn = new javax.swing.JPanel();
+        ManageLProLbl = new javax.swing.JLabel();
+        PendingReqBtn = new javax.swing.JPanel();
+        PendingReqLbl = new javax.swing.JLabel();
+        activeReqBtn = new javax.swing.JPanel();
+        activeReqLbl = new javax.swing.JLabel();
+        deliveredReqPanel = new javax.swing.JPanel();
+        deliveredRedLbl = new javax.swing.JLabel();
+        CardLayoutLogisticsPanel = new javax.swing.JPanel();
 
-        NWHHeader.setBackground(new java.awt.Color(207, 98, 98));
+        LogisticsHeader.setBackground(new java.awt.Color(207, 98, 98));
 
         bloodonateLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 36)); // NOI18N
         bloodonateLbl.setForeground(new java.awt.Color(215, 215, 215));
         bloodonateLbl.setText("BLOODONATE");
         bloodonateLbl.setDebugGraphicsOptions(javax.swing.DebugGraphics.FLASH_OPTION);
 
-        javax.swing.GroupLayout NWHHeaderLayout = new javax.swing.GroupLayout(NWHHeader);
-        NWHHeader.setLayout(NWHHeaderLayout);
-        NWHHeaderLayout.setHorizontalGroup(
-            NWHHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(NWHHeaderLayout.createSequentialGroup()
+        javax.swing.GroupLayout LogisticsHeaderLayout = new javax.swing.GroupLayout(LogisticsHeader);
+        LogisticsHeader.setLayout(LogisticsHeaderLayout);
+        LogisticsHeaderLayout.setHorizontalGroup(
+            LogisticsHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(LogisticsHeaderLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(bloodonateLbl)
                 .addContainerGap(1168, Short.MAX_VALUE))
         );
-        NWHHeaderLayout.setVerticalGroup(
-            NWHHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(NWHHeaderLayout.createSequentialGroup()
+        LogisticsHeaderLayout.setVerticalGroup(
+            LogisticsHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(LogisticsHeaderLayout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addComponent(bloodonateLbl)
                 .addContainerGap(18, Short.MAX_VALUE))
         );
 
-        NWHMenu.setBackground(new java.awt.Color(207, 98, 98));
-        NWHMenu.setPreferredSize(new java.awt.Dimension(220, 700));
-        NWHMenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        LogisticsMenu.setBackground(new java.awt.Color(207, 98, 98));
+        LogisticsMenu.setPreferredSize(new java.awt.Dimension(220, 700));
+        LogisticsMenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        manageHospProfileBtn.setBackground(new java.awt.Color(230, 98, 98));
-        manageHospProfileBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+        manageLogisticsProfileBtn.setBackground(new java.awt.Color(230, 98, 98));
+        manageLogisticsProfileBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                manageLogisticsProfileBtnMouseClicked(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                manageHospProfileBtnMousePressed(evt);
+                manageLogisticsProfileBtnMousePressed(evt);
             }
         });
 
-        ManageHProLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
-        ManageHProLbl.setForeground(new java.awt.Color(215, 215, 215));
-        ManageHProLbl.setText("Manage Profile");
+        ManageLProLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        ManageLProLbl.setForeground(new java.awt.Color(215, 215, 215));
+        ManageLProLbl.setText("Manage Profile");
 
-        hproIcon.setBackground(new java.awt.Color(204, 204, 204));
-        hproIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        hproIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagesPackage/profile_icon.png"))); // NOI18N
-
-        javax.swing.GroupLayout manageHospProfileBtnLayout = new javax.swing.GroupLayout(manageHospProfileBtn);
-        manageHospProfileBtn.setLayout(manageHospProfileBtnLayout);
-        manageHospProfileBtnLayout.setHorizontalGroup(
-            manageHospProfileBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, manageHospProfileBtnLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(hproIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(ManageHProLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        manageHospProfileBtnLayout.setVerticalGroup(
-            manageHospProfileBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ManageHProLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, manageHospProfileBtnLayout.createSequentialGroup()
-                .addComponent(hproIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-
-        NWHMenu.add(manageHospProfileBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 280, -1));
-
-        inventoryBtn.setBackground(new java.awt.Color(230, 98, 98));
-
-        ManageOrgLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
-        ManageOrgLbl.setForeground(new java.awt.Color(215, 215, 215));
-        ManageOrgLbl.setText("Pending Request");
-
-        javax.swing.GroupLayout inventoryBtnLayout = new javax.swing.GroupLayout(inventoryBtn);
-        inventoryBtn.setLayout(inventoryBtnLayout);
-        inventoryBtnLayout.setHorizontalGroup(
-            inventoryBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, inventoryBtnLayout.createSequentialGroup()
+        javax.swing.GroupLayout manageLogisticsProfileBtnLayout = new javax.swing.GroupLayout(manageLogisticsProfileBtn);
+        manageLogisticsProfileBtn.setLayout(manageLogisticsProfileBtnLayout);
+        manageLogisticsProfileBtnLayout.setHorizontalGroup(
+            manageLogisticsProfileBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, manageLogisticsProfileBtnLayout.createSequentialGroup()
                 .addGap(58, 58, 58)
-                .addComponent(ManageOrgLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
+                .addComponent(ManageLProLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        inventoryBtnLayout.setVerticalGroup(
-            inventoryBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, inventoryBtnLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(ManageOrgLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
-                .addContainerGap())
+        manageLogisticsProfileBtnLayout.setVerticalGroup(
+            manageLogisticsProfileBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(ManageLProLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        NWHMenu.add(inventoryBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 280, -1));
+        LogisticsMenu.add(manageLogisticsProfileBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 280, -1));
 
-        manageBloodBtn.setBackground(new java.awt.Color(230, 98, 98));
-        manageBloodBtn.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                manageBloodBtnMousePressed(evt);
+        PendingReqBtn.setBackground(new java.awt.Color(230, 98, 98));
+        PendingReqBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                PendingReqBtnMouseClicked(evt);
             }
         });
 
-        manageBloodLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
-        manageBloodLbl.setForeground(new java.awt.Color(215, 215, 215));
-        manageBloodLbl.setText("Active Request");
+        PendingReqLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        PendingReqLbl.setForeground(new java.awt.Color(215, 215, 215));
+        PendingReqLbl.setText("Pending Request");
 
-        javax.swing.GroupLayout manageBloodBtnLayout = new javax.swing.GroupLayout(manageBloodBtn);
-        manageBloodBtn.setLayout(manageBloodBtnLayout);
-        manageBloodBtnLayout.setHorizontalGroup(
-            manageBloodBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, manageBloodBtnLayout.createSequentialGroup()
+        javax.swing.GroupLayout PendingReqBtnLayout = new javax.swing.GroupLayout(PendingReqBtn);
+        PendingReqBtn.setLayout(PendingReqBtnLayout);
+        PendingReqBtnLayout.setHorizontalGroup(
+            PendingReqBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PendingReqBtnLayout.createSequentialGroup()
                 .addGap(58, 58, 58)
-                .addComponent(manageBloodLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
+                .addComponent(PendingReqLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        manageBloodBtnLayout.setVerticalGroup(
-            manageBloodBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(manageBloodBtnLayout.createSequentialGroup()
+        PendingReqBtnLayout.setVerticalGroup(
+            PendingReqBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PendingReqBtnLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(manageBloodLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
+                .addComponent(PendingReqLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        NWHMenu.add(manageBloodBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 280, -1));
+        LogisticsMenu.add(PendingReqBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 280, -1));
 
-        ManageDonorsPanel.setBackground(new java.awt.Color(230, 98, 98));
+        activeReqBtn.setBackground(new java.awt.Color(230, 98, 98));
+        activeReqBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                activeReqBtnMouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                activeReqBtnMousePressed(evt);
+            }
+        });
 
-        ManageDonLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
-        ManageDonLbl.setForeground(new java.awt.Color(215, 215, 215));
-        ManageDonLbl.setText("Delivered Request");
+        activeReqLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        activeReqLbl.setForeground(new java.awt.Color(215, 215, 215));
+        activeReqLbl.setText("Active Request");
 
-        javax.swing.GroupLayout ManageDonorsPanelLayout = new javax.swing.GroupLayout(ManageDonorsPanel);
-        ManageDonorsPanel.setLayout(ManageDonorsPanelLayout);
-        ManageDonorsPanelLayout.setHorizontalGroup(
-            ManageDonorsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ManageDonorsPanelLayout.createSequentialGroup()
+        javax.swing.GroupLayout activeReqBtnLayout = new javax.swing.GroupLayout(activeReqBtn);
+        activeReqBtn.setLayout(activeReqBtnLayout);
+        activeReqBtnLayout.setHorizontalGroup(
+            activeReqBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, activeReqBtnLayout.createSequentialGroup()
+                .addGap(58, 58, 58)
+                .addComponent(activeReqLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        activeReqBtnLayout.setVerticalGroup(
+            activeReqBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(activeReqBtnLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(donorIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(ManageDonLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
+                .addComponent(activeReqLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        ManageDonorsPanelLayout.setVerticalGroup(
-            ManageDonorsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ManageDonorsPanelLayout.createSequentialGroup()
+
+        LogisticsMenu.add(activeReqBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 280, -1));
+
+        deliveredReqPanel.setBackground(new java.awt.Color(230, 98, 98));
+        deliveredReqPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                deliveredReqPanelMouseClicked(evt);
+            }
+        });
+
+        deliveredRedLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        deliveredRedLbl.setForeground(new java.awt.Color(215, 215, 215));
+        deliveredRedLbl.setText("Delivered Request");
+
+        javax.swing.GroupLayout deliveredReqPanelLayout = new javax.swing.GroupLayout(deliveredReqPanel);
+        deliveredReqPanel.setLayout(deliveredReqPanelLayout);
+        deliveredReqPanelLayout.setHorizontalGroup(
+            deliveredReqPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, deliveredReqPanelLayout.createSequentialGroup()
+                .addGap(58, 58, 58)
+                .addComponent(deliveredRedLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        deliveredReqPanelLayout.setVerticalGroup(
+            deliveredReqPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(deliveredReqPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(ManageDonorsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ManageDonLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
-                    .addComponent(donorIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(deliveredRedLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        NWHMenu.add(ManageDonorsPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 280, -1));
+        LogisticsMenu.add(deliveredReqPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 280, -1));
 
-        CardLayoutNWHPanel.setBackground(new java.awt.Color(255, 255, 255));
-        CardLayoutNWHPanel.setLayout(new java.awt.CardLayout());
+        CardLayoutLogisticsPanel.setBackground(new java.awt.Color(255, 255, 255));
+        CardLayoutLogisticsPanel.setLayout(new java.awt.CardLayout());
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -204,11 +205,11 @@ public class LogisticsJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(NWHHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(LogisticsHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(layout.createSequentialGroup()
-                            .addComponent(NWHMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(LogisticsMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(6, 6, 6)
-                            .addComponent(CardLayoutNWHPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 1142, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(CardLayoutLogisticsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 1142, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
@@ -217,40 +218,83 @@ public class LogisticsJPanel extends javax.swing.JPanel {
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(NWHHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LogisticsHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(6, 6, 6)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(NWHMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 702, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(CardLayoutNWHPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 702, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(LogisticsMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 702, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(CardLayoutLogisticsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 702, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void manageBloodBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_manageBloodBtnMousePressed
+    private void activeReqBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_activeReqBtnMousePressed
         // TODO add your handling code here:
 
-    }//GEN-LAST:event_manageBloodBtnMousePressed
+    }//GEN-LAST:event_activeReqBtnMousePressed
 
-    private void manageHospProfileBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_manageHospProfileBtnMousePressed
+    private void manageLogisticsProfileBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_manageLogisticsProfileBtnMousePressed
         // TODO add your handling code here:
         
-    }//GEN-LAST:event_manageHospProfileBtnMousePressed
+    }//GEN-LAST:event_manageLogisticsProfileBtnMousePressed
+
+    private void manageLogisticsProfileBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_manageLogisticsProfileBtnMouseClicked
+        // TODO add your handling code here:
+        ManageLprofile();
+    }//GEN-LAST:event_manageLogisticsProfileBtnMouseClicked
+
+    private void PendingReqBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PendingReqBtnMouseClicked
+        // TODO add your handling code here:
+        pendingLReq();
+    }//GEN-LAST:event_PendingReqBtnMouseClicked
+
+    private void activeReqBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_activeReqBtnMouseClicked
+        // TODO add your handling code here:
+        activeLReq();
+    }//GEN-LAST:event_activeReqBtnMouseClicked
+
+    private void deliveredReqPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deliveredReqPanelMouseClicked
+        // TODO add your handling code here:
+        deliveredLReq();
+    }//GEN-LAST:event_deliveredReqPanelMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel CardLayoutNWHPanel;
-    private javax.swing.JLabel ManageDonLbl;
-    private javax.swing.JPanel ManageDonorsPanel;
-    private javax.swing.JLabel ManageHProLbl;
-    private javax.swing.JLabel ManageOrgLbl;
-    private javax.swing.JPanel NWHHeader;
-    private javax.swing.JPanel NWHMenu;
+    private javax.swing.JPanel CardLayoutLogisticsPanel;
+    private javax.swing.JPanel LogisticsHeader;
+    private javax.swing.JPanel LogisticsMenu;
+    private javax.swing.JLabel ManageLProLbl;
+    private javax.swing.JPanel PendingReqBtn;
+    private javax.swing.JLabel PendingReqLbl;
+    private javax.swing.JPanel activeReqBtn;
+    private javax.swing.JLabel activeReqLbl;
     private javax.swing.JLabel bloodonateLbl;
-    private javax.swing.JLabel donorIcon;
-    private javax.swing.JLabel hproIcon;
-    private javax.swing.JPanel inventoryBtn;
-    private javax.swing.JPanel manageBloodBtn;
-    private javax.swing.JLabel manageBloodLbl;
-    private javax.swing.JPanel manageHospProfileBtn;
+    private javax.swing.JLabel deliveredRedLbl;
+    private javax.swing.JPanel deliveredReqPanel;
+    private javax.swing.JPanel manageLogisticsProfileBtn;
     // End of variables declaration//GEN-END:variables
+
+    private void ManageLprofile() {
+        CardLayoutLogisticsPanel.removeAll();
+        CardLayoutLogisticsPanel.add(new ManageProfileLogisticsJPanel());
+        ((CardLayout) CardLayoutLogisticsPanel.getLayout()).next(CardLayoutLogisticsPanel);
+    }
+
+    private void pendingLReq() {
+        CardLayoutLogisticsPanel.removeAll();
+        CardLayoutLogisticsPanel.add(new LogisticsPendingOrdJPanel());
+        ((CardLayout) CardLayoutLogisticsPanel.getLayout()).next(CardLayoutLogisticsPanel);
+    }
+
+    private void activeLReq() {
+       CardLayoutLogisticsPanel.removeAll();
+       CardLayoutLogisticsPanel.add(new LogisticsActiveOrdJPanel());
+       ((CardLayout) CardLayoutLogisticsPanel.getLayout()).next(CardLayoutLogisticsPanel);
+    }   
+
+    private void deliveredLReq() {
+        CardLayoutLogisticsPanel.removeAll();
+        CardLayoutLogisticsPanel.add(new LogisticsDeliveredOrdJPanel1());
+        ((CardLayout) CardLayoutLogisticsPanel.getLayout()).next(CardLayoutLogisticsPanel);
+      
+    }
 }

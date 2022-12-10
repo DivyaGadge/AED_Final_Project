@@ -25,21 +25,20 @@
               <Group type="103" groupAlignment="1" max="-2" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="qtyLbl" min="-2" max="-2" attributes="0"/>
+                      <Component id="qtyHLbl" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="qtyTF" min="-2" max="-2" attributes="0"/>
+                      <Component id="qtyHT" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="orderBtn" min="-2" max="-2" attributes="0"/>
+                      <Component id="orderHBtn" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="searchTF" min="-2" pref="208" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="serachIconLbl" min="-2" pref="29" max="-2" attributes="0"/>
+                              <Component id="searchHEquipT" min="-2" pref="208" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="orgTable" alignment="1" min="-2" pref="1069" max="-2" attributes="0"/>
+                          <Component id="equipTable" alignment="1" min="-2" pref="1069" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -50,24 +49,21 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="searchTF" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="serachIconLbl" alignment="1" min="-2" pref="29" max="-2" attributes="0"/>
-              </Group>
+              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+              <Component id="searchHEquipT" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="orgTable" min="-2" pref="364" max="-2" attributes="0"/>
+              <Component id="equipTable" min="-2" pref="364" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace pref="28" max="32767" attributes="0"/>
-                      <Component id="orderBtn" min="-2" max="-2" attributes="0"/>
+                      <Component id="orderHBtn" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="139" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="qtyTF" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="qtyLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="qtyHT" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="qtyHLbl" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -77,16 +73,9 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JTextField" name="searchTF">
+    <Component class="javax.swing.JTextField" name="searchHEquipT">
     </Component>
-    <Component class="javax.swing.JLabel" name="serachIconLbl">
-      <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/imagesPackage/search_icon.png"/>
-        </Property>
-      </Properties>
-    </Component>
-    <Container class="javax.swing.JScrollPane" name="orgTable">
+    <Container class="javax.swing.JScrollPane" name="equipTable">
       <AuxValues>
         <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
       </AuxValues>
@@ -134,7 +123,7 @@
         </Component>
       </SubComponents>
     </Container>
-    <Container class="javax.swing.JPanel" name="orderBtn">
+    <Container class="javax.swing.JPanel" name="orderHBtn">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="6a" green="6a" red="6a" type="rgb"/>
@@ -171,9 +160,9 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JTextField" name="qtyTF">
+    <Component class="javax.swing.JTextField" name="qtyHT">
     </Component>
-    <Component class="javax.swing.JLabel" name="qtyLbl">
+    <Component class="javax.swing.JLabel" name="qtyHLbl">
       <Properties>
         <Property name="text" type="java.lang.String" value="Enter required Quantity"/>
       </Properties>
