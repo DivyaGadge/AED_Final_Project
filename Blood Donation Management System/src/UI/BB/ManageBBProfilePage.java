@@ -5,16 +5,26 @@
 package UI.BB;
 
 
+import model.BBEnt.manageBBprofile;
+import model.BBEnt.BBMgmt;
+
+
 /**
  *
  * @author prishaa
  */
 public class ManageBBProfilePage extends javax.swing.JPanel {
 
+    String userName;
+    manageBBprofile bbProfile;
+    BBMgmt bbMgmnt;
    
-    public ManageBBProfilePage() {
+    public ManageBBProfilePage(String userName) {
         initComponents();
-        
+        this.userName = userName;
+        userNameLbl.setText(userName);
+        this.bbProfile = new manageBBprofile();
+        populateTFs();
     }
 
     /**
@@ -246,11 +256,15 @@ public class ManageBBProfilePage extends javax.swing.JPanel {
                 .addComponent(pinlbl)
                 .addGap(5, 5, 5)
                 .addComponent(pinTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(14, 14, 14)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(updateLicBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(licenseLbl)
-                    .addComponent(viewLicBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(updateLicBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(viewLicBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(licenseLbl)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                 .addComponent(updateProfileBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29))
@@ -273,6 +287,22 @@ public class ManageBBProfilePage extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_stateCBActionPerformed
 
+     private void populateTFs() {
+        System.out.println(userName);
+        userNameLbl.setText(userName);
+        
+        this.bbMgmnt = bbProfile.populateTFs(userName);
+        nameTF.setText(bbMgmnt.getName());
+        emailTF.setText(bbMgmnt.getEmail());
+        passTF.setText(bbMgmnt.getPassword());
+        phoneTF.setText(String.valueOf(bbMgmnt.getPhoneNo()));
+        streetTF.setText(bbMgmnt.getStreet());
+        cityTF.setText(bbMgmnt.getCity());
+        stateCB.setSelectedItem(bbMgmnt.getState());
+        String license = bbMgmnt.getLicense_path();       
+        
+        
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel cityLbl;
