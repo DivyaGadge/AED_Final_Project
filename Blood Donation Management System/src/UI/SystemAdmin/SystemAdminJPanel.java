@@ -20,10 +20,10 @@ public class SystemAdminJPanel extends javax.swing.JPanel {
     JPanel mainFrameCardLayout;
     String username;
     String userType;
-    public SystemAdminJPanel(JPanel mainFrameCardLayout, String username, String userType) {
+    public SystemAdminJPanel(JPanel mainFrameCardLayout, String username) {
         initComponents();
         this.mainFrameCardLayout = mainFrameCardLayout;
-        this.userType = userType;
+//        this.userType = userType;
         this.username = username;
     }
 

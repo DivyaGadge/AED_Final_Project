@@ -141,6 +141,7 @@ public class Login {
 
                     } else {
                         JOptionPane.showMessageDialog(null, "You are not registered. Please register with us to login.", "error message", JOptionPane.ERROR_MESSAGE);
+                        break;
                     }
                 }
             } catch (SQLException ex) {
@@ -171,6 +172,7 @@ public class Login {
                             break;
                         } else {
                             JOptionPane.showMessageDialog(null, username + ", Please enter correct password", "error message", JOptionPane.ERROR_MESSAGE);
+                        break;
                         }
 
                     } else {
@@ -200,12 +202,13 @@ public class Login {
                         if (password.equals(password_sql)) {
                             System.out.println("Selected doctor");
                             mainFrameCardLayout.removeAll();
-                            mainFrameCardLayout.add(new NGOManagementJPanel(mainFrameCardLayout, username_sql));
+                            mainFrameCardLayout.add(new UI.Hospital.HospitalJPanel(mainFrameCardLayout, username_sql));
                             ((CardLayout) mainFrameCardLayout.getLayout()).next(mainFrameCardLayout);
                             JOptionPane.showMessageDialog(mainFrameCardLayout, username + ", You have been successfully logged in.");
                             break;
                         } else {
                             JOptionPane.showMessageDialog(null, username + ", Please enter correct password", "error message", JOptionPane.ERROR_MESSAGE);
+                        break;
                         }
 
                     } else {
@@ -237,12 +240,13 @@ public class Login {
                         if (password.equals(password_sql)) {
                             System.out.println("Selected doctor");
                             mainFrameCardLayout.removeAll();
-                            mainFrameCardLayout.add(new NGOManagementJPanel(mainFrameCardLayout, username_sql));
+                            mainFrameCardLayout.add(new UI.Hospital.HospitalWareHouseJPanel(mainFrameCardLayout, username_sql));
                             ((CardLayout) mainFrameCardLayout.getLayout()).next(mainFrameCardLayout);
                             JOptionPane.showMessageDialog(mainFrameCardLayout, username + ", You have been successfully logged in.");
                             break;
                         } else {
                             JOptionPane.showMessageDialog(null, username + ", Please enter correct password", "error message", JOptionPane.ERROR_MESSAGE);
+                        break;
                         }
 
                     } else {
@@ -272,12 +276,13 @@ public class Login {
                         if (password.equals(password_sql)) {
                             System.out.println("Selected doctor");
                             mainFrameCardLayout.removeAll();
-                            mainFrameCardLayout.add(new NGOManagementJPanel(mainFrameCardLayout, username_sql));
+                            mainFrameCardLayout.add(new UI.BB.BB_org(mainFrameCardLayout, username_sql));
                             ((CardLayout) mainFrameCardLayout.getLayout()).next(mainFrameCardLayout);
                             JOptionPane.showMessageDialog(mainFrameCardLayout, username + ", You have been successfully logged in.");
                             break;
                         } else {
                             JOptionPane.showMessageDialog(null, username + ", Please enter correct password", "error message", JOptionPane.ERROR_MESSAGE);
+                        break;
                         }
 
                     } else {
@@ -307,12 +312,13 @@ public class Login {
                         if (password.equals(password_sql)) {
                             System.out.println("Selected doctor");
                             mainFrameCardLayout.removeAll();
-                            mainFrameCardLayout.add(new NGOManagementJPanel(mainFrameCardLayout, username_sql));
+                            mainFrameCardLayout.add(new UI.Hospital.HospitalDoctorJPanel(mainFrameCardLayout, username_sql));
                             ((CardLayout) mainFrameCardLayout.getLayout()).next(mainFrameCardLayout);
                             JOptionPane.showMessageDialog(mainFrameCardLayout, username + ", You have been successfully logged in.");
                             break;
                         } else {
                             JOptionPane.showMessageDialog(null, username + ", Please enter correct password", "error message", JOptionPane.ERROR_MESSAGE);
+                        break;
                         }
 
                     } else {
@@ -342,12 +348,13 @@ public class Login {
                         if (password.equals(password_sql)) {
                             System.out.println("Selected doctor");
                             mainFrameCardLayout.removeAll();
-                            mainFrameCardLayout.add(new NGOManagementJPanel(mainFrameCardLayout, username_sql));
+                            mainFrameCardLayout.add(new UI.BB.BBWHPanel(mainFrameCardLayout, username_sql));
                             ((CardLayout) mainFrameCardLayout.getLayout()).next(mainFrameCardLayout);
                             JOptionPane.showMessageDialog(mainFrameCardLayout, username + ", You have been successfully logged in.");
                             break;
                         } else {
                             JOptionPane.showMessageDialog(null, username + ", Please enter correct password", "error message", JOptionPane.ERROR_MESSAGE);
+                        break;
                         }
 
                     } else {
@@ -411,12 +418,13 @@ public class Login {
                         if (password.equals(password_sql)) {
                             System.out.println("Selected doctor");
                             mainFrameCardLayout.removeAll();
-                            mainFrameCardLayout.add(new NGOManagementJPanel(mainFrameCardLayout, username_sql));
+                            mainFrameCardLayout.add(new UI.SP.LogisticsJPanel(mainFrameCardLayout, username_sql));
                             ((CardLayout) mainFrameCardLayout.getLayout()).next(mainFrameCardLayout);
                             JOptionPane.showMessageDialog(mainFrameCardLayout, username + ", You have been successfully logged in.");
                             break;
                         } else {
                             JOptionPane.showMessageDialog(null, username + ", Please enter correct password", "error message", JOptionPane.ERROR_MESSAGE);
+                        break;
                         }
 
                     } else {
@@ -446,12 +454,13 @@ public class Login {
                         if (password.equals(password_sql)) {
                             System.out.println("Selected doctor");
                             mainFrameCardLayout.removeAll();
-                            mainFrameCardLayout.add(new NGOManagementJPanel(mainFrameCardLayout, username_sql));
+                            mainFrameCardLayout.add(new UI.SP.EquipmentSupplierJPanel(mainFrameCardLayout, username_sql));
                             ((CardLayout) mainFrameCardLayout.getLayout()).next(mainFrameCardLayout);
                             JOptionPane.showMessageDialog(mainFrameCardLayout, username + ", You have been successfully logged in.");
                             break;
                         } else {
                             JOptionPane.showMessageDialog(null, username + ", Please enter correct password", "error message", JOptionPane.ERROR_MESSAGE);
+                        break;
                         }
 
                     } else {
@@ -481,12 +490,13 @@ public class Login {
                         if (password.equals(password_sql)) {
                             System.out.println("Selected doctor");
                             mainFrameCardLayout.removeAll();
-                            mainFrameCardLayout.add(new NGOManagementJPanel(mainFrameCardLayout, username_sql));
+                            mainFrameCardLayout.add(new SystemAdminJPanel(mainFrameCardLayout, username_sql));
                             ((CardLayout) mainFrameCardLayout.getLayout()).next(mainFrameCardLayout);
                             JOptionPane.showMessageDialog(mainFrameCardLayout, username + ", You have been successfully logged in.");
                             break;
                         } else {
                             JOptionPane.showMessageDialog(null, username + ", Please enter correct password", "error message", JOptionPane.ERROR_MESSAGE);
+                        break;
                         }
 
                     } else {
