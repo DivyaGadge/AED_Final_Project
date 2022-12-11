@@ -2,18 +2,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package model.serviceProvider;
+package model.volunteerEnt;
 
-import model.Enterprise.NGOEnterprise;
+import java.util.Date;
 
 /**
  *
- * @author divyagadge
+ * @author surajvisvesh
  */
-<<<<<<< HEAD:Blood Donation Management System/src/model/serviceProvider/SQLException.java
-class SQLException {
-=======
-public class NGOBloodCollection extends NGOEnterprise{
+public class Donor {
     private String username;
     private String name;
     private String password;
@@ -23,6 +20,9 @@ public class NGOBloodCollection extends NGOEnterprise{
     private String city;
     private String state;
     private int pincode;
+    private String dob;
+    private String bloodGroup;
+    private String NGOUsername;
 
     public String getUsername() {
         return username;
@@ -95,8 +95,31 @@ public class NGOBloodCollection extends NGOEnterprise{
     public void setPincode(int pincode) {
         this.pincode = pincode;
     }
->>>>>>> suraj_branch:Blood Donation Management System/src/model/volunteerEnt/NGOBloodCollection.java
-    
-    
 
+    public String getDate() {
+        return dob;
+    }
+
+    public void setDate(String dob) {
+        this.dob = dob;
+    }
+
+    public String getBloodGroup() {
+        return bloodGroup;
+    }
+
+    public void setBloodGroup(String bloodGroup) {
+        this.bloodGroup = bloodGroup;
+    }
+
+    public String getNGOUsername() {
+        return NGOUsername;
+    }
+
+    public void setNGOUsername(String NGOUsername) {
+        this.NGOUsername = NGOUsername;
+    }
+    
+    
+    
 }

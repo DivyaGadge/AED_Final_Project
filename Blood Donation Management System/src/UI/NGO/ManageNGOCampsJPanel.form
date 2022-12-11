@@ -21,20 +21,18 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="manageHUserCardLayout" alignment="1" max="32767" attributes="0"/>
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="createHUserBtn" min="-2" max="-2" attributes="0"/>
+              <Component id="createCampBtn" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-<<<<<<< HEAD:Blood Donation Management System/src/UI/Hospital/ManageandCreateHospitalUsersJPanel.form
-              <Component id="manageHUserBtn" min="-2" max="-2" attributes="0"/>
-=======
-              <Component id="manageOrgBtn" min="-2" max="-2" attributes="0"/>
+              <Component id="manageCampBtn" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="manageOrgBtn1" min="-2" max="-2" attributes="0"/>
->>>>>>> suraj_branch:Blood Donation Management System/src/UI/NGO/ManageNGOOrganizationsJPanel.form
+              <Component id="reqDocBtn" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="inviteDonBtn" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
+          <Component id="manageCampCardLayout" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -42,25 +40,21 @@
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-<<<<<<< HEAD:Blood Donation Management System/src/UI/Hospital/ManageandCreateHospitalUsersJPanel.form
-                  <Component id="manageHUserBtn" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="createHUserBtn" min="-2" max="-2" attributes="0"/>
-=======
                   <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                      <Component id="manageOrgBtn" alignment="1" min="-2" max="-2" attributes="0"/>
-                      <Component id="createOrgBtn" min="-2" max="-2" attributes="0"/>
+                      <Component id="manageCampBtn" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="createCampBtn" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="manageOrgBtn1" alignment="1" min="-2" max="-2" attributes="0"/>
->>>>>>> suraj_branch:Blood Donation Management System/src/UI/NGO/ManageNGOOrganizationsJPanel.form
+                  <Component id="reqDocBtn" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="inviteDonBtn" alignment="1" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="manageHUserCardLayout" min="-2" max="-2" attributes="0"/>
+              <Component id="manageCampCardLayout" min="-2" pref="630" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JPanel" name="manageHUserCardLayout">
+    <Container class="javax.swing.JPanel" name="manageCampCardLayout">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -72,30 +66,30 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.DesignCardLayout"/>
     </Container>
-    <Container class="javax.swing.JPanel" name="createHUserBtn">
+    <Container class="javax.swing.JPanel" name="createCampBtn">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="6a" green="6a" red="6a" type="rgb"/>
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="createHUserBtnMouseClicked"/>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="createCampBtnMousePressed"/>
       </Events>
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="createHUserLbl" alignment="0" pref="142" max="32767" attributes="0"/>
+              <Component id="createCampLbl" alignment="0" pref="142" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="createHUserLbl" alignment="0" pref="48" max="32767" attributes="0"/>
+              <Component id="createCampLbl" alignment="0" pref="48" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="createHUserLbl">
+        <Component class="javax.swing.JLabel" name="createCampLbl">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Helvetica Neue" size="13" style="1"/>
@@ -104,63 +98,15 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="Create User"/>
+            <Property name="text" type="java.lang.String" value="Create Camp"/>
           </Properties>
           <Events>
-            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="createHUserLblMousePressed"/>
+            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="createCampLblMousePressed"/>
           </Events>
         </Component>
       </SubComponents>
     </Container>
-    <Container class="javax.swing.JPanel" name="manageHUserBtn">
-      <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="6a" green="6a" red="6a" type="rgb"/>
-        </Property>
-      </Properties>
-      <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="manageHUserBtnMouseClicked"/>
-      </Events>
-
-      <Layout>
-        <DimensionLayout dim="0">
-          <Group type="103" groupAlignment="0" attributes="0">
-<<<<<<< HEAD:Blood Donation Management System/src/UI/Hospital/ManageandCreateHospitalUsersJPanel.form
-              <Component id="manageHUserLbl" alignment="0" pref="144" max="32767" attributes="0"/>
-=======
-              <Component id="manageOrgLbl" alignment="0" pref="251" max="32767" attributes="0"/>
->>>>>>> suraj_branch:Blood Donation Management System/src/UI/NGO/ManageNGOOrganizationsJPanel.form
-          </Group>
-        </DimensionLayout>
-        <DimensionLayout dim="1">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="manageHUserLbl" alignment="0" pref="48" max="32767" attributes="0"/>
-          </Group>
-        </DimensionLayout>
-      </Layout>
-      <SubComponents>
-        <Component class="javax.swing.JLabel" name="manageHUserLbl">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Helvetica Neue" size="13" style="1"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="horizontalAlignment" type="int" value="0"/>
-<<<<<<< HEAD:Blood Donation Management System/src/UI/Hospital/ManageandCreateHospitalUsersJPanel.form
-            <Property name="text" type="java.lang.String" value="Manage User"/>
-=======
-            <Property name="text" type="java.lang.String" value="Manage NBC Organization"/>
->>>>>>> suraj_branch:Blood Donation Management System/src/UI/NGO/ManageNGOOrganizationsJPanel.form
-          </Properties>
-          <Events>
-            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="manageHUserLblMousePressed"/>
-          </Events>
-        </Component>
-      </SubComponents>
-    </Container>
-    <Container class="javax.swing.JPanel" name="manageOrgBtn1">
+    <Container class="javax.swing.JPanel" name="manageCampBtn">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="6a" green="6a" red="6a" type="rgb"/>
@@ -170,17 +116,17 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="manageOrgLbl1" alignment="0" pref="246" max="32767" attributes="0"/>
+              <Component id="manageCampLbl" alignment="0" pref="144" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="manageOrgLbl1" alignment="0" pref="48" max="32767" attributes="0"/>
+              <Component id="manageCampLbl" alignment="0" pref="48" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="manageOrgLbl1">
+        <Component class="javax.swing.JLabel" name="manageCampLbl">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Helvetica Neue" size="13" style="1"/>
@@ -189,10 +135,84 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="Manage NWH Organization"/>
+            <Property name="text" type="java.lang.String" value="Manage Camps"/>
           </Properties>
           <Events>
-            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="manageOrgLbl1MousePressed"/>
+            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="manageCampLblMousePressed"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="reqDocBtn">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="6a" green="6a" red="6a" type="rgb"/>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Component id="reqDocLbl" alignment="0" pref="144" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Component id="reqDocLbl" alignment="0" pref="48" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="reqDocLbl">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Helvetica Neue" size="13" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="Request Doctor"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="reqDocLblMousePressed"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="inviteDonBtn">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="6a" green="6a" red="6a" type="rgb"/>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Component id="inviteDonLbl" alignment="0" pref="144" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Component id="inviteDonLbl" alignment="0" pref="48" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="inviteDonLbl">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Helvetica Neue" size="13" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="Invite Donors"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="inviteDonLblMousePressed"/>
           </Events>
         </Component>
       </SubComponents>

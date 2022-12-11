@@ -24,6 +24,7 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD:Blood Donation Management System/src/UI/Hospital/HospitalProfileJPanel.form
                   <Component id="pinTF" min="-2" pref="305" max="-2" attributes="0"/>
                   <Component id="nameLbl" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="nameTF" alignment="0" min="-2" pref="305" max="-2" attributes="0"/>
@@ -48,6 +49,34 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="updateLicBtn" min="-2" max="-2" attributes="0"/>
                   </Group>
+=======
+                  <Component id="licenseLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="viewLicBtn" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="updateLicBtn" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                          <Component id="nameLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="nameTF" alignment="0" min="-2" pref="305" max="-2" attributes="0"/>
+                          <Component id="passLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="passTF" alignment="0" min="-2" pref="305" max="-2" attributes="0"/>
+                          <Component id="emailLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="emailTF" alignment="0" min="-2" pref="305" max="-2" attributes="0"/>
+                          <Component id="phoneLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="phoneTF" alignment="0" min="-2" pref="305" max="-2" attributes="0"/>
+                          <Component id="streetLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="streetTF" alignment="0" min="-2" pref="305" max="-2" attributes="0"/>
+                          <Component id="cityLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="cityTF" alignment="0" min="-2" pref="305" max="-2" attributes="0"/>
+                          <Component id="stateLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="stateCB" alignment="0" min="-2" pref="305" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Component id="userNameLbl" min="-2" pref="978" max="-2" attributes="0"/>
+                  <Component id="updateProfileBtn" alignment="0" min="-2" max="-2" attributes="0"/>
+>>>>>>> suraj_branch:Blood Donation Management System/src/UI/NGO/ManageNGOProfileJPanel.form
               </Group>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
@@ -61,9 +90,9 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="userNameLbl" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="userNameLbl" min="-2" pref="63" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="nameLbl" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="nameTF" min="-2" max="-2" attributes="0"/>
@@ -101,9 +130,15 @@
                   <Component id="licenseLbl" min="-2" max="-2" attributes="0"/>
                   <Component id="viewLicBtn" max="32767" attributes="0"/>
               </Group>
+<<<<<<< HEAD:Blood Donation Management System/src/UI/Hospital/HospitalProfileJPanel.form
               <EmptySpace pref="29" max="32767" attributes="0"/>
               <Component id="updateProfileBtn" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+=======
+              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+              <Component id="updateProfileBtn" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="69" max="32767" attributes="0"/>
+>>>>>>> suraj_branch:Blood Donation Management System/src/UI/NGO/ManageNGOProfileJPanel.form
           </Group>
       </Group>
     </DimensionLayout>
@@ -275,11 +310,15 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD:Blood Donation Management System/src/UI/Hospital/HospitalProfileJPanel.form
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                   <Component id="updateProfileLbl" min="-2" pref="215" max="-2" attributes="0"/>
                   <EmptySpace pref="50" max="32767" attributes="0"/>
               </Group>
+=======
+              <Component id="updateProfileLbl" alignment="0" pref="199" max="32767" attributes="0"/>
+>>>>>>> suraj_branch:Blood Donation Management System/src/UI/NGO/ManageNGOProfileJPanel.form
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
@@ -305,7 +344,11 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
+<<<<<<< HEAD:Blood Donation Management System/src/UI/Hospital/HospitalProfileJPanel.form
             <Property name="text" type="java.lang.String" value="Update Profile"/>
+=======
+            <Property name="text" type="java.lang.String" value="Update Organization Profile"/>
+>>>>>>> suraj_branch:Blood Donation Management System/src/UI/NGO/ManageNGOProfileJPanel.form
           </Properties>
         </Component>
       </SubComponents>

@@ -55,7 +55,7 @@
     <Container class="javax.swing.JPanel" name="HospitalHeader">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="62" green="62" red="cf" type="rgb"/>
+          <Color blue="47" green="55" red="df" type="rgb"/>
         </Property>
       </Properties>
 
@@ -65,7 +65,11 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="bloodonateLbl" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="1168" max="32767" attributes="0"/>
+                  <EmptySpace pref="798" max="32767" attributes="0"/>
+                  <Component id="headerUserName" min="-2" pref="312" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="logoutBtn" min="-2" pref="40" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -73,7 +77,13 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                  <Component id="bloodonateLbl" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="headerUserName" alignment="1" min="-2" pref="40" max="-2" attributes="0"/>
+                          <Component id="logoutBtn" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="bloodonateLbl" min="-2" max="-2" attributes="0"/>
+                  </Group>
                   <EmptySpace pref="18" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -92,12 +102,43 @@
             <Property name="debugGraphicsOptions" type="int" value="2"/>
           </Properties>
         </Component>
+        <Component class="javax.swing.JLabel" name="headerUserName">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Helvetica Neue" size="18" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="d7" green="d7" red="d7" type="rgb"/>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="4"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="headerUserNameMousePressed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="logoutBtn">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Helvetica Neue" size="18" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="d7" green="d7" red="d7" type="rgb"/>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="4"/>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/imagesPackage/suraj/logout.png"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="logoutBtnMousePressed"/>
+          </Events>
+        </Component>
       </SubComponents>
     </Container>
     <Container class="javax.swing.JPanel" name="HospitalMenu">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="62" green="62" red="cf" type="rgb"/>
+          <Color blue="47" green="55" red="df" type="rgb"/>
         </Property>
         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[220, 700]"/>
@@ -111,7 +152,7 @@
         <Container class="javax.swing.JPanel" name="manageHospProfileBtn">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="62" green="62" red="e6" type="rgb"/>
+              <Color blue="47" green="55" red="df" type="rgb"/>
             </Property>
           </Properties>
           <Events>
@@ -149,7 +190,25 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="d7" green="d7" red="d7" type="rgb"/>
                 </Property>
+<<<<<<< HEAD:Blood Donation Management System/src/UI/Hospital/HospitalJPanel.form
                 <Property name="text" type="java.lang.String" value="Hospital Profile"/>
+=======
+                <Property name="text" type="java.lang.String" value="Manage Profile"/>
+              </Properties>
+              <Events>
+                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ManageProLblMousePressed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="proIcon">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                </Property>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/imagesPackage/profile_icon.png"/>
+                </Property>
+>>>>>>> suraj_branch:Blood Donation Management System/src/UI/NGO/NGOWareHouseJPanel.form
               </Properties>
             </Component>
           </SubComponents>
@@ -157,7 +216,7 @@
         <Container class="javax.swing.JPanel" name="mngProfileBtn">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="62" green="62" red="e6" type="rgb"/>
+              <Color blue="47" green="55" red="df" type="rgb"/>
             </Property>
           </Properties>
           <Events>
@@ -173,8 +232,15 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
+<<<<<<< HEAD:Blood Donation Management System/src/UI/Hospital/HospitalJPanel.form
                       <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
                       <Component id="ManageOrgLbl" pref="216" max="32767" attributes="0"/>
+=======
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="orgIcon" min="-2" pref="40" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                      <Component id="inventoryLbl" pref="216" max="32767" attributes="0"/>
+>>>>>>> suraj_branch:Blood Donation Management System/src/UI/NGO/NGOWareHouseJPanel.form
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -183,14 +249,21 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
+<<<<<<< HEAD:Blood Donation Management System/src/UI/Hospital/HospitalJPanel.form
                       <Component id="ManageOrgLbl" pref="43" max="32767" attributes="0"/>
+=======
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="inventoryLbl" alignment="3" pref="43" max="32767" attributes="0"/>
+                          <Component id="orgIcon" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                      </Group>
+>>>>>>> suraj_branch:Blood Donation Management System/src/UI/NGO/NGOWareHouseJPanel.form
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="ManageOrgLbl">
+            <Component class="javax.swing.JLabel" name="inventoryLbl">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Helvetica Neue" size="18" style="1"/>
@@ -198,20 +271,43 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="d7" green="d7" red="d7" type="rgb"/>
                 </Property>
+<<<<<<< HEAD:Blood Donation Management System/src/UI/Hospital/HospitalJPanel.form
                 <Property name="text" type="java.lang.String" value="Manage Profile"/>
+=======
+                <Property name="text" type="java.lang.String" value="Inventory"/>
+              </Properties>
+              <Events>
+                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="inventoryLblMousePressed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="orgIcon">
+              <Properties>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/imagesPackage/suraj/inventory_icon.png"/>
+                </Property>
+>>>>>>> suraj_branch:Blood Donation Management System/src/UI/NGO/NGOWareHouseJPanel.form
               </Properties>
             </Component>
           </SubComponents>
         </Container>
+<<<<<<< HEAD:Blood Donation Management System/src/UI/Hospital/HospitalJPanel.form
         <Container class="javax.swing.JPanel" name="reqBloodBtn">
+=======
+        <Container class="javax.swing.JPanel" name="logisticsBtn">
+>>>>>>> suraj_branch:Blood Donation Management System/src/UI/NGO/NGOWareHouseJPanel.form
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="62" green="62" red="e6" type="rgb"/>
+              <Color blue="47" green="55" red="df" type="rgb"/>
             </Property>
           </Properties>
           <Events>
+<<<<<<< HEAD:Blood Donation Management System/src/UI/Hospital/HospitalJPanel.form
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="reqBloodBtnMouseClicked"/>
             <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="reqBloodBtnMousePressed"/>
+=======
+            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="logisticsBtnMousePressed"/>
+>>>>>>> suraj_branch:Blood Donation Management System/src/UI/NGO/NGOWareHouseJPanel.form
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -248,7 +344,22 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="d7" green="d7" red="d7" type="rgb"/>
                 </Property>
+<<<<<<< HEAD:Blood Donation Management System/src/UI/Hospital/HospitalJPanel.form
                 <Property name="text" type="java.lang.String" value="Request Blood"/>
+=======
+                <Property name="text" type="java.lang.String" value="Logistics"/>
+              </Properties>
+              <Events>
+                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="manageBloodLblMousePressed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="bloodBagIcon">
+              <Properties>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/imagesPackage/suraj/logistics_truck.png"/>
+                </Property>
+>>>>>>> suraj_branch:Blood Donation Management System/src/UI/NGO/NGOWareHouseJPanel.form
               </Properties>
             </Component>
           </SubComponents>
@@ -256,7 +367,7 @@
         <Container class="javax.swing.JPanel" name="mngbloodreqBtn">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="62" green="62" red="e6" type="rgb"/>
+              <Color blue="47" green="55" red="df" type="rgb"/>
             </Property>
           </Properties>
           <Events>
@@ -297,6 +408,62 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="d7" green="d7" red="d7" type="rgb"/>
                 </Property>
+<<<<<<< HEAD:Blood Donation Management System/src/UI/Hospital/HospitalJPanel.form
+=======
+                <Property name="text" type="java.lang.String" value="Insights"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="donorIcon">
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="jPanel9">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="47" green="55" red="df" type="rgb"/>
+            </Property>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+              <AbsoluteConstraints x="0" y="240" width="280" height="-1"/>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabel7" min="-2" pref="40" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                      <Component id="jLabel9" pref="216" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel9" alignment="3" pref="43" max="32767" attributes="0"/>
+                          <Component id="jLabel7" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="jLabel9">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Helvetica Neue" size="18" style="1"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="d7" green="d7" red="d7" type="rgb"/>
+                </Property>
+>>>>>>> suraj_branch:Blood Donation Management System/src/UI/NGO/NGOWareHouseJPanel.form
                 <Property name="text" type="java.lang.String" value="Manage Blood Request"/>
               </Properties>
             </Component>
