@@ -76,6 +76,7 @@ public class ModelDonorRegistration {
                 }
             }
         } catch (SQLException e) {
+            e.printStackTrace();
             JOptionPane.showMessageDialog(null, "User already exists. Please try a different username or email.", "Error!", JOptionPane.ERROR_MESSAGE);
 
         }

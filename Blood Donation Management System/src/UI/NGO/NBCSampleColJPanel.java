@@ -38,13 +38,13 @@ public class NBCSampleColJPanel extends javax.swing.JPanel {
 
         donorTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Donor Name", "vital 1", "vital 2", "vital 3"
+                "Donor Name", "vital 1", "vital 2", "vital 3", "donor_status"
             }
         ));
         jScrollPane1.setViewportView(donorTable);
