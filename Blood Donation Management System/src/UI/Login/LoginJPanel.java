@@ -4,15 +4,8 @@
  */
 package UI.Login;
 
-import Sql.SQLConnection;
-import UI.NGO.NGOManagementJPanel;
-import java.awt.CardLayout;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
-import java.sql.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JOptionPane;
+import model.Login.Login;
 
 /**
  *
@@ -29,6 +22,9 @@ public class LoginJPanel extends javax.swing.JPanel {
         initComponents();
         this.mainFrameCardLayout = mainFrameCardLayout;
         errorVisibility();
+        clearTFs();
+//        Mail mail = new Mail();
+
     }
 
     /**
@@ -199,9 +195,15 @@ public class LoginJPanel extends javax.swing.JPanel {
 
         add(usernamePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 370, -1, -1));
 
-        userCB.setFont(new java.awt.Font("Helvetica Neue", 3, 16)); // NOI18N
-        userCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Doctor", "Patient", "System Admin", "Hospital Organization", "Donor", "NGO Organization", "Hospital Warehouse", "NGO Warehouse", "NGO Blood Collection Organization" }));
+        userCB.setFont(new java.awt.Font("Helvetica Neue", 1, 16)); // NOI18N
+        userCB.setForeground(new java.awt.Color(102, 102, 102));
+        userCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Doctor", "System Admin", "Hospital Organization", "Donor", "NGO Organization", "NGO Warehouse", "NGO Blood Collection", "Hospital Warehouse", "Bloodbank Organization", "Bloodbank Warehouse", "Equipments Provider", "Logistics Organization" }));
         userCB.setBorder(null);
+        userCB.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                userCBMousePressed(evt);
+            }
+        });
         add(userCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 280, 320, 50));
 
         usernameLbl1.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
@@ -240,155 +242,39 @@ public class LoginJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_passTFActionPerformed
 
+    private void userCBMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userCBMousePressed
+        // TODO add your handling code here:
+        errorVisibility();
+        clearTFs();
+    }//GEN-LAST:event_userCBMousePressed
+
     public void loginBtnFunctionality() {
         errorVisibility();
         String userCBValue = userCB.getSelectedItem().toString();
         String username = usernameTF.getText();
         String password = String.valueOf(passTF.getPassword());
-        switch (userCBValue) {
-            case "Doctor":
-                if (username.isEmpty()) {
-                    usernameError.setVisible(true);
-                }
-                if (password.isEmpty()) {
-                    passError.setVisible(true);  
-                    break;
-                } else if (!username.isEmpty() && !password.isEmpty()) {
-                    try {
-                        System.out.println("entered try block");
-                        Connection con = SQLConnection.establishConnection();
-                        System.out.println(con);
-                        if (con != null) {
-                            System.out.println("entered if con not null block");
-
-                            String query = "SELECT * FROM Doctor WHERE user_name=('" + username + "')";
-                            Statement stmt = con.createStatement();
-                            ResultSet rs = stmt.executeQuery(query);
-
-                            if (rs.next()) {
-                                System.out.println("entered if rs. block");
-                                String password_sql = rs.getString("password");
-                                String username_sql = rs.getString("user_name");
-                                if (password.equals(password_sql)) {
-                                    System.out.println("Selected doctor");
-                                    mainFrameCardLayout.removeAll();
-                                    mainFrameCardLayout.add(new NGOManagementJPanel(mainFrameCardLayout, username_sql));
-                                    ((CardLayout) mainFrameCardLayout.getLayout()).next(mainFrameCardLayout);
-                                    JOptionPane.showMessageDialog(mainFrameCardLayout, username + ", You have been successfully logged in.");
-                                    break;
-                                } else {
-                                    JOptionPane.showMessageDialog(null, username + ", Please enter correct password", "error message", JOptionPane.ERROR_MESSAGE);
-                                }
-
-                            } else {
-                                JOptionPane.showMessageDialog(null, "You are not registered. Please register with us to login.", "error message", JOptionPane.ERROR_MESSAGE);
-                            }
-                        }
-                    } catch (SQLException ex) {
-                        Logger.getLogger(LoginJPanel.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                }
-
-//            case "Patient":
-//                System.out.println("Selected Patient");
-//                break;
-//            case "Hospital Administration":
-//                break;
-//            case "NGO Administration":
-//                System.out.println("Selected Patient");
-//                break;
-//            case "Bloodbank Administration":
-//                System.out.println("Selected Patient");
-//                break;
-//            case "Bloodbank Warehouse":
-//                System.out.println("Selected Patient");
-//                break;
-//            case "Sample Testing Organization":
-//                System.out.println("Selected Patient");
-//                break;
-//            case "Logistics Organization":
-//                System.out.println("Selected Patient");
-//                break;
-//            case "Equipment Supplier Organizaiton":
-//                System.out.println("Selected Patient");
-//                break;
-            default:
-                break;
+        if (username.isEmpty()) {
+            usernameError.setVisible(true);
         }
+        if (password.isEmpty()) {
+            passError.setVisible(true);
+        } else if (!username.isEmpty() && !password.isEmpty()) {
+            Login login = new Login();
+            login.loginFunctionality(username, password, userCBValue, mainFrameCardLayout);
+        }
+
     }
 
-    public void errorVisibility(){
+    public void errorVisibility() {
         usernameError.setVisible(false);
         passError.setVisible(false);
     }
-    
-    
-//    public void registrationComboBoxFunctionality() {
-//        String userCBValue = userCB.getSelectedItem().toString();
-//        String username = usernameTF.getText();
-//        String password = String.valueOf(passTF.getPassword());
-//        switch (userCBValue) {
-//            case "Doctor":
-//                try {
-//                    Connection con = SQLConnection.establishConnection();
-//                    if(con!=null){
-//                        String query = "SELECT * FROM Doctor WHERE user_name=?";
-//                        PreparedStatement pstmt = con.prepareStatement(query);
-//                        pstmt.setString(1, username);
-//                        ResultSet rs = pstmt.executeQuery(query);
-//                        
-//                        if (rs.next()){
-//                            String password_sql = rs.getString("password");
-//                            if (password.equals(password_sql)){
-//                                JOptionPane.showMessageDialog(null, username+"You have been successfully logged in.");
-//                                System.out.println("Selected doctor");
-//                                mainFrameCardLayout.removeAll();
-//                                mainFrameCardLayout.add(new NGOManagementJPanel(mainFrameCardLayout, username_sql));
-//                                ((CardLayout) mainFrameCardLayout.getLayout()).next(mainFrameCardLayout);
-//                                JOptionPane.showMessageDialog(null, username+"You have been successfully logged in.");
-//                                break; 
-//                            }
-//                            else{
-//                                JOptionPane.showMessageDialog(null, username+" does not match with password");
-//                            }
-//                            
-//                        }
-//                        else {
-//                            JOptionPane.showMessageDialog(null, username+" not registered. Please register with us to login.");
-//                        }
-//                    }
-//                } catch (SQLException ex) {
-//                Logger.getLogger(LoginJPanel.class.getName()).log(Level.SEVERE, null, ex);
-//            }
-//                
-//
-//            case "Patient":
-//                System.out.println("Selected Patient");
-//                break;
-//            case "Hospital Administration":
-//                break;
-//            case "NGO Administration":
-//                System.out.println("Selected Patient");
-//                break;
-//            case "Bloodbank Administration":
-//                System.out.println("Selected Patient");
-//                break;
-//            case "Bloodbank Warehouse":
-//                System.out.println("Selected Patient");
-//                break;
-//            case "Sample Testing Organization":
-//                System.out.println("Selected Patient");
-//                break;
-//            case "Logistics Organization":
-//                System.out.println("Selected Patient");
-//                break;
-//            case "Equipment Supplier Organizaiton":
-//                System.out.println("Selected Patient");
-//                break;
-//            default:
-//                break;
-//        }
-//    }
+
+    private void clearTFs() {
+        usernameTF.setText("");
+        passTF.setText("");
+    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel helloLbl;

@@ -35,10 +35,12 @@ public class NWHInventoryJPanel extends javax.swing.JPanel {
         viewInventoryLbl = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         manageInventoryCardLayout.setBackground(new java.awt.Color(255, 255, 255));
         manageInventoryCardLayout.setPreferredSize(new java.awt.Dimension(1142, 630));
         manageInventoryCardLayout.setLayout(new java.awt.CardLayout());
+        add(manageInventoryCardLayout, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 72, -1, -1));
 
         orderEquipBtn.setBackground(new java.awt.Color(106, 106, 106));
 
@@ -63,6 +65,8 @@ public class NWHInventoryJPanel extends javax.swing.JPanel {
             .addComponent(orderEquipLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
+        add(orderEquipBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(197, 6, -1, -1));
+
         viewInventoryBtn.setBackground(new java.awt.Color(106, 106, 106));
 
         viewInventoryLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
@@ -86,28 +90,7 @@ public class NWHInventoryJPanel extends javax.swing.JPanel {
             .addComponent(viewInventoryLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(manageInventoryCardLayout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addComponent(viewInventoryBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(orderEquipBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(viewInventoryBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(orderEquipBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
-                .addComponent(manageInventoryCardLayout, javax.swing.GroupLayout.PREFERRED_SIZE, 630, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
+        add(viewInventoryBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 6, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void orderEquipLblMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_orderEquipLblMousePressed
@@ -127,7 +110,7 @@ public class NWHInventoryJPanel extends javax.swing.JPanel {
     public void viewInventoryBtnFunctionality() {
         
         manageInventoryCardLayout.removeAll();
-        manageInventoryCardLayout.add(new ViewInventoryNWHJPanel());
+        manageInventoryCardLayout.add(new ViewInventoryNWHJPanel(manageInventoryCardLayout));
         ((CardLayout) manageInventoryCardLayout.getLayout()).next(manageInventoryCardLayout);
         
     }

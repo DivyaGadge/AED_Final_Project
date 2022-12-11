@@ -7,13 +7,14 @@ package UI.Login;
 import java.sql.*;
 import Sql.SQLConnection;
 import java.io.File;
-import java.util.Properties;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
-import model.volunteerEnt.ngoManagement.NGOManagement;
+import model.volunteerEnt.NGOManagement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import model.Ecosystem.Mail;
+import model.Login.OrganizationRegistration;
 
 /**
  *
@@ -22,17 +23,17 @@ import java.util.logging.Logger;
 public class OrgRegJPanel extends javax.swing.JPanel {
 
     private String imagePath = "";
-    private String userCBValue;
+    private String userType;
 
     /**
      * Creates new form DonorRegistration
      *
      * @param userCBValue
      */
-    public OrgRegJPanel(String userCBValue) {
+    public OrgRegJPanel(String userType) {
         initComponents();
         errorVisibility();
-        this.userCBValue = userCBValue;
+        this.userType = userType;
     }
 
     /**
@@ -138,7 +139,7 @@ public class OrgRegJPanel extends javax.swing.JPanel {
         stateError.setText("Enter valid data");
         add(stateError, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 330, -1, -1));
 
-        licenseLbl.setText("NGO License*");
+        licenseLbl.setText("Organization License*");
         add(licenseLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 410, -1, -1));
 
         addLicBtn.setBackground(new java.awt.Color(106, 106, 106));
@@ -189,7 +190,7 @@ public class OrgRegJPanel extends javax.swing.JPanel {
             .addComponent(registerLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
         );
 
-        add(registerBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 520, -1, -1));
+        add(registerBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 510, -1, -1));
         add(usernameTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, 305, -1));
 
         nameError.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
@@ -228,7 +229,7 @@ public class OrgRegJPanel extends javax.swing.JPanel {
         usernameError.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
         usernameError.setForeground(new java.awt.Color(255, 51, 0));
         usernameError.setText("Enter valid data");
-        add(usernameError, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 40, -1, -1));
+        add(usernameError, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 40, -1, -1));
 
         licError.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
         licError.setForeground(new java.awt.Color(255, 51, 0));
@@ -294,7 +295,6 @@ public class OrgRegJPanel extends javax.swing.JPanel {
         boolean valid = true;
         long phoneNo = 0;
         int pincode = 0;
-
         String name = nameTF.getText();
         String username = usernameTF.getText();
         String email = emailTF.getText();
@@ -347,7 +347,7 @@ public class OrgRegJPanel extends javax.swing.JPanel {
             stateError.setVisible(true);
             valid = false;
         }
-        if (Integer.toString(pincode).length() != 6) {
+        if (!(Integer.toString(pincode).length() >= 5 || Integer.toString(pincode).length() <= 6)) {
             pinError.setVisible(true);
             valid = false;
         }
@@ -356,54 +356,9 @@ public class OrgRegJPanel extends javax.swing.JPanel {
             valid = false;
         }
         if (valid) {
-            switch (userCBValue) {
-                case "NGO Organization":
-                    NGOManagement ngo = new NGOManagement();
-                    ngo.setName(name);
-                    ngo.setUsername(username);
-                    ngo.setEmail(email);
-                    ngo.setPhoneNo(phoneNo);
-                    ngo.setCity(city);
-                    ngo.setStreet(street);
-                    ngo.setPassword(password);
-                    ngo.setPincode(pincode);
-                    ngo.setState(state);
-                    ngo.setLicense_path(imagePath);
-
-                    try {
-                        System.out.println("entered try block");
-                        Connection con = SQLConnection.establishConnection();
-                        System.out.println(con);
-                        if (con != null) {
-                            System.out.println("entered if con not null block");
-
-                            String query = "INSERT INTO NGO(user_name, Name, Email, Password, Phone_number, Street_address, City, State, Pincode, license) VALUES(?,?,?,?,?,?,?,?,?,?)";
-
-                            PreparedStatement pstmt = con.prepareStatement(query);
-                            pstmt.setString(1, username);
-                            pstmt.setString(2, name);
-                            pstmt.setString(3, email);
-                            pstmt.setString(4, password);
-                            pstmt.setLong(5, phoneNo);
-                            pstmt.setString(6, street);
-                            pstmt.setString(7, city);
-                            pstmt.setString(8, state);
-                            pstmt.setInt(9, pincode);
-                            pstmt.setString(10, imagePath);
-
-                            int count = pstmt.executeUpdate();
-                            if (count == 1) {
-                                emptyTF();
-
-                                JOptionPane.showMessageDialog(null, "Thanks for registering. We will notify you once your registration is approved.");
-                                System.out.println("Email User.");
-                            }
-                        }
-                    } catch (SQLException e) {
-                        JOptionPane.showMessageDialog(null, "User already exists. Please try a different username or email.", "Error!", JOptionPane.ERROR_MESSAGE);
-
-                    }
-            }
+            OrganizationRegistration orgRegistration = new OrganizationRegistration();
+            orgRegistration.registration(userType, username, name, email, phoneNo, password, street, city, state, pincode, imagePath);
+            emptyTF();
 
         }
 
@@ -435,28 +390,27 @@ public class OrgRegJPanel extends javax.swing.JPanel {
         pincodeTF.setText("");
     }
 
-    private static boolean isInteger(String s) {
-        try {
-            Integer.parseInt(s);
-        } catch (NumberFormatException e) {
-            return false;
-        } catch (NullPointerException e) {
-            return false;
-        }
-        return true;
-    }
-
-    private static boolean isLong(String s) {
-        try {
-            Long.parseLong(s);
-        } catch (NumberFormatException e) {
-            return false;
-        } catch (NullPointerException e) {
-            return false;
-        }
-        return true;
-    }
-
+//    private static boolean isInteger(String s) {
+//        try {
+//            Integer.parseInt(s);
+//        } catch (NumberFormatException e) {
+//            return false;
+//        } catch (NullPointerException e) {
+//            return false;
+//        }
+//        return true;
+//    }
+//
+//    private static boolean isLong(String s) {
+//        try {
+//            Long.parseLong(s);
+//        } catch (NumberFormatException e) {
+//            return false;
+//        } catch (NullPointerException e) {
+//            return false;
+//        }
+//        return true;
+//    }
 //    public static void sendEmailMessage(String emailId, String body) {
 //        String to = emailId;
 //        String from = "doneverevereply@gmail.com";

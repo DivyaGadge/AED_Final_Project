@@ -5,6 +5,8 @@
 package UI.NGO;
 
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+import model.volunteerEnt.ManageOrgNGO;
 
 /**
  *
@@ -17,8 +19,12 @@ public class ManageOrgNGOJPanel extends javax.swing.JPanel {
      */
     
     JPanel manageOrgCardLayout;
+    
+    ManageOrgNGO manageOrg;
     public ManageOrgNGOJPanel() {
         initComponents();
+        this.manageOrg = new ManageOrgNGO();
+        populateTable();
         
     }
 
@@ -33,110 +39,91 @@ public class ManageOrgNGOJPanel extends javax.swing.JPanel {
 
         searchTF = new javax.swing.JTextField();
         serachIconLbl = new javax.swing.JLabel();
-        emailErrorLbl = new javax.swing.JLabel();
-        passErrorLbl = new javax.swing.JLabel();
-        orgTypeErrorLbl = new javax.swing.JLabel();
-        nameErrorLbl = new javax.swing.JLabel();
         pincodeLbl = new javax.swing.JLabel();
-        stateTF1 = new javax.swing.JTextField();
+        pinTF = new javax.swing.JTextField();
         passTF = new javax.swing.JTextField();
         emailLbl = new javax.swing.JLabel();
         emailTF = new javax.swing.JTextField();
-        nameLbl2 = new javax.swing.JLabel();
         phoneLbl = new javax.swing.JLabel();
         phoneTF = new javax.swing.JTextField();
         streetLbl = new javax.swing.JLabel();
-        orgTypeCB = new javax.swing.JComboBox<>();
         streetTF = new javax.swing.JTextField();
         stateCB = new javax.swing.JComboBox<>();
         cityLbl = new javax.swing.JLabel();
         cityTF = new javax.swing.JTextField();
         stateLbl = new javax.swing.JLabel();
         nameLbl = new javax.swing.JLabel();
-        pincodeErrorLbl = new javax.swing.JLabel();
         passLbl = new javax.swing.JLabel();
-        cityErrorLbl = new javax.swing.JLabel();
         updateOrgBtn = new javax.swing.JPanel();
         updateOrgLbl = new javax.swing.JLabel();
-        streetErrorLbl = new javax.swing.JLabel();
-        phoneErrorLbl = new javax.swing.JLabel();
         nameTF = new javax.swing.JTextField();
-        stateErrorLbl = new javax.swing.JLabel();
         orgTable = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        organizationTbl = new javax.swing.JTable();
+        nameError = new javax.swing.JLabel();
+        streetError = new javax.swing.JLabel();
+        emailError = new javax.swing.JLabel();
+        cityError = new javax.swing.JLabel();
+        pinError = new javax.swing.JLabel();
+        phoneNoError = new javax.swing.JLabel();
+        passError = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        add(searchTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(866, 12, 208, -1));
 
         serachIconLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagesPackage/search_icon.png"))); // NOI18N
-
-        emailErrorLbl.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
-        emailErrorLbl.setForeground(new java.awt.Color(255, 51, 0));
-        emailErrorLbl.setText("Field cannot be empty");
-
-        passErrorLbl.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
-        passErrorLbl.setForeground(new java.awt.Color(255, 51, 0));
-        passErrorLbl.setText("Field cannot be empty");
-
-        orgTypeErrorLbl.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
-        orgTypeErrorLbl.setForeground(new java.awt.Color(255, 51, 0));
-        orgTypeErrorLbl.setText("Field cannot be empty");
-
-        nameErrorLbl.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
-        nameErrorLbl.setForeground(new java.awt.Color(255, 51, 0));
-        nameErrorLbl.setText("Field cannot be empty");
+        add(serachIconLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 6, -1, -1));
 
         pincodeLbl.setText("Pincode*");
+        add(pincodeLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 440, -1, -1));
+        add(pinTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 460, 305, -1));
 
         passTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 passTFActionPerformed(evt);
             }
         });
+        add(passTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 400, 305, -1));
 
         emailLbl.setText("Email*");
+        add(emailLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, -1, -1));
 
         emailTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 emailTFActionPerformed(evt);
             }
         });
-
-        nameLbl2.setText("Organization Type*");
+        add(emailTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, 305, -1));
 
         phoneLbl.setText("Phone*");
+        add(phoneLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 440, -1, -1));
+        add(phoneTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 460, 305, -1));
 
         streetLbl.setText("Street Address*");
-
-        orgTypeCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Blood Collection Organization", "Sample Testing Organization", "Blood Bank Warehouse" }));
-        orgTypeCB.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                orgTypeCBActionPerformed(evt);
-            }
-        });
+        add(streetLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(652, 257, -1, -1));
 
         streetTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 streetTFActionPerformed(evt);
             }
         });
+        add(streetTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(652, 280, 305, -1));
 
         stateCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "IllinoisIndiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "MontanaNebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "PennsylvaniaRhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming" }));
+        add(stateCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 400, 305, -1));
 
         cityLbl.setText("City*");
+        add(cityLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(652, 315, -1, -1));
+        add(cityTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(652, 338, 305, -1));
 
         stateLbl.setText("State*");
+        add(stateLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 380, -1, -1));
 
         nameLbl.setText("Name of the Organization*");
-
-        pincodeErrorLbl.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
-        pincodeErrorLbl.setForeground(new java.awt.Color(255, 51, 0));
-        pincodeErrorLbl.setText("Field cannot be empty.");
+        add(nameLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 257, -1, -1));
 
         passLbl.setText("Password*");
-
-        cityErrorLbl.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
-        cityErrorLbl.setForeground(new java.awt.Color(255, 51, 0));
-        cityErrorLbl.setText("Field cannot be empty");
+        add(passLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, -1, -1));
 
         updateOrgBtn.setBackground(new java.awt.Color(106, 106, 106));
 
@@ -149,26 +136,17 @@ public class ManageOrgNGOJPanel extends javax.swing.JPanel {
         updateOrgBtn.setLayout(updateOrgBtnLayout);
         updateOrgBtnLayout.setHorizontalGroup(
             updateOrgBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(updateOrgLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE)
+            .addComponent(updateOrgLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
         );
         updateOrgBtnLayout.setVerticalGroup(
             updateOrgBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(updateOrgLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
         );
 
-        streetErrorLbl.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
-        streetErrorLbl.setForeground(new java.awt.Color(255, 51, 0));
-        streetErrorLbl.setText("Field cannot be empty");
+        add(updateOrgBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(912, 540, 190, -1));
+        add(nameTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 305, -1));
 
-        phoneErrorLbl.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
-        phoneErrorLbl.setForeground(new java.awt.Color(255, 51, 0));
-        phoneErrorLbl.setText("Field cannot be empty");
-
-        stateErrorLbl.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
-        stateErrorLbl.setForeground(new java.awt.Color(255, 51, 0));
-        stateErrorLbl.setText("Field cannot be empty");
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        organizationTbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null, null},
@@ -187,155 +165,48 @@ public class ManageOrgNGOJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jTable1.getTableHeader().setReorderingAllowed(false);
-        orgTable.setViewportView(jTable1);
-        if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(0).setPreferredWidth(100);
+        organizationTbl.getTableHeader().setReorderingAllowed(false);
+        orgTable.setViewportView(organizationTbl);
+        if (organizationTbl.getColumnModel().getColumnCount() > 0) {
+            organizationTbl.getColumnModel().getColumn(0).setPreferredWidth(100);
         }
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(40, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(searchTF, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(serachIconLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(nameLbl)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(nameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(18, 18, 18)
-                                            .addComponent(nameErrorLbl))
-                                        .addComponent(nameLbl2)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(orgTypeCB, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(18, 18, 18)
-                                            .addComponent(orgTypeErrorLbl))
-                                        .addComponent(passLbl)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(passTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(18, 18, 18)
-                                            .addComponent(passErrorLbl))
-                                        .addComponent(emailLbl)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(emailTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(18, 18, 18)
-                                            .addComponent(emailErrorLbl))
-                                        .addComponent(phoneLbl)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(phoneTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(18, 18, 18)
-                                            .addComponent(phoneErrorLbl)))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(streetLbl)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(streetTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(18, 18, 18)
-                                            .addComponent(streetErrorLbl))
-                                        .addComponent(cityLbl)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(cityTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(18, 18, 18)
-                                            .addComponent(cityErrorLbl))
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                .addComponent(pincodeLbl)
-                                                .addComponent(stateTF1, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGap(18, 18, 18)
-                                            .addComponent(pincodeErrorLbl))
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                .addComponent(stateLbl)
-                                                .addComponent(stateCB, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGap(18, 18, 18)
-                                            .addComponent(stateErrorLbl))))
-                                .addComponent(orgTable, javax.swing.GroupLayout.PREFERRED_SIZE, 1069, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(33, 33, 33))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(updateOrgBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(424, 424, 424))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(searchTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(serachIconLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21)
-                .addComponent(orgTable, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(streetLbl)
-                        .addGap(6, 6, 6)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(streetTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(streetErrorLbl))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(cityLbl)
-                        .addGap(6, 6, 6)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cityTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cityErrorLbl))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(stateErrorLbl)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(stateLbl)
-                                .addGap(6, 6, 6)
-                                .addComponent(stateCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(pincodeLbl)
-                        .addGap(6, 6, 6)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(stateTF1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(pincodeErrorLbl))
-                        .addGap(69, 69, 69)
-                        .addComponent(updateOrgBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(nameLbl)
-                        .addGap(6, 6, 6)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(nameTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(3, 3, 3)
-                                .addComponent(nameErrorLbl)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(nameLbl2)
-                        .addGap(6, 6, 6)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(orgTypeCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(orgTypeErrorLbl))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(emailLbl)
-                        .addGap(6, 6, 6)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(emailTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(emailErrorLbl))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(passLbl)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(passTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(passErrorLbl))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(phoneLbl)
-                        .addGap(6, 6, 6)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(phoneTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(phoneErrorLbl))))
-                .addContainerGap(31, Short.MAX_VALUE))
-        );
+        add(orgTable, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 56, 1069, 183));
+
+        nameError.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
+        nameError.setForeground(new java.awt.Color(255, 51, 0));
+        nameError.setText("Enter Valid Input");
+        add(nameError, new org.netbeans.lib.awtextra.AbsoluteConstraints(363, 283, -1, -1));
+
+        streetError.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
+        streetError.setForeground(new java.awt.Color(255, 51, 0));
+        streetError.setText("Enter Valid Input");
+        add(streetError, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 280, -1, -1));
+
+        emailError.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
+        emailError.setForeground(new java.awt.Color(255, 51, 0));
+        emailError.setText("Enter valid data");
+        add(emailError, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 340, -1, -1));
+
+        cityError.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
+        cityError.setForeground(new java.awt.Color(255, 51, 0));
+        cityError.setText("Enter Valid Input");
+        add(cityError, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 340, -1, -1));
+
+        pinError.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
+        pinError.setForeground(new java.awt.Color(255, 51, 0));
+        pinError.setText("Enter Valid Input");
+        add(pinError, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 460, -1, 20));
+
+        phoneNoError.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
+        phoneNoError.setForeground(new java.awt.Color(255, 51, 0));
+        phoneNoError.setText("Enter valid data");
+        add(phoneNoError, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 460, -1, -1));
+
+        passError.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
+        passError.setForeground(new java.awt.Color(255, 51, 0));
+        passError.setText("Enter valid data");
+        add(passError, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 400, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void passTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passTFActionPerformed
@@ -346,45 +217,79 @@ public class ManageOrgNGOJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_emailTFActionPerformed
 
-    private void orgTypeCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_orgTypeCBActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_orgTypeCBActionPerformed
-
     private void streetTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_streetTFActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_streetTFActionPerformed
 
+    public void errorVisibility() {
 
+        nameError.setVisible(false);
+        emailError.setVisible(false);
+        passError.setVisible(false);
+        phoneNoError.setVisible(false);
+        streetError.setVisible(false);
+        cityError.setVisible(false);
+        pinError.setVisible(false);
+
+    }
+
+    public void emptyTF() {
+        nameTF.setText("");
+        emailTF.setText("");
+        phoneTF.setText("");
+        passTF.setText("");
+        streetTF.setText("");
+        cityTF.setText("");
+        pinTF.setText("");
+    }
+    
+    private void populateTable(){
+        
+        int selectedRowIndex = organizationTbl.getSelectedRow();
+
+
+        DefaultTableModel model = (DefaultTableModel) organizationTbl.getModel();
+       
+        manageOrg.populateTable(model);
+        
+        
+    } 
+    
+    private void populateTFs() {
+        
+    }
+    
+    private void updateBtnFunctionality() {
+        
+    }
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel cityErrorLbl;
+    private javax.swing.JLabel cityError;
     private javax.swing.JLabel cityLbl;
     private javax.swing.JTextField cityTF;
-    private javax.swing.JLabel emailErrorLbl;
+    private javax.swing.JLabel emailError;
     private javax.swing.JLabel emailLbl;
     private javax.swing.JTextField emailTF;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JLabel nameErrorLbl;
+    private javax.swing.JLabel nameError;
     private javax.swing.JLabel nameLbl;
-    private javax.swing.JLabel nameLbl2;
     private javax.swing.JTextField nameTF;
     private javax.swing.JScrollPane orgTable;
-    private javax.swing.JComboBox<String> orgTypeCB;
-    private javax.swing.JLabel orgTypeErrorLbl;
-    private javax.swing.JLabel passErrorLbl;
+    private javax.swing.JTable organizationTbl;
+    private javax.swing.JLabel passError;
     private javax.swing.JLabel passLbl;
     private javax.swing.JTextField passTF;
-    private javax.swing.JLabel phoneErrorLbl;
     private javax.swing.JLabel phoneLbl;
+    private javax.swing.JLabel phoneNoError;
     private javax.swing.JTextField phoneTF;
-    private javax.swing.JLabel pincodeErrorLbl;
+    private javax.swing.JLabel pinError;
+    private javax.swing.JTextField pinTF;
     private javax.swing.JLabel pincodeLbl;
     private javax.swing.JTextField searchTF;
     private javax.swing.JLabel serachIconLbl;
     private javax.swing.JComboBox<String> stateCB;
-    private javax.swing.JLabel stateErrorLbl;
     private javax.swing.JLabel stateLbl;
-    private javax.swing.JTextField stateTF1;
-    private javax.swing.JLabel streetErrorLbl;
+    private javax.swing.JLabel streetError;
     private javax.swing.JLabel streetLbl;
     private javax.swing.JTextField streetTF;
     private javax.swing.JPanel updateOrgBtn;

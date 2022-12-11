@@ -33,14 +33,11 @@ public class NWHLogisticsJPanel extends javax.swing.JPanel {
         logisticsTblSearchTF = new javax.swing.JTextField();
         orderBtn = new javax.swing.JPanel();
         orderLbl = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        sampleBloodBankTable1 = new javax.swing.JTable();
-        logisticsTblSearchTF1 = new javax.swing.JTextField();
-        serachIconLbl2 = new javax.swing.JLabel();
-        orderBtn1 = new javax.swing.JPanel();
-        orderLbl1 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        sampleTblLbl2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         sampleBloodBankTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -50,132 +47,70 @@ public class NWHLogisticsJPanel extends javax.swing.JPanel {
                 {null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Camp Id", "Camp Name", "Sample Count", "Sample Status"
             }
         ));
         jScrollPane1.setViewportView(sampleBloodBankTable);
 
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 41, 1050, 435));
+
         sampleTblLbl1.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
-        sampleTblLbl1.setText("Select Sample");
+        sampleTblLbl1.setText("Select Samples");
+        add(sampleTblLbl1, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 12, -1, -1));
 
         serachIconLbl1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagesPackage/search_icon.png"))); // NOI18N
+        add(serachIconLbl1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1066, 6, -1, -1));
+        add(logisticsTblSearchTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(852, 12, 208, -1));
 
         orderBtn.setBackground(new java.awt.Color(106, 106, 106));
 
         orderLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         orderLbl.setForeground(new java.awt.Color(255, 255, 255));
         orderLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        orderLbl.setText("Select Logistics Organization");
+        orderLbl.setText("Place Order");
 
         javax.swing.GroupLayout orderBtnLayout = new javax.swing.GroupLayout(orderBtn);
         orderBtn.setLayout(orderBtnLayout);
         orderBtnLayout.setHorizontalGroup(
             orderBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(orderLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE)
+            .addComponent(orderLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE)
         );
         orderBtnLayout.setVerticalGroup(
             orderBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(orderLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
         );
 
-        sampleBloodBankTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane2.setViewportView(sampleBloodBankTable1);
+        add(orderBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(951, 494, -1, -1));
 
-        serachIconLbl2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagesPackage/search_icon.png"))); // NOI18N
+        add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 494, 261, 53));
 
-        orderBtn1.setBackground(new java.awt.Color(106, 106, 106));
-
-        orderLbl1.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
-        orderLbl1.setForeground(new java.awt.Color(255, 255, 255));
-        orderLbl1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        orderLbl1.setText("Place Order");
-
-        javax.swing.GroupLayout orderBtn1Layout = new javax.swing.GroupLayout(orderBtn1);
-        orderBtn1.setLayout(orderBtn1Layout);
-        orderBtn1Layout.setHorizontalGroup(
-            orderBtn1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(orderLbl1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE)
-        );
-        orderBtn1Layout.setVerticalGroup(
-            orderBtn1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(orderLbl1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(45, 45, 45)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(orderBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(807, 807, 807)
-                            .addComponent(logisticsTblSearchTF1, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(serachIconLbl2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1050, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(sampleTblLbl1)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(logisticsTblSearchTF, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(serachIconLbl1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(orderBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1050, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(47, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(sampleTblLbl1, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(logisticsTblSearchTF, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(serachIconLbl1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(orderBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(logisticsTblSearchTF1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(serachIconLbl2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(orderBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(50, Short.MAX_VALUE))
-        );
+        sampleTblLbl2.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        sampleTblLbl2.setText("Select Logistics Partner");
+        add(sampleTblLbl2, new org.netbeans.lib.awtextra.AbsoluteConstraints(423, 494, -1, 53));
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    private void populateLogCB() {
+//        sql query to get username of Logistics
+    }
+    
+    private void orderBtnFunctionality() {
+        
+        
+        
+    }
+    
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField logisticsTblSearchTF;
-    private javax.swing.JTextField logisticsTblSearchTF1;
     private javax.swing.JPanel orderBtn;
-    private javax.swing.JPanel orderBtn1;
     private javax.swing.JLabel orderLbl;
-    private javax.swing.JLabel orderLbl1;
     private javax.swing.JTable sampleBloodBankTable;
-    private javax.swing.JTable sampleBloodBankTable1;
     private javax.swing.JLabel sampleTblLbl1;
+    private javax.swing.JLabel sampleTblLbl2;
     private javax.swing.JLabel serachIconLbl1;
-    private javax.swing.JLabel serachIconLbl2;
     // End of variables declaration//GEN-END:variables
 }

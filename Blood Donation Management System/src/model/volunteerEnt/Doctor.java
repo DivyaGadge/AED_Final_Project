@@ -4,6 +4,8 @@
  */
 package model.volunteerEnt;
 
+import java.util.Date;
+
 /**
  *
  * @author surajvisvesh
@@ -14,13 +16,12 @@ public class Doctor {
     private String name;
     private String password;
     private String hospitalUsername;
-    private String dateOfBirth;
     private String email;
-    private String phoneNo;
+    private long phoneNo;
     private String street;
     private String city;
     private String state;
-    private String pincode;
+    private int pincode;
 
     public String getUsername() {
         return username;
@@ -54,14 +55,6 @@ public class Doctor {
         this.hospitalUsername = hospitalUsername;
     }
 
-    public String getDateOfBirth() {
-        return dateOfBirth;
-    }
-
-    public void setDateOfBirth(String dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
-    }
-
     public String getEmail() {
         return email;
     }
@@ -70,11 +63,11 @@ public class Doctor {
         this.email = email;
     }
 
-    public String getPhoneNo() {
+    public long getPhoneNo() {
         return phoneNo;
     }
 
-    public void setPhoneNo(String phoneNo) {
+    public void setPhoneNo(long phoneNo) {
         this.phoneNo = phoneNo;
     }
 
@@ -102,13 +95,13 @@ public class Doctor {
         this.state = state;
     }
 
-    public String getPincode() {
+    public int getPincode() {
         return pincode;
     }
 
-    public void setPincode(String pincode) {
+    public void setPincode(int pincode) {
         this.pincode = pincode;
     }
     
-    
+
 }

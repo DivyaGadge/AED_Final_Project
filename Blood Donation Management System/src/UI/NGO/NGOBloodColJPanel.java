@@ -5,6 +5,9 @@
 package UI.NGO;
 
 import java.awt.CardLayout;
+import java.awt.Color;
+import javax.swing.JPanel;
+import model.Ecosystem.Logout;
 
 /**
  *
@@ -15,8 +18,14 @@ public class NGOBloodColJPanel extends javax.swing.JPanel {
     /**
      * Creates new form NGOBloodColJPanel
      */
-    public NGOBloodColJPanel() {
+    JPanel mainFrameCardLayout;
+    String username;
+
+    public NGOBloodColJPanel(JPanel mainFrameCardLayout, String username) {
         initComponents();
+        this.mainFrameCardLayout = mainFrameCardLayout;
+        this.username = username;
+        headerUserName.setText(username);
     }
 
     /**
@@ -30,6 +39,8 @@ public class NGOBloodColJPanel extends javax.swing.JPanel {
 
         NBCHeader = new javax.swing.JPanel();
         bloodonateLbl = new javax.swing.JLabel();
+        headerUserName = new javax.swing.JLabel();
+        logoutBtn = new javax.swing.JLabel();
         NBCMenu = new javax.swing.JPanel();
         manageProfileBtn = new javax.swing.JPanel();
         ManageProLbl = new javax.swing.JLabel();
@@ -48,12 +59,31 @@ public class NGOBloodColJPanel extends javax.swing.JPanel {
         jLabel7 = new javax.swing.JLabel();
         CardLayoutNBCPanel = new javax.swing.JPanel();
 
-        NBCHeader.setBackground(new java.awt.Color(207, 98, 98));
+        NBCHeader.setBackground(new java.awt.Color(223, 85, 71));
 
         bloodonateLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 36)); // NOI18N
         bloodonateLbl.setForeground(new java.awt.Color(215, 215, 215));
         bloodonateLbl.setText("BLOODONATE");
         bloodonateLbl.setDebugGraphicsOptions(javax.swing.DebugGraphics.FLASH_OPTION);
+
+        headerUserName.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        headerUserName.setForeground(new java.awt.Color(215, 215, 215));
+        headerUserName.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        headerUserName.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                headerUserNameMousePressed(evt);
+            }
+        });
+
+        logoutBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        logoutBtn.setForeground(new java.awt.Color(215, 215, 215));
+        logoutBtn.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        logoutBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagesPackage/suraj/logout.png"))); // NOI18N
+        logoutBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                logoutBtnMousePressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout NBCHeaderLayout = new javax.swing.GroupLayout(NBCHeader);
         NBCHeader.setLayout(NBCHeaderLayout);
@@ -62,21 +92,29 @@ public class NGOBloodColJPanel extends javax.swing.JPanel {
             .addGroup(NBCHeaderLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(bloodonateLbl)
-                .addContainerGap(1168, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 798, Short.MAX_VALUE)
+                .addComponent(headerUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(logoutBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         NBCHeaderLayout.setVerticalGroup(
             NBCHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(NBCHeaderLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
-                .addComponent(bloodonateLbl)
+                .addGroup(NBCHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(bloodonateLbl)
+                    .addGroup(NBCHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(headerUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(logoutBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(19, Short.MAX_VALUE))
         );
 
-        NBCMenu.setBackground(new java.awt.Color(207, 98, 98));
+        NBCMenu.setBackground(new java.awt.Color(223, 85, 71));
         NBCMenu.setPreferredSize(new java.awt.Dimension(220, 700));
         NBCMenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        manageProfileBtn.setBackground(new java.awt.Color(230, 98, 98));
+        manageProfileBtn.setBackground(new java.awt.Color(223, 85, 71));
 
         ManageProLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         ManageProLbl.setForeground(new java.awt.Color(215, 215, 215));
@@ -107,7 +145,7 @@ public class NGOBloodColJPanel extends javax.swing.JPanel {
 
         NBCMenu.add(manageProfileBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 280, -1));
 
-        collectBloodBtn.setBackground(new java.awt.Color(230, 98, 98));
+        collectBloodBtn.setBackground(new java.awt.Color(223, 85, 71));
 
         ManageOrgLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         ManageOrgLbl.setForeground(new java.awt.Color(215, 215, 215));
@@ -139,7 +177,7 @@ public class NGOBloodColJPanel extends javax.swing.JPanel {
 
         NBCMenu.add(collectBloodBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 280, -1));
 
-        transportBloodBtn.setBackground(new java.awt.Color(230, 98, 98));
+        transportBloodBtn.setBackground(new java.awt.Color(223, 85, 71));
         transportBloodBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 transportBloodBtnMousePressed(evt);
@@ -176,7 +214,7 @@ public class NGOBloodColJPanel extends javax.swing.JPanel {
 
         NBCMenu.add(transportBloodBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 280, -1));
 
-        ManageDonorsPanel.setBackground(new java.awt.Color(230, 98, 98));
+        ManageDonorsPanel.setBackground(new java.awt.Color(223, 85, 71));
 
         ManageDonLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         ManageDonLbl.setForeground(new java.awt.Color(215, 215, 215));
@@ -208,7 +246,7 @@ public class NGOBloodColJPanel extends javax.swing.JPanel {
 
         NBCMenu.add(ManageDonorsPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 280, -1));
 
-        jPanel9.setBackground(new java.awt.Color(230, 98, 98));
+        jPanel9.setBackground(new java.awt.Color(223, 85, 71));
         jPanel9.setLayout(new java.awt.CardLayout());
 
         jLabel9.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
@@ -260,6 +298,28 @@ public class NGOBloodColJPanel extends javax.swing.JPanel {
 
     }//GEN-LAST:event_transportBloodBtnMousePressed
 
+    private void headerUserNameMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_headerUserNameMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_headerUserNameMousePressed
+
+    private void logoutBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutBtnMousePressed
+        // TODO add your handling code here:
+
+        Logout logout = new Logout(mainFrameCardLayout);
+        logout.logoutFunctionality();
+    }//GEN-LAST:event_logoutBtnMousePressed
+
+    public void setBtnColor(JPanel panel) {
+
+        panel.setBackground(new Color(210, 75, 60));
+
+    }
+
+    public void resetBtnColor(JPanel panel) {
+
+        panel.setBackground(new Color(223, 85, 71));
+
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel CardLayoutNBCPanel;
@@ -273,10 +333,12 @@ public class NGOBloodColJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel bloodonateLbl;
     private javax.swing.JPanel collectBloodBtn;
     private javax.swing.JLabel donorIcon;
+    private javax.swing.JLabel headerUserName;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JLabel logisticsIcon;
+    private javax.swing.JLabel logoutBtn;
     private javax.swing.JPanel manageProfileBtn;
     private javax.swing.JLabel proIcon;
     private javax.swing.JLabel sampleColIcon;
