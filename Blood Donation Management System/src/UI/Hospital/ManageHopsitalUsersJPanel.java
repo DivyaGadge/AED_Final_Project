@@ -11,6 +11,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import model.medicalEnt.ListofBB;
 import model.medicalEnt.ManageUser;
+import model.serviceProvider.LogisticsPendingOrder;
 
 /**
  *
@@ -316,6 +317,12 @@ public class ManageHopsitalUsersJPanel extends javax.swing.JPanel {
     static class listofBB extends ListofBB {
 
         public listofBB() {
+        }
+    }
+
+    public static class logisticspendingorder extends LogisticsPendingOrder {
+
+        public logisticspendingorder() {
         }
     }
 

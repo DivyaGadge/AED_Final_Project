@@ -5,21 +5,36 @@
 package UI.SP;
 
 import UI.Hospital.*;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.JPanel;
+import com.mysql.cj.protocol.Resultset;
+import javax.swing.JOptionPane;
+import model.serviceProvider.LogisticsDeliveredOrders;
 
 /**
  *
  * @author divyagadge
  */
-public class LogisticsDeliveredOrdJPanel1 extends javax.swing.JPanel {
+public class LogisticsDeliveredOrdJPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form ListofBBJPanel
      */
-    public LogisticsDeliveredOrdJPanel1() {
+    
+    LogisticsDeliveredOrders delvieredorder;
+    
+    public LogisticsDeliveredOrdJPanel() {
         initComponents();
+        this.delvieredorder = new delvieredorder();
+        populateHospitalUserDetailsTable();
     }
 
-    
+    private void populateHospitalUserDetailsTable() {
+        int selectedRowIndex = LogisticsDeliveredOrderJTable.getSelectedRow();
+        DefaultTableModel model = (DefaultTableModel) LogisticsDeliveredOrderJTable.getModel();
+        delvieredorder.populateTable(model);
+         
+    }
     private void activeorderstable(){
         
     }
@@ -34,12 +49,12 @@ public class LogisticsDeliveredOrdJPanel1 extends javax.swing.JPanel {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        LogisticsDeliveredOrderJTable = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(1142, 702));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        LogisticsDeliveredOrderJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -58,10 +73,10 @@ public class LogisticsDeliveredOrdJPanel1 extends javax.swing.JPanel {
                 return types [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(LogisticsDeliveredOrderJTable);
 
         jLabel1.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
-        jLabel1.setText("Active Orders");
+        jLabel1.setText("Delivered Orders");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -87,8 +102,17 @@ public class LogisticsDeliveredOrdJPanel1 extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable LogisticsDeliveredOrderJTable;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
+
+ public class delvieredorder extends LogisticsDeliveredOrders {
+
+    public delvieredorder() {
+    }
+    
+ }
 }
+
+

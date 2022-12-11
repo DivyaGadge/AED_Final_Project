@@ -5,6 +5,11 @@
 package UI.SP;
 
 import UI.Hospital.*;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.JPanel;
+import com.mysql.cj.protocol.Resultset;
+import javax.swing.JOptionPane;
+import model.serviceProvider.LogisticsDeliveredOrders;
 
 /**
  *
@@ -15,10 +20,33 @@ public class LogisticsActiveOrdJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ListofBBJPanel
      */
+    
+    LogisticsDeliveredOrders activeorder;
+    
     public LogisticsActiveOrdJPanel() {
         initComponents();
+        this.activeorder = new activeorder();
+        populateHospitalUserDetailsTable();
     }
 
+    private void populateHospitalUserDetailsTable() {
+        int selectedRowIndex = LogisitcsActiveOrderjTable.getSelectedRow();
+        DefaultTableModel model = (DefaultTableModel) LogisitcsActiveOrderjTable.getModel();
+        activeorder.populateTable(model);
+    }
+
+    private void initComponents() {
+    }
+
+     static int getSelectedRow() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+    
+    
+    public class activeorder extends LogisticsDeliveredOrders {
+
+    public activeorder() {
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -29,14 +57,14 @@ public class LogisticsActiveOrdJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        LogisitcsActiveOrderjTable = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         updateOrgBtn = new javax.swing.JPanel();
         updateOrgLbl = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(1142, 702));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        LogisitcsActiveOrderjTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -55,7 +83,7 @@ public class LogisticsActiveOrdJPanel extends javax.swing.JPanel {
                 return types [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(LogisitcsActiveOrderjTable);
 
         jLabel1.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         jLabel1.setText("Active Orders");
@@ -109,10 +137,11 @@ public class LogisticsActiveOrdJPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable LogisitcsActiveOrderjTable;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JPanel updateOrgBtn;
     private javax.swing.JLabel updateOrgLbl;
     // End of variables declaration//GEN-END:variables
+}
 }

@@ -293,7 +293,7 @@ public class LogisticsJPanel extends javax.swing.JPanel {
 
     private void deliveredLReq() {
         CardLayoutLogisticsPanel.removeAll();
-        CardLayoutLogisticsPanel.add(new LogisticsDeliveredOrdJPanel1());
+        CardLayoutLogisticsPanel.add(new LogisticsDeliveredOrdJPanel());
         ((CardLayout) CardLayoutLogisticsPanel.getLayout()).next(CardLayoutLogisticsPanel);
       
     }

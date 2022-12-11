@@ -4,6 +4,7 @@
  */
 package UI.Hospital;
 
+import UI.Hospital.ManageHopsitalUsersJPanel.listofBB;
 import javax.swing.JPanel;
 import com.mysql.cj.protocol.Resultset;
 import javax.swing.JOptionPane;
@@ -27,7 +28,7 @@ public class ListofBBJPanel extends javax.swing.JPanel {
      
     public ListofBBJPanel() {
         initComponents();
-        this.listofBB = new ManageHopsitalUsersJPanel.listofBB();
+        this.listofBB = new listofBB();
          populateListofBBTable();
     }
     

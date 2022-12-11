@@ -5,6 +5,12 @@
 package UI.SP;
 
 import UI.Hospital.*;
+import javax.swing.table.DefaultTableModel;
+import model.serviceProvider.LogisticsPendingOrder;
+import javax.swing.JPanel;
+import com.mysql.cj.protocol.Resultset;
+import javax.swing.JOptionPane;
+
 
 /**
  *
@@ -15,12 +21,23 @@ public class LogisticsPendingOrdJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ListofBBJPanel
      */
-    public LogisticsPendingOrdJPanel() {
+    
+     LogisticsPendingOrder pendingOrder;
+   
+     public LogisticsPendingOrdJPanel() {
         initComponents();
+        this.pendingOrder = new pendingOrder();
+        populatependingorderstable();
+        
     }
+    
+     
     
     
     private void populatependingorderstable(){
+        int selectedRowIndex = LogisticsPendingjTable.getSelectedRow();     //table name in the design
+        DefaultTableModel model = (DefaultTableModel) LogisticsPendingjTable.getModel();
+        pendingOrder.populateTable(model);
         
     }
     
@@ -44,7 +61,7 @@ public class LogisticsPendingOrdJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        LogisticsPendingjTable = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         updateOrgBtn = new javax.swing.JPanel();
         updateOrgLbl = new javax.swing.JLabel();
@@ -53,7 +70,7 @@ public class LogisticsPendingOrdJPanel extends javax.swing.JPanel {
 
         setPreferredSize(new java.awt.Dimension(1142, 702));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        LogisticsPendingjTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -72,7 +89,7 @@ public class LogisticsPendingOrdJPanel extends javax.swing.JPanel {
                 return types [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(LogisticsPendingjTable);
 
         jLabel1.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         jLabel1.setText("Pending Orders");
@@ -149,12 +166,18 @@ public class LogisticsPendingOrdJPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable LogisticsPendingjTable;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JPanel updateOrgBtn;
     private javax.swing.JPanel updateOrgBtn1;
     private javax.swing.JLabel updateOrgLbl;
     private javax.swing.JLabel updateOrgLbl1;
     // End of variables declaration//GEN-END:variables
+
+    private static class pendingOrder extends LogisticsPendingOrder {
+
+        public pendingOrder() {
+        }
+    }
 }
