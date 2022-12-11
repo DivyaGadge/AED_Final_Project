@@ -23,6 +23,7 @@ public class ManageNGOProfileJPanel extends javax.swing.JPanel {
         initComponents();
         this.userName = userName;
         userNameLbl.setText(userName);
+        this.ngoMgmnt = new NGOManagement();
         this.ngoProfile = new ManageNGOProfile();
         populateTFs();
     }

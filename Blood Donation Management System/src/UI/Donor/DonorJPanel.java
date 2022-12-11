@@ -323,7 +323,7 @@ public class DonorJPanel extends javax.swing.JPanel {
         
         
         CardLayoutPanel.removeAll();
-        CardLayoutPanel.add(new ManageDonorProfileJPanel());
+        CardLayoutPanel.add(new ManageDonorProfileJPanel(username));
         ((CardLayout) CardLayoutPanel.getLayout()).next(CardLayoutPanel);
         
     }
@@ -336,7 +336,7 @@ public class DonorJPanel extends javax.swing.JPanel {
 
         
         CardLayoutPanel.removeAll();
-        CardLayoutPanel.add(new DonateBloodJPanel());
+        CardLayoutPanel.add(new DonateBloodJPanel(username));
         ((CardLayout)CardLayoutPanel.getLayout()).next(CardLayoutPanel);
         
         
@@ -351,7 +351,7 @@ public class DonorJPanel extends javax.swing.JPanel {
         
         
         CardLayoutPanel.removeAll();
-        CardLayoutPanel.add(new DonationHistory());
+        CardLayoutPanel.add(new DonationHistory(username));
         ((CardLayout) CardLayoutPanel.getLayout()).next(CardLayoutPanel);
         
     }

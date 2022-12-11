@@ -13,8 +13,10 @@ public class DonationHistory extends javax.swing.JPanel {
     /**
      * Creates new form DonationHistory
      */
-    public DonationHistory() {
+    String username;
+    public DonationHistory(String username) {
         initComponents();
+        this.username = username;
     }
 
     /**

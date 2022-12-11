@@ -191,6 +191,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Manage Profile"/>
               </Properties>
+              <Events>
+                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ManageProLblMousePressed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="proIcon">
               <Properties>
@@ -253,6 +256,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Sample Collection"/>
               </Properties>
+              <Events>
+                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ManageOrgLblMousePressed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="sampleColIcon">
               <Properties>
@@ -315,6 +321,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Store Sample"/>
               </Properties>
+              <Events>
+                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="OrgCampsLblMousePressed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="logisticsIcon">
               <Properties>

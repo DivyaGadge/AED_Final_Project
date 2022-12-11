@@ -119,6 +119,11 @@ public class NGOBloodColJPanel extends javax.swing.JPanel {
         ManageProLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         ManageProLbl.setForeground(new java.awt.Color(215, 215, 215));
         ManageProLbl.setText("Manage Profile");
+        ManageProLbl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                ManageProLblMousePressed(evt);
+            }
+        });
 
         proIcon.setBackground(new java.awt.Color(204, 204, 204));
         proIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -150,6 +155,11 @@ public class NGOBloodColJPanel extends javax.swing.JPanel {
         ManageOrgLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         ManageOrgLbl.setForeground(new java.awt.Color(215, 215, 215));
         ManageOrgLbl.setText("Sample Collection");
+        ManageOrgLbl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                ManageOrgLblMousePressed(evt);
+            }
+        });
 
         sampleColIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         sampleColIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagesPackage/blood-bag.png"))); // NOI18N
@@ -187,6 +197,11 @@ public class NGOBloodColJPanel extends javax.swing.JPanel {
         OrgCampsLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         OrgCampsLbl.setForeground(new java.awt.Color(215, 215, 215));
         OrgCampsLbl.setText("Store Sample");
+        OrgCampsLbl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                OrgCampsLblMousePressed(evt);
+            }
+        });
 
         logisticsIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         logisticsIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagesPackage/suraj/logistics_truck.png"))); // NOI18N
@@ -291,11 +306,8 @@ public class NGOBloodColJPanel extends javax.swing.JPanel {
     private void transportBloodBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_transportBloodBtnMousePressed
         // TODO add your handling code here:
 
-        OrganizeCampsJPanel organizeCamps = new OrganizeCampsJPanel();
-        CardLayoutNBCPanel.removeAll();
-        CardLayoutNBCPanel.add(organizeCamps);
-        ((CardLayout) CardLayoutNBCPanel.getLayout()).next(CardLayoutNBCPanel);
-
+        storebld();
+        
     }//GEN-LAST:event_transportBloodBtnMousePressed
 
     private void headerUserNameMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_headerUserNameMousePressed
@@ -309,6 +321,21 @@ public class NGOBloodColJPanel extends javax.swing.JPanel {
         logout.logoutFunctionality();
     }//GEN-LAST:event_logoutBtnMousePressed
 
+    private void ManageProLblMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ManageProLblMousePressed
+        // TODO add your handling code here:
+        manageProfileFunc();
+    }//GEN-LAST:event_ManageProLblMousePressed
+
+    private void OrgCampsLblMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OrgCampsLblMousePressed
+        // TODO add your handling code here:
+        storebld();
+    }//GEN-LAST:event_OrgCampsLblMousePressed
+
+    private void ManageOrgLblMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ManageOrgLblMousePressed
+        // TODO add your handling code here:
+        sampleColFunc();
+    }//GEN-LAST:event_ManageOrgLblMousePressed
+
     public void setBtnColor(JPanel panel) {
 
         panel.setBackground(new Color(210, 75, 60));
@@ -320,6 +347,33 @@ public class NGOBloodColJPanel extends javax.swing.JPanel {
         panel.setBackground(new Color(223, 85, 71));
 
     }
+    
+    
+    public void storebld() {
+        CardLayoutNBCPanel.removeAll();
+        CardLayoutNBCPanel.add(new NBCStoreBloodJPanel());
+        ((CardLayout) CardLayoutNBCPanel.getLayout()).next(CardLayoutNBCPanel);
+
+        
+    }
+    
+    public void sampleColFunc() {
+        CardLayoutNBCPanel.removeAll();
+        CardLayoutNBCPanel.add(new NBCSampleColJPanel());
+        ((CardLayout) CardLayoutNBCPanel.getLayout()).next(CardLayoutNBCPanel);
+
+        
+    }
+    
+    
+    public void manageProfileFunc() {
+        CardLayoutNBCPanel.removeAll();
+        CardLayoutNBCPanel.add(new NBCProfileJPanel());
+        ((CardLayout) CardLayoutNBCPanel.getLayout()).next(CardLayoutNBCPanel);
+
+        
+    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel CardLayoutNBCPanel;

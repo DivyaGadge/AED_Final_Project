@@ -4,6 +4,10 @@
  */
 package UI.NGO;
 
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import model.volunteerEnt.NGOLogistics;
+
 /**
  *
  * @author surajvisvesh
@@ -13,8 +17,12 @@ public class NWHLogisticsJPanel extends javax.swing.JPanel {
     /**
      * Creates new form NWHBloodJPanel
      */
+    NGOLogistics ngoLogistics;
     public NWHLogisticsJPanel() {
         initComponents();
+        this.ngoLogistics = new NGOLogistics();
+        populateTable();
+        ngoLogistics.populateLogisticsCombo(jComboBox1);
     }
 
     /**
@@ -37,19 +45,25 @@ public class NWHLogisticsJPanel extends javax.swing.JPanel {
         sampleTblLbl2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setMinimumSize(new java.awt.Dimension(1142, 630));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         sampleBloodBankTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Camp Id", "Camp Name", "Sample Count", "Sample Status"
+                "Camp Id", "Camp Name", "Sample Count", "Sample Status", "Camp Status"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, true, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(sampleBloodBankTable);
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 41, 1050, 435));
@@ -68,6 +82,11 @@ public class NWHLogisticsJPanel extends javax.swing.JPanel {
         orderLbl.setForeground(new java.awt.Color(255, 255, 255));
         orderLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         orderLbl.setText("Place Order");
+        orderLbl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                orderLblMousePressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout orderBtnLayout = new javax.swing.GroupLayout(orderBtn);
         orderBtn.setLayout(orderBtnLayout);
@@ -88,14 +107,32 @@ public class NWHLogisticsJPanel extends javax.swing.JPanel {
         sampleTblLbl2.setText("Select Logistics Partner");
         add(sampleTblLbl2, new org.netbeans.lib.awtextra.AbsoluteConstraints(423, 494, -1, 53));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void orderLblMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_orderLblMousePressed
+        // TODO add your handling code here:
+        orderBtnFunctionality();
+    }//GEN-LAST:event_orderLblMousePressed
     
-    private void populateLogCB() {
+    private void populateTable() {
+        DefaultTableModel model = (DefaultTableModel) sampleBloodBankTable.getModel();
+        ngoLogistics.populateTable(model);
 //        sql query to get username of Logistics
     }
     
     private void orderBtnFunctionality() {
         
-        
+        try{
+        int id = (int) sampleBloodBankTable.getValueAt(sampleBloodBankTable.getSelectedRow(), 0);
+        String camp_name = sampleBloodBankTable.getValueAt(sampleBloodBankTable.getSelectedRow(), 1).toString();
+        String camp_status = sampleBloodBankTable.getValueAt(sampleBloodBankTable.getSelectedRow(), 2).toString();
+        int available_qty = (int) sampleBloodBankTable.getValueAt(sampleBloodBankTable.getSelectedRow(), 3);
+        String bsc_status = sampleBloodBankTable.getValueAt(sampleBloodBankTable.getSelectedRow(), 4).toString();
+        System.out.println("Testing");
+
+        ngoLogistics.orderPlacement(id, camp_name, camp_status, available_qty, bsc_status);
+        } catch(Exception e) {
+            JOptionPane.showMessageDialog(null, "Please select samples to be delivered.");
+        }
         
     }
     

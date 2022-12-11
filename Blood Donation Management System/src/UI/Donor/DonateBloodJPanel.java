@@ -18,12 +18,13 @@ public class DonateBloodJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ManageCampNGOJPanel
      */
-    DonateBlood manageCamp;
-
-    public DonateBloodJPanel() {
+    DonateBlood donate;
+    String username;    
+    public DonateBloodJPanel(String username) {
         initComponents();
         System.out.println("Print statement");
-        this.manageCamp = new DonateBlood();
+        this.donate = new DonateBlood();
+        this.username = username;
         populateCampsTable();
     }
 
@@ -40,26 +41,10 @@ public class DonateBloodJPanel extends javax.swing.JPanel {
         campTable = new javax.swing.JTable();
         searchTF = new javax.swing.JTextField();
         serachIconLbl = new javax.swing.JLabel();
-        campDateLbl = new javax.swing.JLabel();
-        nameTF = new javax.swing.JTextField();
-        streetLbl = new javax.swing.JLabel();
-        streetTF = new javax.swing.JTextField();
-        cityLbl = new javax.swing.JLabel();
-        cityTF = new javax.swing.JTextField();
-        stateLbl = new javax.swing.JLabel();
-        nameLbl = new javax.swing.JLabel();
-        pincodeLbl = new javax.swing.JLabel();
-        latTF = new javax.swing.JTextField();
-        pinTF = new javax.swing.JTextField();
-        latitudeLbl = new javax.swing.JLabel();
-        longitudeLbl = new javax.swing.JLabel();
-        lonTF = new javax.swing.JTextField();
-        campDateTF = new com.toedter.calendar.JDateChooser();
         registerBtn = new javax.swing.JPanel();
         updateCampLbl = new javax.swing.JLabel();
         campLocBtn = new javax.swing.JPanel();
         campLocLbl = new javax.swing.JLabel();
-        stateTF = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -87,28 +72,6 @@ public class DonateBloodJPanel extends javax.swing.JPanel {
 
         serachIconLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagesPackage/search_icon.png"))); // NOI18N
 
-        campDateLbl.setText("Camp Date*");
-
-        streetLbl.setText("Street Address*");
-
-        streetTF.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                streetTFActionPerformed(evt);
-            }
-        });
-
-        cityLbl.setText("City*");
-
-        stateLbl.setText("State*");
-
-        nameLbl.setText("Name of the Camp*");
-
-        pincodeLbl.setText("Pincode*");
-
-        latitudeLbl.setText("Latitude*");
-
-        longitudeLbl.setText("Longitude*");
-
         registerBtn.setBackground(new java.awt.Color(106, 106, 106));
         registerBtn.setPreferredSize(new java.awt.Dimension(132, 47));
 
@@ -116,6 +79,11 @@ public class DonateBloodJPanel extends javax.swing.JPanel {
         updateCampLbl.setForeground(new java.awt.Color(255, 255, 255));
         updateCampLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         updateCampLbl.setText("Register");
+        updateCampLbl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                updateCampLblMousePressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout registerBtnLayout = new javax.swing.GroupLayout(registerBtn);
         registerBtn.setLayout(registerBtnLayout);
@@ -155,122 +123,56 @@ public class DonateBloodJPanel extends javax.swing.JPanel {
                 .addGap(35, 35, 35)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(registerBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(searchTF, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(serachIconLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(orgTable, javax.swing.GroupLayout.PREFERRED_SIZE, 1069, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(campLocBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(38, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(latitudeLbl)
-                            .addComponent(latTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(nameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(streetLbl)
-                            .addComponent(nameLbl)
-                            .addComponent(streetTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(campDateLbl)
-                            .addComponent(campDateTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 247, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(longitudeLbl)
-                                    .addComponent(lonTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(cityLbl)
-                                    .addComponent(pincodeLbl)
-                                    .addComponent(pinTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(cityTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addComponent(stateLbl)
-                                    .addGap(270, 270, 270)))
-                            .addComponent(stateTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(250, 250, 250))))
+                        .addComponent(campLocBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addComponent(registerBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(searchTF, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(serachIconLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(orgTable, javax.swing.GroupLayout.PREFERRED_SIZE, 1069, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(searchTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(serachIconLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(orgTable, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(orgTable, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(campLocBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(180, 180, 180)
-                                .addComponent(latitudeLbl)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(latTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(nameLbl)
-                                .addGap(6, 6, 6)
-                                .addComponent(nameTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(campDateLbl)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(campDateTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(streetLbl)
-                                .addGap(5, 5, 5)
-                                .addComponent(streetTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(cityLbl)
-                        .addGap(6, 6, 6)
-                        .addComponent(cityTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(stateLbl)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(stateTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(pincodeLbl)
-                        .addGap(6, 6, 6)
-                        .addComponent(pinTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(longitudeLbl)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lonTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addComponent(registerBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(68, 68, 68))
+                    .addComponent(campLocBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(registerBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(213, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void streetTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_streetTFActionPerformed
+    private void updateCampLblMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_updateCampLblMousePressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_streetTFActionPerformed
+        registerBtnFunctionality();
+    }//GEN-LAST:event_updateCampLblMousePressed
 
     public void populateCampsTable() {
 
         DefaultTableModel model = (DefaultTableModel) campTable.getModel();
         System.out.println("Here for a reason");
-        manageCamp.populateTable(model);
+        donate.populateTable(model);
 //        write sql query to fetch database details.
 
     }
 
     public void emptyTF() {
-        nameTF.setText("");
-        campDateTF.setDate(null);
-        latTF.setText("");
-        lonTF.setText("");
-        streetTF.setText("");
-        cityTF.setText("");
-        pinTF.setText("");
 
     }
 
     public void registerBtnFunctionality() {
-
+        int id = (int) campTable.getValueAt(campTable.getSelectedRow(), 0);
+        donate.donorRegister(id, username);
+        
     }
 
     public void campLocFunctionality() {
@@ -278,29 +180,13 @@ public class DonateBloodJPanel extends javax.swing.JPanel {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel campDateLbl;
-    private com.toedter.calendar.JDateChooser campDateTF;
     private javax.swing.JPanel campLocBtn;
     private javax.swing.JLabel campLocLbl;
     private javax.swing.JTable campTable;
-    private javax.swing.JLabel cityLbl;
-    private javax.swing.JTextField cityTF;
-    private javax.swing.JTextField latTF;
-    private javax.swing.JLabel latitudeLbl;
-    private javax.swing.JTextField lonTF;
-    private javax.swing.JLabel longitudeLbl;
-    private javax.swing.JLabel nameLbl;
-    private javax.swing.JTextField nameTF;
     private javax.swing.JScrollPane orgTable;
-    private javax.swing.JTextField pinTF;
-    private javax.swing.JLabel pincodeLbl;
     private javax.swing.JPanel registerBtn;
     private javax.swing.JTextField searchTF;
     private javax.swing.JLabel serachIconLbl;
-    private javax.swing.JLabel stateLbl;
-    private javax.swing.JTextField stateTF;
-    private javax.swing.JLabel streetLbl;
-    private javax.swing.JTextField streetTF;
     private javax.swing.JLabel updateCampLbl;
     // End of variables declaration//GEN-END:variables
 }

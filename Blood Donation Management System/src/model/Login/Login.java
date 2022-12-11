@@ -95,7 +95,7 @@ public class Login {
                             String username_sql = rs.getString("user_name");
                             if (password.equals(password_sql)) {
                                 mainFrameCardLayout.removeAll();
-                                mainFrameCardLayout.add(new NGOManagementJPanel(mainFrameCardLayout, username_sql));
+                                mainFrameCardLayout.add(new NGOWareHouseJPanel(mainFrameCardLayout, username_sql));
                                 ((CardLayout) mainFrameCardLayout.getLayout()).next(mainFrameCardLayout);
                                 JOptionPane.showMessageDialog(mainFrameCardLayout, username + ", You have been successfully logged in.");
                                 break;
@@ -130,7 +130,7 @@ public class Login {
                         if (password.equals(password_sql)) {
                             System.out.println("Selected doctor");
                             mainFrameCardLayout.removeAll();
-                            mainFrameCardLayout.add(new NGOManagementJPanel(mainFrameCardLayout, username_sql));
+                            mainFrameCardLayout.add(new NGOBloodColJPanel(mainFrameCardLayout, username_sql));
                             ((CardLayout) mainFrameCardLayout.getLayout()).next(mainFrameCardLayout);
                             JOptionPane.showMessageDialog(mainFrameCardLayout, username + ", You have been successfully logged in.");
                             break;

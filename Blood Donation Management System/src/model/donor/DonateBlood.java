@@ -7,6 +7,7 @@ package model.donor;
 import model.volunteerEnt.*;
 import Sql.SQLConnection;
 import java.sql.*;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 /**
@@ -55,7 +56,33 @@ public class DonateBlood {
     }
     
     
-    public void endCamp() {
+    public void donorRegister(int id, String username) {
+        
+        try {
+            Connection con = SQLConnection.establishConnection();
+            if (con != null) {
+                String status = "registered";
+                String query = "INSERT INTO Donor_registration(camp_id, donor_username, donor_status) VALUES (?,?,?)";
+
+                PreparedStatement pstmt = con.prepareStatement(query);
+                pstmt.setInt(1, id);
+                pstmt.setString(2, username);
+                pstmt.setString(3, status);
+                
+
+                int count = pstmt.executeUpdate();
+                if (count == 1) {
+
+                    JOptionPane.showMessageDialog(null, "Registered for the camp.");
+                    System.out.println("Email User.");
+                }
+
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            System.out.println("insert camp ");
+
+        }
         
     }
     

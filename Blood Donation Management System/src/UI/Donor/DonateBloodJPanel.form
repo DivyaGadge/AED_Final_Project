@@ -25,112 +25,39 @@
               <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="registerBtn" alignment="0" min="-2" pref="147" max="-2" attributes="0"/>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="searchTF" min="-2" pref="208" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="serachIconLbl" min="-2" pref="29" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="orgTable" alignment="1" min="-2" pref="1069" max="-2" attributes="0"/>
-                          <Component id="campLocBtn" alignment="0" min="-2" pref="147" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace pref="38" max="32767" attributes="0"/>
+                      <Component id="campLocBtn" min="-2" pref="147" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                      <Component id="registerBtn" min="-2" pref="147" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="latitudeLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="latTF" alignment="0" min="-2" pref="305" max="-2" attributes="0"/>
-                          <Component id="nameTF" alignment="0" min="-2" pref="305" max="-2" attributes="0"/>
-                          <Component id="streetLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="nameLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="streetTF" alignment="0" min="-2" pref="305" max="-2" attributes="0"/>
-                          <Component id="campDateLbl" min="-2" max="-2" attributes="0"/>
-                          <Component id="campDateTF" min="-2" pref="305" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="searchTF" min="-2" pref="208" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="serachIconLbl" min="-2" pref="29" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="247" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                                  <Component id="longitudeLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lonTF" alignment="0" min="-2" pref="305" max="-2" attributes="0"/>
-                                  <Component id="cityLbl" min="-2" max="-2" attributes="0"/>
-                                  <Component id="pincodeLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="pinTF" alignment="0" min="-2" pref="305" max="-2" attributes="0"/>
-                                  <Component id="cityTF" alignment="0" min="-2" pref="305" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="stateLbl" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="270" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Component id="stateTF" min="-2" pref="305" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="250" max="-2" attributes="0"/>
+                      <Component id="orgTable" alignment="1" min="-2" pref="1069" max="-2" attributes="0"/>
                   </Group>
               </Group>
+              <EmptySpace pref="38" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
                   <Component id="searchTF" alignment="1" min="-2" max="-2" attributes="0"/>
                   <Component id="serachIconLbl" alignment="1" min="-2" pref="29" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="orgTable" min="-2" pref="196" max="-2" attributes="0"/>
+              <Component id="orgTable" min="-2" pref="371" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="campLocBtn" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="23" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="180" max="-2" attributes="0"/>
-                              <Component id="latitudeLbl" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="latTF" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="nameLbl" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                              <Component id="nameTF" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="campDateLbl" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="campDateTF" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="streetLbl" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
-                              <Component id="streetTF" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <Component id="cityLbl" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                      <Component id="cityTF" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="stateLbl" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="stateTF" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="pincodeLbl" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                      <Component id="pinTF" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="longitudeLbl" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="lonTF" min="-2" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="campLocBtn" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="registerBtn" alignment="1" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="registerBtn" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
+              <EmptySpace pref="213" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -217,63 +144,6 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="campDateLbl">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Camp Date*"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="nameTF">
-    </Component>
-    <Component class="javax.swing.JLabel" name="streetLbl">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Street Address*"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="streetTF">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="streetTFActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JLabel" name="cityLbl">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="City*"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="cityTF">
-    </Component>
-    <Component class="javax.swing.JLabel" name="stateLbl">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="State*"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="nameLbl">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Name of the Camp*"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="pincodeLbl">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Pincode*"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="latTF">
-    </Component>
-    <Component class="javax.swing.JTextField" name="pinTF">
-    </Component>
-    <Component class="javax.swing.JLabel" name="latitudeLbl">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Latitude*"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="longitudeLbl">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Longitude*"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="lonTF">
-    </Component>
-    <Component class="com.toedter.calendar.JDateChooser" name="campDateTF">
-    </Component>
     <Container class="javax.swing.JPanel" name="registerBtn">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -308,6 +178,9 @@
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="Register"/>
           </Properties>
+          <Events>
+            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="updateCampLblMousePressed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -348,7 +221,5 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JTextField" name="stateTF">
-    </Component>
   </SubComponents>
 </Form>

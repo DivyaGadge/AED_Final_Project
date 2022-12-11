@@ -4,6 +4,9 @@
  */
 package UI.NGO;
 
+import javax.swing.table.DefaultTableModel;
+import model.volunteerEnt.NBCSampleCollection;
+
 /**
  *
  * @author surajvisvesh
@@ -13,8 +16,12 @@ public class NBCSampleColJPanel extends javax.swing.JPanel {
     /**
      * Creates new form NCBBloodColJPanel
      */
+    NBCSampleCollection nbcCollection;
+    
     public NBCSampleColJPanel() {
         initComponents();
+        this.nbcCollection = new NBCSampleCollection();
+        populateTable();
     }
 
     /**
@@ -38,13 +45,10 @@ public class NBCSampleColJPanel extends javax.swing.JPanel {
 
         donorTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+
             },
             new String [] {
-                "Donor Name", "vital 1", "vital 2", "vital 3", "donor_status"
+                "Donor Name", "vital 1", "vital 2", "vital 3", "donor_status", "camp_id"
             }
         ));
         jScrollPane1.setViewportView(donorTable);
@@ -55,6 +59,11 @@ public class NBCSampleColJPanel extends javax.swing.JPanel {
         collectBloodLbl.setForeground(new java.awt.Color(255, 255, 255));
         collectBloodLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         collectBloodLbl.setText("Collect Blood");
+        collectBloodLbl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                collectBloodLblMousePressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout collectBloodBtnLayout = new javax.swing.GroupLayout(collectBloodBtn);
         collectBloodBtn.setLayout(collectBloodBtnLayout);
@@ -106,12 +115,27 @@ public class NBCSampleColJPanel extends javax.swing.JPanel {
                 .addContainerGap(184, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void collectBloodLblMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_collectBloodLblMousePressed
+        // TODO add your handling code here:
+        collectBldFunctionality();
+    }//GEN-LAST:event_collectBloodLblMousePressed
     
     private void collectBldFunctionality() {
+        int id = (int) donorTable.getValueAt(donorTable.getSelectedRow(), 0);
+        String camp_name = donorTable.getValueAt(donorTable.getSelectedRow(), 1).toString();
+        String donorUsername = donorTable.getValueAt(donorTable.getSelectedRow(), 2).toString();
+        String bloodGroup = donorTable.getValueAt(donorTable.getSelectedRow(), 3).toString();
+        String email = donorTable.getValueAt(donorTable.getSelectedRow(), 4).toString();
+        int camp_id = (int) donorTable.getValueAt(donorTable.getSelectedRow(), 5);
+        
+        nbcCollection.collectSample(id, camp_name, donorUsername, bloodGroup, email, camp_id);
         
     }
     
     private void populateTable() {
+        DefaultTableModel model = (DefaultTableModel) donorTable.getModel();
+        nbcCollection.populateTable(model);
         
     }
     
@@ -125,4 +149,8 @@ public class NBCSampleColJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField searchTF;
     private javax.swing.JLabel serachIconLbl;
     // End of variables declaration//GEN-END:variables
+
+    private void collectSample(int id, String camp_name, String donorUsername, String bloodGroup, String email, int camp_id) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

@@ -4,6 +4,9 @@
  */
 package UI.NGO;
 
+import javax.swing.table.DefaultTableModel;
+import model.volunteerEnt.NBCStoreBlood;
+
 /**
  *
  * @author surajvisvesh
@@ -13,8 +16,12 @@ public class NBCStoreBloodJPanel extends javax.swing.JPanel {
     /**
      * Creates new form NCBSampleColJPanel
      */
+    NBCStoreBlood nbcstoreBlood;
+
     public NBCStoreBloodJPanel() {
         initComponents();
+        this.nbcstoreBlood = new NBCStoreBlood();
+        populateTable();
     }
 
     /**
@@ -42,6 +49,11 @@ public class NBCStoreBloodJPanel extends javax.swing.JPanel {
         moveToWHLbl.setForeground(new java.awt.Color(255, 255, 255));
         moveToWHLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         moveToWHLbl.setText("Move to Warehouse");
+        moveToWHLbl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                moveToWHLblMousePressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout moveToWHBtnLayout = new javax.swing.GroupLayout(moveToWHBtn);
         moveToWHBtn.setLayout(moveToWHBtnLayout);
@@ -61,15 +73,17 @@ public class NBCStoreBloodJPanel extends javax.swing.JPanel {
 
         sampleTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+
             },
             new String [] {
-                "Camp Id", "Camp Name", "Camp Status", "Sample Count", "Sample Status"
+                "camp Id", "camp Name", "Camp Status", "Available Quantitiy", "Blood Status"
             }
         ));
+        sampleTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                sampleTableMousePressed(evt);
+            }
+        });
         jScrollPane2.setViewportView(sampleTable);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -105,15 +119,34 @@ public class NBCStoreBloodJPanel extends javax.swing.JPanel {
                 .addGap(154, 154, 154))
         );
     }// </editor-fold>//GEN-END:initComponents
-    
+
+    private void moveToWHLblMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_moveToWHLblMousePressed
+        // TODO add your handling code here:
+        moveBloodBtnFunc();
+    }//GEN-LAST:event_moveToWHLblMousePressed
+
+    private void sampleTableMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sampleTableMousePressed
+        // TODO add your handling code here:
+
+
+    }//GEN-LAST:event_sampleTableMousePressed
+
     private void populateTable() {
-        
-        
+        DefaultTableModel model = (DefaultTableModel) sampleTable.getModel();
+        nbcstoreBlood.populateTable(model);
+
     }
-    
-    private void moveBloodBtn() {
-        
- 
+
+    private void moveBloodBtnFunc() {
+        int id = (int) sampleTable.getValueAt(sampleTable.getSelectedRow(), 0);
+        String camp_name = sampleTable.getValueAt(sampleTable.getSelectedRow(), 1).toString();
+        String camp_status = sampleTable.getValueAt(sampleTable.getSelectedRow(), 2).toString();
+        int available_qty = (int) sampleTable.getValueAt(sampleTable.getSelectedRow(), 3);
+        String bsc_status = sampleTable.getValueAt(sampleTable.getSelectedRow(), 4).toString();
+        System.out.println("Testing");
+
+        nbcstoreBlood.storeBld(id, camp_name, camp_status, available_qty, bsc_status);
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
