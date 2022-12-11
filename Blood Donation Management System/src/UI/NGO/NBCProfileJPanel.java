@@ -12,7 +12,7 @@ public class NBCProfileJPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form NCBProfileJPanel
-     */
+     */String nbc_username;
     public NBCProfileJPanel() {
         initComponents();
         populateTFs();

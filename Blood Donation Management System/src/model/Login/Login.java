@@ -5,6 +5,7 @@
 package model.Login;
 
 import Sql.SQLConnection;
+import UI.Donor.DonorJPanel;
 import UI.Login.LoginJPanel;
 import UI.NGO.NGOBloodColJPanel;
 import UI.NGO.NGOManagementJPanel;
@@ -164,7 +165,7 @@ public class Login {
                         if (password.equals(password_sql)) {
                             System.out.println("Selected doctor");
                             mainFrameCardLayout.removeAll();
-                            mainFrameCardLayout.add(new NGOManagementJPanel(mainFrameCardLayout, username_sql));
+                            mainFrameCardLayout.add(new DonorJPanel(mainFrameCardLayout, username_sql));
                             ((CardLayout) mainFrameCardLayout.getLayout()).next(mainFrameCardLayout);
                             JOptionPane.showMessageDialog(mainFrameCardLayout, username + ", You have been successfully logged in.");
                             break;

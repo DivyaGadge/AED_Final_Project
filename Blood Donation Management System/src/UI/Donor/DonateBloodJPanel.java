@@ -5,6 +5,9 @@
 package UI.Donor;
 
 //import UI.NGO.*;
+import javax.swing.table.DefaultTableModel;
+import model.donor.DonateBlood;
+import model.volunteerEnt.ManageCampNGO;
 
 /**
  *
@@ -15,8 +18,13 @@ public class DonateBloodJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ManageCampNGOJPanel
      */
+    DonateBlood manageCamp;
+
     public DonateBloodJPanel() {
         initComponents();
+        System.out.println("Print statement");
+        this.manageCamp = new DonateBlood();
+        populateCampsTable();
     }
 
     /**
@@ -242,12 +250,13 @@ public class DonateBloodJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_streetTFActionPerformed
 
     public void populateCampsTable() {
-        
+
+        DefaultTableModel model = (DefaultTableModel) campTable.getModel();
+        System.out.println("Here for a reason");
+        manageCamp.populateTable(model);
 //        write sql query to fetch database details.
-        
+
     }
-    
-   
 
     public void emptyTF() {
         nameTF.setText("");
@@ -259,15 +268,15 @@ public class DonateBloodJPanel extends javax.swing.JPanel {
         pinTF.setText("");
 
     }
-    
+
     public void registerBtnFunctionality() {
-        
+
     }
-    
+
     public void campLocFunctionality() {
-        
+
     }
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel campDateLbl;
     private com.toedter.calendar.JDateChooser campDateTF;
