@@ -104,7 +104,7 @@ public class CreateHospitalUsersJPanel extends javax.swing.JPanel {
 
         orgTypeLbl.setText("Organization Type*");
 
-        orgTypeCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Doctor", "Patient", "WareHouse Management" }));
+        orgTypeCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hospital", "Doctor", "Patient", "WareHouse Management" }));
         orgTypeCB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 orgTypeCBActionPerformed(evt);
@@ -150,7 +150,7 @@ public class CreateHospitalUsersJPanel extends javax.swing.JPanel {
         createOrgLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         createOrgLbl.setForeground(new java.awt.Color(255, 255, 255));
         createOrgLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        createOrgLbl.setText("Create User");
+        createOrgLbl.setText("Create");
 
         javax.swing.GroupLayout createOrgBtnLayout = new javax.swing.GroupLayout(createOrgBtn);
         createOrgBtn.setLayout(createOrgBtnLayout);

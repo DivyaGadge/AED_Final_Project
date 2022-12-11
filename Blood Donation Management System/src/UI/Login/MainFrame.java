@@ -64,7 +64,7 @@ public final class MainFrame extends javax.swing.JFrame {
     public void loadHomePage() {
         
         mainFrameCardLayout.removeAll();
-        mainFrameCardLayout.add(new HospitalDoctorJPanel());
+        mainFrameCardLayout.add(new HospitalRegistrationJPanel());
         ((CardLayout) mainFrameCardLayout.getLayout()).next(mainFrameCardLayout);
         
     }

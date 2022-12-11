@@ -6,7 +6,7 @@ package UI.Login;
 
 /**
  *
- * @author surajvisvesh
+ * @author divyagadge
  */
 public class HospitalRegistrationJPanel extends javax.swing.JPanel {
 
