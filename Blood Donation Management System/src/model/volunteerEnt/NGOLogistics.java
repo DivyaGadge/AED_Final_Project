@@ -10,6 +10,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Iterator;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -19,9 +22,9 @@ import javax.swing.table.DefaultTableModel;
  * @author surajvisvesh
  */
 public class NGOLogistics {
-    
+
     JComboBox jComboBox1;
-    
+
     public void populateTable(DefaultTableModel model) {
         try {
             System.out.println("entered try block");
@@ -53,36 +56,61 @@ public class NGOLogistics {
 
     }
 
-    public void orderPlacement(int camp_id, String camp_name, String camp_status, int available_qty, String bsc_status) {
+    public void orderPlacement(int camp_id, String camp_name, String camp_status, int available_qty, String bsc_status, String logistics_name) {
 
         try {
             Connection con = SQLConnection.establishConnection();
             if (con != null) {
-                
+                String query = "SELECT blood_id FROM blood_sample_collection WHERE camp_id = " + camp_id + "";
+                PreparedStatement pstmt;
+                int count;
+                Statement stmt = con.createStatement();
+                ResultSet rs = stmt.executeQuery(query);
+                List<Integer> blood_id = new ArrayList<Integer>();
+                while (rs.next()) {
+                    blood_id.add(rs.getInt("blood_id"));
+                }
+//                Iterator it = blood_id.iterator();
+                for (int k = 0; k < blood_id.size(); k++) {
+                    int blood = blood_id.get(k);
+                    String query1 = "INSERT INTO Logistics_order(blood_id, logistics_org_username) VALUES(?,?) ";
+
+                    pstmt = con.prepareStatement(query1);
+                    pstmt.setInt(1, blood);
+                    pstmt.setString(2, logistics_name);
+                    count = pstmt.executeUpdate();
+                    if (count > 0) {
+                        String query2 = "UPDATE blood_sample_collection SET status='Logistics order placed' WHERE camp_id=" + blood + "";
+                        pstmt.execute(query2);
+                    }
+
+                }
+
+//                String query1 = "INSERT INTO Logistics_order(blood_id, logistics_org_username) VALUES(?,?) ";
+//                String query2 = "UPDATE Donor_registration SET donor_status='collected' WHERE registration_id=" + id + "";
 //                insert statement
-                String query = "UPDATE blood_sample_collection SET status='Delivered' WHERE camp_id=" + camp_id + "";
-
-                PreparedStatement pstmt = con.prepareStatement(query);
-
-                int count = pstmt.executeUpdate();
-
-                JOptionPane.showMessageDialog(null, "Order has been placed with Logistics Provider.");
-                System.out.println("Email User.");
-
+//                String query2 = "UPDATE blood_sample_collection SET status='At Logistics' WHERE camp_id=" + camp_id + "";
+//
+//                PreparedStatement pstmt = con.prepareStatement(query1);
+//                int count = pstmt.executeUpdate();
+//                if (count > 0) {
+////                    pstmt.execute(query2);
+//                    JOptionPane.showMessageDialog(null, "Order has been placed with Logistics Provider.");
+//                    System.out.println("Email User.");
+//                }
             }
         } catch (SQLException ex) {
             ex.printStackTrace();
             System.out.println("insert camp ");
 
         }
-        
-        
-    }    
-        
+
+    }
+
     public void populateLogisticsCombo(JComboBox jComboBox1) {
-        
+
         this.jComboBox1 = jComboBox1;
-        
+
         try {
             Connection con = SQLConnection.establishConnection();
             if (con != null) {
@@ -97,6 +125,6 @@ public class NGOLogistics {
         } catch (SQLException e) {
             System.out.println("log CB population");
         }
-        
-    }    
+
+    }
 }

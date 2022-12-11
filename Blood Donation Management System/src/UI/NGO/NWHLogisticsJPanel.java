@@ -18,6 +18,7 @@ public class NWHLogisticsJPanel extends javax.swing.JPanel {
      * Creates new form NWHBloodJPanel
      */
     NGOLogistics ngoLogistics;
+
     public NWHLogisticsJPanel() {
         initComponents();
         this.ngoLogistics = new NGOLogistics();
@@ -112,32 +113,32 @@ public class NWHLogisticsJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         orderBtnFunctionality();
     }//GEN-LAST:event_orderLblMousePressed
-    
+
     private void populateTable() {
         DefaultTableModel model = (DefaultTableModel) sampleBloodBankTable.getModel();
         ngoLogistics.populateTable(model);
 //        sql query to get username of Logistics
     }
-    
-    private void orderBtnFunctionality() {
-        
-        try{
-        int id = (int) sampleBloodBankTable.getValueAt(sampleBloodBankTable.getSelectedRow(), 0);
-        String camp_name = sampleBloodBankTable.getValueAt(sampleBloodBankTable.getSelectedRow(), 1).toString();
-        String camp_status = sampleBloodBankTable.getValueAt(sampleBloodBankTable.getSelectedRow(), 2).toString();
-        int available_qty = (int) sampleBloodBankTable.getValueAt(sampleBloodBankTable.getSelectedRow(), 3);
-        String bsc_status = sampleBloodBankTable.getValueAt(sampleBloodBankTable.getSelectedRow(), 4).toString();
-        System.out.println("Testing");
 
-        ngoLogistics.orderPlacement(id, camp_name, camp_status, available_qty, bsc_status);
-        } catch(Exception e) {
+    private void orderBtnFunctionality() {
+
+        try {
+            int id = (int) sampleBloodBankTable.getValueAt(sampleBloodBankTable.getSelectedRow(), 0);
+            String camp_name = sampleBloodBankTable.getValueAt(sampleBloodBankTable.getSelectedRow(), 1).toString();
+            String camp_status = sampleBloodBankTable.getValueAt(sampleBloodBankTable.getSelectedRow(), 2).toString();
+            int available_qty = (int) sampleBloodBankTable.getValueAt(sampleBloodBankTable.getSelectedRow(), 3);
+            String bsc_status = sampleBloodBankTable.getValueAt(sampleBloodBankTable.getSelectedRow(), 4).toString();
+            String logistics_name = jComboBox1.getSelectedItem().toString();
+            System.out.println("Testing");
+
+            ngoLogistics.orderPlacement(id, camp_name, camp_status, available_qty, bsc_status, logistics_name);
+            JOptionPane.showMessageDialog(null, "Order placed with logistics Organization.");
+        } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Please select samples to be delivered.");
         }
-        
+
     }
-    
-    
-    
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> jComboBox1;
