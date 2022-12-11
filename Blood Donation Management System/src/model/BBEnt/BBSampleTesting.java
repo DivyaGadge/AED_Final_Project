@@ -4,84 +4,46 @@
  */
 package model.BBEnt;
 
+import Sql.SQLConnection;
+import java.sql.*;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author prishaa
  */
 public class BBSampleTesting {
+   
+     public ResultSet populateTable(DefaultTableModel model) {
+        
+        try {
+                System.out.println("entered try block");
+                Connection con = SQLConnection.establishConnection();
+                System.out.println(con);
+                if (con != null) {
+                    System.out.println("entered if con not null block");
 
-    private int sample_id;
-    private String sample_testing_org_username;
-    private String bloodGroup;
-    private String testStatus;
-    private String collectionDate;
-    private float plasmaQty;
-    private float plateletQty;
-    private float rbcQty;
-    private float bloodSampleCount;
-    
-    public int getSample_id() {
-        return sample_id;
-    }
+                    String query = "SELECT * FROM sample_testing";
+                    Statement stmt = con.createStatement();
+                    ResultSet rs = stmt.executeQuery(query);
 
-    public void setSample_id(int sample_id) {
-        this.sample_id = sample_id;
-    }
-
-    public String getSample_testing_org_username() {
-        return sample_testing_org_username;
-    }
-
-    public void setSample_testing_org_username(String sample_testing_org_username) {
-        this.sample_testing_org_username = sample_testing_org_username;
-    }
-
-    public String getBloodGroup() {
-        return bloodGroup;
-    }
-
-    public void setBloodGroup(String bloodGroup) {
-        this.bloodGroup = bloodGroup;
-    }
-
-    public String getTestStatus() {
-        return testStatus;
-    }
-
-    public void setTestStatus(String testStatus) {
-        this.testStatus = testStatus;
-    }
-
-    public String getCollectionDate() {
-        return collectionDate;
-    }
-
-    public void setCollectionDate(String collectionDate) {
-        this.collectionDate = collectionDate;
-    }
-
-    public float getPlasmaQty() {
-        return plasmaQty;
-    }
-
-    public void setPlasmaQty(float plasmaQty) {
-        this.plasmaQty = plasmaQty;
-    }
-
-    public float getPlateletQty() {
-        return plateletQty;
-    }
-
-    public void setPlatelet(float platelet) {
-        this.plateletQty = plateletQty;
-    }
-
-    public float getRbcQty() {
-        return rbcQty;
-    }
-
-    public void setRbcQty(float rbcQty) {
-        this.rbcQty = rbcQty;
+                    while (rs.next()) {
+                        System.out.println("entered if rs. block");
+                        String bloodBank = rs.getString("bb_username");
+                        String bloodGroup = rs.getString("bloodGroup");
+                        int bloodQty = rs.getInt("bloodQty");
+                       
+                        
+                        Object row[] = {bloodBank,bloodGroup, bloodQty};
+                        model.insertRow(0,row);
+                    }
+                }
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+        return null;
+        
     }
     
 }

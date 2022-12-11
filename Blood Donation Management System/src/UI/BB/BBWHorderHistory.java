@@ -44,13 +44,13 @@ public class BBWHorderHistory extends javax.swing.JPanel {
 
         BBWHorderHistoryTbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Order Date", "Delivery Date", "Logistics Supplier", "Hospital name", "Blood unit", "Blood type", "Plasma unit", "Plasma type", "Platelet unit", "Platelet type", "RBC units", "RBC type"
+                "Blood Bank", "Order Date", "Delivery Date", "Logistics Supplier", "Hospital name", "Blood unit", "Blood type"
             }
         ));
         BBWHorderHistoryTbl.getTableHeader().setReorderingAllowed(false);

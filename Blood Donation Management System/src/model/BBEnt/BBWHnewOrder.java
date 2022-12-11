@@ -13,9 +13,16 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author prishaa
  */
+public class BBWHnewOrder {
+//   private int equipment_id;
+//private String username;
+//private String equipmentName;
+//private int equipmentCount;
+//private String equipmentSupplier;
+//private String equipmentDescription;
 
-public class bbWHorderHistory {
-  public ResultSet populateTable(DefaultTableModel model) {
+    
+    public ResultSet populateTable(DefaultTableModel model) {
         
         try {
                 System.out.println("entered try block");
@@ -24,29 +31,28 @@ public class bbWHorderHistory {
                 if (con != null) {
                     System.out.println("entered if con not null block");
 
-                    String query = "SELECT * FROM BBorderHistory";
+                    String query = "SELECT * FROM newOrder";
                     Statement stmt = con.createStatement();
                     ResultSet rs = stmt.executeQuery(query);
 
                     while (rs.next()) {
                         System.out.println("entered if rs. block");
-                        String bloodBank = rs.getString("bb_username");
-                        String orderDt = rs.getString("orderDt");
-                        String deliveryDt = rs.getString("deliveryDt");
-                        String logisticSupplier = rs.getString("logisticSupplier");
-                        String hospitalName = rs.getString("hospitalName");
-                        int bloodUnit = rs.getInt("bloodunit");
-                        String bloodType = rs.getString("bloodType");
-                       
+                        int equipmentId = rs.getInt("equipmentId");
+                        String bb_username = rs.getString("bb_username");
+                        String equipmentName = rs.getString("equipmentName");
+                        String equipmentDesc = rs.getString("equipmentDesc");
+                        String equipmentSupplier = rs.getString("equipmentSupplier");
+                        int equipmentCount = rs.getInt("equipmentCount");
                         
-                        Object row[] = {bloodBank,orderDt,deliveryDt,logisticSupplier,hospitalName,bloodUnit,bloodType};
+                        Object row[] = {equipmentId,bb_username , equipmentName, equipmentDesc, equipmentCount,equipmentSupplier};
                         model.insertRow(0,row);
                     }
                 }
             } catch (SQLException ex) {
-             ex.printStackTrace();   
+                ex.printStackTrace();
             }
         return null;
         
     }
 }
+   

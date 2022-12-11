@@ -4,18 +4,27 @@
  */
 package UI.BB;
 
+
+import com.mysql.cj.protocol.Resultset;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import model.BBEnt.BBWHnewOrder;
+
+
 /**
  *
  * @author prishaa
  *
  */
 public class BBWHnewOrderPanel extends javax.swing.JPanel {
-
+    BBWHnewOrder newOrder;
     /**
      * Creates new form ManageEquipmentNWHJPanel
      */
     public BBWHnewOrderPanel() {
-        initComponents();
+         initComponents();
+        this.newOrder = new newOrder();
+        populateNewOrderTable();
     }
 
     /**
@@ -29,14 +38,14 @@ public class BBWHnewOrderPanel extends javax.swing.JPanel {
 
         searchTF = new javax.swing.JTextField();
         BBWHequipTable = new javax.swing.JScrollPane();
-        BBWHorderEquipmentTable = new javax.swing.JTable();
+        newOrderTbl = new javax.swing.JTable();
         orderEquipmentsBtn = new javax.swing.JPanel();
         placeOrderLbl = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(1142, 702));
 
-        BBWHorderEquipmentTable.setModel(new javax.swing.table.DefaultTableModel(
+        newOrderTbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -55,8 +64,8 @@ public class BBWHnewOrderPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        BBWHorderEquipmentTable.getTableHeader().setReorderingAllowed(false);
-        BBWHequipTable.setViewportView(BBWHorderEquipmentTable);
+        newOrderTbl.getTableHeader().setReorderingAllowed(false);
+        BBWHequipTable.setViewportView(newOrderTbl);
 
         orderEquipmentsBtn.setBackground(new java.awt.Color(106, 106, 106));
 
@@ -108,6 +117,13 @@ public class BBWHnewOrderPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    public void populateNewOrderTable() {
+        int selectedRowIndex = newOrderTbl.getSelectedRow();
+        DefaultTableModel model = (DefaultTableModel) newOrderTbl.getModel();   
+        newOrder.populateTable(model);
+            
+    }
     private void placeOrderLblMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_placeOrderLblMousePressed
         // TODO add your handling code here:
 
@@ -117,9 +133,15 @@ public class BBWHnewOrderPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane BBWHequipTable;
-    private javax.swing.JTable BBWHorderEquipmentTable;
+    private javax.swing.JTable newOrderTbl;
     private javax.swing.JPanel orderEquipmentsBtn;
     private javax.swing.JLabel placeOrderLbl;
     private javax.swing.JTextField searchTF;
     // End of variables declaration//GEN-END:variables
+
+    private static class newOrder extends BBWHnewOrder {
+
+        public newOrder() {
+        }
+    }
 }

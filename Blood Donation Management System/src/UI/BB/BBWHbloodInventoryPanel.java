@@ -36,27 +36,21 @@ public class BBWHbloodInventoryPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        searchTF = new javax.swing.JTextField();
         bloodInvTbl = new javax.swing.JScrollPane();
         bloodInventoryTbl = new javax.swing.JTable();
         unitAvailability = new javax.swing.JLabel();
-        unitType = new javax.swing.JLabel();
-        blood = new javax.swing.JLabel();
-        plasma = new javax.swing.JLabel();
-        platelet = new javax.swing.JLabel();
-        rbc = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
         bloodInventoryTbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"
+                "Blood Bank", "Blood Group", "Units Available"
             }
         ));
         bloodInventoryTbl.getTableHeader().setReorderingAllowed(false);
@@ -65,65 +59,28 @@ public class BBWHbloodInventoryPanel extends javax.swing.JPanel {
         unitAvailability.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         unitAvailability.setText("SAMPLE UNIT AVAILABILITY");
 
-        unitType.setText("UNIT TYPE");
-
-        blood.setText("BLOOD");
-
-        plasma.setText("PLASMA");
-
-        platelet.setText("PLATELET");
-
-        rbc.setText("RBC");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(unitAvailability)
-                .addGap(623, 623, 623)
-                .addComponent(searchTF, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(platelet)
-                        .addGap(4, 4, 4))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(plasma)
-                            .addComponent(rbc)
-                            .addComponent(blood)
-                            .addComponent(unitType))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                .addComponent(bloodInvTbl, javax.swing.GroupLayout.PREFERRED_SIZE, 999, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(131, 131, 131)
+                        .addComponent(bloodInvTbl, javax.swing.GroupLayout.PREFERRED_SIZE, 780, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(397, 397, 397)
+                        .addComponent(unitAvailability)))
+                .addContainerGap(177, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(44, 44, 44)
+                .addGap(55, 55, 55)
                 .addComponent(unitAvailability)
-                .addGap(42, 42, 42)
-                .addComponent(searchTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addComponent(bloodInvTbl, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(56, 56, 56)
-                        .addComponent(unitType)
-                        .addGap(18, 18, 18)
-                        .addComponent(blood)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(plasma)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(rbc)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(platelet)))
-                .addContainerGap(218, Short.MAX_VALUE))
+                .addGap(82, 82, 82)
+                .addComponent(bloodInvTbl, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(114, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -136,15 +93,9 @@ public class BBWHbloodInventoryPanel extends javax.swing.JPanel {
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel blood;
     private javax.swing.JScrollPane bloodInvTbl;
     private javax.swing.JTable bloodInventoryTbl;
-    private javax.swing.JLabel plasma;
-    private javax.swing.JLabel platelet;
-    private javax.swing.JLabel rbc;
-    private javax.swing.JTextField searchTF;
     private javax.swing.JLabel unitAvailability;
-    private javax.swing.JLabel unitType;
     // End of variables declaration//GEN-END:variables
 
     private static class bloodInventory extends BBbloodInventory {

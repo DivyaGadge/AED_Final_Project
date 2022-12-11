@@ -5,17 +5,25 @@
 package UI.BB;
 
 
+import com.mysql.cj.protocol.Resultset;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import model.BBEnt.BBSampleTesting;
+
 /**
  *
  * @author prishaa
  */
 public class BBSampleTestingPanel extends javax.swing.JPanel {
 
+    BBSampleTesting sampleTesting;
     /**
      * Creates new form ManageNWHEquipmentsJPanel
      */
     public BBSampleTestingPanel() {
         initComponents();
+        this.sampleTesting = new sampleTesting();
+        populateSampleTestingTable();
     }
 
     /**
@@ -30,27 +38,25 @@ public class BBSampleTestingPanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         SmplTbl = new javax.swing.JTable();
         TestSmplBtn = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        smplCountTbl = new javax.swing.JTable();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
         SmplTbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Sample ID", "Collection Date", "Blood group", "Test Status"
+                "Sample ID", "Blood Bank", "Collection Date", "Blood group", "Test Status"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.Object.class, java.lang.String.class, java.lang.String.class
+                java.lang.Integer.class, java.lang.Object.class, java.lang.Object.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, true, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -73,38 +79,15 @@ public class BBSampleTestingPanel extends javax.swing.JPanel {
             }
         });
 
-        smplCountTbl.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Blood sample Count", "RBC Count", "Plasma Count", "Platelet Count"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        smplCountTbl.getTableHeader().setReorderingAllowed(false);
-        jScrollPane2.setViewportView(smplCountTbl);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(83, 83, 83)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 970, Short.MAX_VALUE)
-                    .addComponent(TestSmplBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane2))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 970, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TestSmplBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(89, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -114,12 +97,16 @@ public class BBSampleTestingPanel extends javax.swing.JPanel {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
                 .addComponent(TestSmplBtn)
-                .addGap(30, 30, 30)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(145, Short.MAX_VALUE))
+                .addContainerGap(410, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    public void populateSampleTestingTable() {
+        int selectedRowIndex = SmplTbl.getSelectedRow();
+        DefaultTableModel model = (DefaultTableModel) SmplTbl.getModel();
+        sampleTesting.populateTable(model);
+            
+    }
     private void TestSmplBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TestSmplBtnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TestSmplBtnActionPerformed
@@ -138,7 +125,5 @@ public class BBSampleTestingPanel extends javax.swing.JPanel {
     private javax.swing.JTable SmplTbl;
     private javax.swing.JButton TestSmplBtn;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable smplCountTbl;
     // End of variables declaration//GEN-END:variables
 }

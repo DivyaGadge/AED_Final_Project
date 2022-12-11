@@ -49,7 +49,7 @@ public class BBWHequipment {
                     }
                 }
             } catch (SQLException ex) {
-                
+                ex.printStackTrace();
             }
         return null;
         

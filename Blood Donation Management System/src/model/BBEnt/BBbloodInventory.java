@@ -24,28 +24,23 @@ public class BBbloodInventory {
                 if (con != null) {
                     System.out.println("entered if con not null block");
 
-                    String query = "SELECT * FROM BBbloodInventory";
+                    String query = "SELECT * FROM bloodInventory";
                     Statement stmt = con.createStatement();
                     ResultSet rs = stmt.executeQuery(query);
 
                     while (rs.next()) {
                         System.out.println("entered if rs. block");
-                        int bloodAp = rs.getInt("bloodAp");
-                        int bloodAm = rs.getInt("bloodAm");
-                        int bloodBp = rs.getInt("bloodBp");
-                        int bloodBm= rs.getInt("bloodBm");
-                        int bloodABp = rs.getInt("bloodABp");
-                        int bloodABm = rs.getInt("bloodABm");
-                        int bloodOp = rs.getInt("bloodOp");
-                        int bloodOm = rs.getInt("bloodOm");
+                        String bloodBank = rs.getString("bb_username");
+                        String bloodGroup = rs.getString("bloodGroup");
+                        int bloodQty = rs.getInt("bloodQty");
                        
                         
-                        Object row[] = {bloodAp,bloodAm , bloodBp, bloodBm, bloodABp,bloodABm,bloodOp,bloodOm};
+                        Object row[] = {bloodBank,bloodGroup, bloodQty};
                         model.insertRow(0,row);
                     }
                 }
             } catch (SQLException ex) {
-                
+                ex.printStackTrace();
             }
         return null;
         
