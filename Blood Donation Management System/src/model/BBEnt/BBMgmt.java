@@ -4,6 +4,8 @@
  */
 package model.BBEnt;
 
+import model.Enterprise.BloodBankEnterprise;
+
 /**
  *
  * @author prishaa
@@ -108,7 +110,7 @@ public class BBMgmt extends BloodBankEnterprise {
     public void setPincode(int pincode) {
         this.pincode = pincode;
     }
-    
-    
+
+  
     
 }

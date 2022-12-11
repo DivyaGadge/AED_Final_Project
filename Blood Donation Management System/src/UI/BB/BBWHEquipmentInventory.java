@@ -4,18 +4,27 @@
  */
 package UI.BB;
 
+import com.mysql.cj.protocol.Resultset;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import model.BBEnt.BBWHequipment;
 
 /**
  *
  * @author prishaa
  */
+
+
 public class BBWHEquipmentInventory extends javax.swing.JPanel {
 
+    BBWHequipment whEquipment;
     /**
      * Creates new form ManageEquipmentNWHJPanel
      */
     public BBWHEquipmentInventory() {
         initComponents();
+        this.whEquipment = new whEquipment();
+        populateEquipmentTable();
     }
 
     /**
@@ -79,10 +88,25 @@ public class BBWHEquipmentInventory extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+ public void populateEquipmentTable() {
+        int selectedRowIndex = BBWHequipInventoryTbl.getSelectedRow();
 
+
+        DefaultTableModel model = (DefaultTableModel) BBWHequipInventoryTbl.getModel();
+       
+        whEquipment.populateTable(model);
+            
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable BBWHequipInventoryTbl;
     private javax.swing.JScrollPane BBWHequipmentTbl;
     private javax.swing.JTextField searchTF;
     // End of variables declaration//GEN-END:variables
+
+    private static class whEquipment extends BBWHequipment {
+
+        public whEquipment() {
+        }
+    }
 }

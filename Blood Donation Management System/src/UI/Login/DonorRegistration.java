@@ -5,15 +5,14 @@
 package UI.Login;
 
 import Sql.SQLConnection;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import model.volunteerEnt.ngoManagement.NGOManagement;
-
+import model.BBEnt.BBMgmt;
+import model.BBEnt.BBWarehouse;
 
 
 /**
@@ -29,6 +28,7 @@ public class DonorRegistration extends javax.swing.JPanel {
         initComponents();
         populateNGOCB();
         errorVisibility();
+        
     }
 
     /**

@@ -4,11 +4,13 @@
  */
 package model.BBEnt;
 
+import model.Enterprise.BloodBankEnterprise;
+
 /**
  *
  * @author prishaa
  */
-public class BBWarehouse {
+public class BBWarehouse extends BloodBankEnterprise {
     private String username;
     private String name;
     private String password;

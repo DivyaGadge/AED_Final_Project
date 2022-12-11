@@ -11,9 +11,7 @@ package UI.BB;
  */
 public class ManageBBProfilePage extends javax.swing.JPanel {
 
-    /**
-     * Creates new form ManageNGOProfileJPanel
-     */
+   
     public ManageBBProfilePage() {
         initComponents();
         
