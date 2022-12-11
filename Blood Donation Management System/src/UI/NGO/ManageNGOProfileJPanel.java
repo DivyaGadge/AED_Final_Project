@@ -4,6 +4,9 @@
  */
 package UI.NGO;
 
+import model.volunteerEnt.ManageNGOProfile;
+import model.volunteerEnt.NGOManagement;
+
 /**
  *
  * @author surajvisvesh
@@ -14,9 +17,14 @@ public class ManageNGOProfileJPanel extends javax.swing.JPanel {
      * Creates new form ManageNGOProfileJPanel
      */
     String userName;
+    ManageNGOProfile ngoProfile;
+    NGOManagement ngoMgmnt;
     public ManageNGOProfileJPanel(String userName) {
         initComponents();
+        this.userName = userName;
         userNameLbl.setText(userName);
+        this.ngoProfile = new ManageNGOProfile();
+        populateTFs();
     }
 
     /**
@@ -250,6 +258,23 @@ public class ManageNGOProfileJPanel extends javax.swing.JPanel {
     }
     
     private void populateTFs() {
+        System.out.println(userName);
+        userNameLbl.setText(userName);
+        
+        this.ngoMgmnt = ngoProfile.populateTFs(userName);
+        nameTF.setText(ngoMgmnt.getName());
+        emailTF.setText(ngoMgmnt.getEmail());
+        passTF.setText(ngoMgmnt.getPassword());
+        phoneTF.setText(String.valueOf(ngoMgmnt.getPhoneNo()));
+        streetTF.setText(ngoMgmnt.getStreet());
+        cityTF.setText(ngoMgmnt.getCity());
+        stateCB.setSelectedItem(ngoMgmnt.getState());
+        String license = ngoMgmnt.getLicense_path();
+
+        
+        
+        
+        
         
     }
     

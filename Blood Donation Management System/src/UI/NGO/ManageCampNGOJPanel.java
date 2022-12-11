@@ -346,7 +346,7 @@ public class ManageCampNGOJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_streetTFActionPerformed
 
     public void populateCampsTable() {
-        int selectedRowIndex = campTable.getSelectedRow();
+//        int selectedRowIndex = campTable.getSelectedRow();
 
 
         DefaultTableModel model = (DefaultTableModel) campTable.getModel();
