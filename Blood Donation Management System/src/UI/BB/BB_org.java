@@ -4,7 +4,12 @@
  */
 package UI.BB;
 
+import model.Ecosystem.Logout;
+import UI.Login.homeJPanel;
 import java.awt.CardLayout;
+import java.awt.Color;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 /**
  *
@@ -12,12 +17,17 @@ import java.awt.CardLayout;
  */
 public class BB_org extends javax.swing.JPanel {
 
+     JPanel mainFrameCardLayout;
+    String username;
     /**
      * Creates new form BB_org
      */
     public BB_org() {
-        initComponents();
+        initComponents(JPanel mainFrameCardLayout, String username);
+        this.mainFrameCardLayout = mainFrameCardLayout;
+        this.username = username;
         
+        headerUserName.setText(username);
     }
 
     /**
@@ -31,6 +41,7 @@ public class BB_org extends javax.swing.JPanel {
 
         BBheader = new javax.swing.JPanel();
         BLOODONATE = new javax.swing.JLabel();
+        headerUserName = new javax.swing.JLabel();
         BBmenu = new javax.swing.JPanel();
         manageProfileBtn = new javax.swing.JPanel();
         manageProfileIcon = new javax.swing.JLabel();
@@ -57,6 +68,8 @@ public class BB_org extends javax.swing.JPanel {
         BLOODONATE.setForeground(new java.awt.Color(215, 215, 215));
         BLOODONATE.setText("BLOODONATE");
 
+        headerUserName.setText("jLabel1");
+
         javax.swing.GroupLayout BBheaderLayout = new javax.swing.GroupLayout(BBheader);
         BBheader.setLayout(BBheaderLayout);
         BBheaderLayout.setHorizontalGroup(
@@ -64,13 +77,20 @@ public class BB_org extends javax.swing.JPanel {
             .addGroup(BBheaderLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(BLOODONATE)
-                .addContainerGap(1164, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 914, Short.MAX_VALUE)
+                .addComponent(headerUserName)
+                .addGap(213, 213, 213))
         );
         BBheaderLayout.setVerticalGroup(
             BBheaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BBheaderLayout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(BLOODONATE)
+                .addGroup(BBheaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(BBheaderLayout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addComponent(BLOODONATE))
+                    .addGroup(BBheaderLayout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addComponent(headerUserName)))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
@@ -283,6 +303,7 @@ public class BB_org extends javax.swing.JPanel {
     private javax.swing.JPanel BBorgCardLayout;
     private javax.swing.JLabel BLOODONATE;
     private javax.swing.JLabel SampleTestingIcon;
+    private javax.swing.JLabel headerUserName;
     private javax.swing.JPanel manageProfileBtn;
     private javax.swing.JLabel manageProfileIcon;
     private javax.swing.JLabel manageProfileLbl;

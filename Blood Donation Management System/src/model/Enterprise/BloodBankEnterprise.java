@@ -6,7 +6,7 @@ package model.Enterprise;
 
 /**
  *
- * @author HP
+ * @author prishaa
  */
 public class BloodBankEnterprise {
    

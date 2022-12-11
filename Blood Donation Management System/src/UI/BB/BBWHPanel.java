@@ -368,7 +368,7 @@ public class BBWHPanel extends javax.swing.JPanel {
 
     private void manageProfileFunctionality() {
         CardLayoutBBWHPanel.removeAll();
-        CardLayoutBBWHPanel.add(new BBWHManageProfile());
+        CardLayoutBBWHPanel.add(new ManageBBWarehouseProfilePage(username));
         ((CardLayout) CardLayoutBBWHPanel.getLayout()).next(CardLayoutBBWHPanel);
     }
 

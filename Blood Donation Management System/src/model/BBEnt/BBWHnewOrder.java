@@ -6,6 +6,7 @@ package model.BBEnt;
 
 import Sql.SQLConnection;
 import java.sql.*;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
@@ -53,6 +54,30 @@ public class BBWHnewOrder {
             }
         return null;
         
+    }
+
+    public void placeOrderFunctionality(int id, String bloodBank, String equipmentName, String equipmentDesc, int equipmentCount) {
+      // try {
+        //    Connection con = SQLConnection.establishConnection();
+          //  if (con != null) {
+            //    String query = "UPDATE newOrder SET testsSatus='Tested' WHERE sample_id=" + sample_id + "";
+               
+
+               // PreparedStatement pstmt = con.prepareStatement(query);
+               
+
+                //int count = pstmt.executeUpdate();
+
+
+                    JOptionPane.showMessageDialog(null, "Order has been placed");
+                   // System.out.println("Email User.");
+
+          //  }
+      //  } catch (SQLException ex) {
+        //    ex.printStackTrace();
+          //  System.out.println("insert camp ");
+
+     //   }
     }
 }
    

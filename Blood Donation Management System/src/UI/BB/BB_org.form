@@ -73,15 +73,25 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="BLOODONATE" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="1164" max="32767" attributes="0"/>
+                  <EmptySpace pref="914" max="32767" attributes="0"/>
+                  <Component id="headerUserName" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="213" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                  <Component id="BLOODONATE" min="-2" max="-2" attributes="0"/>
+              <Group type="102" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                          <Component id="BLOODONATE" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                          <Component id="headerUserName" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
                   <EmptySpace pref="20" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -100,6 +110,11 @@
               <Color blue="d7" green="d7" red="d7" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="BLOODONATE"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="headerUserName">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="jLabel1"/>
           </Properties>
         </Component>
       </SubComponents>

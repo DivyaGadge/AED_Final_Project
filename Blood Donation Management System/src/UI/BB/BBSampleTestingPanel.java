@@ -10,6 +10,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import model.BBEnt.BBSampleTesting;
 
+
 /**
  *
  * @author prishaa
@@ -109,16 +110,21 @@ public class BBSampleTestingPanel extends javax.swing.JPanel {
     }
     private void TestSmplBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TestSmplBtnActionPerformed
         // TODO add your handling code here:
+        testSample();
     }//GEN-LAST:event_TestSmplBtnActionPerformed
     
-    public void viewInventoryBtnFunctionality() {
-        
-       
-    }
-    
-    public void orderEquipBtnFunctionality() {
-        
-       
+
+
+    private void testSample() {
+        int id = (int) SmplTbl.getValueAt(SmplTbl.getSelectedRow(), 0);
+        String bloodBank = SmplTbl.getValueAt(SmplTbl.getSelectedRow(), 1).toString();
+        String collectionDt = SmplTbl.getValueAt(SmplTbl.getSelectedRow(), 2).toString();
+        int bloodGroup = (int) SmplTbl.getValueAt(SmplTbl.getSelectedRow(), 3);
+        String testStatus = SmplTbl.getValueAt(SmplTbl.getSelectedRow(), 4).toString();
+        System.out.println("Testing");
+
+        sampleTesting.testSample(id, bloodBank, collectionDt, bloodGroup, testStatus);
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -126,4 +132,10 @@ public class BBSampleTestingPanel extends javax.swing.JPanel {
     private javax.swing.JButton TestSmplBtn;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
+
+    private static class sampleTesting extends BBSampleTesting {
+
+        public sampleTesting() {
+        }
+    }
 }

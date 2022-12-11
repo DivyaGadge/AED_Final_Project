@@ -17,6 +17,7 @@ public class BBWHmanageReqPanel extends javax.swing.JPanel {
 
     
     bbManageBloodReq manageReq;
+      String logisticSupplier;
     /**
      * Creates new form ManageEquipmentNWHJPanel
      */
@@ -42,42 +43,14 @@ public class BBWHmanageReqPanel extends javax.swing.JPanel {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
         BBWHequipmentTbl1 = new javax.swing.JScrollPane();
         bbwhOrderTbl = new javax.swing.JTable();
+        logisticSupplierTF = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(1142, 630));
 
         bbwhManageBloodReqTbl.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Order Date", "Hospital name", "Blood unit", "Blood type"
-            }
-        ));
-        bbwhManageBloodReqTbl.getTableHeader().setReorderingAllowed(false);
-        BBWHequipmentTbl.setViewportView(bbwhManageBloodReqTbl);
-
-        jButton1.setText("APPROVE REQUEST");
-
-        jButton2.setText("DECLINE REQUEST");
-
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel1.setText("SELECT LOGISTICS SUPPLIER :");
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "supplier1", "supplier2", "supplier3", " " }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
-            }
-        });
-
-        bbwhOrderTbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -85,7 +58,38 @@ public class BBWHmanageReqPanel extends javax.swing.JPanel {
                 {null, null, null, null, null}
             },
             new String [] {
-                "Order Date", "Hospital name", "Blood unit", "Blood type", "Logistics Supplier"
+                "Order Id", "Order Date", "Hospital name", "Blood unit", "Blood type"
+            }
+        ));
+        bbwhManageBloodReqTbl.getTableHeader().setReorderingAllowed(false);
+        BBWHequipmentTbl.setViewportView(bbwhManageBloodReqTbl);
+
+        jButton1.setText("APPROVE REQUEST");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jButton2.setText("DECLINE REQUEST");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel1.setText("SELECT LOGISTICS SUPPLIER :");
+
+        bbwhOrderTbl.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Order Id", "Order Date", "Hospital name", "Blood unit", "Blood type", "Logistics Supplier"
             }
         ));
         bbwhOrderTbl.getTableHeader().setReorderingAllowed(false);
@@ -96,19 +100,19 @@ public class BBWHmanageReqPanel extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(113, Short.MAX_VALUE)
+                .addContainerGap(33, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(BBWHequipmentTbl, javax.swing.GroupLayout.PREFERRED_SIZE, 1076, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BBWHequipmentTbl1, javax.swing.GroupLayout.PREFERRED_SIZE, 1076, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(logisticSupplierTF, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jButton2)
                         .addGap(28, 28, 28)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(113, Short.MAX_VALUE))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -118,7 +122,7 @@ public class BBWHmanageReqPanel extends javax.swing.JPanel {
                 .addGap(37, 37, 37)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(logisticSupplierTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -129,6 +133,11 @@ public class BBWHmanageReqPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    public String getLogisticSupplier() {
+      
+        logisticSupplierTF.setText(logisticSupplier);
+        return logisticSupplier;
+    }
     
     public void populateManageReqTable() {
         int selectedRowIndex = bbwhManageBloodReqTbl.getSelectedRow();
@@ -143,9 +152,15 @@ public class BBWHmanageReqPanel extends javax.swing.JPanel {
             
     }
     
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+        declineRequest();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        approveRequest();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -155,13 +170,32 @@ public class BBWHmanageReqPanel extends javax.swing.JPanel {
     private javax.swing.JTable bbwhOrderTbl;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JTextField logisticSupplierTF;
     // End of variables declaration//GEN-END:variables
 
     private static class manageReq extends bbManageBloodReq {
 
         public manageReq() {
         }
+    }
+    
+    private void declineRequest(){
+    JOptionPane.showMessageDialog(null, "Order request has been declined");
+    }
+    
+
+    
+    private void approveRequest(){
+         int id = (int) bbwhOrderTbl.getValueAt(bbwhOrderTbl.getSelectedRow(), 0);
+        String orderDt = bbwhOrderTbl.getValueAt(bbwhOrderTbl.getSelectedRow(), 1).toString();
+        String hospital = bbwhOrderTbl.getValueAt(bbwhOrderTbl.getSelectedRow(), 2).toString();
+        int bloodUnit = (int) bbwhOrderTbl.getValueAt(bbwhOrderTbl.getSelectedRow(), 3);
+        int bloodGroup = (int) bbwhOrderTbl.getValueAt(bbwhOrderTbl.getSelectedRow(), 4);
+        String logisticSupplier = bbwhOrderTbl.getValueAt(bbwhOrderTbl.getSelectedRow(), 5).toString();
+        System.out.println("Testing");
+
+        manageReq.placeOrder(id,orderDt,hospital,bloodUnit,bloodGroup,logisticSupplier);
+
     }
 }

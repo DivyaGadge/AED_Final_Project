@@ -53,11 +53,11 @@ public class BBWHnewOrderPanel extends javax.swing.JPanel {
                 {null, null, null, null, null}
             },
             new String [] {
-                "Equipment Id", "Equipment Name", "Description", "Image", "Available Count"
+                "Equipment Id", "Blood Bank", "Equipment Name", "Description", "Available Count"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, true
+                false, true, false, false, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -126,10 +126,22 @@ public class BBWHnewOrderPanel extends javax.swing.JPanel {
     }
     private void placeOrderLblMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_placeOrderLblMousePressed
         // TODO add your handling code here:
-
+        placeOrderFunctionality();
 
     }//GEN-LAST:event_placeOrderLblMousePressed
 
+    
+    private void placeOrderFunctionality() {
+        int id = (int) newOrderTbl.getValueAt(newOrderTbl.getSelectedRow(), 0);
+        String bloodBank= newOrderTbl.getValueAt(newOrderTbl.getSelectedRow(), 1).toString();
+        String equipmentName = newOrderTbl.getValueAt(newOrderTbl.getSelectedRow(), 2).toString();
+        String equipmentDesc = newOrderTbl.getValueAt(newOrderTbl.getSelectedRow(), 3).toString();
+        int equipmentCount = (int) newOrderTbl.getValueAt(newOrderTbl.getSelectedRow(), 4);
+        System.out.println("Testing");
+
+        newOrder.placeOrderFunctionality(id,bloodBank,equipmentName,equipmentDesc,equipmentCount);
+
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane BBWHequipTable;

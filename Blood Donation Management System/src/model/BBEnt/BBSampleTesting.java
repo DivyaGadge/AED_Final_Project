@@ -6,6 +6,7 @@ package model.BBEnt;
 
 import Sql.SQLConnection;
 import java.sql.*;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
@@ -30,12 +31,13 @@ public class BBSampleTesting {
 
                     while (rs.next()) {
                         System.out.println("entered if rs. block");
+                        int sample_id = rs.getInt("sample_id");
                         String bloodBank = rs.getString("bb_username");
                         String bloodGroup = rs.getString("bloodGroup");
                         int bloodQty = rs.getInt("bloodQty");
                        
                         
-                        Object row[] = {bloodBank,bloodGroup, bloodQty};
+                        Object row[] = {sample_id, bloodBank,bloodGroup, bloodQty};
                         model.insertRow(0,row);
                     }
                 }
@@ -44,6 +46,30 @@ public class BBSampleTesting {
             }
         return null;
         
+    }
+     
+     public void testSample(int sample_id, String bb_username, String collectionDt, int bloodGroup1, String bloodGroup) {
+        try {
+            Connection con = SQLConnection.establishConnection();
+            if (con != null) {
+                String query = "UPDATE sample_testing SET testStatus='Tested' WHERE sample_id=" + sample_id + "";
+               // String query1 = "UPDATE blood_bank_sample SET ----> logic for incrementing blood qty in blood inventory table ";
+
+                PreparedStatement pstmt = con.prepareStatement(query);
+               
+
+                int count = pstmt.executeUpdate();
+
+
+                    JOptionPane.showMessageDialog(null, "Blood sample has been tested.");
+                   // System.out.println("Email User.");
+
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+          //  System.out.println("insert camp ");
+
+        }
     }
     
 }
