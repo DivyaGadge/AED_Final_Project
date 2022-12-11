@@ -4,8 +4,6 @@
  */
 package UI.Hospital;
 
-
-
 /**
  *
  * @author divyagadge
@@ -13,19 +11,21 @@ package UI.Hospital;
 public class ViewInventoryHospitalJPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form ManageEquipmentNWHJPanel
+     * Creates new form ListofBBJPanel
      */
     public ViewInventoryHospitalJPanel() {
         initComponents();
     }
-
-    private void populateInventryTable(){
+    
+    private void populateTable(){
+        
+    } 
+     
+    
+    private void donorListBtnFunctionality() {
         
     }
     
-    private void populateOrderNewEquimentTable(){
-        
-    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -35,57 +35,50 @@ public class ViewInventoryHospitalJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        searchHWH = new javax.swing.JTextField();
-        inventoryWHWTable = new javax.swing.JScrollPane();
-        inventoryhwTable = new javax.swing.JTable();
-        ordEquipHWHBtn = new javax.swing.JPanel();
-        ordEquipHWHLbl = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        EquipmentHopsitaljTable = new javax.swing.JTable();
+        ordEquipmentBtn = new javax.swing.JPanel();
+        ordEquipmentLbl = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setPreferredSize(new java.awt.Dimension(1142, 702));
 
-        inventoryhwTable.setModel(new javax.swing.table.DefaultTableModel(
+        EquipmentHopsitaljTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Equipment Id", "Equipment Name", "Description", "Image", "Available Count"
+                "Equipment Id", "Equipment Name", "Description", "Available Count"
             }
         ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, true
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
             };
 
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
             }
         });
-        inventoryhwTable.getTableHeader().setReorderingAllowed(false);
-        inventoryWHWTable.setViewportView(inventoryhwTable);
+        jScrollPane1.setViewportView(EquipmentHopsitaljTable);
 
-        ordEquipHWHBtn.setBackground(new java.awt.Color(106, 106, 106));
+        ordEquipmentBtn.setBackground(new java.awt.Color(106, 106, 106));
 
-        ordEquipHWHLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
-        ordEquipHWHLbl.setForeground(new java.awt.Color(255, 255, 255));
-        ordEquipHWHLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        ordEquipHWHLbl.setText("Order New Equipments");
-        ordEquipHWHLbl.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                ordEquipHWHLblMousePressed(evt);
-            }
-        });
+        ordEquipmentLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        ordEquipmentLbl.setForeground(new java.awt.Color(255, 255, 255));
+        ordEquipmentLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ordEquipmentLbl.setText("Order New Equipment");
 
-        javax.swing.GroupLayout ordEquipHWHBtnLayout = new javax.swing.GroupLayout(ordEquipHWHBtn);
-        ordEquipHWHBtn.setLayout(ordEquipHWHBtnLayout);
-        ordEquipHWHBtnLayout.setHorizontalGroup(
-            ordEquipHWHBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ordEquipHWHLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 288, Short.MAX_VALUE)
+        javax.swing.GroupLayout ordEquipmentBtnLayout = new javax.swing.GroupLayout(ordEquipmentBtn);
+        ordEquipmentBtn.setLayout(ordEquipmentBtnLayout);
+        ordEquipmentBtnLayout.setHorizontalGroup(
+            ordEquipmentBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(ordEquipmentLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE)
         );
-        ordEquipHWHBtnLayout.setVerticalGroup(
-            ordEquipHWHBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ordEquipHWHLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+        ordEquipmentBtnLayout.setVerticalGroup(
+            ordEquipmentBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(ordEquipmentLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -93,40 +86,31 @@ public class ViewInventoryHospitalJPanel extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(searchHWH, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(35, 35, 35))
-                    .addComponent(inventoryWHWTable, javax.swing.GroupLayout.PREFERRED_SIZE, 1068, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ordEquipHWHBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(40, Short.MAX_VALUE))
+                        .addGap(813, 813, 813)
+                        .addComponent(ordEquipmentBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1049, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(62, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(searchHWH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(inventoryWHWTable, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19)
-                .addComponent(ordEquipHWHBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(57, Short.MAX_VALUE))
+                .addGap(94, 94, 94)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(51, 51, 51)
+                .addComponent(ordEquipmentBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(211, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ordEquipHWHLblMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ordEquipHWHLblMousePressed
-        // TODO add your handling code here:
-
-
-    }//GEN-LAST:event_ordEquipHWHLblMousePressed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JScrollPane inventoryWHWTable;
-    private javax.swing.JTable inventoryhwTable;
-    private javax.swing.JPanel ordEquipHWHBtn;
-    private javax.swing.JLabel ordEquipHWHLbl;
-    private javax.swing.JTextField searchHWH;
+    private javax.swing.JTable EquipmentHopsitaljTable;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JPanel ordEquipmentBtn;
+    private javax.swing.JLabel ordEquipmentLbl;
     // End of variables declaration//GEN-END:variables
 }

@@ -141,7 +141,7 @@ public class DoctorHospProfileJPanel extends javax.swing.JPanel {
                     .addComponent(DpassLbl)
                     .addComponent(demailTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(docpinlbl))
-                .addContainerGap(808, Short.MAX_VALUE))
+                .addContainerGap(783, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

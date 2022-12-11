@@ -4,6 +4,13 @@
  */
 package UI.Hospital;
 
+import javax.swing.JPanel;
+import com.mysql.cj.protocol.Resultset;
+import javax.swing.JOptionPane;
+import model.medicalEnt.ManageDoctorAvail;
+import javax.swing.table.DefaultTableModel;
+
+
 /**
  *
  * @author divyagadge
@@ -13,10 +20,21 @@ public class ManageRequestJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ManageRequestJPanel
      */
+    
+    ManageDoctorAvail managedocavail;
+    
     public ManageRequestJPanel() {
         initComponents();
+        this.managedocavail = new managedocavail();
+        populateHospitalUserDetailsTable();
     }
 
+    private void populateHospitalUserDetailsTable() {
+        int selectedRowIndex = campDjTable.getSelectedRow();
+        DefaultTableModel model = (DefaultTableModel) campDjTable.getModel();
+        managedocavail.populateTable(model);
+    }
+    
     private void populateCampDetailsTable(){
         
     }
@@ -133,4 +151,6 @@ public class ManageRequestJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel assignDocLbl;
     private javax.swing.JTable campDjTable;
     // End of variables declaration//GEN-END:variables
+
+    
 }

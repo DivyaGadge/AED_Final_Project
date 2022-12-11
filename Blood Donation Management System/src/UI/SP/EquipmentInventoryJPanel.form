@@ -41,10 +41,10 @@
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="emailLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="emailTF2" min="-2" pref="305" max="-2" attributes="0"/>
-                          <Component id="emailTF1" alignment="0" min="-2" pref="305" max="-2" attributes="0"/>
-                          <Component id="emailTF5" min="-2" pref="305" max="-2" attributes="0"/>
-                          <Component id="emailTF" alignment="0" min="-2" pref="305" max="-2" attributes="0"/>
+                          <Component id="BCollectionPressureTF" min="-2" pref="305" max="-2" attributes="0"/>
+                          <Component id="ScalesTF" alignment="0" min="-2" pref="305" max="-2" attributes="0"/>
+                          <Component id="DonorChairTF" min="-2" pref="305" max="-2" attributes="0"/>
+                          <Component id="BPMonitorTF" alignment="0" min="-2" pref="305" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="175" pref="175" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -74,7 +74,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="emailTF3" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="emailTF" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="BPMonitorTF" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -84,7 +84,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="emailTF4" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="emailTF1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="ScalesTF" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -94,7 +94,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="emailTF6" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="emailTF5" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="DonorChairTF" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
               <Component id="emailLbl6" min="-2" pref="17" max="-2" attributes="0"/>
@@ -102,7 +102,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="emailTF2" min="-2" max="-2" attributes="0"/>
+                          <Component id="BCollectionPressureTF" min="-2" max="-2" attributes="0"/>
                           <Component id="updateESBtn" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="107" max="32767" attributes="0"/>
@@ -211,19 +211,19 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JTextField" name="emailTF">
+    <Component class="javax.swing.JTextField" name="BPMonitorTF">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="emailTFActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BPMonitorTFActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="emailTF1">
+    <Component class="javax.swing.JTextField" name="ScalesTF">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="emailTF1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ScalesTFActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="emailTF2">
+    <Component class="javax.swing.JTextField" name="BCollectionPressureTF">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="emailTF2ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BCollectionPressureTFActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="emailTF3">
@@ -236,9 +236,9 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="emailTF4ActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="emailTF5">
+    <Component class="javax.swing.JTextField" name="DonorChairTF">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="emailTF5ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DonorChairTFActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="emailTF6">

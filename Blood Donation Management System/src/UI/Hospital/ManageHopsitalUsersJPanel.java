@@ -6,27 +6,39 @@ package UI.Hospital;
 
 
 import javax.swing.JPanel;
+import com.mysql.cj.protocol.Resultset;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import model.medicalEnt.ListofBB;
+import model.medicalEnt.ManageUser;
 
 /**
  *
  * @author divyagadge
  */
+
+
+
 public class ManageHopsitalUsersJPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form ManageOrgNGOJPanel
      */
     
-    JPanel CardLayoutHPanel;
+    ManageUser manageuser;
+   
+   
     public ManageHopsitalUsersJPanel() {
         initComponents();
-        initComponents();
-        this.CardLayoutHPanel = new JPanel();
+        this.manageuser = new manageuser();
          populateHospitalUserDetailsTable();
         
     }
     
     private void populateHospitalUserDetailsTable(){
+        int selectedRowIndex = updateUserTable.getSelectedRow();
+        DefaultTableModel model = (DefaultTableModel) updateUserTable.getModel();
+        manageuser.populateTable(model);
         
     }
     
@@ -176,7 +188,7 @@ public class ManageHopsitalUsersJPanel extends javax.swing.JPanel {
                                         .addComponent(phoneHT, javax.swing.GroupLayout.DEFAULT_SIZE, 305, Short.MAX_VALUE)
                                         .addComponent(passHLbl)
                                         .addComponent(HUPass))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 309, Short.MAX_VALUE)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(streetALbl)
                                         .addComponent(streetHT, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -294,4 +306,18 @@ public class ManageHopsitalUsersJPanel extends javax.swing.JPanel {
         streetHT.setText("");
 
     }
+
+    private static class manageuser extends ManageUser {
+
+        public manageuser() {
+        }
+    }
+
+    static class listofBB extends ListofBB {
+
+        public listofBB() {
+        }
+    }
+
+    
 }

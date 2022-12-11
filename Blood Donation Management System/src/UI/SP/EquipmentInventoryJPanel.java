@@ -46,12 +46,12 @@ public class EquipmentInventoryJPanel extends javax.swing.JPanel {
         updateESLbl = new javax.swing.JLabel();
         addESBtn = new javax.swing.JPanel();
         addESLbl = new javax.swing.JLabel();
-        emailTF = new javax.swing.JTextField();
-        emailTF1 = new javax.swing.JTextField();
-        emailTF2 = new javax.swing.JTextField();
+        BPMonitorTF = new javax.swing.JTextField();
+        ScalesTF = new javax.swing.JTextField();
+        BCollectionPressureTF = new javax.swing.JTextField();
         emailTF3 = new javax.swing.JTextField();
         emailTF4 = new javax.swing.JTextField();
-        emailTF5 = new javax.swing.JTextField();
+        DonorChairTF = new javax.swing.JTextField();
         emailTF6 = new javax.swing.JTextField();
         emailLbl = new javax.swing.JLabel();
         emailLbl1 = new javax.swing.JLabel();
@@ -120,21 +120,21 @@ public class EquipmentInventoryJPanel extends javax.swing.JPanel {
             .addComponent(addESLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
         );
 
-        emailTF.addActionListener(new java.awt.event.ActionListener() {
+        BPMonitorTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                emailTFActionPerformed(evt);
+                BPMonitorTFActionPerformed(evt);
             }
         });
 
-        emailTF1.addActionListener(new java.awt.event.ActionListener() {
+        ScalesTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                emailTF1ActionPerformed(evt);
+                ScalesTFActionPerformed(evt);
             }
         });
 
-        emailTF2.addActionListener(new java.awt.event.ActionListener() {
+        BCollectionPressureTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                emailTF2ActionPerformed(evt);
+                BCollectionPressureTFActionPerformed(evt);
             }
         });
 
@@ -150,9 +150,9 @@ public class EquipmentInventoryJPanel extends javax.swing.JPanel {
             }
         });
 
-        emailTF5.addActionListener(new java.awt.event.ActionListener() {
+        DonorChairTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                emailTF5ActionPerformed(evt);
+                DonorChairTFActionPerformed(evt);
             }
         });
 
@@ -197,10 +197,10 @@ public class EquipmentInventoryJPanel extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(emailLbl)
-                            .addComponent(emailTF2, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(emailTF1, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(emailTF5, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(emailTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(BCollectionPressureTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ScalesTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(DonorChairTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BPMonitorTF, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(175, 175, 175)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(emailTF3, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -222,7 +222,7 @@ public class EquipmentInventoryJPanel extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(emailTF3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(emailTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(BPMonitorTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(22, 22, 22)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(emailLbl4, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -230,7 +230,7 @@ public class EquipmentInventoryJPanel extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(emailTF4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(emailTF1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ScalesTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(24, 24, 24)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(emailLbl5, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -238,14 +238,14 @@ public class EquipmentInventoryJPanel extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(emailTF6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(emailTF5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(DonorChairTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(25, 25, 25)
                 .addComponent(emailLbl6, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(emailTF2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BCollectionPressureTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(updateESBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 107, Short.MAX_VALUE)
                         .addComponent(inventoryESScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -256,17 +256,17 @@ public class EquipmentInventoryJPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void emailTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailTFActionPerformed
+    private void BPMonitorTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BPMonitorTFActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_emailTFActionPerformed
+    }//GEN-LAST:event_BPMonitorTFActionPerformed
 
-    private void emailTF1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailTF1ActionPerformed
+    private void ScalesTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ScalesTFActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_emailTF1ActionPerformed
+    }//GEN-LAST:event_ScalesTFActionPerformed
 
-    private void emailTF2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailTF2ActionPerformed
+    private void BCollectionPressureTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BCollectionPressureTFActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_emailTF2ActionPerformed
+    }//GEN-LAST:event_BCollectionPressureTFActionPerformed
 
     private void emailTF3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailTF3ActionPerformed
         // TODO add your handling code here:
@@ -276,9 +276,9 @@ public class EquipmentInventoryJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_emailTF4ActionPerformed
 
-    private void emailTF5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailTF5ActionPerformed
+    private void DonorChairTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DonorChairTFActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_emailTF5ActionPerformed
+    }//GEN-LAST:event_DonorChairTFActionPerformed
 
     private void emailTF6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailTF6ActionPerformed
         // TODO add your handling code here:
@@ -286,7 +286,11 @@ public class EquipmentInventoryJPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField BCollectionPressureTF;
+    private javax.swing.JTextField BPMonitorTF;
+    private javax.swing.JTextField DonorChairTF;
     private javax.swing.JTable ESjTable;
+    private javax.swing.JTextField ScalesTF;
     private javax.swing.JPanel addESBtn;
     private javax.swing.JLabel addESLbl;
     private javax.swing.JLabel emailLbl;
@@ -296,12 +300,8 @@ public class EquipmentInventoryJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel emailLbl5;
     private javax.swing.JLabel emailLbl6;
     private javax.swing.JLabel emailLbl7;
-    private javax.swing.JTextField emailTF;
-    private javax.swing.JTextField emailTF1;
-    private javax.swing.JTextField emailTF2;
     private javax.swing.JTextField emailTF3;
     private javax.swing.JTextField emailTF4;
-    private javax.swing.JTextField emailTF5;
     private javax.swing.JTextField emailTF6;
     private javax.swing.JScrollPane inventoryESScrollPane;
     private javax.swing.JPanel updateESBtn;

@@ -5,6 +5,14 @@
 package UI.Hospital;
 
 
+import UI.Hospital.ManageHopsitalUsersJPanel;
+import javax.swing.JPanel;
+import com.mysql.cj.protocol.Resultset;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import model.medicalEnt.ManageEquipementQuantity;
+
+
 
 /**
  *
@@ -15,25 +23,37 @@ public class OrderEquipmentsHospitalJPanel extends javax.swing.JPanel {
     /**
      * Creates new form AddEquipmentNWHJPanel
      */
+    
+    ManageEquipementQuantity manageQ;
+    
     public OrderEquipmentsHospitalJPanel() {
-        initComponents();
+         initComponents();
+        this.manageQ = new OrderEquipmentsHospitalJPanel.manageQ();
+         populateHospitalUserDetailsTable();
+    }
+     
+    
+     private void populateListofBBTable() {
+        int selectedRowIndex = equipmentListTbl.getSelectedRow();     //table name in the design
+        DefaultTableModel model = (DefaultTableModel) equipmentListTbl.getModel();
+        manageQ.populateTable(model);
     }
     
     private void populatesearchentry(){
         
     }
     
-    private void populateequipmentTable(){
-        
-    }
+//    private void populateequipmentTable(
+//    
+//    }
     
-    private void quantityTable(){
-        
-    }
+//    private void quantityTable(){
+//        
+//    }
     
-    private void orderHEquipment(){
-        
-    }
+//    private void orderHEquipment(){
+//        
+//    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -56,18 +76,25 @@ public class OrderEquipmentsHospitalJPanel extends javax.swing.JPanel {
 
         equipmentListTbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Equipment Id", "Equipment Name", "Description", "Image"
+                "Equipment Id", "Equipment Name", "Description", "Required Quantity", "Hospital Name"
             }
         ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class
             };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, true, true
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
@@ -158,4 +185,16 @@ public class OrderEquipmentsHospitalJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField qtyHT;
     private javax.swing.JTextField searchHEquipT;
     // End of variables declaration//GEN-END:variables
+
+    
+
+    private void populateHospitalUserDetailsTable() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    private static class manageQ extends ManageEquipementQuantity {
+
+        public manageQ() {
+        }
+    }
 }

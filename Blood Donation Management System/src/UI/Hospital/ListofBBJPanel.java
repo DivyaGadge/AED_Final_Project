@@ -4,6 +4,13 @@
  */
 package UI.Hospital;
 
+import javax.swing.JPanel;
+import com.mysql.cj.protocol.Resultset;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import model.medicalEnt.ListofBB;
+import model.medicalEnt.ManageUser;
+
 //import java.awt.CardLayout;
 
 /**
@@ -15,12 +22,19 @@ public class ListofBBJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ListofBBJPanel
      */
+    
+     ListofBB listofBB;
+     
     public ListofBBJPanel() {
         initComponents();
+        this.listofBB = new ManageHopsitalUsersJPanel.listofBB();
+         populateListofBBTable();
     }
     
     private void populateListofBBTable(){
-        
+        int selectedRowIndex = ListofBBjTable.getSelectedRow();     //table name in the design
+        DefaultTableModel model = (DefaultTableModel) ListofBBjTable.getModel();
+        listofBB.populateTable(model);
     }
     
     private void reqtoBBTable(){
@@ -140,4 +154,15 @@ public class ListofBBJPanel extends javax.swing.JPanel {
 //        ((CardLayout) CardLayoutHPanel.getLayout()).next(CardLayoutHPanel);
 //    }
 
+//    
+//    public void emptyTF() {
+//        nameHT.setText("");
+//        emailHT.setText("");
+//        HUPass.setText("");
+//        phoneHT.setText("");
+//        cityHT.setText("");
+//        pinT.setText("");
+//        streetHT.setText("");
+//
+//    }
 }
