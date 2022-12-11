@@ -28,7 +28,7 @@
                       <Component id="stateTF" min="-2" pref="305" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="userNameLbl" min="-2" pref="978" max="-2" attributes="0"/>
                           <Component id="nameLbl" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -43,11 +43,8 @@
                           <Component id="streetTF" alignment="0" min="-2" pref="305" max="-2" attributes="0"/>
                           <Component id="cityLbl" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="stateLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="cityTF" alignment="0" min="-2" pref="305" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="91" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="cityTF" min="-2" pref="305" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
