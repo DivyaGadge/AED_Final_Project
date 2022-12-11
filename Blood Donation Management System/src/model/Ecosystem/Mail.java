@@ -8,6 +8,7 @@ package model.Ecosystem;
 import java.lang.System.Logger;
 import java.lang.System.Logger.Level;
 import java.util.Properties;
+import javax.mail.Address;
 import javax.mail.Message;
 import javax.mail.MessagingException;
 import javax.mail.Session;
@@ -43,16 +44,31 @@ public class Mail {
             message.setSubject("New User Registration");
             message.setText(body);
             System.out.println("before");
-            try (Transport transport = session.getTransport("smtp")) {
-                System.out.println("Entered transport");
-                transport.connect(host, from, pass);
-                System.out.println("Entered transport2");
-                transport.sendMessage(message, message.getAllRecipients());
-            }
+            Transport transport = session.getTransport("smtp");
+            System.out.println("Entered transport");
+            transport.connect(host, from, pass);
+            System.out.println("Entered transport2");
+            transport.sendMessage(message, message.getAllRecipients());
+            
             System.out.println("Sent message successfully....");
         } catch (Exception mex) {
+            mex.printStackTrace();
             System.out.print(mex.getMessage());
 //            JOptionPane.showMessageDialog(null, "Invalid Email Address");
+        }
+    }
+
+    private static class transport {
+
+        private static void connect(String host, String from, String pass) {
+            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        }
+
+        private static void sendMessage(MimeMessage message, Address[] allRecipients) {
+            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        }
+
+        public transport() {
         }
     }
     

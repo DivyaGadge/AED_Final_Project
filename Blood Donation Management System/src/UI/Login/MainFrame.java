@@ -5,9 +5,8 @@
 package UI.Login;
 
 
-
-
 import UI.Hospital.HospitalDoctorJPanel;
+import UI.Hospital.HospitalJPanel;
 
 
 import java.awt.CardLayout;
@@ -64,7 +63,7 @@ public final class MainFrame extends javax.swing.JFrame {
     public void loadHomePage() {
         
         mainFrameCardLayout.removeAll();
-        mainFrameCardLayout.add(new HospitalRegistrationJPanel());
+        mainFrameCardLayout.add(new HospitalJPanel());
         ((CardLayout) mainFrameCardLayout.getLayout()).next(mainFrameCardLayout);
         
     }
