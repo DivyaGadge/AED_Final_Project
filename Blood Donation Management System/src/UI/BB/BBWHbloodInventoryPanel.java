@@ -130,10 +130,7 @@ public class BBWHbloodInventoryPanel extends javax.swing.JPanel {
 
      public void populateBloodInventoryTable() {
         int selectedRowIndex = bloodInventoryTbl.getSelectedRow();
-
-
         DefaultTableModel model = (DefaultTableModel) bloodInventoryTbl.getModel();
-       
         bloodInventory.populateTable(model);
             
     }
