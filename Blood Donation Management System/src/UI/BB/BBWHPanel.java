@@ -23,7 +23,7 @@ public class BBWHPanel extends javax.swing.JPanel {
     /**
      * Creates new form NGOWareHouseJPanel
      */
-    public BBWHPanel(JPanel mainFrameCardLayout, String username) {
+    public BBWHPanel(String username) {
         initComponents();
         this.mainFrameCardLayout = mainFrameCardLayout;
         this.username = username;
@@ -31,10 +31,7 @@ public class BBWHPanel extends javax.swing.JPanel {
         headerUserName.setText(username);
     }
 
-    BBWHPanel() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

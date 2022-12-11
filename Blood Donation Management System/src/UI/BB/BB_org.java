@@ -355,7 +355,7 @@ public class BB_org extends javax.swing.JPanel {
         
         
          BBorgCardLayout.removeAll();
-        BBorgCardLayout.add(new ManageBBProfilePage());
+        BBorgCardLayout.add(new ManageBBProfilePage(username));
         ((CardLayout) BBorgCardLayout.getLayout()).next(BBorgCardLayout);
     }
 
@@ -367,7 +367,7 @@ public class BB_org extends javax.swing.JPanel {
         resetBtnColor(manageRqBtn);
         
        BBorgCardLayout.removeAll();
-        BBorgCardLayout.add(new BBWHPanel());
+        BBorgCardLayout.add(new BBWHPanel(username));
         ((CardLayout) BBorgCardLayout.getLayout()).next(BBorgCardLayout);
     }
 
