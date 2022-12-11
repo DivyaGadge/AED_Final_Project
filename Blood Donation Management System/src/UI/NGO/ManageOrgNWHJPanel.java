@@ -7,12 +7,13 @@ package UI.NGO;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 import model.volunteerEnt.ManageOrgNGO;
+import model.volunteerEnt.ManageOrgNWH;
 
 /**
  *
  * @author surajvisvesh
  */
-public class ManageOrgNGOJPanel extends javax.swing.JPanel {
+public class ManageOrgNWHJPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form ManageOrgNGOJPanel
@@ -20,10 +21,10 @@ public class ManageOrgNGOJPanel extends javax.swing.JPanel {
     
     JPanel manageOrgCardLayout;
     
-    ManageOrgNGO manageOrg;
-    public ManageOrgNGOJPanel() {
+    ManageOrgNWH manageOrg;
+    public ManageOrgNWHJPanel() {
         initComponents();
-        this.manageOrg = new ManageOrgNGO();
+        this.manageOrg = new ManageOrgNWH();
         populateTable();
         
     }
@@ -131,6 +132,11 @@ public class ManageOrgNGOJPanel extends javax.swing.JPanel {
         updateOrgLbl.setForeground(new java.awt.Color(255, 255, 255));
         updateOrgLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         updateOrgLbl.setText("Update Organization Details");
+        updateOrgLbl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                updateOrgLblMousePressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout updateOrgBtnLayout = new javax.swing.GroupLayout(updateOrgBtn);
         updateOrgBtn.setLayout(updateOrgBtnLayout);
@@ -221,6 +227,10 @@ public class ManageOrgNGOJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_streetTFActionPerformed
 
+    private void updateOrgLblMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_updateOrgLblMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_updateOrgLblMousePressed
+
     public void errorVisibility() {
 
         nameError.setVisible(false);
@@ -249,7 +259,6 @@ public class ManageOrgNGOJPanel extends javax.swing.JPanel {
 
 
         DefaultTableModel model = (DefaultTableModel) organizationTbl.getModel();
-       
         manageOrg.populateTable(model);
         
         

@@ -14,7 +14,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class ManageCampNGO {
     
-    public ResultSet populateTable(DefaultTableModel model) {
+    public void populateTable(DefaultTableModel model) {
         
         try {
                 System.out.println("entered try block");
@@ -28,7 +28,7 @@ public class ManageCampNGO {
                     ResultSet rs = stmt.executeQuery(query);
 
                     while (rs.next()) {
-                        System.out.println("entered if rs. block");
+                        System.out.println("entered if rs. block, sql");
                         int campId = rs.getInt("camp_id");
                         String ngo_username = rs.getString("ngo_username");
                         String campName = rs.getString("campName");
@@ -47,9 +47,9 @@ public class ManageCampNGO {
                     }
                 }
             } catch (SQLException ex) {
+                ex.printStackTrace();
                 
             }
-        return null;
         
     }
     

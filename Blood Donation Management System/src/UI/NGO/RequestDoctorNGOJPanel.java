@@ -4,6 +4,8 @@
  */
 package UI.NGO;
 
+import model.volunteerEnt.RequestDoctor;
+
 /**
  *
  * @author surajvisvesh
@@ -13,8 +15,11 @@ public class RequestDoctorNGOJPanel extends javax.swing.JPanel {
     /**
      * Creates new form RequestDoctorJPanel
      */
+    RequestDoctor reqDoctor;
     public RequestDoctorNGOJPanel() {
         initComponents();
+        this.reqDoctor = new RequestDoctor();
+        
     }
 
     /**
@@ -46,13 +51,10 @@ public class RequestDoctorNGOJPanel extends javax.swing.JPanel {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"1", null, null, null},
-                {"2", null, null, null},
-                {"3", null, null, null},
-                {null, null, null, null}
+                {null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Hospital Username", "Hospital City", "Hospital State"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -61,18 +63,20 @@ public class RequestDoctorNGOJPanel extends javax.swing.JPanel {
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"1", null, null, null},
-                {"2", null, null, null},
-                {"3", null, null, null},
-                {"4", null, null, null},
-                {"5", null, null, null},
-                {"6", null, null, null},
                 {null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Camp Id", "Camp Name", "Camp Date", "Camp status"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, true, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane2.setViewportView(jTable2);
 
         add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 47, 1064, 136));
@@ -135,19 +139,25 @@ public class RequestDoctorNGOJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
     private void populateCamps() {
         
+//        reqDoctor.
+        
     }
 
     private void populateHospitals() {
+        
         
     }
     
     private void selectCampBtnFunctionality(){
         
+        
     }
     
     private void reqDoctorBtnFunctionality() {
         
+        
     }
+    
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel SelectCampBtn;

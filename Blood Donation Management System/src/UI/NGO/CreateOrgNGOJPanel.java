@@ -26,6 +26,7 @@ public class CreateOrgNGOJPanel extends javax.swing.JPanel {
         initComponents();
         this.ngo_username = ngo_username;
         this.createOrg = new CreateOrgNGO();
+        errorVisibility();
 
     }
 
@@ -151,6 +152,11 @@ public class CreateOrgNGOJPanel extends javax.swing.JPanel {
         createOrgLbl.setForeground(new java.awt.Color(255, 255, 255));
         createOrgLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         createOrgLbl.setText("Create New Organization");
+        createOrgLbl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                createOrgLblMousePressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout createOrgBtnLayout = new javax.swing.GroupLayout(createOrgBtn);
         createOrgBtn.setLayout(createOrgBtnLayout);
@@ -222,6 +228,11 @@ public class CreateOrgNGOJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_orgTypeCBActionPerformed
 
+    private void createOrgLblMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_createOrgLblMousePressed
+        // TODO add your handling code here:
+        registerBtnFunctionality();
+    }//GEN-LAST:event_createOrgLblMousePressed
+
     public void registerBtnFunctionality() {
         boolean valid = true;
         long phoneNo = 0;
@@ -240,6 +251,7 @@ public class CreateOrgNGOJPanel extends javax.swing.JPanel {
         String street = streetTF.getText();
         String city = cityTF.getText();
         String state = stateCB.getSelectedItem().toString();
+        String userType = orgTypeCB.getSelectedItem().toString();
         try {
             pincode = Integer.parseInt(pincodeTF.getText());
         } catch (Exception e) {
@@ -286,7 +298,7 @@ public class CreateOrgNGOJPanel extends javax.swing.JPanel {
 
         if (valid) {
 
-            createOrg.insertOrg(username, ngo_username, name, email, password, phoneNo, street, city, state, pincode);
+            createOrg.insertOrg(username, ngo_username, name, email, password, phoneNo, street, city, state, pincode, userType);
             emptyTF();
         }
 
