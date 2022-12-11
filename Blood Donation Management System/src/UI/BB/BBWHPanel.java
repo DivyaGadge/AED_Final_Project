@@ -5,6 +5,12 @@
 package UI.BB;
 
 import java.awt.CardLayout;
+import model.Ecosystem.Logout;
+import UI.Login.homeJPanel;
+import java.awt.Color;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+
 
 /**
  *
@@ -12,11 +18,21 @@ import java.awt.CardLayout;
  */
 public class BBWHPanel extends javax.swing.JPanel {
 
+    JPanel mainFrameCardLayout;
+    String username;
     /**
      * Creates new form NGOWareHouseJPanel
      */
-    public BBWHPanel() {
+    public BBWHPanel(JPanel mainFrameCardLayout, String username) {
         initComponents();
+        this.mainFrameCardLayout = mainFrameCardLayout;
+        this.username = username;
+        
+        headerUserName.setText(username);
+    }
+
+    BBWHPanel() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     /**
@@ -30,6 +46,8 @@ public class BBWHPanel extends javax.swing.JPanel {
 
         BBWHheader = new javax.swing.JPanel();
         bloodonateLbl = new javax.swing.JLabel();
+        headerUserName = new javax.swing.JLabel();
+        logoutBtn = new javax.swing.JButton();
         BBWHmenu = new javax.swing.JPanel();
         manageProfileBtn = new javax.swing.JPanel();
         ManageProLbl = new javax.swing.JLabel();
@@ -52,6 +70,15 @@ public class BBWHPanel extends javax.swing.JPanel {
         bloodonateLbl.setText("BLOODONATE");
         bloodonateLbl.setDebugGraphicsOptions(javax.swing.DebugGraphics.FLASH_OPTION);
 
+        headerUserName.setText("jLabel2");
+
+        logoutBtn.setText("LOGOUT");
+        logoutBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                logoutBtnMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout BBWHheaderLayout = new javax.swing.GroupLayout(BBWHheader);
         BBWHheader.setLayout(BBWHheaderLayout);
         BBWHheaderLayout.setHorizontalGroup(
@@ -59,13 +86,24 @@ public class BBWHPanel extends javax.swing.JPanel {
             .addGroup(BBWHheaderLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(bloodonateLbl)
-                .addContainerGap(1168, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 994, Short.MAX_VALUE)
+                .addComponent(headerUserName)
+                .addGap(31, 31, 31)
+                .addComponent(logoutBtn)
+                .addGap(31, 31, 31))
         );
         BBWHheaderLayout.setVerticalGroup(
             BBWHheaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BBWHheaderLayout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(bloodonateLbl)
+                .addGroup(BBWHheaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(BBWHheaderLayout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addComponent(bloodonateLbl))
+                    .addGroup(BBWHheaderLayout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addGroup(BBWHheaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(headerUserName)
+                            .addComponent(logoutBtn))))
                 .addContainerGap(18, Short.MAX_VALUE))
         );
 
@@ -346,7 +384,25 @@ public class BBWHPanel extends javax.swing.JPanel {
          manageBloodReqFunctionality();
     }//GEN-LAST:event_manageBloodReqLblMouseClicked
 
+    private void logoutBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutBtnMouseClicked
+        // TODO add your handling code here:
+        Logout logout = new Logout(mainFrameCardLayout);
+        logout.logoutFunctionality();
+        
+    }//GEN-LAST:event_logoutBtnMouseClicked
 
+    public void setBtnColor(JPanel panel) {
+        
+        panel.setBackground(new Color(210, 75, 60));
+        
+    }
+
+    public void resetBtnColor(JPanel panel) {
+        
+        panel.setBackground(new Color (223, 85, 71));
+        
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel BBWHheader;
     private javax.swing.JPanel BBWHmenu;
@@ -357,6 +413,8 @@ public class BBWHPanel extends javax.swing.JPanel {
     private javax.swing.JLabel bloodonateLbl;
     private javax.swing.JPanel equipmentInventoryBtn;
     private javax.swing.JLabel equipmentInventoryLbl;
+    private javax.swing.JLabel headerUserName;
+    private javax.swing.JButton logoutBtn;
     private javax.swing.JPanel manageBloodReqBtn;
     private javax.swing.JLabel manageBloodReqIcon;
     private javax.swing.JLabel manageBloodReqLbl;
@@ -367,30 +425,63 @@ public class BBWHPanel extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
     private void manageProfileFunctionality() {
+        
+        setBtnColor(manageProfileBtn);
+        resetBtnColor(equipmentInventoryBtn);
+        resetBtnColor(placeOrderBtn);
+        resetBtnColor(bloodInventoryBtn);
+        resetBtnColor(manageBloodReqBtn);
+        
+        
         CardLayoutBBWHPanel.removeAll();
         CardLayoutBBWHPanel.add(new ManageBBWarehouseProfilePage(username));
         ((CardLayout) CardLayoutBBWHPanel.getLayout()).next(CardLayoutBBWHPanel);
     }
 
     private void bloodInventoryFunctionality() {
+        resetBtnColor(manageProfileBtn);
+        resetBtnColor(equipmentInventoryBtn);
+        resetBtnColor(placeOrderBtn);
+        setBtnColor(bloodInventoryBtn);
+        resetBtnColor(manageBloodReqBtn);
+        
         CardLayoutBBWHPanel.removeAll();
         CardLayoutBBWHPanel.add(new BBWHbloodInventoryPanel());
         ((CardLayout) CardLayoutBBWHPanel.getLayout()).next(CardLayoutBBWHPanel);
     }
 
     private void equipmentInventoryFunctionality() {
+        
+        resetBtnColor(manageProfileBtn);
+        setBtnColor(equipmentInventoryBtn);
+        resetBtnColor(placeOrderBtn);
+        resetBtnColor(bloodInventoryBtn);
+        resetBtnColor(manageBloodReqBtn);
+        
         CardLayoutBBWHPanel.removeAll();
         CardLayoutBBWHPanel.add(new BBWHEquipmentInventory());
         ((CardLayout) CardLayoutBBWHPanel.getLayout()).next(CardLayoutBBWHPanel);
     }
 
     private void placeOrderFunctionality() {
+        resetBtnColor(manageProfileBtn);
+        resetBtnColor(equipmentInventoryBtn);
+        setBtnColor(placeOrderBtn);
+        resetBtnColor(bloodInventoryBtn);
+        resetBtnColor(manageBloodReqBtn);
+        
         CardLayoutBBWHPanel.removeAll();
         CardLayoutBBWHPanel.add(new BBWHnewOrderPanel());
         ((CardLayout) CardLayoutBBWHPanel.getLayout()).next(CardLayoutBBWHPanel);
     }
 
     private void manageBloodReqFunctionality() {
+        resetBtnColor(manageProfileBtn);
+        resetBtnColor(equipmentInventoryBtn);
+        resetBtnColor(placeOrderBtn);
+        resetBtnColor(bloodInventoryBtn);
+        setBtnColor(manageBloodReqBtn);
+        
         CardLayoutBBWHPanel.removeAll();
         CardLayoutBBWHPanel.add(new BBWHmanageRequestsPanel());
         ((CardLayout) CardLayoutBBWHPanel.getLayout()).next(CardLayoutBBWHPanel);

@@ -4,9 +4,9 @@
  */
 package UI.BB;
 
+import java.awt.CardLayout;
 import model.Ecosystem.Logout;
 import UI.Login.homeJPanel;
-import java.awt.CardLayout;
 import java.awt.Color;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -18,12 +18,12 @@ import javax.swing.JPanel;
 public class BB_org extends javax.swing.JPanel {
 
      JPanel mainFrameCardLayout;
-    String username;
+        String username;
     /**
      * Creates new form BB_org
      */
-    public BB_org() {
-        initComponents(JPanel mainFrameCardLayout, String username);
+    public BB_org(JPanel mainFrameCardLayout, String username) {
+        initComponents();
         this.mainFrameCardLayout = mainFrameCardLayout;
         this.username = username;
         
@@ -42,6 +42,7 @@ public class BB_org extends javax.swing.JPanel {
         BBheader = new javax.swing.JPanel();
         BLOODONATE = new javax.swing.JLabel();
         headerUserName = new javax.swing.JLabel();
+        logoutBtn = new javax.swing.JButton();
         BBmenu = new javax.swing.JPanel();
         manageProfileBtn = new javax.swing.JPanel();
         manageProfileIcon = new javax.swing.JLabel();
@@ -70,6 +71,13 @@ public class BB_org extends javax.swing.JPanel {
 
         headerUserName.setText("jLabel1");
 
+        logoutBtn.setText("LOGOUT");
+        logoutBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                logoutBtnMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout BBheaderLayout = new javax.swing.GroupLayout(BBheader);
         BBheader.setLayout(BBheaderLayout);
         BBheaderLayout.setHorizontalGroup(
@@ -77,9 +85,11 @@ public class BB_org extends javax.swing.JPanel {
             .addGroup(BBheaderLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(BLOODONATE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 914, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 913, Short.MAX_VALUE)
                 .addComponent(headerUserName)
-                .addGap(213, 213, 213))
+                .addGap(60, 60, 60)
+                .addComponent(logoutBtn)
+                .addGap(78, 78, 78))
         );
         BBheaderLayout.setVerticalGroup(
             BBheaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -89,8 +99,10 @@ public class BB_org extends javax.swing.JPanel {
                         .addGap(17, 17, 17)
                         .addComponent(BLOODONATE))
                     .addGroup(BBheaderLayout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(headerUserName)))
+                        .addGap(22, 22, 22)
+                        .addGroup(BBheaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(headerUserName)
+                            .addComponent(logoutBtn))))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
@@ -276,14 +288,13 @@ public class BB_org extends javax.swing.JPanel {
 
     private void manageProfileBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_manageProfileBtnMouseClicked
         // TODO add your handling code here:
-        
         manageProfileFunctionality();
        
     }//GEN-LAST:event_manageProfileBtnMouseClicked
 
     private void warehouseBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_warehouseBtnMouseClicked
         // TODO add your handling code here:
-       // warehouseFunctionality();
+        warehouseFunctionality();
     }//GEN-LAST:event_warehouseBtnMouseClicked
 
     private void sampleTestingBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sampleTestingBtnMouseClicked
@@ -296,6 +307,23 @@ public class BB_org extends javax.swing.JPanel {
       //  manageRequestFunctionality();
     }//GEN-LAST:event_manageRqBtnMouseClicked
 
+    private void logoutBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutBtnMouseClicked
+        // TODO add your handling code here:
+         Logout logout = new Logout(mainFrameCardLayout);
+        logout.logoutFunctionality();
+    }//GEN-LAST:event_logoutBtnMouseClicked
+
+     public void setBtnColor(JPanel panel) {
+        
+        panel.setBackground(new Color(210, 75, 60));
+        
+    }
+
+    public void resetBtnColor(JPanel panel) {
+        
+        panel.setBackground(new Color (223, 85, 71));
+        
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel BBheader;
@@ -304,6 +332,7 @@ public class BB_org extends javax.swing.JPanel {
     private javax.swing.JLabel BLOODONATE;
     private javax.swing.JLabel SampleTestingIcon;
     private javax.swing.JLabel headerUserName;
+    private javax.swing.JButton logoutBtn;
     private javax.swing.JPanel manageProfileBtn;
     private javax.swing.JLabel manageProfileIcon;
     private javax.swing.JLabel manageProfileLbl;
@@ -318,23 +347,45 @@ public class BB_org extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
     private void manageProfileFunctionality() {
+        
+        setBtnColor(manageProfileBtn);
+        resetBtnColor(warehouseBtn);
+        resetBtnColor(sampleTestingBtn);
+        resetBtnColor(manageRqBtn);
+        
+        
          BBorgCardLayout.removeAll();
         BBorgCardLayout.add(new ManageBBProfilePage());
         ((CardLayout) BBorgCardLayout.getLayout()).next(BBorgCardLayout);
     }
 
-   // private void warehouseFunctionality() {
-     //    BBorgCardLayout.removeAll();
-       // BBorgCardLayout.add(new BBWHPanel());
-        //((CardLayout) BBorgCardLayout.getLayout()).next(BBorgCardLayout);
-    //}
+   private void warehouseFunctionality() {
+       
+       resetBtnColor(manageProfileBtn);
+        setBtnColor(warehouseBtn);
+        resetBtnColor(sampleTestingBtn);
+        resetBtnColor(manageRqBtn);
+        
+       BBorgCardLayout.removeAll();
+        BBorgCardLayout.add(new BBWHPanel());
+        ((CardLayout) BBorgCardLayout.getLayout()).next(BBorgCardLayout);
+    }
 
     private void sampleTestingFunctionality() {
+        resetBtnColor(manageProfileBtn);
+        resetBtnColor(warehouseBtn);
+        setBtnColor(sampleTestingBtn);
+        resetBtnColor(manageRqBtn);
+        
          BBorgCardLayout.removeAll();
         BBorgCardLayout.add(new BBSampleTestingPanel());
         ((CardLayout) BBorgCardLayout.getLayout()).next(BBorgCardLayout);
     }
 
     //private void manageRequestFunctionality() {
+        //resetBtnColor(manageProfileBtn);
+        //resetBtnColor(warehouseBtn);
+        //resetBtnColor(sampleTestingBtn);
+        //setBtnColor(manageRqBtn);
     //}
 }
