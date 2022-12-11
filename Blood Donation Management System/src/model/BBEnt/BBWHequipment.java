@@ -6,7 +6,6 @@ package model.BBEnt;
 
 import Sql.SQLConnection;
 import java.sql.*;
-import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 /**
