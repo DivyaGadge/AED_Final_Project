@@ -13,8 +13,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author prishaa
  */
-
-public class bbWHorderHistory {
+public class bbManageBloodReq {
   public ResultSet populateTable(DefaultTableModel model) {
         
         try {
@@ -24,7 +23,7 @@ public class bbWHorderHistory {
                 if (con != null) {
                     System.out.println("entered if con not null block");
 
-                    String query = "SELECT * FROM BBorderHistory";
+                    String query = "SELECT * FROM bbManageBloodRequest";
                     Statement stmt = con.createStatement();
                     ResultSet rs = stmt.executeQuery(query);
 

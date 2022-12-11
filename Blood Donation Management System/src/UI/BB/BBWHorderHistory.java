@@ -4,6 +4,10 @@
  */
 package UI.BB;
 
+import com.mysql.cj.protocol.Resultset;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import model.BBEnt.bbWHorderHistory;
 
 /**
  *
@@ -11,11 +15,14 @@ package UI.BB;
  */
 public class BBWHorderHistory extends javax.swing.JPanel {
 
+    bbWHorderHistory orderHistory;
     /**
      * Creates new form ManageEquipmentNWHJPanel
      */
     public BBWHorderHistory() {
         initComponents();
+        this.orderHistory = new orderHistory();
+        populateOrderHistoryTable();
     }
 
     /**
@@ -80,6 +87,15 @@ public class BBWHorderHistory extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    public void populateOrderHistoryTable() {
+        int selectedRowIndex = BBWHorderHistoryTbl.getSelectedRow();
+
+
+        DefaultTableModel model = (DefaultTableModel) BBWHorderHistoryTbl.getModel();
+       
+        orderHistory.populateTable(model);
+            
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane BBWHequipmentTbl;
@@ -87,4 +103,12 @@ public class BBWHorderHistory extends javax.swing.JPanel {
     private javax.swing.JLabel pastOrderLbl;
     private javax.swing.JTextField searchTF;
     // End of variables declaration//GEN-END:variables
+
+    private static class orderHistory extends bbWHorderHistory {
+
+        public orderHistory() {
+        }
+    }
+
+   
 }

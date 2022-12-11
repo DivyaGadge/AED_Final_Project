@@ -4,6 +4,10 @@
  */
 package UI.BB;
 
+import com.mysql.cj.protocol.Resultset;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import model.BBEnt.bbManageBloodReq;
 
 /**
  *
@@ -11,11 +15,15 @@ package UI.BB;
  */
 public class BBWHmanageReqPanel extends javax.swing.JPanel {
 
+    
+    bbManageBloodReq manageReq;
     /**
      * Creates new form ManageEquipmentNWHJPanel
      */
     public BBWHmanageReqPanel() {
         initComponents();
+        this.manageReq = new manageReq();
+        populateManageReqTable();
     }
 
     /**
@@ -29,7 +37,7 @@ public class BBWHmanageReqPanel extends javax.swing.JPanel {
 
         searchTF = new javax.swing.JTextField();
         BBWHequipmentTbl = new javax.swing.JScrollPane();
-        BBWHequipInventoryTbl = new javax.swing.JTable();
+        bbwhManageBloodReqTbl = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -38,7 +46,7 @@ public class BBWHmanageReqPanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(1142, 630));
 
-        BBWHequipInventoryTbl.setModel(new javax.swing.table.DefaultTableModel(
+        bbwhManageBloodReqTbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null, null},
@@ -49,8 +57,8 @@ public class BBWHmanageReqPanel extends javax.swing.JPanel {
                 "Order Date", "Hospital name", "Blood unit", "Blood type", "Plasma unit", "Plasma type", "Platelet unit", "Platelet type", "RBC units", "RBC type"
             }
         ));
-        BBWHequipInventoryTbl.getTableHeader().setReorderingAllowed(false);
-        BBWHequipmentTbl.setViewportView(BBWHequipInventoryTbl);
+        bbwhManageBloodReqTbl.getTableHeader().setReorderingAllowed(false);
+        BBWHequipmentTbl.setViewportView(bbwhManageBloodReqTbl);
 
         jButton1.setText("APPROVE REQUEST");
 
@@ -105,18 +113,35 @@ public class BBWHmanageReqPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    public void populateManageReqTable() {
+        int selectedRowIndex = bbwhManageBloodReqTbl.getSelectedRow();
+
+
+        DefaultTableModel model = (DefaultTableModel) bbwhManageBloodReqTbl.getModel();
+       
+        manageReq.populateTable(model);
+            
+    }
+    
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable BBWHequipInventoryTbl;
     private javax.swing.JScrollPane BBWHequipmentTbl;
+    private javax.swing.JTable bbwhManageBloodReqTbl;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField searchTF;
     // End of variables declaration//GEN-END:variables
+
+    private static class manageReq extends bbManageBloodReq {
+
+        public manageReq() {
+        }
+    }
 }
