@@ -20,6 +20,9 @@ public class ManageHopsitalUsersJPanel extends javax.swing.JPanel {
     JPanel CardLayoutHPanel;
     public ManageHopsitalUsersJPanel() {
         initComponents();
+        initComponents();
+        this.CardLayoutHPanel = new JPanel();
+         populateHospitalUserDetailsTable();
         
     }
     
@@ -43,7 +46,6 @@ public class ManageHopsitalUsersJPanel extends javax.swing.JPanel {
         search = new javax.swing.JTextField();
         pinLbl = new javax.swing.JLabel();
         pinT = new javax.swing.JTextField();
-        passT = new javax.swing.JTextField();
         emailHLbl = new javax.swing.JLabel();
         emailHT = new javax.swing.JTextField();
         UserCategory = new javax.swing.JLabel();
@@ -62,17 +64,12 @@ public class ManageHopsitalUsersJPanel extends javax.swing.JPanel {
         updateOrgLbl = new javax.swing.JLabel();
         nameHT = new javax.swing.JTextField();
         UserdetailsTable = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        updateUserTable = new javax.swing.JTable();
+        HUPass = new javax.swing.JPasswordField();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
         pinLbl.setText("Pincode*");
-
-        passT.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passTActionPerformed(evt);
-            }
-        });
 
         emailHLbl.setText("Email*");
 
@@ -129,7 +126,7 @@ public class ManageHopsitalUsersJPanel extends javax.swing.JPanel {
             .addComponent(updateOrgLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
         );
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        updateUserTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null},
@@ -148,10 +145,10 @@ public class ManageHopsitalUsersJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jTable1.getTableHeader().setReorderingAllowed(false);
-        UserdetailsTable.setViewportView(jTable1);
-        if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(0).setPreferredWidth(100);
+        updateUserTable.getTableHeader().setReorderingAllowed(false);
+        UserdetailsTable.setViewportView(updateUserTable);
+        if (updateUserTable.getColumnModel().getColumnCount() > 0) {
+            updateUserTable.getColumnModel().getColumn(0).setPreferredWidth(100);
         }
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -168,29 +165,27 @@ public class ManageHopsitalUsersJPanel extends javax.swing.JPanel {
                                 .addGap(35, 35, 35))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(nameHLbl)
-                                        .addComponent(nameHT, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(nameHT, javax.swing.GroupLayout.DEFAULT_SIZE, 305, Short.MAX_VALUE)
                                         .addComponent(UserCategory)
-                                        .addComponent(UserTypeCB, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(passHLbl)
-                                        .addComponent(passT, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(UserTypeCB, 0, 305, Short.MAX_VALUE)
                                         .addComponent(emailHLbl)
-                                        .addComponent(emailHT, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(emailHT, javax.swing.GroupLayout.DEFAULT_SIZE, 305, Short.MAX_VALUE)
                                         .addComponent(phoneHLbl)
-                                        .addComponent(phoneHT, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(phoneHT, javax.swing.GroupLayout.DEFAULT_SIZE, 305, Short.MAX_VALUE)
+                                        .addComponent(passHLbl)
+                                        .addComponent(HUPass))
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(streetALbl)
                                         .addComponent(streetHT, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(cityHLbl)
                                         .addComponent(cityHT, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(pinLbl)
-                                            .addComponent(pinT, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(stateHLbl)
-                                            .addComponent(stateHT, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(pinLbl)
+                                        .addComponent(pinT, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(stateHLbl)
+                                        .addComponent(stateHT, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGap(152, 152, 152))
                                 .addComponent(UserdetailsTable, javax.swing.GroupLayout.PREFERRED_SIZE, 1069, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(33, 33, 33))
@@ -240,7 +235,7 @@ public class ManageHopsitalUsersJPanel extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(passHLbl)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(passT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(HUPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(phoneHLbl)
                         .addGap(6, 6, 6)
@@ -248,10 +243,6 @@ public class ManageHopsitalUsersJPanel extends javax.swing.JPanel {
                 .addContainerGap(31, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void passTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passTActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_passTActionPerformed
 
     private void emailHTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailHTActionPerformed
         // TODO add your handling code here:
@@ -267,6 +258,7 @@ public class ManageHopsitalUsersJPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPasswordField HUPass;
     private javax.swing.JLabel UserCategory;
     private javax.swing.JComboBox<String> UserTypeCB;
     private javax.swing.JScrollPane UserdetailsTable;
@@ -274,11 +266,9 @@ public class ManageHopsitalUsersJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField cityHT;
     private javax.swing.JLabel emailHLbl;
     private javax.swing.JTextField emailHT;
-    private javax.swing.JTable jTable1;
     private javax.swing.JLabel nameHLbl;
     private javax.swing.JTextField nameHT;
     private javax.swing.JLabel passHLbl;
-    private javax.swing.JTextField passT;
     private javax.swing.JLabel phoneHLbl;
     private javax.swing.JTextField phoneHT;
     private javax.swing.JLabel pinLbl;
@@ -289,6 +279,19 @@ public class ManageHopsitalUsersJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel streetALbl;
     private javax.swing.JTextField streetHT;
     private javax.swing.JLabel updateOrgLbl;
+    private javax.swing.JTable updateUserTable;
     private javax.swing.JPanel updateuserBtn;
     // End of variables declaration//GEN-END:variables
+
+  
+     public void emptyTF() {
+        nameHT.setText("");
+        emailHT.setText("");
+        HUPass.setText("");
+        phoneHT.setText("");
+        cityHT.setText("");
+        pinT.setText("");
+        streetHT.setText("");
+
+    }
 }
