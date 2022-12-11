@@ -19,11 +19,11 @@ public class HospitalProfileJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ManageNGOProfileJPanel
      */
-<<<<<<< HEAD:Blood Donation Management System/src/UI/Hospital/HospitalProfileJPanel.java
+
     public HospitalProfileJPanel() {
         initComponents();
         
-=======
+
     String userName;
     ManageNGOProfile ngoProfile;
     NGOManagement ngoMgmnt;
@@ -31,10 +31,8 @@ public class HospitalProfileJPanel extends javax.swing.JPanel {
         initComponents();
         this.userName = userName;
         userNameLbl.setText(userName);
-        this.ngoMgmnt = new NGOManagement();
-        this.ngoProfile = new ManageNGOProfile();
+     
         populateTFs();
->>>>>>> suraj_branch:Blood Donation Management System/src/UI/NGO/ManageNGOProfileJPanel.java
     }
 
     /**
@@ -336,12 +334,12 @@ public class HospitalProfileJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_streetTFActionPerformed
 
-<<<<<<< HEAD:Blood Donation Management System/src/UI/Hospital/HospitalProfileJPanel.java
+
     private void stateCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stateCBActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_stateCBActionPerformed
 
-=======
+
     private void updateBtnFunctionality() {
         
     }
@@ -367,7 +365,7 @@ public class HospitalProfileJPanel extends javax.swing.JPanel {
         cityTF.setText(ngoMgmnt.getCity());
         stateCB.setSelectedItem(ngoMgmnt.getState());
         String license = ngoMgmnt.getLicense_path();
->>>>>>> suraj_branch:Blood Donation Management System/src/UI/NGO/ManageNGOProfileJPanel.java
+
 
         
         
