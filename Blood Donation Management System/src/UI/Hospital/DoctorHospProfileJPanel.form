@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <Properties>
+    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+    </Property>
+  </Properties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="docupdateProfileBtn" min="-2" max="-2" attributes="0"/>
+                  <Component id="docpinTF" min="-2" pref="305" max="-2" attributes="0"/>
+                  <Component id="docnameLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="docnameTF" alignment="0" min="-2" pref="305" max="-2" attributes="0"/>
+                  <Component id="DpassTF" alignment="0" min="-2" pref="305" max="-2" attributes="0"/>
+                  <Component id="docphoneLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="docphoneTF" alignment="0" min="-2" pref="305" max="-2" attributes="0"/>
+                  <Component id="docstreetLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="docstreetTF" alignment="0" min="-2" pref="305" max="-2" attributes="0"/>
+                  <Component id="doccityLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="doccityTF" alignment="0" min="-2" pref="305" max="-2" attributes="0"/>
+                  <Component id="docstateLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="docstateCB" alignment="0" min="-2" pref="305" max="-2" attributes="0"/>
+                  <Component id="docemailLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="DpassLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="demailTF" alignment="0" min="-2" pref="305" max="-2" attributes="0"/>
+                  <Component id="docpinlbl" alignment="0" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="783" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
+              <Component id="docnameLbl" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="docnameTF" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="docemailLbl" min="-2" pref="17" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
+              <Component id="demailTF" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="DpassLbl" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="DpassTF" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+              <Component id="docphoneLbl" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="docphoneTF" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="docstreetLbl" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="docstreetTF" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="doccityLbl" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="doccityTF" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+              <Component id="docstateLbl" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="docstateCB" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+              <Component id="docpinlbl" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
+              <Component id="docpinTF" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+              <Component id="docupdateProfileBtn" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="73" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="docnameLbl">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Doctor Name"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="DpassLbl">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Password"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="docnameTF">
+    </Component>
+    <Component class="javax.swing.JTextField" name="DpassTF">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DpassTFActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="docemailLbl">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Email"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="demailTF">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="demailTFActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="docphoneLbl">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Phone"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="docphoneTF">
+    </Component>
+    <Component class="javax.swing.JLabel" name="docstreetLbl">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Street Address"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="docstreetTF">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="docstreetTFActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="doccityLbl">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="City"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="doccityTF">
+    </Component>
+    <Component class="javax.swing.JLabel" name="docstateLbl">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="State"/>
+      </Properties>
+    </Component>
+    <Container class="javax.swing.JPanel" name="docupdateProfileBtn">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="6a" green="6a" red="6a" type="rgb"/>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                  <Component id="docupdateProfileLbl" min="-2" pref="215" max="-2" attributes="0"/>
+                  <EmptySpace pref="50" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="docupdateProfileLbl" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="docupdateProfileLbl">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="d7" green="d7" red="d7" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Helvetica Neue" size="13" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="Update Profile"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JComboBox" name="docstateCB">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="50">
+            <StringItem index="0" value="Alabama"/>
+            <StringItem index="1" value="Alaska"/>
+            <StringItem index="2" value="Arizona"/>
+            <StringItem index="3" value="Arkansas"/>
+            <StringItem index="4" value="California"/>
+            <StringItem index="5" value="Colorado"/>
+            <StringItem index="6" value="Connecticut"/>
+            <StringItem index="7" value="Delaware"/>
+            <StringItem index="8" value="Florida"/>
+            <StringItem index="9" value="Georgia"/>
+            <StringItem index="10" value="Hawaii"/>
+            <StringItem index="11" value="Idaho"/>
+            <StringItem index="12" value="Illinois"/>
+            <StringItem index="13" value="Indiana"/>
+            <StringItem index="14" value="Iowa"/>
+            <StringItem index="15" value="Kansas"/>
+            <StringItem index="16" value="Kentucky"/>
+            <StringItem index="17" value="Louisiana"/>
+            <StringItem index="18" value="Maine"/>
+            <StringItem index="19" value="Maryland"/>
+            <StringItem index="20" value="Massachusetts"/>
+            <StringItem index="21" value="Michigan"/>
+            <StringItem index="22" value="Minnesota"/>
+            <StringItem index="23" value="Mississippi"/>
+            <StringItem index="24" value="Missouri"/>
+            <StringItem index="25" value="Montana"/>
+            <StringItem index="26" value="Nebraska"/>
+            <StringItem index="27" value="Nevada"/>
+            <StringItem index="28" value="New Hampshire"/>
+            <StringItem index="29" value="New Jersey"/>
+            <StringItem index="30" value="New Mexico"/>
+            <StringItem index="31" value="New York"/>
+            <StringItem index="32" value="North Carolina"/>
+            <StringItem index="33" value="North Dakota"/>
+            <StringItem index="34" value="Ohio"/>
+            <StringItem index="35" value="Oklahoma"/>
+            <StringItem index="36" value="Oregon"/>
+            <StringItem index="37" value="Pennsylvania"/>
+            <StringItem index="38" value="Rhode Island"/>
+            <StringItem index="39" value="South Carolina"/>
+            <StringItem index="40" value="South Dakota"/>
+            <StringItem index="41" value="Tennessee"/>
+            <StringItem index="42" value="Texas"/>
+            <StringItem index="43" value="Utah"/>
+            <StringItem index="44" value="Vermont"/>
+            <StringItem index="45" value="Virginia"/>
+            <StringItem index="46" value="Washington"/>
+            <StringItem index="47" value="West Virginia"/>
+            <StringItem index="48" value="Wisconsin"/>
+            <StringItem index="49" value="Wyoming"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="docstateCBActionPerformed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="docpinlbl">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Pincode"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="docpinTF">
+    </Component>
+  </SubComponents>
+</Form>
