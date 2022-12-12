@@ -45,15 +45,9 @@ public class NGOWareHouseJPanel extends javax.swing.JPanel {
         manageProfileBtn = new javax.swing.JPanel();
         ManageProLbl = new javax.swing.JLabel();
         proIcon = new javax.swing.JLabel();
-        inventoryBtn = new javax.swing.JPanel();
-        inventoryLbl = new javax.swing.JLabel();
-        orgIcon = new javax.swing.JLabel();
         logisticsBtn = new javax.swing.JPanel();
         manageBloodLbl = new javax.swing.JLabel();
         bloodBagIcon = new javax.swing.JLabel();
-        ManageDonorsPanel = new javax.swing.JPanel();
-        ManageDonLbl = new javax.swing.JLabel();
-        donorIcon = new javax.swing.JLabel();
         CardLayoutNWHPanel = new javax.swing.JPanel();
 
         NWHHeader.setBackground(new java.awt.Color(223, 85, 71));
@@ -152,43 +146,6 @@ public class NGOWareHouseJPanel extends javax.swing.JPanel {
 
         NWHMenu.add(manageProfileBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 280, -1));
 
-        inventoryBtn.setBackground(new java.awt.Color(223, 85, 71));
-
-        inventoryLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
-        inventoryLbl.setForeground(new java.awt.Color(215, 215, 215));
-        inventoryLbl.setText("Inventory");
-        inventoryLbl.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                inventoryLblMousePressed(evt);
-            }
-        });
-
-        orgIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        orgIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagesPackage/suraj/inventory_icon.png"))); // NOI18N
-
-        javax.swing.GroupLayout inventoryBtnLayout = new javax.swing.GroupLayout(inventoryBtn);
-        inventoryBtn.setLayout(inventoryBtnLayout);
-        inventoryBtnLayout.setHorizontalGroup(
-            inventoryBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, inventoryBtnLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(orgIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(inventoryLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        inventoryBtnLayout.setVerticalGroup(
-            inventoryBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, inventoryBtnLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(inventoryBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(inventoryLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
-                    .addComponent(orgIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
-        );
-
-        NWHMenu.add(inventoryBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 280, -1));
-
         logisticsBtn.setBackground(new java.awt.Color(223, 85, 71));
         logisticsBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -230,37 +187,6 @@ public class NGOWareHouseJPanel extends javax.swing.JPanel {
         );
 
         NWHMenu.add(logisticsBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 280, -1));
-
-        ManageDonorsPanel.setBackground(new java.awt.Color(223, 85, 71));
-
-        ManageDonLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
-        ManageDonLbl.setForeground(new java.awt.Color(215, 215, 215));
-        ManageDonLbl.setText("Insights");
-
-        donorIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagesPackage/suraj/insights_icon.png"))); // NOI18N
-
-        javax.swing.GroupLayout ManageDonorsPanelLayout = new javax.swing.GroupLayout(ManageDonorsPanel);
-        ManageDonorsPanel.setLayout(ManageDonorsPanelLayout);
-        ManageDonorsPanelLayout.setHorizontalGroup(
-            ManageDonorsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ManageDonorsPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(donorIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(ManageDonLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        ManageDonorsPanelLayout.setVerticalGroup(
-            ManageDonorsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ManageDonorsPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(ManageDonorsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ManageDonLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
-                    .addComponent(donorIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
-        );
-
-        NWHMenu.add(ManageDonorsPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 280, -1));
 
         CardLayoutNWHPanel.setBackground(new java.awt.Color(255, 255, 255));
         CardLayoutNWHPanel.setLayout(new java.awt.CardLayout());
@@ -317,12 +243,6 @@ public class NGOWareHouseJPanel extends javax.swing.JPanel {
         logisticsBtnFunctionality();
     }//GEN-LAST:event_manageBloodLblMousePressed
 
-    private void inventoryLblMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inventoryLblMousePressed
-        // TODO add your handling code here:
-        inventoryBtnFunctionality();
-        
-    }//GEN-LAST:event_inventoryLblMousePressed
-
     private void headerUserNameMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_headerUserNameMousePressed
         // TODO add your handling code here:
     }//GEN-LAST:event_headerUserNameMousePressed
@@ -349,7 +269,7 @@ public class NGOWareHouseJPanel extends javax.swing.JPanel {
     public void manageProfileBtnFunctionality(){
         
         setBtnColor(manageProfileBtn);
-        resetBtnColor(inventoryBtn);
+//        resetBtnColor(inventoryBtn);
         resetBtnColor(logisticsBtn);
         
         
@@ -361,7 +281,7 @@ public class NGOWareHouseJPanel extends javax.swing.JPanel {
     
     public void inventoryBtnFunctionality(){
         
-        setBtnColor(inventoryBtn);
+//        setBtnColor(inventoryBtn);
         resetBtnColor(manageProfileBtn);
         resetBtnColor(logisticsBtn);
         
@@ -375,7 +295,7 @@ public class NGOWareHouseJPanel extends javax.swing.JPanel {
     public void logisticsBtnFunctionality(){
         
         setBtnColor(logisticsBtn);
-        resetBtnColor(inventoryBtn);
+//        resetBtnColor(inventoryBtn);
         resetBtnColor(manageProfileBtn);
         
         
@@ -389,22 +309,16 @@ public class NGOWareHouseJPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel CardLayoutNWHPanel;
-    private javax.swing.JLabel ManageDonLbl;
-    private javax.swing.JPanel ManageDonorsPanel;
     private javax.swing.JLabel ManageProLbl;
     private javax.swing.JPanel NWHHeader;
     private javax.swing.JPanel NWHMenu;
     private javax.swing.JLabel bloodBagIcon;
     private javax.swing.JLabel bloodonateLbl;
-    private javax.swing.JLabel donorIcon;
     private javax.swing.JLabel headerUserName;
-    private javax.swing.JPanel inventoryBtn;
-    private javax.swing.JLabel inventoryLbl;
     private javax.swing.JPanel logisticsBtn;
     private javax.swing.JLabel logoutBtn;
     private javax.swing.JLabel manageBloodLbl;
     private javax.swing.JPanel manageProfileBtn;
-    private javax.swing.JLabel orgIcon;
     private javax.swing.JLabel proIcon;
     // End of variables declaration//GEN-END:variables
 }

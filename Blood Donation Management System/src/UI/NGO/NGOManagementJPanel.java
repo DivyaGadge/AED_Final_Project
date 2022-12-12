@@ -53,9 +53,6 @@ public class NGOManagementJPanel extends javax.swing.JPanel {
         manageProfileBtn = new javax.swing.JPanel();
         ManageProLbl = new javax.swing.JLabel();
         proIcon = new javax.swing.JLabel();
-        manageDonorsBtn = new javax.swing.JPanel();
-        ManageDonLbl = new javax.swing.JLabel();
-        donorIcon = new javax.swing.JLabel();
         CardLayoutPanel = new javax.swing.JPanel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -247,38 +244,6 @@ public class NGOManagementJPanel extends javax.swing.JPanel {
 
         NGOMenu.add(manageProfileBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 280, -1));
 
-        manageDonorsBtn.setBackground(new java.awt.Color(223, 85, 71));
-
-        ManageDonLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
-        ManageDonLbl.setForeground(new java.awt.Color(215, 215, 215));
-        ManageDonLbl.setText("Manage Donors");
-
-        donorIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        donorIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagesPackage/suraj/donor_icon.png"))); // NOI18N
-
-        javax.swing.GroupLayout manageDonorsBtnLayout = new javax.swing.GroupLayout(manageDonorsBtn);
-        manageDonorsBtn.setLayout(manageDonorsBtnLayout);
-        manageDonorsBtnLayout.setHorizontalGroup(
-            manageDonorsBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, manageDonorsBtnLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(donorIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(ManageDonLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        manageDonorsBtnLayout.setVerticalGroup(
-            manageDonorsBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(manageDonorsBtnLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(manageDonorsBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ManageDonLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
-                    .addComponent(donorIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
-        );
-
-        NGOMenu.add(manageDonorsBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 280, -1));
-
         add(NGOMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 92, 280, 702));
 
         CardLayoutPanel.setBackground(new java.awt.Color(255, 255, 255));
@@ -354,7 +319,7 @@ public class NGOManagementJPanel extends javax.swing.JPanel {
         resetBtnColor(organizationsBtn);
         resetBtnColor(organizeCampsBtn);
 
-        resetBtnColor(manageDonorsBtn);
+//        resetBtnColor(manageDonorsBtn);
         
         
         CardLayoutPanel.removeAll();
@@ -369,7 +334,7 @@ public class NGOManagementJPanel extends javax.swing.JPanel {
         resetBtnColor(manageProfileBtn);
         resetBtnColor(organizeCampsBtn);
 
-        resetBtnColor(manageDonorsBtn);
+//        resetBtnColor(manageDonorsBtn);
         
         CardLayoutPanel.removeAll();
         CardLayoutPanel.add(new ManageNGOOrganizationsJPanel(username));
@@ -384,7 +349,7 @@ public class NGOManagementJPanel extends javax.swing.JPanel {
         resetBtnColor(organizationsBtn);
         resetBtnColor(manageProfileBtn);
 
-        resetBtnColor(manageDonorsBtn);
+//        resetBtnColor(manageDonorsBtn);
         
         
         CardLayoutPanel.removeAll();
@@ -401,7 +366,6 @@ public class NGOManagementJPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel CardLayoutPanel;
-    private javax.swing.JLabel ManageDonLbl;
     private javax.swing.JLabel ManageOrgLbl;
     private javax.swing.JLabel ManageProLbl;
     private javax.swing.JPanel NGOHeader;
@@ -409,10 +373,8 @@ public class NGOManagementJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel OrgCampsLbl;
     private javax.swing.JLabel bloodonateLbl;
     private javax.swing.JLabel campIcon;
-    private javax.swing.JLabel donorIcon;
     private javax.swing.JLabel headerUserName;
     private javax.swing.JLabel logoutBtn;
-    private javax.swing.JPanel manageDonorsBtn;
     private javax.swing.JPanel manageProfileBtn;
     private javax.swing.JLabel orgIcon;
     private javax.swing.JPanel organizationsBtn;

@@ -51,9 +51,6 @@ public class NGOBloodColJPanel extends javax.swing.JPanel {
         transportBloodBtn = new javax.swing.JPanel();
         OrgCampsLbl = new javax.swing.JLabel();
         logisticsIcon = new javax.swing.JLabel();
-        ManageDonorsPanel = new javax.swing.JPanel();
-        ManageDonLbl = new javax.swing.JLabel();
-        donorIcon = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -229,38 +226,6 @@ public class NGOBloodColJPanel extends javax.swing.JPanel {
 
         NBCMenu.add(transportBloodBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 280, -1));
 
-        ManageDonorsPanel.setBackground(new java.awt.Color(223, 85, 71));
-
-        ManageDonLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
-        ManageDonLbl.setForeground(new java.awt.Color(215, 215, 215));
-        ManageDonLbl.setText("Insights");
-
-        donorIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        donorIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagesPackage/suraj/insights_icon.png"))); // NOI18N
-
-        javax.swing.GroupLayout ManageDonorsPanelLayout = new javax.swing.GroupLayout(ManageDonorsPanel);
-        ManageDonorsPanel.setLayout(ManageDonorsPanelLayout);
-        ManageDonorsPanelLayout.setHorizontalGroup(
-            ManageDonorsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ManageDonorsPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(donorIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(ManageDonLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        ManageDonorsPanelLayout.setVerticalGroup(
-            ManageDonorsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ManageDonorsPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(ManageDonorsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ManageDonLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
-                    .addComponent(donorIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
-        );
-
-        NBCMenu.add(ManageDonorsPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 280, -1));
-
         jPanel9.setBackground(new java.awt.Color(223, 85, 71));
         jPanel9.setLayout(new java.awt.CardLayout());
 
@@ -377,8 +342,6 @@ public class NGOBloodColJPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel CardLayoutNBCPanel;
-    private javax.swing.JLabel ManageDonLbl;
-    private javax.swing.JPanel ManageDonorsPanel;
     private javax.swing.JLabel ManageOrgLbl;
     private javax.swing.JLabel ManageProLbl;
     private javax.swing.JPanel NBCHeader;
@@ -386,7 +349,6 @@ public class NGOBloodColJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel OrgCampsLbl;
     private javax.swing.JLabel bloodonateLbl;
     private javax.swing.JPanel collectBloodBtn;
-    private javax.swing.JLabel donorIcon;
     private javax.swing.JLabel headerUserName;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
