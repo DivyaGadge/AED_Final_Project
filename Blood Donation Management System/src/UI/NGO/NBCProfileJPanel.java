@@ -4,6 +4,10 @@
  */
 package UI.NGO;
 
+import java.util.ArrayList;
+import model.volunteerEnt.NBCProfile;
+import model.volunteerEnt.NGOBloodCollection;
+
 /**
  *
  * @author surajvisvesh
@@ -12,9 +16,16 @@ public class NBCProfileJPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form NCBProfileJPanel
-     */String nbc_username;
-    public NBCProfileJPanel() {
+     */
+    String nbc_username;
+    NBCProfile nbcProfile;
+    NGOBloodCollection ngoBC;
+
+    public NBCProfileJPanel(String userName) {
         initComponents();
+        this.nbc_username = userName;
+        
+        this.nbcProfile = new NBCProfile();
         populateTFs();
     }
 
@@ -159,12 +170,24 @@ public class NBCProfileJPanel extends javax.swing.JPanel {
     private void emailTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailTFActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_emailTFActionPerformed
-    
+
     public void populateTFs() {
 //        code to populate TF from DB.
+
+        userNameLbl.setText(nbc_username);
+        this.ngoBC = nbcProfile.populateTFs(nbc_username);
+
+        nameTF.setText(ngoBC.getName());
+        emailTF.setText(ngoBC.getEmail());
+        passTF.setText(ngoBC.getPassword());
+        phoneTF.setText(String.valueOf(ngoBC.getPhoneNo()));
+        streetTF.setText(ngoBC.getStreet());
+        cityTF.setText(ngoBC.getCity());
+        stateTF.setText(ngoBC.getCity());
+//        stateCB.setSelectedItem(ngoMgmnt.getState());
+//        String license = ngoMgmnt.getLicense_path();
     }
-    
-    
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel cityLbl;

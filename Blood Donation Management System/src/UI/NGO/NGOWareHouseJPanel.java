@@ -54,9 +54,6 @@ public class NGOWareHouseJPanel extends javax.swing.JPanel {
         ManageDonorsPanel = new javax.swing.JPanel();
         ManageDonLbl = new javax.swing.JLabel();
         donorIcon = new javax.swing.JLabel();
-        jPanel9 = new javax.swing.JPanel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         CardLayoutNWHPanel = new javax.swing.JPanel();
 
         NWHHeader.setBackground(new java.awt.Color(223, 85, 71));
@@ -240,6 +237,8 @@ public class NGOWareHouseJPanel extends javax.swing.JPanel {
         ManageDonLbl.setForeground(new java.awt.Color(215, 215, 215));
         ManageDonLbl.setText("Insights");
 
+        donorIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagesPackage/suraj/insights_icon.png"))); // NOI18N
+
         javax.swing.GroupLayout ManageDonorsPanelLayout = new javax.swing.GroupLayout(ManageDonorsPanel);
         ManageDonorsPanel.setLayout(ManageDonorsPanelLayout);
         ManageDonorsPanelLayout.setHorizontalGroup(
@@ -262,35 +261,6 @@ public class NGOWareHouseJPanel extends javax.swing.JPanel {
         );
 
         NWHMenu.add(ManageDonorsPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 280, -1));
-
-        jPanel9.setBackground(new java.awt.Color(223, 85, 71));
-
-        jLabel9.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(215, 215, 215));
-        jLabel9.setText("Manage Blood Request");
-
-        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
-        jPanel9.setLayout(jPanel9Layout);
-        jPanel9Layout.setHorizontalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        jPanel9Layout.setVerticalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
-        );
-
-        NWHMenu.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 280, -1));
 
         CardLayoutNWHPanel.setBackground(new java.awt.Color(255, 255, 255));
         CardLayoutNWHPanel.setLayout(new java.awt.CardLayout());
@@ -384,7 +354,7 @@ public class NGOWareHouseJPanel extends javax.swing.JPanel {
         
         
         CardLayoutNWHPanel.removeAll();
-        CardLayoutNWHPanel.add(new NWHProfileJPanel());
+        CardLayoutNWHPanel.add(new NWHProfileJPanel(username));
         ((CardLayout) CardLayoutNWHPanel.getLayout()).next(CardLayoutNWHPanel);
         
     }
@@ -430,9 +400,6 @@ public class NGOWareHouseJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel headerUserName;
     private javax.swing.JPanel inventoryBtn;
     private javax.swing.JLabel inventoryLbl;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel9;
     private javax.swing.JPanel logisticsBtn;
     private javax.swing.JLabel logoutBtn;
     private javax.swing.JLabel manageBloodLbl;

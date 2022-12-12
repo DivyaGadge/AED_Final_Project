@@ -4,6 +4,9 @@
  */
 package UI.NGO;
 
+import model.volunteerEnt.NGOWarehouse;
+import model.volunteerEnt.NWHProfile;
+
 /**
  *
  * @author surajvisvesh
@@ -13,8 +16,16 @@ public class NWHProfileJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ManageNGOWHJPanel
      */
-    public NWHProfileJPanel() {
+    NGOWarehouse ngoWH;
+    NWHProfile nwhP;
+    String userName;
+    public NWHProfileJPanel(String username) {
         initComponents();
+        this.ngoWH = new NGOWarehouse();
+        this.nwhP = new NWHProfile();
+        this.userName = username;
+        populateTFs();
+        
     }
 
     /**
@@ -109,9 +120,23 @@ public class NWHProfileJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_streetTFActionPerformed
 
-    private void populateTFs() {
-//        code to populate the TFs
+    public void populateTFs() {
+//        code to populate TF from DB.
+
+        userNameLbl.setText(userName);
+        this.ngoWH = nwhP.populateTFs(userName);
+
+        nameTF.setText(ngoWH.getName());
+        emailTF.setText(ngoWH.getEmail());
+        passTF.setText(ngoWH.getPassword());
+        phoneTF.setText(String.valueOf(ngoWH.getPhoneNo()));
+        streetTF.setText(ngoWH.getStreet());
+        cityTF.setText(ngoWH.getCity());
+        stateTF.setText(ngoWH.getCity());
+//        stateCB.setSelectedItem(ngoMgmnt.getState());
+//        String license = ngoMgmnt.getLicense_path();
     }
+
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

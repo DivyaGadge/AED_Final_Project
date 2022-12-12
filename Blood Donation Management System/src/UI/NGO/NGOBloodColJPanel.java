@@ -368,7 +368,7 @@ public class NGOBloodColJPanel extends javax.swing.JPanel {
     
     public void manageProfileFunc() {
         CardLayoutNBCPanel.removeAll();
-        CardLayoutNBCPanel.add(new NBCProfileJPanel());
+        CardLayoutNBCPanel.add(new NBCProfileJPanel(username));
         ((CardLayout) CardLayoutNBCPanel.getLayout()).next(CardLayoutNBCPanel);
 
         

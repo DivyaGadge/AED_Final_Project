@@ -4,17 +4,23 @@
  */
 package UI.SystemAdmin;
 
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author surajvisvesh
  */
-public class DonorRegistration extends javax.swing.JPanel {
+public class NGORegistration extends javax.swing.JPanel {
 
     /**
      * Creates new form DonorRegistration
      */
-    public DonorRegistration() {
+    model.SystemAdmin.NGORegistration ngoReg;
+    String approval_file;
+    public NGORegistration() {
         initComponents();
+        this.ngoReg = new model.SystemAdmin.NGORegistration();
+        populateTable();
     }
 
     /**
@@ -62,17 +68,17 @@ public class DonorRegistration extends javax.swing.JPanel {
 
         organizationTbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "User Name", "Organization Name", "Password", "Email", "Phone Number", "Street Address", "City", "State", "Pincode", "Approval Status"
+                "User Name", "Organization Name", "Email", "Phone Number", "Street Address", "City", "State", "Pincode", "Approval Status"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -190,6 +196,17 @@ public class DonorRegistration extends javax.swing.JPanel {
     }
     
     private void populateTable() {
+        
+        DefaultTableModel model = (DefaultTableModel) organizationTbl.getModel();
+       
+        ngoReg.populateTable(model);
+        
+    }
+    
+    private void selectRow(){
+        
+        String name = organizationTbl.getValueAt(organizationTbl.getSelectedRow(), 1).toString();
+        
         
     }
     

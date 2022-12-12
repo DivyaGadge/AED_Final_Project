@@ -183,190 +183,118 @@ public class Login {
             } catch (SQLException ex) {
                 Logger.getLogger(LoginJPanel.class.getName()).log(Level.SEVERE, null, ex);
             }
-            case "Hospital Organization":
-                try {
-                System.out.println("entered try block");
-                Connection con = SQLConnection.establishConnection();
-                System.out.println(con);
-                if (con != null) {
-                    System.out.println("entered if con not null block");
-
-                    String query = "SELECT user_name, Password FROM Hospital WHERE user_name=('" + username + "')";
-                    Statement stmt = con.createStatement();
-                    ResultSet rs = stmt.executeQuery(query);
-
-                    if (rs.next()) {
-                        System.out.println("entered if rs. block");
-                        String password_sql = rs.getString("password");
-                        String username_sql = rs.getString("user_name");
-                        if (password.equals(password_sql)) {
-                            System.out.println("Selected doctor");
-                            mainFrameCardLayout.removeAll();
-                            mainFrameCardLayout.add(new UI.Hospital.HospitalJPanel(mainFrameCardLayout, username_sql));
-                            ((CardLayout) mainFrameCardLayout.getLayout()).next(mainFrameCardLayout);
-                            JOptionPane.showMessageDialog(mainFrameCardLayout, username + ", You have been successfully logged in.");
-                            break;
-                        } else {
-                            JOptionPane.showMessageDialog(null, username + ", Please enter correct password", "error message", JOptionPane.ERROR_MESSAGE);
-                        break;
-                        }
-
-                    } else {
-                        
-                        JOptionPane.showMessageDialog(null, "You are not registered. Please register with us to login.", "error message", JOptionPane.ERROR_MESSAGE);
-                        break;
-                    }
-                }
-            } catch (SQLException ex) {
-                ex.printStackTrace();
-                Logger.getLogger(LoginJPanel.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            case "Hospital Warehouse":
-                try {
-                System.out.println("entered try block");
-                Connection con = SQLConnection.establishConnection();
-                System.out.println(con);
-                if (con != null) {
-                    System.out.println("entered if con not null block");
-
-                    String query = "SELECT user_name, Password FROM Hospital_Warehouse_management WHERE user_name=('" + username + "')";
-                    Statement stmt = con.createStatement();
-                    ResultSet rs = stmt.executeQuery(query);
-
-                    if (rs.next()) {
-                        System.out.println("entered if rs. block");
-                        String password_sql = rs.getString("password");
-                        String username_sql = rs.getString("user_name");
-                        if (password.equals(password_sql)) {
-                            System.out.println("Selected doctor");
-                            mainFrameCardLayout.removeAll();
-                            mainFrameCardLayout.add(new UI.Hospital.HospitalWareHouseJPanel(mainFrameCardLayout, username_sql));
-                            ((CardLayout) mainFrameCardLayout.getLayout()).next(mainFrameCardLayout);
-                            JOptionPane.showMessageDialog(mainFrameCardLayout, username + ", You have been successfully logged in.");
-                            break;
-                        } else {
-                            JOptionPane.showMessageDialog(null, username + ", Please enter correct password", "error message", JOptionPane.ERROR_MESSAGE);
-                        break;
-                        }
-
-                    } else {
-                        JOptionPane.showMessageDialog(null, "You are not registered. Please register with us to login.", "error message", JOptionPane.ERROR_MESSAGE);
-                        break;
-                    }
-                }
-            } catch (SQLException ex) {
-                Logger.getLogger(LoginJPanel.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            case "Bloodbank Organization":
-                try {
-                System.out.println("entered try block");
-                Connection con = SQLConnection.establishConnection();
-                System.out.println(con);
-                if (con != null) {
-                    System.out.println("entered if con not null block");
-
-                    String query = "SELECT user_name, Password FROM BloodBank_Org WHERE user_name=('" + username + "')";
-                    Statement stmt = con.createStatement();
-                    ResultSet rs = stmt.executeQuery(query);
-
-                    if (rs.next()) {
-                        System.out.println("entered if rs. block");
-                        String password_sql = rs.getString("password");
-                        String username_sql = rs.getString("user_name");
-                        if (password.equals(password_sql)) {
-                            System.out.println("Selected doctor");
-                            mainFrameCardLayout.removeAll();
-                            mainFrameCardLayout.add(new UI.BB.BB_org(mainFrameCardLayout, username_sql));
-                            ((CardLayout) mainFrameCardLayout.getLayout()).next(mainFrameCardLayout);
-                            JOptionPane.showMessageDialog(mainFrameCardLayout, username + ", You have been successfully logged in.");
-                            break;
-                        } else {
-                            JOptionPane.showMessageDialog(null, username + ", Please enter correct password", "error message", JOptionPane.ERROR_MESSAGE);
-                        break;
-                        }
-
-                    } else {
-                        JOptionPane.showMessageDialog(null, "You are not registered. Please register with us to login.", "error message", JOptionPane.ERROR_MESSAGE);
-                        break;
-                    }
-                }
-            } catch (SQLException ex) {
-                Logger.getLogger(LoginJPanel.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            case "Doctor":
-               try {
-                System.out.println("entered try block");
-                Connection con = SQLConnection.establishConnection();
-                System.out.println(con);
-                if (con != null) {
-                    System.out.println("entered if con not null block");
-
-                    String query = "SELECT user_name, Password FROM Doctor WHERE user_name=('" + username + "')";
-                    Statement stmt = con.createStatement();
-                    ResultSet rs = stmt.executeQuery(query);
-
-                    if (rs.next()) {
-                        System.out.println("entered if rs. block");
-                        String password_sql = rs.getString("password");
-                        String username_sql = rs.getString("user_name");
-                        if (password.equals(password_sql)) {
-                            System.out.println("Selected doctor");
-                            mainFrameCardLayout.removeAll();
-                            mainFrameCardLayout.add(new UI.Hospital.HospitalDoctorJPanel(mainFrameCardLayout, username_sql));
-                            ((CardLayout) mainFrameCardLayout.getLayout()).next(mainFrameCardLayout);
-                            JOptionPane.showMessageDialog(mainFrameCardLayout, username + ", You have been successfully logged in.");
-                            break;
-                        } else {
-                            JOptionPane.showMessageDialog(null, username + ", Please enter correct password", "error message", JOptionPane.ERROR_MESSAGE);
-                        break;
-                        }
-
-                    } else {
-                        JOptionPane.showMessageDialog(null, "You are not registered. Please register with us to login.", "error message", JOptionPane.ERROR_MESSAGE);
-                        break;
-                    }
-                }
-            } catch (SQLException ex) {
-                Logger.getLogger(LoginJPanel.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            case "Bloodbank Warehouse":
-                try {
-                System.out.println("entered try block");
-                Connection con = SQLConnection.establishConnection();
-                System.out.println(con);
-                if (con != null) {
-                    System.out.println("entered if con not null block");
-
-                    String query = "SELECT user_name, Password FROM BloodBank_Warehouse_Management WHERE user_name=('" + username + "')";
-                    Statement stmt = con.createStatement();
-                    ResultSet rs = stmt.executeQuery(query);
-
-                    if (rs.next()) {
-                        System.out.println("entered if rs. block");
-                        String password_sql = rs.getString("password");
-                        String username_sql = rs.getString("user_name");
-                        if (password.equals(password_sql)) {
-                            System.out.println("Selected doctor");
-                            mainFrameCardLayout.removeAll();
-                            mainFrameCardLayout.add(new UI.BB.BBWHPanel(mainFrameCardLayout, username_sql));
-                            ((CardLayout) mainFrameCardLayout.getLayout()).next(mainFrameCardLayout);
-                            JOptionPane.showMessageDialog(mainFrameCardLayout, username + ", You have been successfully logged in.");
-                            break;
-                        } else {
-                            JOptionPane.showMessageDialog(null, username + ", Please enter correct password", "error message", JOptionPane.ERROR_MESSAGE);
-                        break;
-                        }
-
-                    } else {
-                        JOptionPane.showMessageDialog(null, "You are not registered. Please register with us to login.", "error message", JOptionPane.ERROR_MESSAGE);
-                        break;
-                    }
-                }
-            } catch (SQLException ex) {
-                Logger.getLogger(LoginJPanel.class.getName()).log(Level.SEVERE, null, ex);
-            }
-//            case "Sample Tester":
+//            case "Hospital Organization":
 //                try {
+//                System.out.println("entered try block");
+//                Connection con = SQLConnection.establishConnection();
+//                System.out.println(con);
+//                if (con != null) {
+//                    System.out.println("entered if con not null block");
+//
+//                    String query = "SELECT user_name, Password FROM Hospital WHERE user_name=('" + username + "')";
+//                    Statement stmt = con.createStatement();
+//                    ResultSet rs = stmt.executeQuery(query);
+//
+//                    if (rs.next()) {
+//                        System.out.println("entered if rs. block");
+//                        String password_sql = rs.getString("password");
+//                        String username_sql = rs.getString("user_name");
+//                        if (password.equals(password_sql)) {
+//                            System.out.println("Selected doctor");
+//                            mainFrameCardLayout.removeAll();
+//                            mainFrameCardLayout.add(new UI.Hospital.HospitalJPanel(mainFrameCardLayout, username_sql));
+//                            ((CardLayout) mainFrameCardLayout.getLayout()).next(mainFrameCardLayout);
+//                            JOptionPane.showMessageDialog(mainFrameCardLayout, username + ", You have been successfully logged in.");
+//                            break;
+//                        } else {
+//                            JOptionPane.showMessageDialog(null, username + ", Please enter correct password", "error message", JOptionPane.ERROR_MESSAGE);
+//                        break;
+//                        }
+//
+//                    } else {
+//                        
+//                        JOptionPane.showMessageDialog(null, "You are not registered. Please register with us to login.", "error message", JOptionPane.ERROR_MESSAGE);
+//                        break;
+//                    }
+//                }
+//            } catch (SQLException ex) {
+//                ex.printStackTrace();
+//                Logger.getLogger(LoginJPanel.class.getName()).log(Level.SEVERE, null, ex);
+//            }
+//            case "Hospital Warehouse":
+//                try {
+//                System.out.println("entered try block");
+//                Connection con = SQLConnection.establishConnection();
+//                System.out.println(con);
+//                if (con != null) {
+//                    System.out.println("entered if con not null block");
+//
+//                    String query = "SELECT user_name, Password FROM Hospital_Warehouse_management WHERE user_name=('" + username + "')";
+//                    Statement stmt = con.createStatement();
+//                    ResultSet rs = stmt.executeQuery(query);
+//
+//                    if (rs.next()) {
+//                        System.out.println("entered if rs. block");
+//                        String password_sql = rs.getString("password");
+//                        String username_sql = rs.getString("user_name");
+//                        if (password.equals(password_sql)) {
+//                            System.out.println("Selected doctor");
+//                            mainFrameCardLayout.removeAll();
+//                            mainFrameCardLayout.add(new UI.Hospital.HospitalWareHouseJPanel(mainFrameCardLayout, username_sql));
+//                            ((CardLayout) mainFrameCardLayout.getLayout()).next(mainFrameCardLayout);
+//                            JOptionPane.showMessageDialog(mainFrameCardLayout, username + ", You have been successfully logged in.");
+//                            break;
+//                        } else {
+//                            JOptionPane.showMessageDialog(null, username + ", Please enter correct password", "error message", JOptionPane.ERROR_MESSAGE);
+//                        break;
+//                        }
+//
+//                    } else {
+//                        JOptionPane.showMessageDialog(null, "You are not registered. Please register with us to login.", "error message", JOptionPane.ERROR_MESSAGE);
+//                        break;
+//                    }
+//                }
+//            } catch (SQLException ex) {
+//                Logger.getLogger(LoginJPanel.class.getName()).log(Level.SEVERE, null, ex);
+//            }
+//            case "Bloodbank Organization":
+//                try {
+//                System.out.println("entered try block");
+//                Connection con = SQLConnection.establishConnection();
+//                System.out.println(con);
+//                if (con != null) {
+//                    System.out.println("entered if con not null block");
+//
+//                    String query = "SELECT user_name, Password FROM BloodBank_Org WHERE user_name=('" + username + "')";
+//                    Statement stmt = con.createStatement();
+//                    ResultSet rs = stmt.executeQuery(query);
+//
+//                    if (rs.next()) {
+//                        System.out.println("entered if rs. block");
+//                        String password_sql = rs.getString("password");
+//                        String username_sql = rs.getString("user_name");
+//                        if (password.equals(password_sql)) {
+//                            System.out.println("Selected doctor");
+//                            mainFrameCardLayout.removeAll();
+//                            mainFrameCardLayout.add(new UI.BB.BB_org(mainFrameCardLayout, username_sql));
+//                            ((CardLayout) mainFrameCardLayout.getLayout()).next(mainFrameCardLayout);
+//                            JOptionPane.showMessageDialog(mainFrameCardLayout, username + ", You have been successfully logged in.");
+//                            break;
+//                        } else {
+//                            JOptionPane.showMessageDialog(null, username + ", Please enter correct password", "error message", JOptionPane.ERROR_MESSAGE);
+//                        break;
+//                        }
+//
+//                    } else {
+//                        JOptionPane.showMessageDialog(null, "You are not registered. Please register with us to login.", "error message", JOptionPane.ERROR_MESSAGE);
+//                        break;
+//                    }
+//                }
+//            } catch (SQLException ex) {
+//                Logger.getLogger(LoginJPanel.class.getName()).log(Level.SEVERE, null, ex);
+//            }
+//            case "Doctor":
+//               try {
 //                System.out.println("entered try block");
 //                Connection con = SQLConnection.establishConnection();
 //                System.out.println(con);
@@ -384,131 +312,203 @@ public class Login {
 //                        if (password.equals(password_sql)) {
 //                            System.out.println("Selected doctor");
 //                            mainFrameCardLayout.removeAll();
-//                            mainFrameCardLayout.add(new NGOManagementJPanel(mainFrameCardLayout, username_sql));
+//                            mainFrameCardLayout.add(new UI.Hospital.HospitalDoctorJPanel(mainFrameCardLayout, username_sql));
 //                            ((CardLayout) mainFrameCardLayout.getLayout()).next(mainFrameCardLayout);
 //                            JOptionPane.showMessageDialog(mainFrameCardLayout, username + ", You have been successfully logged in.");
 //                            break;
 //                        } else {
 //                            JOptionPane.showMessageDialog(null, username + ", Please enter correct password", "error message", JOptionPane.ERROR_MESSAGE);
+//                        break;
 //                        }
 //
 //                    } else {
 //                        JOptionPane.showMessageDialog(null, "You are not registered. Please register with us to login.", "error message", JOptionPane.ERROR_MESSAGE);
+//                        break;
 //                    }
 //                }
 //            } catch (SQLException ex) {
 //                Logger.getLogger(LoginJPanel.class.getName()).log(Level.SEVERE, null, ex);
 //            }
-            case "Logistics Organization":
-                try {
-                System.out.println("entered try block");
-                Connection con = SQLConnection.establishConnection();
-                System.out.println(con);
-                if (con != null) {
-                    System.out.println("entered if con not null block");
-
-                    String query = "SELECT user_name, Password FROM Logistics_Org WHERE user_name=('" + username + "')";
-                    Statement stmt = con.createStatement();
-                    ResultSet rs = stmt.executeQuery(query);
-
-                    if (rs.next()) {
-                        System.out.println("entered if rs. block");
-                        String password_sql = rs.getString("password");
-                        String username_sql = rs.getString("user_name");
-                        if (password.equals(password_sql)) {
-                            System.out.println("Selected doctor");
-                            mainFrameCardLayout.removeAll();
-                            mainFrameCardLayout.add(new UI.SP.LogisticsJPanel(mainFrameCardLayout, username_sql));
-                            ((CardLayout) mainFrameCardLayout.getLayout()).next(mainFrameCardLayout);
-                            JOptionPane.showMessageDialog(mainFrameCardLayout, username + ", You have been successfully logged in.");
-                            break;
-                        } else {
-                            JOptionPane.showMessageDialog(null, username + ", Please enter correct password", "error message", JOptionPane.ERROR_MESSAGE);
-                        break;
-                        }
-
-                    } else {
-                        JOptionPane.showMessageDialog(null, "You are not registered. Please register with us to login.", "error message", JOptionPane.ERROR_MESSAGE);
-                        break;
-                    }
-                }
-            } catch (SQLException ex) {
-                Logger.getLogger(LoginJPanel.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            case "Equipments Provider":
-                try {
-                System.out.println("entered try block");
-                Connection con = SQLConnection.establishConnection();
-                System.out.println(con);
-                if (con != null) {
-                    System.out.println("entered if con not null block");
-
-                    String query = "SELECT user_name, Password FROM EquipmentSupplier WHERE user_name=('" + username + "')";
-                    Statement stmt = con.createStatement();
-                    ResultSet rs = stmt.executeQuery(query);
-
-                    if (rs.next()) {
-                        System.out.println("entered if rs. block");
-                        String password_sql = rs.getString("password");
-                        String username_sql = rs.getString("user_name");
-                        if (password.equals(password_sql)) {
-                            System.out.println("Selected doctor");
-                            mainFrameCardLayout.removeAll();
-                            mainFrameCardLayout.add(new UI.SP.EquipmentSupplierJPanel(mainFrameCardLayout, username_sql));
-                            ((CardLayout) mainFrameCardLayout.getLayout()).next(mainFrameCardLayout);
-                            JOptionPane.showMessageDialog(mainFrameCardLayout, username + ", You have been successfully logged in.");
-                            break;
-                        } else {
-                            JOptionPane.showMessageDialog(null, username + ", Please enter correct password", "error message", JOptionPane.ERROR_MESSAGE);
-                        break;
-                        }
-
-                    } else {
-                        JOptionPane.showMessageDialog(null, "You are not registered. Please register with us to login.", "error message", JOptionPane.ERROR_MESSAGE);
-                        break;
-                    }
-                }
-            } catch (SQLException ex) {
-                Logger.getLogger(LoginJPanel.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            case "System Admin":
-                try {
-                System.out.println("entered try block");
-                Connection con = SQLConnection.establishConnection();
-                System.out.println(con);
-                if (con != null) {
-                    System.out.println("entered if con not null block");
-
-                    String query = "SELECT user_name, Password FROM system_admin WHERE user_name=('" + username + "')";
-                    Statement stmt = con.createStatement();
-                    ResultSet rs = stmt.executeQuery(query);
-
-                    if (rs.next()) {
-                        System.out.println("entered if rs. block");
-                        String password_sql = rs.getString("password");
-                        String username_sql = rs.getString("user_name");
-                        if (password.equals(password_sql)) {
-                            System.out.println("Selected doctor");
-                            mainFrameCardLayout.removeAll();
-                            mainFrameCardLayout.add(new SystemAdminJPanel(mainFrameCardLayout, username_sql));
-                            ((CardLayout) mainFrameCardLayout.getLayout()).next(mainFrameCardLayout);
-                            JOptionPane.showMessageDialog(mainFrameCardLayout, username + ", You have been successfully logged in.");
-                            break;
-                        } else {
-                            JOptionPane.showMessageDialog(null, username + ", Please enter correct password", "error message", JOptionPane.ERROR_MESSAGE);
-                        break;
-                        }
-
-                    } else {
-                        JOptionPane.showMessageDialog(null, "You are not registered. Please register with us to login.", "error message", JOptionPane.ERROR_MESSAGE);
-                        break;
-                    }
-                }
-            } catch (SQLException ex) {
-                Logger.getLogger(LoginJPanel.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            default:
-                break;
+//            case "Bloodbank Warehouse":
+//                try {
+//                System.out.println("entered try block");
+//                Connection con = SQLConnection.establishConnection();
+//                System.out.println(con);
+//                if (con != null) {
+//                    System.out.println("entered if con not null block");
+//
+//                    String query = "SELECT user_name, Password FROM BloodBank_Warehouse_Management WHERE user_name=('" + username + "')";
+//                    Statement stmt = con.createStatement();
+//                    ResultSet rs = stmt.executeQuery(query);
+//
+//                    if (rs.next()) {
+//                        System.out.println("entered if rs. block");
+//                        String password_sql = rs.getString("password");
+//                        String username_sql = rs.getString("user_name");
+//                        if (password.equals(password_sql)) {
+//                            System.out.println("Selected doctor");
+//                            mainFrameCardLayout.removeAll();
+//                            mainFrameCardLayout.add(new UI.BB.BBWHPanel(mainFrameCardLayout, username_sql));
+//                            ((CardLayout) mainFrameCardLayout.getLayout()).next(mainFrameCardLayout);
+//                            JOptionPane.showMessageDialog(mainFrameCardLayout, username + ", You have been successfully logged in.");
+//                            break;
+//                        } else {
+//                            JOptionPane.showMessageDialog(null, username + ", Please enter correct password", "error message", JOptionPane.ERROR_MESSAGE);
+//                        break;
+//                        }
+//
+//                    } else {
+//                        JOptionPane.showMessageDialog(null, "You are not registered. Please register with us to login.", "error message", JOptionPane.ERROR_MESSAGE);
+//                        break;
+//                    }
+//                }
+//            } catch (SQLException ex) {
+//                Logger.getLogger(LoginJPanel.class.getName()).log(Level.SEVERE, null, ex);
+//            }
+////            case "Sample Tester":
+////                try {
+////                System.out.println("entered try block");
+////                Connection con = SQLConnection.establishConnection();
+////                System.out.println(con);
+////                if (con != null) {
+////                    System.out.println("entered if con not null block");
+////
+////                    String query = "SELECT user_name, Password FROM Doctor WHERE user_name=('" + username + "')";
+////                    Statement stmt = con.createStatement();
+////                    ResultSet rs = stmt.executeQuery(query);
+////
+////                    if (rs.next()) {
+////                        System.out.println("entered if rs. block");
+////                        String password_sql = rs.getString("password");
+////                        String username_sql = rs.getString("user_name");
+////                        if (password.equals(password_sql)) {
+////                            System.out.println("Selected doctor");
+////                            mainFrameCardLayout.removeAll();
+////                            mainFrameCardLayout.add(new NGOManagementJPanel(mainFrameCardLayout, username_sql));
+////                            ((CardLayout) mainFrameCardLayout.getLayout()).next(mainFrameCardLayout);
+////                            JOptionPane.showMessageDialog(mainFrameCardLayout, username + ", You have been successfully logged in.");
+////                            break;
+////                        } else {
+////                            JOptionPane.showMessageDialog(null, username + ", Please enter correct password", "error message", JOptionPane.ERROR_MESSAGE);
+////                        }
+////
+////                    } else {
+////                        JOptionPane.showMessageDialog(null, "You are not registered. Please register with us to login.", "error message", JOptionPane.ERROR_MESSAGE);
+////                    }
+////                }
+////            } catch (SQLException ex) {
+////                Logger.getLogger(LoginJPanel.class.getName()).log(Level.SEVERE, null, ex);
+////            }
+//            case "Logistics Organization":
+//                try {
+//                System.out.println("entered try block");
+//                Connection con = SQLConnection.establishConnection();
+//                System.out.println(con);
+//                if (con != null) {
+//                    System.out.println("entered if con not null block");
+//
+//                    String query = "SELECT user_name, Password FROM Logistics_Org WHERE user_name=('" + username + "')";
+//                    Statement stmt = con.createStatement();
+//                    ResultSet rs = stmt.executeQuery(query);
+//
+//                    if (rs.next()) {
+//                        System.out.println("entered if rs. block");
+//                        String password_sql = rs.getString("password");
+//                        String username_sql = rs.getString("user_name");
+//                        if (password.equals(password_sql)) {
+//                            System.out.println("Selected doctor");
+//                            mainFrameCardLayout.removeAll();
+//                            mainFrameCardLayout.add(new UI.SP.LogisticsJPanel(mainFrameCardLayout, username_sql));
+//                            ((CardLayout) mainFrameCardLayout.getLayout()).next(mainFrameCardLayout);
+//                            JOptionPane.showMessageDialog(mainFrameCardLayout, username + ", You have been successfully logged in.");
+//                            break;
+//                        } else {
+//                            JOptionPane.showMessageDialog(null, username + ", Please enter correct password", "error message", JOptionPane.ERROR_MESSAGE);
+//                        break;
+//                        }
+//
+//                    } else {
+//                        JOptionPane.showMessageDialog(null, "You are not registered. Please register with us to login.", "error message", JOptionPane.ERROR_MESSAGE);
+//                        break;
+//                    }
+//                }
+//            } catch (SQLException ex) {
+//                Logger.getLogger(LoginJPanel.class.getName()).log(Level.SEVERE, null, ex);
+//            }
+//            case "Equipments Provider":
+//                try {
+//                System.out.println("entered try block");
+//                Connection con = SQLConnection.establishConnection();
+//                System.out.println(con);
+//                if (con != null) {
+//                    System.out.println("entered if con not null block");
+//
+//                    String query = "SELECT user_name, Password FROM EquipmentSupplier WHERE user_name=('" + username + "')";
+//                    Statement stmt = con.createStatement();
+//                    ResultSet rs = stmt.executeQuery(query);
+//
+//                    if (rs.next()) {
+//                        System.out.println("entered if rs. block");
+//                        String password_sql = rs.getString("password");
+//                        String username_sql = rs.getString("user_name");
+//                        if (password.equals(password_sql)) {
+//                            System.out.println("Selected doctor");
+//                            mainFrameCardLayout.removeAll();
+//                            mainFrameCardLayout.add(new UI.SP.EquipmentSupplierJPanel(mainFrameCardLayout, username_sql));
+//                            ((CardLayout) mainFrameCardLayout.getLayout()).next(mainFrameCardLayout);
+//                            JOptionPane.showMessageDialog(mainFrameCardLayout, username + ", You have been successfully logged in.");
+//                            break;
+//                        } else {
+//                            JOptionPane.showMessageDialog(null, username + ", Please enter correct password", "error message", JOptionPane.ERROR_MESSAGE);
+//                        break;
+//                        }
+//
+//                    } else {
+//                        JOptionPane.showMessageDialog(null, "You are not registered. Please register with us to login.", "error message", JOptionPane.ERROR_MESSAGE);
+//                        break;
+//                    }
+//                }
+//            } catch (SQLException ex) {
+//                Logger.getLogger(LoginJPanel.class.getName()).log(Level.SEVERE, null, ex);
+//            }
+//            case "System Admin":
+//                try {
+//                System.out.println("entered try block");
+//                Connection con = SQLConnection.establishConnection();
+//                System.out.println(con);
+//                if (con != null) {
+//                    System.out.println("entered if con not null block");
+//
+//                    String query = "SELECT user_name, Password FROM system_admin WHERE user_name=('" + username + "')";
+//                    Statement stmt = con.createStatement();
+//                    ResultSet rs = stmt.executeQuery(query);
+//
+//                    if (rs.next()) {
+//                        System.out.println("entered if rs. block");
+//                        String password_sql = rs.getString("password");
+//                        String username_sql = rs.getString("user_name");
+//                        if (password.equals(password_sql)) {
+//                            System.out.println("Selected doctor");
+//                            mainFrameCardLayout.removeAll();
+//                            mainFrameCardLayout.add(new SystemAdminJPanel(mainFrameCardLayout, username_sql));
+//                            ((CardLayout) mainFrameCardLayout.getLayout()).next(mainFrameCardLayout);
+//                            JOptionPane.showMessageDialog(mainFrameCardLayout, username + ", You have been successfully logged in.");
+//                            break;
+//                        } else {
+//                            JOptionPane.showMessageDialog(null, username + ", Please enter correct password", "error message", JOptionPane.ERROR_MESSAGE);
+//                        break;
+//                        }
+//                 
+//                    } else {
+//                        JOptionPane.showMessageDialog(null, "You are not registered. Please register with us to login.", "error message", JOptionPane.ERROR_MESSAGE);
+//                        break;
+//                    }
+//                }
+//            } catch (SQLException ex) {
+//                Logger.getLogger(LoginJPanel.class.getName()).log(Level.SEVERE, null, ex);
+//            }
+//            default:
+//                break;
         }
 
     }

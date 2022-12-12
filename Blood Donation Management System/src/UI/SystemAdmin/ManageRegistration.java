@@ -93,34 +93,23 @@ public class ManageRegistration extends javax.swing.JPanel {
     public void registrationComboBoxFunctionality() {
         String userCBValue = userCB.getSelectedItem().toString();
         switch (userCBValue) {
-            case "Donor":
-                System.out.println("Selected doctor");
 
-                break;
-            case "Patient":
-                System.out.println("Selected Patient");
-                break;
             case "Hospital Organization":
-                System.out.println("Selected Hospital");
+                openHosRegPanel();
 
                 break;
             case "NGO Organization":
-                System.out.println("Selected Patient");
-//                registrationCardLayout.removeAll();
-//                registrationCardLayout.add(new OrgRegJPanel(userCBValue));
-//                ((CardLayout) registrationCardLayout.getLayout()).next(registrationCardLayout);
+                openNGOReg();
                 break;
             case "Bloodbank Organization":
                 openBldRegPanel();
                 break;
-            case "Sample Tester":
-                System.out.println("Selected Patient");
-                break;
+
             case "Logistics Organization":
-                System.out.println("Selected Patient");
+                openLogRegPanel();
                 break;
             case "Equipments Provider":
-                System.out.println("Selected Patient");
+                openEquipRegPanel();
                 break;
             default:
                 break;
@@ -134,30 +123,35 @@ public class ManageRegistration extends javax.swing.JPanel {
         manageRegCardLayout.add(new BloodbankRegistration());
         ((CardLayout) manageRegCardLayout.getLayout()).next(manageRegCardLayout);
     }
+
     public void openHosRegPanel() {
         System.out.println("Selected Bloodbank");
         manageRegCardLayout.removeAll();
         manageRegCardLayout.add(new HospitalRegistration());
         ((CardLayout) manageRegCardLayout.getLayout()).next(manageRegCardLayout);
     }
-    public void openDonorRegPanel() {
+
+    public void openNGOReg() {
         System.out.println("Selected Bloodbank");
         manageRegCardLayout.removeAll();
-        manageRegCardLayout.add(new DonorRegistration());
+        manageRegCardLayout.add(new NGORegistration());
         ((CardLayout) manageRegCardLayout.getLayout()).next(manageRegCardLayout);
     }
+
     public void openEquipRegPanel() {
         System.out.println("Selected Bloodbank");
         manageRegCardLayout.removeAll();
         manageRegCardLayout.add(new EquipRegistration());
         ((CardLayout) manageRegCardLayout.getLayout()).next(manageRegCardLayout);
     }
+
     public void openLogRegPanel() {
         System.out.println("Selected Bloodbank");
         manageRegCardLayout.removeAll();
         manageRegCardLayout.add(new LogisticsRegistration());
         ((CardLayout) manageRegCardLayout.getLayout()).next(manageRegCardLayout);
     }
+
     public void openSampTestRegPanel() {
         System.out.println("Selected Bloodbank");
         manageRegCardLayout.removeAll();

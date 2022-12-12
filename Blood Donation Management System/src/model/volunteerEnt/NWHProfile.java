@@ -9,15 +9,13 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
 
 /**
  *
  * @author surajvisvesh
  */
-public class NBCProfile {
-
-    public NGOBloodCollection populateTFs(String userName) {
+public class NWHProfile {
+    public NGOWarehouse populateTFs(String userName) {
         try {
             System.out.println("entered try block");
             Connection con = SQLConnection.establishConnection();
@@ -25,24 +23,24 @@ public class NBCProfile {
             if (con != null) {
                 System.out.println("entered if con not null block");
 
-                String query = "SELECT * FROM NGO_blood_collection_org WHERE user_name='" + userName + "'";
+                String query = "SELECT * FROM NGO_warehouse WHERE user_name='" + userName + "'";
                 Statement stmt = con.createStatement();
                 ResultSet rs = stmt.executeQuery(query);
 
                 if (rs.next()) {
                     System.out.println("entered if rs. block");
-                    NGOBloodCollection ngoBC = new NGOBloodCollection();
+                    NGOWarehouse ngoWH = new NGOWarehouse();
 
-                    ngoBC.setUsername(rs.getString("user_name"));
-                    ngoBC.setName(rs.getString("Name"));
-                    ngoBC.setEmail(rs.getString("Email"));
-                    ngoBC.setPassword(rs.getString("Password"));
-                    ngoBC.setPhoneNo(rs.getLong("Phone_number"));
-                    ngoBC.setStreet(rs.getString("Street_address"));
-                    ngoBC.setCity(rs.getString("City"));
-                    ngoBC.setState(rs.getString("State"));
+                    ngoWH.setUsername(rs.getString("user_name"));
+                    ngoWH.setName(rs.getString("Name"));
+                    ngoWH.setEmail(rs.getString("Email"));
+                    ngoWH.setPassword(rs.getString("Password"));
+                    ngoWH.setPhoneNo(rs.getLong("Phone_number"));
+                    ngoWH.setStreet(rs.getString("Street_address"));
+                    ngoWH.setCity(rs.getString("City"));
+                    ngoWH.setState(rs.getString("State"));
 
-                    return ngoBC;
+                    return ngoWH;
 //                    Object[] objects = {name, email, password, Phone_number, Street_address, City, State, Pincode};
 
 //                    nameTF.setText(ngoProfile.getName());

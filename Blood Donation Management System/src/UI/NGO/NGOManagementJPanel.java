@@ -56,12 +56,6 @@ public class NGOManagementJPanel extends javax.swing.JPanel {
         manageDonorsBtn = new javax.swing.JPanel();
         ManageDonLbl = new javax.swing.JLabel();
         donorIcon = new javax.swing.JLabel();
-        insightsBtn = new javax.swing.JPanel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jPanel10 = new javax.swing.JPanel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
         CardLayoutPanel = new javax.swing.JPanel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -285,64 +279,6 @@ public class NGOManagementJPanel extends javax.swing.JPanel {
 
         NGOMenu.add(manageDonorsBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 280, -1));
 
-        insightsBtn.setBackground(new java.awt.Color(223, 85, 71));
-
-        jLabel9.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(215, 215, 215));
-        jLabel9.setText("Insights");
-
-        javax.swing.GroupLayout insightsBtnLayout = new javax.swing.GroupLayout(insightsBtn);
-        insightsBtn.setLayout(insightsBtnLayout);
-        insightsBtnLayout.setHorizontalGroup(
-            insightsBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, insightsBtnLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        insightsBtnLayout.setVerticalGroup(
-            insightsBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, insightsBtnLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(insightsBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
-        );
-
-        NGOMenu.add(insightsBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 280, -1));
-
-        jPanel10.setBackground(new java.awt.Color(223, 85, 71));
-
-        jLabel10.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(215, 215, 215));
-        jLabel10.setText("Insights");
-
-        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
-        jPanel10.setLayout(jPanel10Layout);
-        jPanel10Layout.setHorizontalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        jPanel10Layout.setVerticalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
-        );
-
-        NGOMenu.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, 280, -1));
-
         add(NGOMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 92, 280, 702));
 
         CardLayoutPanel.setBackground(new java.awt.Color(255, 255, 255));
@@ -417,7 +353,7 @@ public class NGOManagementJPanel extends javax.swing.JPanel {
         setBtnColor(manageProfileBtn);
         resetBtnColor(organizationsBtn);
         resetBtnColor(organizeCampsBtn);
-        resetBtnColor(insightsBtn);
+
         resetBtnColor(manageDonorsBtn);
         
         
@@ -432,7 +368,7 @@ public class NGOManagementJPanel extends javax.swing.JPanel {
         setBtnColor(organizationsBtn);
         resetBtnColor(manageProfileBtn);
         resetBtnColor(organizeCampsBtn);
-        resetBtnColor(insightsBtn);
+
         resetBtnColor(manageDonorsBtn);
         
         CardLayoutPanel.removeAll();
@@ -447,7 +383,7 @@ public class NGOManagementJPanel extends javax.swing.JPanel {
         setBtnColor(organizeCampsBtn);
         resetBtnColor(organizationsBtn);
         resetBtnColor(manageProfileBtn);
-        resetBtnColor(insightsBtn);
+
         resetBtnColor(manageDonorsBtn);
         
         
@@ -475,12 +411,6 @@ public class NGOManagementJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel campIcon;
     private javax.swing.JLabel donorIcon;
     private javax.swing.JLabel headerUserName;
-    private javax.swing.JPanel insightsBtn;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel10;
     private javax.swing.JLabel logoutBtn;
     private javax.swing.JPanel manageDonorsBtn;
     private javax.swing.JPanel manageProfileBtn;
