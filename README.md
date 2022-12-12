@@ -43,7 +43,7 @@ The Project Blood Management System is designed for the blood banks to gather bl
 12. Blood Bank WareHouse admin
 
 
-#User Requirement/Flow
+# User Requirement/Flow
 
 # URL for ERD diagram
 
@@ -54,7 +54,28 @@ The Project Blood Management System is designed for the blood banks to gather bl
 ![Domain Model](ArchD.jpeg)
 
 
-#Steps to Run the Project
+# Blood Donation Management System UI
+
+Landing Page:
+![Landing Page](Readme Images/Landing_Page.jpeg)
+
+Registration Page:
+![Registration Page](Readme Images/Registration_Page.jpeg)
+
+Manage Profile:
+![Manage Profile](Readme Images/ManageProfile.jpeg)
+
+Organize Camps:
+![Organize Camps](Readme Images/Organize_Camps.jpeg)
+
+Inventory:
+![Inventory](Readme Images/Inventory.jpeg)
+
+Logout:
+![Logout](Readme Images/Logout.jpeg)
+
+
+# Steps to Run the Project
 
 Open the Apache NEtBeans Application
 
@@ -65,7 +86,7 @@ Open the Blood Bank Management System Project
 Run the MainFrame.java file
 
 
-Team
+# Team
 
 Divya Gadge 002792525- gadge.d@northeastern.edu
 Prishaa Mittal 002765340 - mittal.pris@northeastern.edu
