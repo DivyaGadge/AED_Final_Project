@@ -4,7 +4,7 @@
  */
 package model.medicalEnt;
 
-import model.Hospital;
+//import model.Hospital;
 import Sql.SQLConnection;
 import java.beans.Statement;
 import javax.swing.JOptionPane;

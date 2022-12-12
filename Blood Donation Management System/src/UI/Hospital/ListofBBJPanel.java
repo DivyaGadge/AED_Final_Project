@@ -6,7 +6,7 @@ package UI.Hospital;
 
 import UI.Hospital.ManageHopsitalUsersJPanel.listofBB;
 import javax.swing.JPanel;
-import com.mysql.cj.protocol.Resultset;
+//import com.mysql.cj.protocol.Resultset;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import model.medicalEnt.ListofBB;
@@ -39,7 +39,7 @@ public class ListofBBJPanel extends javax.swing.JPanel {
     }
     
     private void reqtoBBTable(){
-        
+        JOptionPane.showMessageDialog(null, "Order request has been sent to blood bank");
     }
 
     /**
@@ -137,7 +137,7 @@ public class ListofBBJPanel extends javax.swing.JPanel {
 
     private void ReqtoBBBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ReqtoBBBtnMouseClicked
         // TODO add your handling code here:
-//        requesttoBB();
+       reqtoBBTable();
     }//GEN-LAST:event_ReqtoBBBtnMouseClicked
 
 

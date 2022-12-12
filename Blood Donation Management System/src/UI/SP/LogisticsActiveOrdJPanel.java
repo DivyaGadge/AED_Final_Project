@@ -5,11 +5,10 @@
 package UI.SP;
 
 import UI.Hospital.*;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.JPanel;
-import com.mysql.cj.protocol.Resultset;
 import javax.swing.JOptionPane;
-import model.serviceProvider.LogisticsDeliveredOrders;
+import javax.swing.table.DefaultTableModel;
+import model.serviceProvider.LogisticsActiveOrders;
+
 
 /**
  *
@@ -21,7 +20,7 @@ public class LogisticsActiveOrdJPanel extends javax.swing.JPanel {
      * Creates new form ListofBBJPanel
      */
     
-    LogisticsDeliveredOrders activeorder;
+    LogisticsActiveOrders activeorder;
     
     public LogisticsActiveOrdJPanel() {
         initComponents();
@@ -29,24 +28,7 @@ public class LogisticsActiveOrdJPanel extends javax.swing.JPanel {
         populateHospitalUserDetailsTable();
     }
 
-    private void populateHospitalUserDetailsTable() {
-        int selectedRowIndex = LogisitcsActiveOrderjTable.getSelectedRow();
-        DefaultTableModel model = (DefaultTableModel) LogisitcsActiveOrderjTable.getModel();
-        activeorder.populateTable(model);
-    }
-
-    private void initComponents() {
-    }
-
-     static int getSelectedRow() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
     
-    
-    public class activeorder extends LogisticsDeliveredOrders {
-
-    public activeorder() {
-    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -94,6 +76,11 @@ public class LogisticsActiveOrdJPanel extends javax.swing.JPanel {
         updateOrgLbl.setForeground(new java.awt.Color(255, 255, 255));
         updateOrgLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         updateOrgLbl.setText("Delivered");
+        updateOrgLbl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                updateOrgLblMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout updateOrgBtnLayout = new javax.swing.GroupLayout(updateOrgBtn);
         updateOrgBtn.setLayout(updateOrgBtnLayout);
@@ -135,6 +122,32 @@ public class LogisticsActiveOrdJPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    
+     private void populateHospitalUserDetailsTable() {
+        int selectedRowIndex = LogisitcsActiveOrderjTable.getSelectedRow();
+        DefaultTableModel model = (DefaultTableModel) LogisitcsActiveOrderjTable.getModel();
+        activeorder.populateTable(model);
+    }
+    
+     
+    private void updateOrgLblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_updateOrgLblMouseClicked
+        // TODO add your handling code here:
+        deliveredFunctionality();
+    }//GEN-LAST:event_updateOrgLblMouseClicked
+
+   
+     private void deliveredFunctionality() {
+        int id = (int) LogisitcsActiveOrderjTable.getValueAt(LogisitcsActiveOrderjTable.getSelectedRow(), 0);
+        String logisticsUsername= LogisitcsActiveOrderjTable.getValueAt(LogisitcsActiveOrderjTable.getSelectedRow(), 1).toString();
+        String receivedFrom = LogisitcsActiveOrderjTable.getValueAt(LogisitcsActiveOrderjTable.getSelectedRow(), 2).toString();
+        String description = LogisitcsActiveOrderjTable.getValueAt(LogisitcsActiveOrderjTable.getSelectedRow(), 3).toString();
+        String deliveryTo = LogisitcsActiveOrderjTable.getValueAt(LogisitcsActiveOrderjTable.getSelectedRow(), 4).toString();
+        String deliveryStatus = LogisitcsActiveOrderjTable.getValueAt(LogisitcsActiveOrderjTable.getSelectedRow(), 5).toString();
+        System.out.println("Testing");
+
+        activeorder.deliveredFunctionality(id,logisticsUsername,receivedFrom,description,deliveryTo,deliveryStatus);
+
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable LogisitcsActiveOrderjTable;
@@ -143,5 +156,10 @@ public class LogisticsActiveOrdJPanel extends javax.swing.JPanel {
     private javax.swing.JPanel updateOrgBtn;
     private javax.swing.JLabel updateOrgLbl;
     // End of variables declaration//GEN-END:variables
-}
+
+    private static class activeorder extends LogisticsActiveOrders {
+
+        public activeorder() {
+        }
+    }
 }

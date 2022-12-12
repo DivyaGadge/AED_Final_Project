@@ -7,7 +7,7 @@ package UI.SP;
 import UI.Hospital.*;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.JPanel;
-import com.mysql.cj.protocol.Resultset;
+//import com.mysql.cj.protocol.Resultset;
 import javax.swing.JOptionPane;
 import model.serviceProvider.LogisticsDeliveredOrders;
 
@@ -21,23 +21,21 @@ public class LogisticsDeliveredOrdJPanel extends javax.swing.JPanel {
      * Creates new form ListofBBJPanel
      */
     
-    LogisticsDeliveredOrders delvieredorder;
+    LogisticsDeliveredOrders deliveredOrder;
     
     public LogisticsDeliveredOrdJPanel() {
         initComponents();
-        this.delvieredorder = new delvieredorder();
+        this.deliveredOrder = new deliveredOrder();
         populateHospitalUserDetailsTable();
     }
 
     private void populateHospitalUserDetailsTable() {
         int selectedRowIndex = LogisticsDeliveredOrderJTable.getSelectedRow();
         DefaultTableModel model = (DefaultTableModel) LogisticsDeliveredOrderJTable.getModel();
-        delvieredorder.populateTable(model);
+        deliveredOrder.populateTable(model);
          
     }
-    private void activeorderstable(){
-        
-    }
+    
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -107,12 +105,13 @@ public class LogisticsDeliveredOrdJPanel extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 
- public class delvieredorder extends LogisticsDeliveredOrders {
+    private static class deliveredOrder extends LogisticsDeliveredOrders {
 
-    public delvieredorder() {
+        public deliveredOrder() {
+        }
     }
-    
- }
+
+ 
 }
 
 

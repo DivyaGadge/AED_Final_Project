@@ -4,9 +4,12 @@
  */
 package model.serviceProvider;
 
+//import Sql.SQLConnection;
 import Sql.SQLConnection;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.Statement;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 
@@ -15,8 +18,8 @@ import javax.swing.table.DefaultTableModel;
  * @author divyagadge
  */
 public class LogisticsPendingOrder {
-    
 
+  
     public java.sql.ResultSet populateTable(DefaultTableModel model) {
 
         try {
@@ -32,15 +35,15 @@ public class LogisticsPendingOrder {
                 
          while (rs.next()) {
                     System.out.println("entered if rs. block");
-                    String OrderID = rs.getString("order_id");
-                    String Logisitcsorgname = rs.getString("logistics_org_username");
+                    String order_id = rs.getString("order_id");
+                    String LogisticSupplier = rs.getString("logisticSupplier");
                     String Description = rs.getString("order_decription");
                     String ReceivedFrom = rs.getString("order_received_from");
                     String DeliveryTo = rs.getString("order_recipient");
                     String DeliveryStatus = rs.getString("delivery_status");
                     
 
-                    Object row[] = {OrderID, Logisitcsorgname, Description, ReceivedFrom, DeliveryTo, DeliveryStatus};
+                    Object row[] = {order_id, LogisticSupplier, Description, ReceivedFrom, DeliveryTo, DeliveryStatus};
                     model.insertRow(0, row);
                 }
 
@@ -53,5 +56,31 @@ public class LogisticsPendingOrder {
         
         return null;
 }
+  
+
+
+    public void placeOrder(int order_id, String logisticSupplier, String receivedFrom, String description, String deliveryTo, String deliveryStatus) {
+        try {
+            Connection con = SQLConnection.establishConnection();
+            if (con != null) {
+                String query = "UPDATE bbManageBloodRequest SET logisticSupplier ="+logisticSupplier+"WHERE order_id=" + order_id + "";
+
+                PreparedStatement pstmt = con.prepareStatement(query);
+               
+
+                int count = pstmt.executeUpdate();
+
+
+                    JOptionPane.showMessageDialog(null, "Blood sample has been tested.");
+                   // System.out.println("Email User.");
+
+            }
+        } catch (java.sql.SQLException ex) {
+            ex.printStackTrace();
+          //  System.out.println("insert camp ");
+
+        }
+    }
+        
     
-}
+    }

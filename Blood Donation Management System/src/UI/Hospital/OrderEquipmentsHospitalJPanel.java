@@ -7,7 +7,7 @@ package UI.Hospital;
 
 import UI.Hospital.ManageHopsitalUsersJPanel;
 import javax.swing.JPanel;
-import com.mysql.cj.protocol.Resultset;
+//import com.mysql.cj.protocol.Resultset;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import model.medicalEnt.ManageEquipementQuantity;

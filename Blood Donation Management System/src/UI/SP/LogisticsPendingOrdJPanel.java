@@ -8,7 +8,7 @@ import UI.Hospital.*;
 import javax.swing.table.DefaultTableModel;
 import model.serviceProvider.LogisticsPendingOrder;
 import javax.swing.JPanel;
-import com.mysql.cj.protocol.Resultset;
+//import com.mysql.cj.protocol.Resultset;
 import javax.swing.JOptionPane;
 
 
@@ -34,22 +34,7 @@ public class LogisticsPendingOrdJPanel extends javax.swing.JPanel {
      
     
     
-    private void populatependingorderstable(){
-        int selectedRowIndex = LogisticsPendingjTable.getSelectedRow();     //table name in the design
-        DefaultTableModel model = (DefaultTableModel) LogisticsPendingjTable.getModel();
-        pendingOrder.populateTable(model);
-        
-    }
-    
-    
-    private void acceptOrderL(){
-        
-    }
-    
-    
-    private void denyOrderL(){
-        
-    }
+   
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -100,6 +85,11 @@ public class LogisticsPendingOrdJPanel extends javax.swing.JPanel {
         updateOrgLbl.setForeground(new java.awt.Color(255, 255, 255));
         updateOrgLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         updateOrgLbl.setText("Deny Order");
+        updateOrgLbl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                updateOrgLblMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout updateOrgBtnLayout = new javax.swing.GroupLayout(updateOrgBtn);
         updateOrgBtn.setLayout(updateOrgBtnLayout);
@@ -118,6 +108,11 @@ public class LogisticsPendingOrdJPanel extends javax.swing.JPanel {
         updateOrgLbl1.setForeground(new java.awt.Color(255, 255, 255));
         updateOrgLbl1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         updateOrgLbl1.setText("Accept Order");
+        updateOrgLbl1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                updateOrgLbl1MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout updateOrgBtn1Layout = new javax.swing.GroupLayout(updateOrgBtn1);
         updateOrgBtn1.setLayout(updateOrgBtn1Layout);
@@ -164,7 +159,40 @@ public class LogisticsPendingOrdJPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+     private void populatependingorderstable(){
+        int selectedRowIndex = LogisticsPendingjTable.getSelectedRow();     //table name in the design
+        DefaultTableModel model = (DefaultTableModel) LogisticsPendingjTable.getModel();
+        pendingOrder.populateTable(model);
+        
+    }
+    
+    private void updateOrgLbl1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_updateOrgLbl1MouseClicked
+        // TODO add your handling code here:
+        acceptOrder();
+    }//GEN-LAST:event_updateOrgLbl1MouseClicked
 
+    private void updateOrgLblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_updateOrgLblMouseClicked
+        // TODO add your handling code here:
+        denyOrder();
+    }//GEN-LAST:event_updateOrgLblMouseClicked
+
+    private void acceptOrder() {
+        int id = (int) LogisticsPendingjTable.getValueAt(LogisticsPendingjTable.getSelectedRow(), 0);
+        String logisticsUsername= LogisticsPendingjTable.getValueAt(LogisticsPendingjTable.getSelectedRow(), 1).toString();
+        String receivedFrom = LogisticsPendingjTable.getValueAt(LogisticsPendingjTable.getSelectedRow(), 2).toString();
+        String description = LogisticsPendingjTable.getValueAt(LogisticsPendingjTable.getSelectedRow(), 3).toString();
+        String deliveryTo = LogisticsPendingjTable.getValueAt(LogisticsPendingjTable.getSelectedRow(), 4).toString();
+        String deliveryStatus = LogisticsPendingjTable.getValueAt(LogisticsPendingjTable.getSelectedRow(), 5).toString();
+        System.out.println("accepting order");
+
+        pendingOrder.placeOrder(id,logisticsUsername,receivedFrom,description,deliveryTo,deliveryStatus);
+
+    }
+
+    private void denyOrder(){
+    JOptionPane.showMessageDialog(null, "Order request has been declined");
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable LogisticsPendingjTable;
     private javax.swing.JLabel jLabel1;

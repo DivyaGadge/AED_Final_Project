@@ -39,36 +39,15 @@ public class AvailableBloodListJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         availBloodListLbl = new javax.swing.JLabel();
-        bloodTypejScrollPane = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
         patientDetailsjScrollPane = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
         assignbloodBtn = new javax.swing.JPanel();
         assignbloodLbl = new javax.swing.JLabel();
+        bloodInvTbl = new javax.swing.JScrollPane();
+        bloodInventoryTbl = new javax.swing.JTable();
 
         availBloodListLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         availBloodListLbl.setText("Available Blood List");
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "Unit type", "A+", "A-", "B+", "B-", "O+", "O-", "AB+"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
-        bloodTypejScrollPane.setViewportView(jTable1);
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -109,34 +88,55 @@ public class AvailableBloodListJPanel extends javax.swing.JPanel {
             .addComponent(assignbloodLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
         );
 
+        bloodInventoryTbl.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Blood Bank", "Blood Group", "Units Available"
+            }
+        ));
+        bloodInventoryTbl.getTableHeader().setReorderingAllowed(false);
+        bloodInvTbl.setViewportView(bloodInventoryTbl);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(44, 44, 44)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(availBloodListLbl)
-                    .addComponent(bloodTypejScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 1018, Short.MAX_VALUE)
-                    .addComponent(patientDetailsjScrollPane))
-                .addContainerGap(80, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(assignbloodBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(178, 178, 178))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(177, 177, 177)
+                        .addComponent(bloodInvTbl, javax.swing.GroupLayout.PREFERRED_SIZE, 619, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(patientDetailsjScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 1018, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addComponent(availBloodListLbl)))
+                .addContainerGap(406, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(availBloodListLbl)
-                .addGap(18, 18, 18)
-                .addComponent(bloodTypejScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(patientDetailsjScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(511, 511, 511)
                 .addComponent(assignbloodBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(199, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(availBloodListLbl)
+                .addGap(62, 62, 62)
+                .addComponent(bloodInvTbl, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(patientDetailsjScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(258, 258, 258))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -145,8 +145,8 @@ public class AvailableBloodListJPanel extends javax.swing.JPanel {
     private javax.swing.JPanel assignbloodBtn;
     private javax.swing.JLabel assignbloodLbl;
     private javax.swing.JLabel availBloodListLbl;
-    private javax.swing.JScrollPane bloodTypejScrollPane;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JScrollPane bloodInvTbl;
+    private javax.swing.JTable bloodInventoryTbl;
     private javax.swing.JTable jTable2;
     private javax.swing.JScrollPane patientDetailsjScrollPane;
     // End of variables declaration//GEN-END:variables
