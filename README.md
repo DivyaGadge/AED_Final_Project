@@ -2,7 +2,6 @@
 
 <h1>Blood Donors Management System</h1>
 
-<<<<<<< HEAD
 #Introduction
 
 The Project Blood Management System is designed for the blood banks to gather blood from various sources and distribute to the needy people who have high requirement of it. The Software is desgined to handle the daily transctions of the blood band and search details when required.
@@ -125,21 +124,4 @@ Run the MainFrame.java file
 Divya Gadge 002792525- gadge.d@northeastern.edu
 Prishaa Mittal 002765340 - mittal.pris@northeastern.edu
 Suraj Viesveswaraiya 002998051 - visveswaraiya.s@northeastern.edu
-
-
-
-
-
-
-
-=======
-# URL for ERD diagram
-
-
-![ERDl](Database_ER.jpeg)
-
-# URL for Architecture Diagram
-
-![Domain Model](abstract.jpeg)
->>>>>>> divya_test
 
