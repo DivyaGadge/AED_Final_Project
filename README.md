@@ -57,22 +57,28 @@ The Project Blood Management System is designed for the blood banks to gather bl
 # Blood Donation Management System UI
 
 Landing Page:
-![Landing Page](Readme Images/Landing_Page.jpeg)
+
+![Landing Page](Readme_Images/Landing.jpeg)
 
 Registration Page:
-![Registration Page](Readme Images/Registration_Page.jpeg)
+
+![Registration Page](Readme_Images/Registration.jpeg)
 
 Manage Profile:
-![Manage Profile](Readme Images/ManageProfile.jpeg)
+
+![Manage Profile](Readme_Images/ManageProfile.jpeg)
 
 Organize Camps:
-![Organize Camps](Readme Images/Organize_Camps.jpeg)
+
+![Organize Camps](Readme_Images/Organize.jpeg)
 
 Inventory:
-![Inventory](Readme Images/Inventory.jpeg)
+
+![Inventory](Readme_Images/Inventory.jpeg)
 
 Logout:
-![Logout](Readme Images/Logout.jpeg)
+
+![Logout](Readme_Images/Logout.jpeg)
 
 
 # Steps to Run the Project
