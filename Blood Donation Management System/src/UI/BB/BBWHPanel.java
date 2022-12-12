@@ -389,13 +389,11 @@ public class BBWHPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_logoutBtnMouseClicked
 
     public void setBtnColor(JPanel panel) {
-        
         panel.setBackground(new Color(210, 75, 60));
         
     }
 
     public void resetBtnColor(JPanel panel) {
-        
         panel.setBackground(new Color (223, 85, 71));
         
     }

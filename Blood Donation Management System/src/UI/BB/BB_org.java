@@ -42,20 +42,19 @@ public class BB_org extends javax.swing.JPanel {
         BBheader = new javax.swing.JPanel();
         BLOODONATE = new javax.swing.JLabel();
         headerUserName = new javax.swing.JLabel();
-        logoutBtn = new javax.swing.JButton();
+        logoutBtn = new javax.swing.JLabel();
         BBmenu = new javax.swing.JPanel();
         manageProfileBtn = new javax.swing.JPanel();
         manageProfileIcon = new javax.swing.JLabel();
         manageProfileLbl = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         warehouseBtn = new javax.swing.JPanel();
         warehouseLbl = new javax.swing.JLabel();
         warehouseIcon = new javax.swing.JLabel();
-        manageRqBtn = new javax.swing.JPanel();
-        manageReqIcon = new javax.swing.JLabel();
-        manageReqLbl = new javax.swing.JLabel();
         sampleTestingBtn = new javax.swing.JPanel();
-        sampleTestingLbl = new javax.swing.JLabel();
         SampleTestingIcon = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        sampleTestingLbl = new javax.swing.JLabel();
         BBorgCardLayout = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(255, 255, 255));
@@ -69,14 +68,11 @@ public class BB_org extends javax.swing.JPanel {
         BLOODONATE.setForeground(new java.awt.Color(215, 215, 215));
         BLOODONATE.setText("BLOODONATE");
 
+        headerUserName.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        headerUserName.setForeground(new java.awt.Color(215, 215, 215));
         headerUserName.setText("jLabel1");
 
-        logoutBtn.setText("LOGOUT");
-        logoutBtn.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                logoutBtnMouseClicked(evt);
-            }
-        });
+        logoutBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UI/BB/logout.png"))); // NOI18N
 
         javax.swing.GroupLayout BBheaderLayout = new javax.swing.GroupLayout(BBheader);
         BBheader.setLayout(BBheaderLayout);
@@ -85,25 +81,22 @@ public class BB_org extends javax.swing.JPanel {
             .addGroup(BBheaderLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(BLOODONATE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 913, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 985, Short.MAX_VALUE)
                 .addComponent(headerUserName)
-                .addGap(60, 60, 60)
+                .addGap(55, 55, 55)
                 .addComponent(logoutBtn)
-                .addGap(78, 78, 78))
+                .addGap(24, 24, 24))
         );
         BBheaderLayout.setVerticalGroup(
             BBheaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BBheaderLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
                 .addGroup(BBheaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(BBheaderLayout.createSequentialGroup()
-                        .addGap(17, 17, 17)
-                        .addComponent(BLOODONATE))
-                    .addGroup(BBheaderLayout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addGroup(BBheaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(headerUserName)
-                            .addComponent(logoutBtn))))
-                .addContainerGap(20, Short.MAX_VALUE))
+                    .addGroup(BBheaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(headerUserName)
+                        .addComponent(logoutBtn))
+                    .addComponent(BLOODONATE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
         BBmenu.setBackground(new java.awt.Color(223, 85, 71));
@@ -124,6 +117,8 @@ public class BB_org extends javax.swing.JPanel {
         manageProfileLbl.setForeground(new java.awt.Color(215, 215, 215));
         manageProfileLbl.setText("Manage Profile");
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UI/BB/profile_icon.png"))); // NOI18N
+
         javax.swing.GroupLayout manageProfileBtnLayout = new javax.swing.GroupLayout(manageProfileBtn);
         manageProfileBtn.setLayout(manageProfileBtnLayout);
         manageProfileBtnLayout.setHorizontalGroup(
@@ -131,17 +126,27 @@ public class BB_org extends javax.swing.JPanel {
             .addGroup(manageProfileBtnLayout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addComponent(manageProfileIcon)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(manageProfileLbl)
-                .addContainerGap(91, Short.MAX_VALUE))
+                .addGap(58, 58, 58))
         );
         manageProfileBtnLayout.setVerticalGroup(
             manageProfileBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(manageProfileBtnLayout.createSequentialGroup()
-                .addGroup(manageProfileBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(manageProfileLbl)
-                    .addComponent(manageProfileIcon))
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addGroup(manageProfileBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(manageProfileBtnLayout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addGroup(manageProfileBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(manageProfileLbl)
+                            .addGroup(manageProfileBtnLayout.createSequentialGroup()
+                                .addComponent(manageProfileIcon)
+                                .addGap(16, 16, 16))))
+                    .addGroup(manageProfileBtnLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel1)))
+                .addContainerGap(9, Short.MAX_VALUE))
         );
 
         BBmenu.add(manageProfileBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 280, 50));
@@ -164,60 +169,26 @@ public class BB_org extends javax.swing.JPanel {
         warehouseBtn.setLayout(warehouseBtnLayout);
         warehouseBtnLayout.setHorizontalGroup(
             warehouseBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, warehouseBtnLayout.createSequentialGroup()
+            .addGroup(warehouseBtnLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(warehouseIcon)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addContainerGap(205, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, warehouseBtnLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(warehouseLbl)
-                .addContainerGap(105, Short.MAX_VALUE))
+                .addGap(52, 52, 52))
         );
         warehouseBtnLayout.setVerticalGroup(
             warehouseBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(warehouseBtnLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(warehouseBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(warehouseIcon)
-                    .addComponent(warehouseLbl))
-                .addContainerGap(19, Short.MAX_VALUE))
-        );
-
-        BBmenu.add(warehouseBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, -1, -1));
-
-        manageRqBtn.setBackground(new java.awt.Color(223, 85, 71));
-        manageRqBtn.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                manageRqBtnMouseClicked(evt);
-            }
-        });
-
-        manageReqIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagesPackage/suraj/profile_icon.png"))); // NOI18N
-        manageReqIcon.setAutoscrolls(true);
-
-        manageReqLbl.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        manageReqLbl.setForeground(new java.awt.Color(215, 215, 215));
-        manageReqLbl.setText("Manage Requests");
-
-        javax.swing.GroupLayout manageRqBtnLayout = new javax.swing.GroupLayout(manageRqBtn);
-        manageRqBtn.setLayout(manageRqBtnLayout);
-        manageRqBtnLayout.setHorizontalGroup(
-            manageRqBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(manageRqBtnLayout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(manageReqIcon)
+                .addGap(10, 10, 10)
+                .addComponent(warehouseLbl)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(manageReqLbl)
-                .addContainerGap(70, Short.MAX_VALUE))
-        );
-        manageRqBtnLayout.setVerticalGroup(
-            manageRqBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(manageRqBtnLayout.createSequentialGroup()
-                .addGroup(manageRqBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(manageReqLbl)
-                    .addComponent(manageReqIcon))
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addComponent(warehouseIcon)
+                .addContainerGap(9, Short.MAX_VALUE))
         );
 
-        BBmenu.add(manageRqBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 280, -1));
+        BBmenu.add(warehouseBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, 50));
 
         sampleTestingBtn.setBackground(new java.awt.Color(223, 85, 71));
         sampleTestingBtn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -226,12 +197,14 @@ public class BB_org extends javax.swing.JPanel {
             }
         });
 
+        SampleTestingIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagesPackage/suraj/profile_icon.png"))); // NOI18N
+        SampleTestingIcon.setAutoscrolls(true);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UI/BB/blood-bag.png"))); // NOI18N
+
         sampleTestingLbl.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         sampleTestingLbl.setForeground(new java.awt.Color(215, 215, 215));
         sampleTestingLbl.setText("Sample Testing");
-
-        SampleTestingIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagesPackage/suraj/profile_icon.png"))); // NOI18N
-        SampleTestingIcon.setAutoscrolls(true);
 
         javax.swing.GroupLayout sampleTestingBtnLayout = new javax.swing.GroupLayout(sampleTestingBtn);
         sampleTestingBtn.setLayout(sampleTestingBtnLayout);
@@ -240,21 +213,26 @@ public class BB_org extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sampleTestingBtnLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(SampleTestingIcon)
+                .addGap(32, 32, 32)
+                .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(sampleTestingLbl)
-                .addContainerGap(105, Short.MAX_VALUE))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
         sampleTestingBtnLayout.setVerticalGroup(
             sampleTestingBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sampleTestingBtnLayout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addGroup(sampleTestingBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(SampleTestingIcon)
-                    .addComponent(sampleTestingLbl))
+                .addGap(31, 31, 31)
+                .addComponent(SampleTestingIcon)
                 .addContainerGap(9, Short.MAX_VALUE))
+            .addGroup(sampleTestingBtnLayout.createSequentialGroup()
+                .addGroup(sampleTestingBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addComponent(sampleTestingLbl))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        BBmenu.add(sampleTestingBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, -1, -1));
+        BBmenu.add(sampleTestingBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, -1, 40));
 
         BBorgCardLayout.setLayout(new java.awt.CardLayout());
 
@@ -263,13 +241,13 @@ public class BB_org extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(BBmenu, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(BBorgCardLayout, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(BBheader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(BBheader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 12, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(BBmenu, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(BBorgCardLayout, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(1154, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -302,17 +280,6 @@ public class BB_org extends javax.swing.JPanel {
         sampleTestingFunctionality();
     }//GEN-LAST:event_sampleTestingBtnMouseClicked
 
-    private void manageRqBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_manageRqBtnMouseClicked
-        // TODO add your handling code here:
-      //  manageRequestFunctionality();
-    }//GEN-LAST:event_manageRqBtnMouseClicked
-
-    private void logoutBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutBtnMouseClicked
-        // TODO add your handling code here:
-         Logout logout = new Logout(mainFrameCardLayout);
-        logout.logoutFunctionality();
-    }//GEN-LAST:event_logoutBtnMouseClicked
-
      public void setBtnColor(JPanel panel) {
         
         panel.setBackground(new Color(210, 75, 60));
@@ -332,13 +299,12 @@ public class BB_org extends javax.swing.JPanel {
     private javax.swing.JLabel BLOODONATE;
     private javax.swing.JLabel SampleTestingIcon;
     private javax.swing.JLabel headerUserName;
-    private javax.swing.JButton logoutBtn;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel logoutBtn;
     private javax.swing.JPanel manageProfileBtn;
     private javax.swing.JLabel manageProfileIcon;
     private javax.swing.JLabel manageProfileLbl;
-    private javax.swing.JLabel manageReqIcon;
-    private javax.swing.JLabel manageReqLbl;
-    private javax.swing.JPanel manageRqBtn;
     private javax.swing.JPanel sampleTestingBtn;
     private javax.swing.JLabel sampleTestingLbl;
     private javax.swing.JPanel warehouseBtn;
