@@ -2,15 +2,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package model.volunteerEnt;
 
-import java.util.Date;
+package model.BBEnt;
+
+import model.Enterprise.BloodBankEnterprise;
 
 /**
  *
- * @author surajvisvesh
+ * @author prishaa
  */
-public class Donor {
+
+public class BBMgmt extends BloodBankEnterprise {
+
     private String username;
     private String name;
     private String password;
@@ -20,9 +23,24 @@ public class Donor {
     private String city;
     private String state;
     private int pincode;
-    private String dob;
-    private String bloodGroup;
-    private String NGOUsername;
+    private String license_path;
+    private String approval_status;
+
+    public String getApproval_status() {
+        return approval_status;
+    }
+
+    public void setApproval_status(String approval_status) {
+        this.approval_status = approval_status;
+    }
+
+    public String getLicense_path() {
+        return license_path;
+    }
+
+    public void setLicense_path(String license_path) {
+        this.license_path = license_path;
+    }
 
     public String getUsername() {
         return username;
@@ -96,30 +114,6 @@ public class Donor {
         this.pincode = pincode;
     }
 
-    public String getDate() {
-        return dob;
-    }
-
-    public void setDate(String dob) {
-        this.dob = dob;
-    }
-
-    public String getBloodGroup() {
-        return bloodGroup;
-    }
-
-    public void setBloodGroup(String bloodGroup) {
-        this.bloodGroup = bloodGroup;
-    }
-
-    public String getNGOUsername() {
-        return NGOUsername;
-    }
-
-    public void setNGOUsername(String NGOUsername) {
-        this.NGOUsername = NGOUsername;
-    }
-    
-    
+  
     
 }

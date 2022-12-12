@@ -2,10 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package UI.SP;
-
-import UI.Hospital.*;
-import UI.BB.*;
+package UI.BB;
 
 
 import model.BBEnt.manageBBWarehouseProfile;
@@ -14,16 +11,8 @@ import model.BBEnt.BBWarehouse;
 
 /**
  *
- * @author divyagadge
+ * @author prishaa
  */
-<<<<<<<< HEAD:Blood Donation Management System/src/UI/SP/ManageProfileEqpSupplierJPanel.java
-public class ManageProfileEqpSupplierJPanel extends javax.swing.JPanel {
-
-    /**
-     * Creates new form ManageNGOProfileJPanel
-     */
-    public ManageProfileEqpSupplierJPanel() {
-========
 public class ManageBBWarehouseProfilePage extends javax.swing.JPanel {
 
     String userName;
@@ -31,7 +20,6 @@ public class ManageBBWarehouseProfilePage extends javax.swing.JPanel {
     BBWarehouse warehouse;
    
     public ManageBBWarehouseProfilePage(String userName) {
->>>>>>>> prishaa_branch:Blood Donation Management System/src/UI/SP/ManageBBWarehouseProfilePage.java
         initComponents();
         this.userName = userName;
         userNameLbl.setText(userName);
@@ -79,7 +67,7 @@ public class ManageBBWarehouseProfilePage extends javax.swing.JPanel {
         userNameLbl.setForeground(new java.awt.Color(153, 153, 153));
         userNameLbl.setText("User Name - Delete the text later");
 
-        nameLbl.setText("Equipment Supplier Org Name");
+        nameLbl.setText("Name");
 
         passLbl.setText("Password");
 
@@ -111,11 +99,7 @@ public class ManageBBWarehouseProfilePage extends javax.swing.JPanel {
 
         stateLbl.setText("State");
 
-<<<<<<<< HEAD:Blood Donation Management System/src/UI/SP/ManageProfileEqpSupplierJPanel.java
-        licenseLbl.setText("Equipment Supplier License");
-========
         licenseLbl.setText("Warehouse License");
->>>>>>>> prishaa_branch:Blood Donation Management System/src/UI/SP/ManageBBWarehouseProfilePage.java
 
         viewLicBtn.setBackground(new java.awt.Color(106, 106, 106));
 
@@ -272,13 +256,6 @@ public class ManageBBWarehouseProfilePage extends javax.swing.JPanel {
                 .addComponent(pinlbl)
                 .addGap(5, 5, 5)
                 .addComponent(pinTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-<<<<<<<< HEAD:Blood Donation Management System/src/UI/SP/ManageProfileEqpSupplierJPanel.java
-                .addGap(14, 14, 14)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(updateLicBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(licenseLbl)
-                    .addComponent(viewLicBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-========
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(14, 14, 14)
@@ -288,7 +265,6 @@ public class ManageBBWarehouseProfilePage extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(licenseLbl)))
->>>>>>>> prishaa_branch:Blood Donation Management System/src/UI/SP/ManageBBWarehouseProfilePage.java
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                 .addComponent(updateProfileBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29))

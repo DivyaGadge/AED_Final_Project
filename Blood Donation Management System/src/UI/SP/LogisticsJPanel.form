@@ -65,20 +65,45 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="bloodonateLbl" min="-2" max="-2" attributes="0"/>
+<<<<<<< HEAD:Blood Donation Management System/src/UI/SP/LogisticsJPanel.form
                   <EmptySpace pref="798" max="32767" attributes="0"/>
                   <Component id="headerUserName" min="-2" pref="312" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="logoutBtn" min="-2" pref="40" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
+=======
+                  <EmptySpace pref="994" max="32767" attributes="0"/>
+                  <Component id="headerUserName" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                  <Component id="logoutBtn" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+>>>>>>> prishaa_branch:Blood Donation Management System/src/UI/BB/BBWHPanel.form
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD:Blood Donation Management System/src/UI/SP/LogisticsJPanel.form
               <Group type="102" alignment="0" attributes="0">
 <<<<<<< HEAD:Blood Donation Management System/src/UI/SP/LogisticsJPanel.form
                   <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                   <Component id="bloodonateLbl" min="-2" max="-2" attributes="0"/>
+=======
+              <Group type="102" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                          <Component id="bloodonateLbl" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="headerUserName" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="logoutBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+>>>>>>> prishaa_branch:Blood Donation Management System/src/UI/BB/BBWHPanel.form
                   <EmptySpace pref="18" max="32767" attributes="0"/>
 =======
                   <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
@@ -110,6 +135,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="headerUserName">
           <Properties>
+<<<<<<< HEAD:Blood Donation Management System/src/UI/SP/LogisticsJPanel.form
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Helvetica Neue" size="18" style="1"/>
             </Property>
@@ -137,6 +163,17 @@
           </Properties>
           <Events>
             <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="logoutBtnMousePressed"/>
+=======
+            <Property name="text" type="java.lang.String" value="jLabel2"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="logoutBtn">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="LOGOUT"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="logoutBtnMouseClicked"/>
+>>>>>>> prishaa_branch:Blood Donation Management System/src/UI/BB/BBWHPanel.form
           </Events>
         </Component>
       </SubComponents>
@@ -176,14 +213,22 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
+<<<<<<< HEAD:Blood Donation Management System/src/UI/SP/LogisticsJPanel.form
                       <Component id="ManageLProLbl" pref="216" max="32767" attributes="0"/>
+=======
+                      <Component id="ManageProLbl" pref="216" max="32767" attributes="0"/>
+>>>>>>> prishaa_branch:Blood Donation Management System/src/UI/BB/BBWHPanel.form
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD:Blood Donation Management System/src/UI/SP/LogisticsJPanel.form
                   <Component id="ManageLProLbl" alignment="1" min="-2" pref="55" max="-2" attributes="0"/>
+=======
+                  <Component id="ManageProLbl" alignment="1" min="-2" pref="55" max="-2" attributes="0"/>
+>>>>>>> prishaa_branch:Blood Donation Management System/src/UI/BB/BBWHPanel.form
               </Group>
             </DimensionLayout>
           </Layout>
@@ -211,7 +256,11 @@
             </Property>
           </Properties>
           <Events>
+<<<<<<< HEAD:Blood Donation Management System/src/UI/SP/LogisticsJPanel.form
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="PendingReqBtnMouseClicked"/>
+=======
+            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="bloodInventoryBtnMousePressed"/>
+>>>>>>> prishaa_branch:Blood Donation Management System/src/UI/BB/BBWHPanel.form
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -289,7 +338,11 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
+<<<<<<< HEAD:Blood Donation Management System/src/UI/SP/LogisticsJPanel.form
                       <Component id="activeReqLbl" pref="216" max="32767" attributes="0"/>
+=======
+                      <Component id="equipmentInventoryLbl" pref="216" max="32767" attributes="0"/>
+>>>>>>> prishaa_branch:Blood Donation Management System/src/UI/BB/BBWHPanel.form
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -298,7 +351,11 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
+<<<<<<< HEAD:Blood Donation Management System/src/UI/SP/LogisticsJPanel.form
                       <Component id="activeReqLbl" pref="43" max="32767" attributes="0"/>
+=======
+                      <Component id="equipmentInventoryLbl" pref="43" max="32767" attributes="0"/>
+>>>>>>> prishaa_branch:Blood Donation Management System/src/UI/BB/BBWHPanel.form
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -319,6 +376,7 @@
                 <Property name="text" type="java.lang.String" value="Store Sample"/>
               </Properties>
               <Events>
+<<<<<<< HEAD:Blood Donation Management System/src/UI/SP/LogisticsJPanel.form
                 <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="OrgCampsLblMousePressed"/>
               </Events>
             </Component>
@@ -330,6 +388,10 @@
                 </Property>
 >>>>>>> suraj_branch:Blood Donation Management System/src/UI/NGO/NGOBloodColJPanel.form
               </Properties>
+=======
+                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="equipmentInventoryLblMousePressed"/>
+              </Events>
+>>>>>>> prishaa_branch:Blood Donation Management System/src/UI/BB/BBWHPanel.form
             </Component>
           </SubComponents>
         </Container>
@@ -379,6 +441,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Delivered Request"/>
               </Properties>
+              <Events>
+                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="placeOrderLblMousePressed"/>
+              </Events>
             </Component>
 <<<<<<< HEAD:Blood Donation Management System/src/UI/SP/LogisticsJPanel.form
 =======
@@ -415,11 +480,17 @@
                   <Color blue="d7" green="d7" red="d7" type="rgb"/>
                 </Property>
               </Properties>
+<<<<<<< HEAD:Blood Donation Management System/src/UI/SP/LogisticsJPanel.form
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
                   <CardConstraints cardName="card2"/>
                 </Constraint>
               </Constraints>
+=======
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="manageBloodReqLblMouseClicked"/>
+              </Events>
+>>>>>>> prishaa_branch:Blood Donation Management System/src/UI/BB/BBWHPanel.form
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel7">
               <Constraints>

@@ -2,21 +2,42 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
+<<<<<<< HEAD:Blood Donation Management System/src/UI/Donor/DonationHistory.java
 package UI.Donor;
+=======
+package UI.BB;
+
+import com.mysql.cj.protocol.Resultset;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import model.BBEnt.BBWHequipment;
+>>>>>>> prishaa_branch:Blood Donation Management System/src/UI/BB/BBWHEquipmentInventory.java
 
 /**
  *
  * @author surajvisvesh
  */
+<<<<<<< HEAD:Blood Donation Management System/src/UI/Donor/DonationHistory.java
 public class DonationHistory extends javax.swing.JPanel {
+=======
 
+
+public class BBWHEquipmentInventory extends javax.swing.JPanel {
+>>>>>>> prishaa_branch:Blood Donation Management System/src/UI/BB/BBWHEquipmentInventory.java
+
+    BBWHequipment whEquipment;
     /**
      * Creates new form DonationHistory
      */
     String username;
     public DonationHistory(String username) {
         initComponents();
+<<<<<<< HEAD:Blood Donation Management System/src/UI/Donor/DonationHistory.java
         this.username = username;
+=======
+        this.whEquipment = new whEquipment();
+        populateEquipmentTable();
+>>>>>>> prishaa_branch:Blood Donation Management System/src/UI/BB/BBWHEquipmentInventory.java
     }
 
     /**
@@ -31,11 +52,20 @@ public class DonationHistory extends javax.swing.JPanel {
         orgTable = new javax.swing.JScrollPane();
         campTable = new javax.swing.JTable();
         searchTF = new javax.swing.JTextField();
+<<<<<<< HEAD:Blood Donation Management System/src/UI/Donor/DonationHistory.java
         serachIconLbl = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
         campTable.setModel(new javax.swing.table.DefaultTableModel(
+=======
+        BBWHequipmentTbl = new javax.swing.JScrollPane();
+        BBWHequipInventoryTbl = new javax.swing.JTable();
+
+        setBackground(new java.awt.Color(255, 255, 255));
+
+        BBWHequipInventoryTbl.setModel(new javax.swing.table.DefaultTableModel(
+>>>>>>> prishaa_branch:Blood Donation Management System/src/UI/BB/BBWHEquipmentInventory.java
             new Object [][] {
                 {},
                 {},
@@ -60,33 +90,59 @@ public class DonationHistory extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(searchTF, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+<<<<<<< HEAD:Blood Donation Management System/src/UI/Donor/DonationHistory.java
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(serachIconLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(orgTable, javax.swing.GroupLayout.PREFERRED_SIZE, 1069, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(34, 34, 34))
+=======
+                        .addGap(35, 35, 35))
+                    .addComponent(BBWHequipmentTbl, javax.swing.GroupLayout.PREFERRED_SIZE, 1068, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(40, Short.MAX_VALUE))
+>>>>>>> prishaa_branch:Blood Donation Management System/src/UI/BB/BBWHEquipmentInventory.java
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+<<<<<<< HEAD:Blood Donation Management System/src/UI/Donor/DonationHistory.java
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(searchTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(serachIconLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+=======
+                .addGap(21, 21, 21)
+                .addComponent(searchTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+>>>>>>> prishaa_branch:Blood Donation Management System/src/UI/BB/BBWHEquipmentInventory.java
                 .addGap(18, 18, 18)
                 .addComponent(orgTable, javax.swing.GroupLayout.PREFERRED_SIZE, 514, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(135, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+ public void populateEquipmentTable() {
+        int selectedRowIndex = BBWHequipInventoryTbl.getSelectedRow();
 
+<<<<<<< HEAD:Blood Donation Management System/src/UI/Donor/DonationHistory.java
     private void populateTable() {
         
+=======
+
+        DefaultTableModel model = (DefaultTableModel) BBWHequipInventoryTbl.getModel();
+       
+        whEquipment.populateTable(model);
+            
+>>>>>>> prishaa_branch:Blood Donation Management System/src/UI/BB/BBWHEquipmentInventory.java
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable campTable;
     private javax.swing.JScrollPane orgTable;
     private javax.swing.JTextField searchTF;
-    private javax.swing.JLabel serachIconLbl;
     // End of variables declaration//GEN-END:variables
+
+    private static class whEquipment extends BBWHequipment {
+
+        public whEquipment() {
+        }
+    }
 }

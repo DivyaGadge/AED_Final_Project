@@ -129,7 +129,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="nameLbl">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Logistics Org Name"/>
+        <Property name="text" type="java.lang.String" value="Name"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="passLbl">
@@ -185,7 +185,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="licenseLbl">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Logistics License"/>
+        <Property name="text" type="java.lang.String" value="Blood Bank License"/>
       </Properties>
     </Component>
     <Container class="javax.swing.JPanel" name="viewLicBtn">
